@@ -1,0 +1,62 @@
+# 서비스 정의
+
+## 개요
+
+`hdr_msgs` 패키지는 HD현대로보틱스 제어기와의 통합을 위한 ROS2 message 정의를 제공합니다.
+
+
+## ROS2 messages
+
+| Message Type          | 설명                                           |
+|-----------------------|-------------------------------------------------------|
+| `srv/DateTime.srv`    | 로봇 제어기의 시스템 시간를 가져오거나 설정합니다. 입력에는 전체 날짜/시간 필드(year, mon, day, hour, min, sec)가 포함됩니다. |
+| `srv/Emergency.srv`   | 단계적 매개변수(step_no, stop_at, stop_mode)를 사용하여 비상 정지 로직을 테스트합니다. 시뮬레이션/테스트 시나리오에 사용됩니다. |
+| `srv/ExecuteCmd.srv`  | 콘솔 명령어를 문자열 라인 목록으로 실행하며, 실행 간격을 설정할 수 있습니다. rl.stop과 같은 원시 저수준 명령어에 유용합니다. |
+| `srv/ExecuteMove.srv` | 문자열 기반 명령문을 사용하여 로봇 이동 명령을 실행합니다. 예: "move L,spd=1sec,tool=1 [0, 0, 0, 0, 90, 0]". task_no는 작업 인덱스를 식별합니다(일반적으로 0). |
+| `srv/FileList.srv`    | 로봇에서 디렉토리 내용을 조회합니다. 불리언 값을 통해 파일이나 디렉토리를 포함하도록 필터링할 수 있습니다. |
+| `srv/FilePath.srv`    | 읽기, 삭제, 존재 확인과 같은 작업을 위해 파일 경로를 전송하거나 조회할 수 있습니다. |
+| `srv/FileRename.srv`  | 로봇 제어기의 파일 시스템에서 파일 이름을 변경하거나 이동합니다. |
+| `srv/FileSend.srv`    | 로컬 PC에서 로봇 제어기로 파일을 업로드합니다. 소스 및 대상 경로가 필요합니다. |
+| `srv/IoplcGet.srv`    | PLC 메모리(예: 릴레이, M, S, R)를 읽습니다. 직접 주소 지정과 이름 기반 신호 주소 지정을 모두 지원합니다. |
+| `srv/IoplcPost.srv`   | M, S, R 또는 FBx.y와 같은 심볼릭 이름을 사용하여 PLC 메모리(릴레이)에 씁니다. |
+| `srv/IoRequest.srv`   | 디지털, 시리얼 또는 사용자 I/O에 접근하는 데 사용됩니다. type 필드는 'di', 'do', 'si' 또는 'so'와 같은 I/O 종류를 지정합니다. blk_no와 sig_no는 블록 및 신호 인덱스를 지정합니다. 'val' 필드는 I/O 값을 설정할 때 사용되며 읽기 작업을 수행할 때는 무시됩니다. |
+| `srv/LogManager.srv`  | 카테고리(E, W 등), ID 범위 및 타임스탬프 필터를 사용하여 로그 항목을 조회합니다. |
+| `srv/Number.srv`      | 정수를 전송/수신하는 범용 서비스입니다. 도구 번호, 좌표계, 인덱스 설정 등에 사용됩니다. |
+| `srv/OpCnd.srv`       | 재생 모드나 사용자 좌표계와 같은 작동 조건을 읽거나 씁니다. |
+| `srv/PoseCur.srv`     | 내부 구성에 따라 관절 공간 또는 작업 공간에서 현재 로봇 포즈(위치 + 방향)를 가져옵니다. |
+| `srv/ProgramCnt.srv`  | 작업 로직의 특정 위치로 이동하기 위해 프로그램 실행 포인터(pno, sno, fno 등)를 설정합니다. |
+| `srv/ProgramVar.srv`  | 변수를 읽거나 할당합니다. 범위(로컬/글로벌), 표현식 및 지속성을 지정할 수 있습니다. |
+
+---
+
+## 사용법
+
+package.xml과 CMakeLists.txt 파일에서 `hdr_msgs`가 의존성으로 등록되어 있는지 확인하세요.
+
+##### 패키지 의존성 설정
+
+**package.xml**:
+
+```xml
+<depend>hdr_msgs</depend>
+```
+
+**CMakeLists.txt**:
+
+```cmake
+find_package(hdr_msgs REQUIRED)
+ament_target_dependencies(your_node hdr_msgs)
+```
+
+
+##### Python 예제
+
+```python
+from hdr_msgs.srv import ExecuteCmd
+```
+
+##### C++ 예제
+
+```cpp
+#include "hdr_msgs/srv/execute_cmd.hpp"
+```
