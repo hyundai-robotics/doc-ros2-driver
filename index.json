@@ -6,227 +6,207 @@
 	},
 	{
 		"link": "0-intro/README.md",
-		"char_ofs": 337,
-		"byte_ofs": 704
+		"char_ofs": 373,
+		"byte_ofs": 784
 	},
 	{
 		"link": "0-intro/1-controller-models/README.md",
-		"char_ofs": 768,
-		"byte_ofs": 1441
+		"char_ofs": 1666,
+		"byte_ofs": 3115
 	},
 	{
 		"link": "0-intro/2-robot-models/README.md",
-		"char_ofs": 1215,
-		"byte_ofs": 2222
+		"char_ofs": 2115,
+		"byte_ofs": 3902
 	},
 	{
 		"link": "0-intro/3-requirements/README.md",
-		"char_ofs": 1737,
-		"byte_ofs": 3120
+		"char_ofs": 2637,
+		"byte_ofs": 4800
 	},
 	{
 		"link": "0-intro/4-ros2-version/README.md",
-		"char_ofs": 2300,
-		"byte_ofs": 4087
+		"char_ofs": 3200,
+		"byte_ofs": 5767
+	},
+	{
+		"link": "0-intro/5-hdr-robot/README.md",
+		"char_ofs": 3591,
+		"byte_ofs": 6372
 	},
 	{
 		"link": "1-start/README.md",
-		"char_ofs": 2691,
-		"byte_ofs": 4692
+		"char_ofs": 4561,
+		"byte_ofs": 7432
 	},
 	{
 		"link": "1-start/1-repo-overview/README.md",
-		"char_ofs": 3245,
-		"byte_ofs": 5660
+		"char_ofs": 4882,
+		"byte_ofs": 8007
 	},
 	{
 		"link": "1-start/2-installation/README.md",
-		"char_ofs": 4831,
-		"byte_ofs": 8072
+		"char_ofs": 6530,
+		"byte_ofs": 10429
 	},
 	{
-		"link": "1-start/2-installation/1-build-install/README.md",
-		"char_ofs": 5309,
-		"byte_ofs": 8944
+		"link": "1-start/2-installation/README.md",
+		"char_ofs": 7782,
+		"byte_ofs": 12147
 	},
 	{
 		"link": "1-start/3-initial-setup/README.md",
-		"char_ofs": 6604,
-		"byte_ofs": 10729
-	},
-	{
-		"link": "1-start/3-initial-setup/1-controller-PC/README.md",
-		"char_ofs": 8071,
-		"byte_ofs": 13526
-	},
-	{
-		"link": "1-start/3-initial-setup/2-controller-set/README.md",
-		"char_ofs": 9642,
-		"byte_ofs": 16071
-	},
-	{
-		"link": "1-start/3-initial-setup/3-network-test/README.md",
-		"char_ofs": 12681,
-		"byte_ofs": 21004
+		"char_ofs": 9034,
+		"byte_ofs": 13865
 	},
 	{
 		"link": "1-start/4-verifying/README.md",
-		"char_ofs": 14594,
-		"byte_ofs": 23813
+		"char_ofs": 10684,
+		"byte_ofs": 16573
 	},
 	{
 		"link": "2-hdr_ros2_driver/README.md",
-		"char_ofs": 15830,
-		"byte_ofs": 25435
+		"char_ofs": 11570,
+		"byte_ofs": 17855
 	},
 	{
 		"link": "2-hdr_ros2_driver/1-launch/README.md",
-		"char_ofs": 16506,
-		"byte_ofs": 26683
+		"char_ofs": 12227,
+		"byte_ofs": 18968
 	},
 	{
 		"link": "2-hdr_ros2_driver/2-topics/README.md",
-		"char_ofs": 17882,
-		"byte_ofs": 28831
+		"char_ofs": 13603,
+		"byte_ofs": 21116
 	},
 	{
 		"link": "2-hdr_ros2_driver/3-actions/README.md",
-		"char_ofs": 18590,
-		"byte_ofs": 29915
+		"char_ofs": 14163,
+		"byte_ofs": 22000
 	},
 	{
 		"link": "2-hdr_ros2_driver/4-services/README.md",
-		"char_ofs": 19541,
-		"byte_ofs": 31052
+		"char_ofs": 15491,
+		"byte_ofs": 23466
 	},
 	{
 		"link": "2-hdr_ros2_driver/4-services/1-control/README.md",
-		"char_ofs": 20488,
-		"byte_ofs": 32421
+		"char_ofs": 16425,
+		"byte_ofs": 24822
 	},
 	{
 		"link": "2-hdr_ros2_driver/4-services/2-task/README.md",
-		"char_ofs": 22377,
-		"byte_ofs": 34636
+		"char_ofs": 18314,
+		"byte_ofs": 27037
 	},
 	{
 		"link": "2-hdr_ros2_driver/4-services/3-file/README.md",
-		"char_ofs": 23149,
-		"byte_ofs": 35564
+		"char_ofs": 19086,
+		"byte_ofs": 27965
 	},
 	{
 		"link": "2-hdr_ros2_driver/4-services/4-plc/README.md",
-		"char_ofs": 24369,
-		"byte_ofs": 36978
+		"char_ofs": 20306,
+		"byte_ofs": 29379
 	},
 	{
 		"link": "2-hdr_ros2_driver/4-services/5-console/README.md",
-		"char_ofs": 24722,
-		"byte_ofs": 37427
+		"char_ofs": 20659,
+		"byte_ofs": 29828
 	},
 	{
 		"link": "2-hdr_ros2_driver/4-services/6-project/README.md",
-		"char_ofs": 25595,
-		"byte_ofs": 38524
+		"char_ofs": 21532,
+		"byte_ofs": 30925
 	},
 	{
 		"link": "2-hdr_ros2_driver/4-services/7-version/README.md",
-		"char_ofs": 26132,
-		"byte_ofs": 39229
+		"char_ofs": 22069,
+		"byte_ofs": 31630
 	},
 	{
 		"link": "3-hdr_hardware_interface/README.md",
-		"char_ofs": 26404,
-		"byte_ofs": 39605
+		"char_ofs": 22341,
+		"byte_ofs": 32006
 	},
 	{
 		"link": "4-hdr_description/README.md",
-		"char_ofs": 31940,
-		"byte_ofs": 46557
+		"char_ofs": 27606,
+		"byte_ofs": 38423
 	},
 	{
 		"link": "5-hdr_moveit_config/README.md",
-		"char_ofs": 33488,
-		"byte_ofs": 49027
+		"char_ofs": 29154,
+		"byte_ofs": 40893
 	},
 	{
 		"link": "6-hdr_client_driver/README.md",
-		"char_ofs": 35588,
-		"byte_ofs": 52351
+		"char_ofs": 31254,
+		"byte_ofs": 44217
 	},
 	{
 		"link": "6-hdr_client_driver/1-api-categories/README.md",
-		"char_ofs": 36175,
-		"byte_ofs": 53500
+		"char_ofs": 31841,
+		"byte_ofs": 45366
 	},
 	{
 		"link": "6-hdr_client_driver/1-api-categories/1-control/README.md",
-		"char_ofs": 36612,
-		"byte_ofs": 54231
+		"char_ofs": 32278,
+		"byte_ofs": 46097
 	},
 	{
 		"link": "6-hdr_client_driver/1-api-categories/2-robot/README.md",
-		"char_ofs": 37264,
-		"byte_ofs": 55323
+		"char_ofs": 32930,
+		"byte_ofs": 47189
 	},
 	{
 		"link": "6-hdr_client_driver/1-api-categories/3-project/README.md",
-		"char_ofs": 38027,
-		"byte_ofs": 56622
+		"char_ofs": 33693,
+		"byte_ofs": 48488
 	},
 	{
 		"link": "6-hdr_client_driver/1-api-categories/4-file/README.md",
-		"char_ofs": 38474,
-		"byte_ofs": 57453
+		"char_ofs": 34140,
+		"byte_ofs": 49319
 	},
 	{
 		"link": "6-hdr_client_driver/1-api-categories/5-io/README.md",
-		"char_ofs": 39012,
-		"byte_ofs": 58457
+		"char_ofs": 34678,
+		"byte_ofs": 50323
 	},
 	{
 		"link": "6-hdr_client_driver/1-api-categories/6-task/README.md",
-		"char_ofs": 39330,
-		"byte_ofs": 59021
+		"char_ofs": 34996,
+		"byte_ofs": 50887
 	},
 	{
 		"link": "6-hdr_client_driver/1-api-categories/7-etc/README.md",
-		"char_ofs": 39857,
-		"byte_ofs": 59994
+		"char_ofs": 35523,
+		"byte_ofs": 51860
 	},
 	{
 		"link": "6-hdr_simulation_gz/README.md",
-		"char_ofs": 40228,
-		"byte_ofs": 60675
+		"char_ofs": 35894,
+		"byte_ofs": 52541
 	},
 	{
 		"link": "7-hdr_msgs/README.md",
-		"char_ofs": 42443,
-		"byte_ofs": 63840
-	},
-	{
-		"link": "7-hdr_msgs/1-service-definitions/README.md",
-		"char_ofs": 42670,
-		"byte_ofs": 64275
+		"char_ofs": 37351,
+		"byte_ofs": 54660
 	},
 	{
 		"link": "8-running/README.md",
-		"char_ofs": 44955,
-		"byte_ofs": 68012
+		"char_ofs": 39254,
+		"byte_ofs": 57963
 	},
 	{
 		"link": "8-running/1-launch-moveit2/README.md",
-		"char_ofs": 45322,
-		"byte_ofs": 68633
+		"char_ofs": 39591,
+		"byte_ofs": 58540
 	},
 	{
 		"link": "8-running/2-launch-ros2_control/README.md",
-		"char_ofs": 46709,
-		"byte_ofs": 70740
-	},
-	{
-		"link": "8-running/3-emg-stop/README.md",
-		"char_ofs": 49061,
-		"byte_ofs": 73980
+		"char_ofs": 40679,
+		"byte_ofs": 60288
 	}
 ]

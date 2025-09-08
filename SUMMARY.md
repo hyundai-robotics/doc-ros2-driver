@@ -7,16 +7,14 @@
   * [0.2 로봇 모델](0-intro/2-robot-models/README.md)
   * [0.3 요구사항](0-intro/3-requirements/README.md)
   * [0.4 ROS2 버전](0-intro/4-ros2-version/README.md)
+  * [0.5 로봇 joint 및 link 명칭](0-intro/5-hdr-robot/README.md)
 
 * [1. 시작하기](1-start/README.md)
   * [1.1 레포지토리 개요](1-start/1-repo-overview/README.md)
   * [1.2 설치](1-start/2-installation/README.md)
-    * [1.2.1 빌드 및 설치](1-start/2-installation/1-build-install/README.md)
-  * [1.3 초기 설정](1-start/3-initial-setup/README.md)
-    * [1.3.1 제어기 PC 연결](1-start/3-initial-setup/1-controller-PC/README.md)
-    * [1.3.2 제어기 설정](1-start/3-initial-setup/2-controller-set/README.md)
-    * [1.3.3 네트워크 테스트](1-start/3-initial-setup/3-network-test/README.md)
-  * [1.4 검증](1-start/4-verifying/README.md)
+    * [1.2.1 빌드 및 설치](1-start/2-installation/README.md)
+  * [1.3 PC 설정](1-start/3-initial-setup/README.md)
+  * [1.4 설치 검증](1-start/4-verifying/README.md)
 
 * [2. ROS2 드라이버 (hdr_ros2_driver)](2-hdr_ros2_driver/README.md)
   * [2.1 런치](2-hdr_ros2_driver/1-launch/README.md)
@@ -50,9 +48,7 @@
 * [6. Gazebo 시뮬레이션 (hdr_simulation_gz)](6-hdr_simulation_gz/README.md)
 
 * [7. ROS 메시지 정의 (hdr_msgs)](7-hdr_msgs/README.md)
-  * [7.1 서비스 정의](7-hdr_msgs/1-service-definitions/README.md)
 
 * [8. 실행](8-running/README.md)
   * [8.1 MoveIt2 실행](8-running/1-launch-moveit2/README.md)
   * [8.2 ROS2 Control 실행](8-running/2-launch-ros2_control/README.md)
-  * [8.3 비상정지](8-running/3-emg-stop/README.md)

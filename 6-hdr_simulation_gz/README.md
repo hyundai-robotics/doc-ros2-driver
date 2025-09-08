@@ -20,7 +20,7 @@
 
 ### 로봇 생성
 ```bash
-# ros2_control이 포함된 로봇을 Gazebo에서 생성
+# ros2_control이 포함된 로봇을 Gazebo에서 spawn
 ros2 launch hdr_simulation_gz hdr_gz_spawn.launch.py robot_model:=ha006b
 ```
 
@@ -43,46 +43,6 @@ ros2 launch hdr_simulation_gz hdr_gz_moveit.launch.py robot_model:=hdr50_22
 | `initial_positions_file` | string | `initial_positions.yaml` | 시작 조인트 위치 |
 | `kinematics_file` | string | `kinematics.yaml` | 기구학 솔버 구성 |
 
-## Gazebo 물리
-
-시뮬레이션에서 제공하는 기능:
-- **현실적인 동역학**: 조인트 마찰, 관성 및 댐핑
-- **충돌 감지**: 안전 테스트 및 장애물 회피
-- **센서 시뮬레이션**: 향후 카메라, 힘 센서 지원
-- **환경 상호작용**: 객체 조작 기능
-
-## 제어기 구성
-
-시뮬레이션은 표준 ros2_control 인터페이스를 사용합니다:
-
-```yaml
-# 제어기 구성 예제
-joint_trajectory_controller:
-  type: joint_trajectory_controller/JointTrajectoryController
-  joints:
-    - joint1
-    - joint2
-    - joint3
-    - joint4
-    - joint5
-    - joint6
-```
-
-## 궤적 실행 예제
-
-```bash
-# 조인트 궤적 명령 전송
-ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
-  control_msgs/action/FollowJointTrajectory "{
-  trajectory: {
-    joint_names: ['j1', 'j2', 'j3', 'j4', 'j5', 'j6'],
-    points: [{
-      positions: [0.0, 1.571, 1.0, 0.0, 0.0, 0.0],
-      time_from_start: {sec: 2, nanosec: 0}
-    }]
-  }
-}"
-```
 
 ## 향후 개선사항
 - 센서 및 툴 시뮬레이션 지원

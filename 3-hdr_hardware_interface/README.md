@@ -80,12 +80,6 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
 | `/controller_manager/list_hardware_interfaces` | controller_manager_msgs/srv/ListHardwareInterfaces | 사용 가능한 조인트 명령 및 상태 인터페이스를 반환합니다 |
 | `/controller_manager/switch_controller`        | controller_manager_msgs/srv/SwitchController       | controller를 활성화하거나 비활성화합니다  |
 | `/controller_manager/load_controller`          | controller_manager_msgs/srv/LoadController         | controller를 로드합니다             |
-| `/controller_manager/unload_controller`        | controller_manager_msgs/srv/UnloadController       | 지정된 controller를 언로드하고 제거합니다    |
+| `/controller_manager/unload_controller`        | controller_manager_msgs/srv/UnloadController       | 지정된 controller를 언로드합니다.    |
 
 ---
-
-## 4. 문제 해결
-- **제어기를 찾을 수 없음**: URDF의 플러그인 이름을 확인하고 다시 빌드하세요.
-- **실행 시 타임아웃**: OpenAPI IP 주소가 host PC에서 접근 가능한지 확인하세요.
-- **조인트 상태 없음**: 드라이버가 실행 중이고 `robot_pose` 기능이 활성화되어 있는지 확인하세요.
-- **인터페이스 시작 실패**: 지원되는 펌웨어 버전 ≥ **60.34-00**인지 확인하세요. (이 버전은 **10월**에 릴리스 예정입니다.)

@@ -38,18 +38,6 @@ ros2 topic echo /joint_states --once
 ros2 service list | grep move_group
 ```
 
-### 3. 기본 동작 테스트
-```bash
-# MoveIt Commander 실행
-ros2 run moveit_commander moveit_commander_cmdline.py
-
-# Commander에서 실행할 명령:
-# > use manipulator
-# > go home
-# > plan
-# > execute
-```
-
 ## 지원되는 로봇 모델
 
 - ha006b
@@ -63,10 +51,6 @@ ros2 run moveit_commander moveit_commander_cmdline.py
 
 ### 비상 정지
 - 하드웨어 비상 정지 버튼을 항상 접근 가능한 곳에 두세요
-- 소프트웨어 정지:
-  ```bash
-  ros2 service call /move_group/stop_trajectory_execution std_srvs/srv/Empty
-  ```
 
 ### 안전한 종료
 1. 모든 동작 정지
@@ -79,7 +63,6 @@ ros2 run moveit_commander moveit_commander_cmdline.py
 ### 연결 문제
 - 네트워크 연결 확인: `ping 192.168.1.150`
 - 로봇 제어기가 REMOTE 모드인지 확인
-- 방화벽 설정 확인
 
 ### 계획 실패
 - 목표 위치가 작업 영역 내에 있는지 확인

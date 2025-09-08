@@ -33,5 +33,5 @@ ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 ros2 service call /hdr_ros2_driver/robot/get/motor_state std_srvs/srv/Trigger
 
 # 모터 전원 켜기
-ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/SetBool "data: true"
+ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/Trigger
 ```

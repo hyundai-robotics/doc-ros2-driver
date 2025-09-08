@@ -19,18 +19,8 @@ std_msgs/Header header
   string frame_id
 string[] name          # URDF와 일치하는 조인트 이름
 float64[] position     # 라디안 단위의 조인트 position
-float64[] velocity     # NULL
-float64[] effort       # NULL
+float64[] velocity     # NULL (현재 지원하지 않음)
+float64[] effort       # NULL (현재 지원하지 않음)
 ```
 
 **퍼블리싱 주기**: 50 Hz (`publish_rate` 매개변수를 통해 구성 가능)
-
-
-### 변환 정보
-
-#### `/tf` 및 `/tf_static` (tf2_msgs/msg/TFMessage)
-**설명**: 로봇 기구학 체인 변환
-
-**퍼블리시되는 변환**:
-- `base_link` → `link1` → `link2` → ... → `tool0`
-- 로봇 장착 및 교정을 위한 정적 변환

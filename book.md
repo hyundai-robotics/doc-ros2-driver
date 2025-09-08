@@ -8,18 +8,39 @@ HD현대로보틱스의 서면 동의 없이 전체 또는 일부를 복제하�
 
 **Copyright ⓒ 2025 by HD현대로보틱스**
 
-현재 ROS2 호환 제어기는 Hi6 시리즈이며, 제어기 소프트웨어 버전 **v60.34-00** 이상에서 지원됩니다. </br> **v60.34-00** 버전은 2025년 10월 중 공식 릴리스가 예정되어 있으므로 참고하시기 바랍니다.# 개요
+현재 ROS2 호환 제어기는 Hi6 시리즈이며, 제어기 소프트웨어 버전 **v60.34-00** 이상에서 지원됩니다. </br>
+**v60.34-00** 버전은 2025년 10월 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 HD현대로보틱스 ROS2 드라이버 사용을 지양하시기 바랍니다.# 개요
 
 본 매뉴얼에서는 HD현대로보틱스 (HDR) ROS2 드라이버에 대한 설명을 제공합니다.
 
-HDR ROS2 드라이버는 HD현대로보틱스 산업용 로봇 제어기(Hi6 시리즈)와 ROS2 간의 원활한 통합을 가능하게 하며, 시뮬레이션과 실제 로봇 제어 기능을 모두 제공합니다.
+HDR ROS2 드라이버는 HD현대로보틱스 산업용 로봇 제어기(Hi6 시리즈)와 ROS2 시스템을 연동하여 시뮬레이션 환경 및 실제 로봇 제어 기능을 모두 지원합니다.
 
 ![hdr_main](../_assets/0_hdr_main.png)
 
-- [지원 제어기](1-controller-models/README.md) - 호환되는 Hi6 시리즈 제어기
-- [지원 로봇 모델](2-robot-models/README.md) - 호환되는 HD현대로보틱스 로봇 모델
+
+## 사전 확인 사항
+HDR ROS2 드라이버 사용에 앞서 아래 항목을 반드시 확인하시기 바랍니다.
+- [지원 제어기](1-controller-models/README.md) - 호환 가능한 Hi6 시리즈 제어기
+- [지원 로봇 모델](2-robot-models/README.md) - 호환 가능한 HD현대로보틱스 로봇 모델
 - [시스템 요구사항](3-requirements/README.md) - 하드웨어 및 소프트웨어 요구사항
-- [지원 ROS2 버전](4-ros2-version/README.md) - 지원 ROS2 버전# 지원 제어기 모델
+- [ROS2 버전](4-ros2-version/README.md) - 지원 ROS2 버전
+- [로봇 joint, link 명](5-hdr-robot/README.md) - ROS2 내 로봇 joint 및 link 명칭
+
+## 설치 및 초기 설정
+위 항목을 모두 확인한 후 문제가 없다면 아래 절차에 따라 ROS2 드라이버 설치 및 초기 설정을 진행하시기 바랍니다.
+- [레포지토리 개요](1-repo-overview/README.md) - HDR ROS2 드라이버 레포지토리 구조 및 아키텍처 확인
+- [패키지 설치](2-installation/README.md) - HDR ROS2 드라이버 빌드 및 설치 방법
+- [제어기 및 PC 설정](3-initial-setup/README.md) - HDR ROS2 드라이버 사용을 위한 초기 설정 방법
+- [설치 검증](4-verifying/README.md) - 설치 및 설정이 올바르게 완료되었는지 확인
+
+## ROS2 드라이버 바로 실행하기
+위의 설치 및 초기 설정 과정을 모두 마쳤다면, 아래 절차를 통해 HDR ROS2 드라이버를 실행하고 로봇 제어를 시작할 수 있습니다.
+
+- [ROS2 드라이버 실행](8-running/README.md) - ROS2 드라이버 실행 및 로봇 제어 방법
+
+⚠️ **반드시 사전 확인 사항을 확인하고 설치 및 초기 설정을 모두 완료한 뒤 진행하시기 바랍니다.** 
+
+⚠️ **현재 HD현대로보틱스 ROS2 드라이버는 제어기 소프트웨어 버전 *v60.34-00* 이상에서 지원됩니다. </br> *v60.34-00* 버전은 2025년 10월 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 ROS2 드라이버 사용을 지양하시기 바랍니다.**# 지원 제어기 모델
 ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 모델은 아래와 같습니다.
 
 - Hi6-N10
@@ -33,9 +54,9 @@ ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 �
 - SW 버전 버전: **60.34-00** 이상 (10월 중 배포 예정)
 - 동작 모드: **REMOTE 모드**
 
-> ❗ **참고:** HD현대로보틱스 ROS2 드라이버는 **Hi5** 제어기 시리즈를 **지원하지 않습니다**.
+> ⚠️ **참고:** HD현대로보틱스 ROS2 드라이버는 **Hi5** 제어기 시리즈를 **지원하지 않습니다**.
 
-> ❗ **실시간 인터페이스**: 2025년 11월 예정 (모션 제어, 상태 피드백 및 I/O 작업을 위한 2ms 주기 제어)
+> ⚠️ **실시간 인터페이스**: 2025년 11월 예정 (모션 제어, 상태 피드백 및 I/O 작업을 위한 2ms 주기 제어)
 
 ## 다음 단계
 
@@ -109,24 +130,59 @@ ros2 doctor
 
 ## 다음 단계
 
-ROS2 호환성을 확인한 후 설치를 위해 [시작하기](../../1-start/README.md)로 진행하세요.# 시작하기
+ROS2 호환성을 확인한 후 설치를 위해 [시작하기](../../1-start/README.md)로 진행하세요.# 로봇 joint 및 link 명칭
+
+HD현대로보틱스 로봇은 URDF 내에서 아래와 같은 joint 및 link 명칭을 따릅니다.
+
+
+## Joint 명
+
+|joint no|joint name </br>(URDF)|joint name </br>(TP)|
+|:------:|:---:|:---:|
+|1|j1|S|
+|2|j2|H|
+|3|j3|V|
+|4|j4|R2|
+|5|j5|B|
+|6|j6|R1|
+
+
+## Link 명
+
+|link No|link Name|
+|:------:|:---:|
+|0|base_link|
+|1|lower_frame_link|
+|2|upper_frame_link|
+|3|arm_link|
+|4|wrist_body_link|
+|5|wrist_holder_link|
+|6|flange_link|
+
+
+## Link 간 관계
+
+|link No|link Name|joint|parent link|joint type|note|
+|:------:|:---:|:---:|:------:|:---:|:---:|
+||world||||||
+|0|base_link|world_joint|world|fixed|||
+|1|lower_frame_link|j1|base_link|revolute||
+|2|upper_frame_link|j2|lower_frame_link|revolute||
+|3|arm_link|j3|upper_frame_link|revolute||
+|4|wrist_body_link|j4|arm_link|revolute||
+|5|wrist_holder_link|j5|wrist_body_link|revolute||
+|6|flange_link|j6|wrist_holder_link|revolute||
+||flange|flange_link-flange|flange_link|fixed|ROS-Industrial 표준 좌표계|
+||tool0|flange-tool0|flange|fixed|ROS-Industrial 표준 좌표계|# 시작하기
 
 본 섹션에서는 HD현대로보틱스 ROS2 드라이버의 설치, 구성 및 실행을 위한 단계별 지침을 제공합니다. 이 가이드를 따라 개발 환경을 설정하고 로봇과의 통신을 구축하세요.
 
 ## 설치 및 설정 과정
 
 1. [레포지토리 개요](1-repo-overview/README.md) - 패키지 구조와 관계 이해
-2. [설치](2-installation/README.md) - 레포지토리 클론 및 소프트웨어 스택 빌드
-3. [초기 설정](3-initial-setup/README.md) - 네트워킹 및 로봇 설정 구성
-4. [설정 검증](4-verifying/README.md) - 설치 테스트
-
-## 지원 및 문제 해결
-
-설정 중 문제가 발생하면:
-- [시스템 요구사항](../0-intro/3-requirements/README.md) 확인
-- [로봇 모델이 지원되는지](../0-intro/2-robot-models/README.md) 확인
-- [초기 설정](3-initial-setup/README.md) 섹션에서 네트워크 구성 검토
-- 개별 패키지 문서의 문제 해결 섹션 참조# 레포지토리 개요
+2. [설치](2-installation/README.md) - 레포지토리 클론 및 빌드
+3. [초기 설정](3-initial-setup/README.md) - 네트워킹 설정 구성
+4. [설정 검증](4-verifying/README.md) - 설치 테스트# 레포지토리 개요
 
 HD현대로보틱스 ROS2 드라이버는 로봇 제어, 시뮬레이션 및 모션 플래닝 기능을 제공하기 위해 함께 작동하는 여러 상호 연결된 패키지로 구성됩니다.
 
@@ -135,64 +191,50 @@ HD현대로보틱스 ROS2 드라이버는 로봇 제어, 시뮬레이션 및 모
 ```
 HD Hyundai Robotics ROS2 Driver
 
-hdr_ros2_driver 
-   hdr_ros2_driver          # 핵심 통신 드라이버
-   hdr_hardware_interface   # ros2_control 통합
-   hdr_moveit_config       # MoveIt 모션 플래닝 구성
-   hdr_msgs                # 커스텀 메시지 정의
+hdr_ros2_driver            # 상위 레포지토리
+   hdr_bringup             # 로봇 연동 및 제어 launch 파일
+   hdr_ros2_driver         # 핵심 통신 드라이버
+   hdr_hardware_interface  # ros2_control 통합
+   hdr_moveit_config       # MoveIt configuration
+   hdr_msgs                # HD로보틱스 커스텀 메시지 정의
 
-hdr_client_driver        # C++ 클라이언트 라이브러리  
-hdr_description         # 로봇 URDF 모델 및 메쉬
-hdr_simulation_gz       # Gazebo 시뮬레이션
+hdr_client_driver          # C++ 클라이언트 라이브러리
+
+hdr_description            # 로봇 URDF 모델 및 mesh
+
+hdr_simulation_gz          # Gazebo 시뮬레이션 연동
 ```
 
 ## 레포지토리 내 패키지 세부사항
 
-### 핵심 패키지
+- **[ROS2 드라이버 (`hdr_ros2_driver`)](../../2-hdr_ros2_driver/README.md)** </br>
+로봇 제어, 파일 관리, I/O 작업 및 시스템 모니터링을 위한 서비스를 제공하는 기본 ROS2 노드
 
-- **[ROS2 드라이버 (`hdr_ros2_driver`)](../../2-hdr_ros2_driver/README.md)**: 로봇 제어, 파일 관리, I/O 작업 및 시스템 모니터링을 위한 서비스를 제공하는 기본 ROS2 노드
+- **[HDR 클라이언트 드라이버 (`hdr_client_driver`)](../../6-hdr_client_driver/README.md)** </br>
+HD현대로보틱스 제어기와 TCP/UDP 통신 프로토콜을 구현하는 C++ 라이브러리
 
-- **[HDR 클라이언트 드라이버 (`hdr_client_driver`)](../../6-hdr_client_driver/README.md)**: Hi6 제어기와 TCP/UDP 통신 프로토콜을 구현하는 C++ 라이브러리
+- **[ROS2 제어 통합 (`hdr_hardware_interface`)](../../3-hdr_hardware_interface/README.md)** </br>
+표준 ROS2 제어 프레임워크와의 통합을 위한 ros2_control SystemInterface
 
-- **[ROS2 제어 통합 (`hdr_hardware_interface`)](../../3-hdr_hardware_interface/README.md)**: 표준 ROS2 제어 프레임워크와의 통합을 가능하게 하는 ros2_control SystemInterface
+- **[로봇 설명 (`hdr_description`)](../../4-hdr_description/README.md)** </br>
+지원되는 로봇 모델에 대한 URDF/XACRO, 충돌/시각적 mesh 및 RViz 구성
 
-### 모델 및 구성 패키지
+- **[MoveIt2 구성 (`hdr_moveit_config`)](../../5-hdr_moveit_config/README.md)** </br>
+SRDF, Soft limits, 기구학 및 모션 플래닝 설정을 포함한 로봇 모델 별 MoveIt2 구성
 
-- **[로봇 설명 (`hdr_description`)](../../4-hdr_description/README.md)**: 모든 지원되는 로봇 모델에 대한 URDF/XACRO 로봇 설명, 충돌/시각적 메쉬 및 RViz 구성
+- **[Gazebo 시뮬레이션 (`hdr_simulation_gz`)](../../6-hdr_simulation_gz/README.md)** </br>
+Gazebo Ignition 시뮬레이션 연동
 
-- **[MoveIt2 구성 (`hdr_moveit_config`)](../../5-hdr_moveit_config/README.md)**: SRDF, soft limits, 기구학 및 모션 플래닝 설정을 포함한 모델별 MoveIt2 구성
-
-### 시뮬레이션 및 HD현대로보틱스 커스텀 메시지
-
-- **[Gazebo 시뮬레이션 (`hdr_simulation_gz`)](../../6-hdr_simulation_gz/README.md)**: 시뮬레이션 환경 연동을 제공하는 Gazebo Ignition 통합
-
-- **[커스텀 메시지 (`hdr_msgs`)](../../7-hdr_msgs/README.md)**: 제어기와의 통신을 위한 커스텀 ROS2 서비스 및 메시지 정의
+- **[커스텀 메시지 (`hdr_msgs`)](../../7-hdr_msgs/README.md)** </br>
+HD현대로보틱스 제어기와의 통신을 위한 커스텀 ROS2 서비스 및 메시지 정의
 
 
 ## 다음 단계
 
-1. 위에 링크된 개별 패키지 문서를 검토하십시오.
+1. 위 링크된 개별 패키지 문서를 검토하십시오.
 2. [설치](../2-installation/README.md)로 진행하여 패키지를 빌드하십시오.
-3. [초기 설정](../3-initial-setup/README.md)에서 로봇 연결을 구성하십시오.# 설치
-
-이 섹션에서는 종속성 관리, 저장소 복제 및 패키지 빌드를 포함한 HD현대로보틱스 ROS2 드라이버의 설치 과정을 다룹니다.
-
-## 전제조건
-
-설치를 시작하기 전에 시스템이 [시스템 요구사항](../../0-intro/3-requirements/README.md)을 충족하고 ROS2가 올바르게 설치되어 있는지 확인하십시오.
-
-## 설치 과정
-
-[시스템 라이브러리 설치 및 패키지 빌드](1-build-install/README.md) - 필요한 시스템 종속성 설치 후 HD현대로보틱스 ROS2 드라이버를 빌드합니다
-
-## 다음 단계
-
-설치 후:
-1. 로봇 구성을 위해 [초기 설정](../3-initial-setup/README.md)으로 진행하십시오
-2. [설치 검증](../4-verifying/README.md) 테스트를 실행하십시오
-3. [기본 로봇 작업](../../2-hdr_ros2_driver/README.md)으로 시작하십시오# 패키지 빌드 및 설치
-
-이 가이드는 ROS2 작업공간 설정, 종속성 설치를 포함하여 HD현대로보틱스 ROS2 드라이버 패키지를 소스에서 빌드하는 방법을 다룹니다.
+3. [초기 설정](../3-initial-setup/README.md)에서 로봇 연결을 구성하십시오.# 패키지 빌드 및 설치
+이 섹션에서는 레포지토리 복제, 종속성 설치 및 패키지 빌드를 포함한 HD현대로보틱스 ROS2 드라이버의 설치 과정을 다룹니다.
 
 ## 작업공간 설정
 
@@ -202,12 +244,9 @@ hdr_simulation_gz       # Gazebo 시뮬레이션
 # 작업공간 디렉토리 생성
 mkdir -p ~/hdr_ws/src
 cd ~/hdr_ws
-
-# 작업공간 초기화
-echo "작업공간 생성 위치: $(pwd)"
 ```
 
-### 소스 저장소 복제
+### 소스 레포지토리 복제
 
 ```bash
 cd ~/hdr_ws/src
@@ -265,86 +304,94 @@ echo "source ~/hdr_ws/install/setup.bash" >> ~/.bashrc
 
 ## 다음 단계
 
-패키지 빌드가 성공한 후:
-1. 로봇 구성을 위한 [초기 설정](../3-initial-setup/README.md) 진행
-2. [검증 테스트](../4-verifying/README.md)로 ROS2 드라이버 설치 및 세팅 상태 확인# 초기 설정
+패키지 설치 및 빌드 성공 후:
+1. 제어기 및 PC 설정을 위해 [초기 설정](../3-initial-setup/README.md)을 진행하십시오
+2. [설치 검증](../4-verifying/README.md) 테스트를 실행하십시오# 패키지 빌드 및 설치
+이 섹션에서는 레포지토리 복제, 종속성 설치 및 패키지 빌드를 포함한 HD현대로보틱스 ROS2 드라이버의 설치 과정을 다룹니다.
 
-이 섹션에서는 개발 PC와 HD현대로보틱스 로봇 제어기 간의 통신을 설정하는 데 필요한 초기 구성을 안내합니다.
+## 작업공간 설정
 
-## 설정 개요
+### ROS2 작업공간 생성
 
-초기 설정 과정은 세 가지 주요 단계로 구성됩니다:
+```bash
+# 작업공간 디렉토리 생성
+mkdir -p ~/hdr_ws/src
+cd ~/hdr_ws
+```
 
-1. **[제어기 PC 설정](1-controller-PC/README.md)** - 로봇 제어기의 네트워크 설정 구성
-2. **[제어기 구성](2-controller-set/README.md)** - 로봇을 REMOTE 모드로 설정하고 시스템 매개변수 구성  
-3. **[네트워크 테스트](3-network-test/README.md)** - 연결성 확인 및 기본 통신 테스트
+### 소스 레포지토리 복제
 
-## 전제조건
+```bash
+cd ~/hdr_ws/src
 
-초기 설정을 시작하기 전에:
+# HDR 핵심 드라이버 및 client 라이브러리
+git clone https://github.com/hyundai-robotics/hdr_ros2_driver.git
+git clone https://github.com/hyundai-robotics/hdr_client_driver.git
 
-- **로봇 제어기**: SW 버전 **60.34-00** 이상의 Hi6 시리즈 제어기
-- **네트워크 연결**: PC와 로봇 제어기를 연결하는 이더넷 케이블
-- **PC 설정**: HDR ROS2 패키지의 [설치 및 빌드](../2-installation/README.md) 완료
-- **물리적 접근**: 로봇 제어기 티칭 펜던트에 대한 접근
+# HDR description 패키지
+git clone https://github.com/hyundai-robotics/hdr_description.git
 
+# Gazebo 시뮬레이션
+git clone https://github.com/hyundai-robotics/hdr_simulation_gz.git
+```
 
-## 기본 네트워크 구성
+## 종속성 설치
 
-자세한 네트워크 구성 정보는 [네트워크 구성 참조](../../9-reference/network-config.md)를 참조하십시오.
+### ROS2 종속성 설치
 
-**빠른 참조**:
-- 로봇 제어기 IP: `192.168.1.150` (기본값)
-- PC IP: `192.168.1.100` (예시) 
-- API 포트: `8888`
+```bash
+cd ~/hdr_ws
 
+# 패키지 데이터베이스 업데이트
+rosdep update
 
-## 안전 요구사항
+# HDR 패키지의 모든 종속성 설치
+rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
+```
 
-### 설정 시작 전
+## 빌드 프로세스
 
-> **안전 경고**: 설정을 시작하기 전에 다음 안전 조치를 확인하십시오:
+### 표준 빌드
 
-- **비상 정지 접근**: 비상 정지 버튼이 접근 가능하고 작동하는지 확인
-- **안전한 작업 공간**: 로봇 작업 공간에서 사람과 장애물 제거
-- **전원 제어**: 주 전원 차단기의 위치 파악
-- **교육**: 운영자가 로봇 안전 절차에 대해 교육받았는지 확인
+```bash
+cd ~/hdr_ws
 
-### 구성 중
+# 최적화를 통해 모든 패키지 빌드
+colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Release
+```
 
-- **티칭 펜던트 접근**: 비상 정지를 위해 티칭 펜던트를 접근 가능한 상태로 유지
-- **REMOTE 모드 이해**: REMOTE 모드가 외부 제어를 허용한다는 점 이해
-- **네트워크 보안**: 가능한 경우 로봇 통신에 격리된 네트워크 사용
+### 빌드 구성 옵션
+```bash
+# 디버그 기호와 함께 빌드
+colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Debug
+```
 
-## 문제 해결 빠른 참조
+### 환경 설정
 
-### 일반적인 네트워크 문제
+```bash
+cd ~/hdr_ws
+source install/setup.bash
 
-**로봇 제어기에 연결할 수 없음**
-1. 이더넷 케이블 연결 확인
-2. PC와 제어기 모두의 IP 주소 구성 확인
-3. ping 명령으로 테스트
-4. 제어기의 전원이 켜져 있고 작동 중인지 확인
+echo "source ~/hdr_ws/install/setup.bash" >> ~/.bashrc
+```
 
-**로봇이 명령에 응답하지 않음**
-1. 로봇이 REMOTE 모드에 있는지 확인
-2. OpenAPI 포트 구성 확인 (8888)
-3. SW 버전 버전 호환성 확인
-4. 기본 서비스 호출로 테스트
+## 다음 단계
 
-**서비스 호출 실패**
-1. ROS2 환경이 올바르게 소스되었는지 확인
-2. HDR 패키지가 빌드되고 설치되었는지 확인
-3. 티칭 펜던트를 통해 로봇 제어기 상태 확인
-4. 네트워크 연결성 검토# PC 네트워크 설정
+패키지 설치 및 빌드 성공 후:
+1. 제어기 및 PC 설정을 위해 [초기 설정](../3-initial-setup/README.md)을 진행하십시오
+2. [설치 검증](../4-verifying/README.md) 테스트를 실행하십시오# 제어기 및 PC 통신 설정
 
 본 가이드는 HD현대로보틱스 로봇 제어기와 통신하기 위한 개발 PC의 네트워크 인터페이스 구성을 다룹니다.
+
+## 전제조건
+⚠️ 설정을 시작하기 전에 아래 내용을 확인하세요:
+- **로봇 제어기 SW 버전**: SW 버전 **60.34-00** 이상의 Hi6 시리즈 제어기
 
 ## 네트워크 구성 개요
 
 PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 합니다. 기본 구성은 제어기가 192.168.1.150에 있는 192.168.1.x 서브넷을 사용합니다.
 
-## 기본 네트워크 구성
+## 기본 네트워크 구성 (LAN1 사용 시)
 
 | 구성 요소 | 매개변수 | 기본값 |
 |-----------|-----------|---------------|
@@ -355,16 +402,18 @@ PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 �
 
 ## 케이블 연결
 
-![controller](../../../_assets/controller.png)
+![controller](../../_assets/controller.png)
 
 1. **로봇 제어기 이더넷 포트 위치 확인**
-   - **Hi6-N 제어기**: 도어 중간 패널의 메인 모듈 상단
-   - **Hi6-T 제어기**: 제어기의 전면 이더넷 포트
+   - **Hi6-N 제어기**: 메인 모듈 상단 이더넷 포트
+   - **Hi6-T 제어기**: 제어기 전면 이더넷 포트
 
 2. **이더넷 케이블 연결**
    - Cat5e 또는 Cat6 이더넷 케이블 사용
-   - LAN1, LAN2 또는 LAN3 포트에 연결
    - **권장사항**: LAN1 사용 (일반적으로 192.168.1.x로 미리 구성됨)
+   - LAN2, LAN3 포트도 사용 가능하며, 기본 설정된 제어기 IP는 각각 다음과 같습니다. </br>
+      LAN2: 192.168.4.150 → PC는 192.168.4.x 대역으로 설정 필요 </br>
+      LAN3: 192.168.3.150 → PC는 192.168.3.x 대역으로 설정 필요
 
 3. **물리적 연결 확인**
    - 케이블 연결이 안전한지 확인
@@ -373,7 +422,7 @@ PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 �
 
 ## PC 네트워크 인터페이스 구성
 
-![LAN_com](../../../_assets/LAN_com.png)
+![LAN_com](../../_assets/LAN_com.png)
 
 ### Network Manager GUI 사용
 
@@ -387,7 +436,7 @@ PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 �
    - 유선 연결 옆의 톱니바퀴 아이콘을 클릭
    - "IPv4" 탭으로 이동
 
-3. **고정 IP 구성 설정**
+3. **고정 IP 구성 설정 (LAN1 사용 시)**
    - **방법**: 수동
    - **주소**: 192.168.1.100
    - **넷마스크**: 255.255.255.0
@@ -396,7 +445,7 @@ PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 �
 4. **설정 적용**
    - "적용"을 클릭하고 네트워크 인터페이스 연결을 해제한 후 재연결
 
-![ip_setup](../../../_assets/ip_setup.png)
+![ip_setup](../../_assets/ip_setup.png)
 
 ## 검증
 
@@ -407,314 +456,27 @@ PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 �
 ping -c 4 192.168.1.150
 ```
 
-![ping_test](../../../_assets/ping_test.png)
+![ping_test](../../_assets/ping_test.png)# 설치 검증
 
-## 다음 단계
+본 가이드는 HD현대로보틱스 ROS2 드라이버가 올바르게 설치, 구성되고 작동할 준비가 되었는지 확인하는 검증 절차를 제공합니다.
 
-PC 네트워크 인터페이스 구성 후:
 
-1. [네트워크 테스트](../3-network-test/README.md)로 연결성 확인
-2. [제어기 설정](../2-controller-set/README.md) 구성
-3. [검증 테스트](../4-verifying/README.md)로 설정 완료# 제어기 구성
+### 로봇 모드 설정
 
-본 가이드는 네트워크 설정, 동작 모드를 포함하여 ROS2 통신을 위한 HD현대로보틱스 Hi6 제어기 구성을 다룹니다.
+HDR ROS2 드라이버는 로봇이 **REMOTE** 모드일 때만 동작합니다.
 
-## 전제조건
+티치 펜던트(TP)에서 모드 스위치를 REMOTE 위치로 전환하여 제어기를 원격 제어 모드로 설정한 후 ROS2 드라이버를 실행하시기 바랍니다.
 
-- 로봇 제어기 및 티칭 펜던트에 대한 물리적 액세스
-- 제어기 SW 버전 버전 **60.34-00** 이상 (10월 중 배포 예정)
-- PC와 제어기 간 연결된 네트워크 케이블
+![ip_setup](../../_assets/tp_operate.png)
 
-## 구성 개요
 
-제어기 구성에는 다음이 포함됩니다:
-
-1. **네트워크 설정** - IP 주소 및 네트워크 매개변수 구성
-2. **동작 모드** - 외부 제어를 위해 로봇을 REMOTE 모드로 설정  
-4. **안전 구성** - 안전 매개변수 구성
-
-## 네트워크 구성
-
-### 네트워크 설정에 액세스
-
-티칭 펜던트 사용:
-
-1. **네트워크 메뉴로 이동**
-   - **[F2: 시스템]** 누르기
-   - **[2: 제어 매개변수]** 선택
-   - **[9: 네트워크]** 선택
-
-2. **환경 설정 선택**
-   - **[1: 환경 설정]** 선택
-   - 연결한 LAN 포트 선택 (예: **[LAN1 (일반)]**, **[LAN2 (일반)]**, **[LAN3 (일반)]**)
-
-### IP 주소 구성
-
-#### 기본 구성 (권장)
-
-기본 설정을 사용하는 경우, LAN1은 일반적으로 미리 구성되어 있습니다:
-
-| 매개변수 | 기본값 | 비고 |
-|-----------|---------------|-------|
-| **IP 주소** | 192.168.1.150 | 로봇 제어기 IP |
-| **서브넷 마스크** | 255.255.255.0 | 표준 서브넷 마스크 |
-| **게이트웨이** | 192.168.1.1 | 선택사항, 비워둘 수 있음 |
-| **포트 포워딩** | 비활성화 | 일반적으로 필요하지 않음 |
-
-#### 사용자 정의 구성
-
-다른 IP 주소를 구성하려면:
-
-1. **IP 구성 입력**
-   - LAN 포트 선택 (예: LAN1)
-   - 원하는 IP 주소 입력
-   - 서브넷 마스크 설정 (일반적으로 255.255.255.0)
-
-2. **일반적인 IP 구성**
-   ```
-   구성 1 (기본값):
-   - 로봇: 192.168.1.150
-   - PC:     192.168.1.100
-   - 서브넷: 255.255.255.0
-   
-   구성 2:  
-   - 로봇: 10.0.0.150
-   - PC:     10.0.0.100
-   - 서브넷: 255.255.255.0
-   
-   구성 3:
-   - 로봇: 172.16.1.150  
-   - PC:     172.16.1.100
-   - 서브넷: 255.255.255.0
-   ```
-
-3. **설정 적용**
-   - 변경 사항을 저장하려면 **[F7: 확인]** 누르기
-   - 변경 사항이 적용되려면 **제어기 재부팅**
-
-## 동작 모드 구성
-
-### REMOTE 모드 설정
-
-> ⚠ **중요**: 로봇을 ROS2로 제어하려면 제어기가 REMOTE 모드에 있어야 합니다.
-
-#### 티칭 펜던트 사용
-
-1. **동작 모드로 이동**
-   - 메인 화면 → 동작 모드 선택
-   - 또는 메뉴를 통해: **[F1: 동작]** → **[모드]**
-
-2. **REMOTE 모드 선택**
-   - 사용 가능한 모드에서 **REMOTE** 선택
-   - 사용 가능한 모드: AUTO, MANUAL, REMOTE
-   - 선택 확인
-
-3. **모드 설정 확인**
-   - 메인 화면에 "REMOTE" 표시 확인
-   - 로봇이 외부 명령을 받아들이는지 확인
-
-**안전 요구사항**:
-- 비상 정지 버튼이 접근 가능하고 작동해야 함
-- 로봇 작업 공간에서 벗어나야 함
-- 운영자는 로봇 동작을 모니터링해야 함
-
-
-
-## 안전 고려사항
-
-> 🔒 **안전 경고**: 모터 전원이나 동작 명령을 실행하기 전에 항상 작업 공간에 사람이 없는지 확인하세요.
-
-### 비상정지에서 복구
-1. 로봇의 비상정지 버튼을 누르고 해제합니다
-2. 서비스를 통해 모터 전원을 켭니다:
-```bash
-ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/SetBool "data: true"
-```
-
-### 절전 모드 복구
-로봇이 절전 모드에 진입한 경우:
-```bash
-# 방법 1: 모터 전원 사이클
-ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/SetBool "data: false"
-ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/SetBool "data: true"
-```
-
-## 일반적인 오류 상황
-
-- **제어기가 REMOTE 모드가 아님**: 로봇이 REMOTE 모드로 설정되어 있는지 확인하세요
-- **네트워크 연결**: IP 주소 및 포트 구성을 확인하세요
-- **SW 버전 버전**: Hi6 SW 버전 60.34-00 이상이 필요합니다
-- **모터 전원 꺼짐**: 티치펜던트 상에서 모터 전원이 켜져있는지 확인하세요
-
-## 통합 테스트
-
-구성 후 통합 확인:
-
-```bash
-# ROS2 드라이버 연결성 테스트
-ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
-  openapi_ip:=192.168.1.150 \
-  openapi_port:=8888
-
-# 서비스 가용성 확인  
-ros2 service list | grep hdr_ros2_driver
-
-# 기본 서비스 호출 테스트
-ros2 service call /hdr_ros2_driver/version/get/api_ver std_srvs/srv/Trigger
-```
-
-## 다음 단계
-
-제어기 구성을 완료한 후:
-
-1. **[네트워크 테스트](../3-network-test/README.md)** - 연결성 및 통신 확인
-2. **[설치 검증](../4-verifying/README.md)** - 완전한 시스템 검증  
-3. **[ROS2 드라이버 사용](../../2-hdr_ros2_driver/README.md)** - ROS2 서비스 사용 시작# 네트워크 테스트
-
-본 가이드는 ROS2 작업을 위한 안정적인 통신을 보장하기 위해 개발 PC와 HD현대로보틱스 로봇 제어기 간의 네트워크 연결 테스트를 다룹니다.
-
-## 테스트 개요
-네트워크 테스트는 다음 순서로 수행해야 합니다:
-
-1. **네트워크 계층 테스트** - IP 연결성 및 라우팅
-2. **애플리케이션 계층 테스트** - OpenAPI 통신
-3. **ROS2 통신 테스트** - ROS2 드라이버 통신
-
-## 네트워크 계층 테스트
-
-### 기본 연결성 테스트
-
-```bash
-# 로봇 제어기에 대한 기본 IP 연결성 테스트
-ping -c 5 192.168.1.150
-
-# 예상 출력:
-# 5 packets transmitted, 5 received, 0% packet loss
-# rtt min/avg/max/mdev = X.X/X.X/X.X/X.X ms
-```
-
-## 애플리케이션 계층 테스트
-
-### API 응답 테스트
-
-```bash
-# 버전 엔드포인트 테스트
-curl -X GET \
-  -H "Content-Type: application/json" \
-  http://192.168.1.150:8888/api/version
-
-# 예상 응답 (예시):
-# {
-#   "api_version": "1.0",
-#   "system_version": "60.34-00",
-#   "status": "ok"
-# }
-```
-
-## ROS2 통신 테스트
-
-### HDR 드라이버 실행
-
-```bash
-# 통신 테스트를 위한 ROS2 드라이버 실행
-ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
-  openapi_ip:=192.168.1.150 \
-  openapi_port:=8888
-```
-
-### ROS2 서비스 테스트
-
-```bash
-ros2 service list | grep hdr_ros2_driver
-
-# 버전 서비스 테스트
-ros2 service call /hdr_ros2_driver/version/get/api_ver std_srvs/srv/Trigger
-
-# 모터 상태 서비스 테스트  
-ros2 service call /hdr_ros2_driver/robot/get/motor_state std_srvs/srv/Trigger
-```
-
-### 토픽 모니터링
-
-```bash
-# 조인트 상태 모니터링
-ros2 topic echo /joint_states --once
-```
-
-## 문제 해결
-
-### 일반적인 문제 및 해결책
-
-#### Ping 실패
-
-**증상**: `ping: sendmsg: Operation not permitted` 또는 응답 없음
-
-**해결책**:
-```bash
-# 네트워크 구성 확인
-ip addr show
-ip route show
-
-# 인터페이스가 활성 상태인지 확인
-sudo ip link set eth0 up
-
-# 방화벽 규칙 확인
-sudo ufw status
-sudo iptables -L
-```
-
-#### 포트 닫힘
-
-**증상**: 연결 거부됨, 포트가 닫힌 것으로 표시
-
-**해결책**:
-- 로봇 제어기의 전원이 켜져 있는지 확인
-- 제어기가 REMOTE 모드에 있는지 확인
-- 올바른 포트 번호 확인 (기본값: 8888)
-
-#### ROS2 서비스 실패
-
-**증상**: 서비스 사용 불가, 호출 타임아웃
-
-**해결책**:
-```bash
-# ROS2 환경 확인
-echo $ROS_DISTRO
-ros2 --help
-
-# HDR 패키지 확인
-ros2 pkg list | grep hdr
-
-# 디버그 출력과 함께 드라이버 재시작
-ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py --ros-args --log-level DEBUG
-```
-
-## 다음 단계
-
-네트워크 테스트 후 [설치 검증](../4-verifying/README.md)을 수행하십시오.# 설치 검증
-
-본 가이드는 HD현대로보틱스 ROS2 드라이버가 올바르게 설치, 구성되고 작동할 준비가 되었는지 확인하는 포괄적인 검증 절차를 제공합니다.
-
-### HDR 드라이버 실행 테스트
+### HDR ROS2 드라이버 실행 테스트
 
 ```bash
 # HDR ROS2 드라이버 실행 (로봇이 REMOTE 모드에 있는지 확인)
-ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
-  openapi_ip:=192.168.1.150 \
-  openapi_port:=8888
+ros2 launch hdr_bringup hdr_control.py \
+  robot_model:=hdf7_7      # 로봇 모델 입력 (default: ha006b)
 
-```
-
-## 하드웨어 인터페이스 검증
-
-### ros2_control 통합 테스트
-
-```bash
-# 하드웨어 인터페이스 실행
-ros2 launch hdr_hardware_interface ros2_control.launch.py \
-  robot_model:=ha006b \
-  openapi_ip:=192.168.1.150 \
-  openapi_port:=8888
 
 # 다른 터미널에서 controller 매니저 확인
 ros2 control list_controllers
@@ -724,49 +486,35 @@ ros2 control list_controllers
 # joint_trajectory_controller[joint_trajectory_controller/JointTrajectoryController] active
 ```
 
-### 조인트 상태 발행 테스트
+### joint state 발행 테스트
 
 ```bash
-# 조인트 상태가 발행되고 있는지 확인
+# joint state가 발행되고 있는지 확인
 ros2 topic list | grep joint_states
 
-# 조인트 상태 모니터링
+# joint state 모니터링
 ros2 topic echo /joint_states --once
 
-# 발행 빈도 확인
+# 발행 hz 확인
 ros2 topic hz /joint_states
-```
-
-### controller 로딩 테스트
-
-```bash
-# 조인트 궤적 controller 로드
-ros2 control load_controller joint_trajectory_controller
-
-# controller 구성 및 시작
-ros2 control set_controller_state joint_trajectory_controller configure
-ros2 control set_controller_state joint_trajectory_controller start
-
-# controller가 활성 상태인지 확인
-ros2 control list_controllers
 ```# ROS2 드라이버 (`hdr_ros2_driver`)
 
 `hdr_ros2_driver` 패키지는 HD현대로보틱스의 Open API와 인터페이스하기 위한 핵심 ROS2 드라이버를 제공합니다. 이 드라이버는 REST API를 통해 로봇 제어기와의 포괄적인 통신을 가능하게 하며, 로봇 제어, 모니터링, 파일 작업 및 시스템 관리를 위한 서비스를 지원합니다.
 
 ## 주요 기능
 
-- **로봇 상태 퍼블리싱**: `/joint_states` 토픽을 통한 실시간 조인트 상태 정보
-- **모션 제어**: ROS2 action을 통한 조인트 궤적 실행
+- **로봇 상태 퍼블리싱**: `/joint_states` 토픽을 통한 실시간 joint state 정보
+- **모션 제어**: ROS2 action을 통한 joint trajectory 제어
 - **포괄적인 서비스**: 기능별로 구성된 30개 이상의 서비스 엔드포인트
-- **테스팅 프레임워크**: 분류된 테스트 스크립트를 포함한 내장 서비스 테스트
+
 
 ## 상세 문서
 
-- [실행 지침](1-launch/README.md) - 다양한 구성으로 드라이버를 시작하는 방법
-- [구성 매개변수](2-parameters/README.md) - 사용 가능한 실행 매개변수 및 의미
-- [제공되는 토픽](3-topics/README.md) - 퍼블리시되는 로봇 상태 정보  
-- [사용 가능한 action](4-actions/README.md) - 궤적 실행 및 모션 제어
-- [지원되는 서비스](5-services/README.md) - 완전한 API 서비스 참조# 실행 지침
+- [실행 지침](1-launch/README.md) - 드라이버 실행을 위한 launch 파일
+- [구성 매개변수](2-parameters/README.md) - 사용 가능한 launch 내 매개변수
+- [제공되는 토픽](3-topics/README.md) - 퍼블리시되는 로봇 상태 정보
+- [사용 가능한 action](4-actions/README.md) - joint trajectory 실행 및 모션 제어
+- [지원 ROS2 서비스](5-services/README.md) - API 서비스 참조# 실행 지침
 
 이 섹션에서는 HDR ROS2 드라이버를 실행하는 방법을 다룹니다.
 
@@ -858,52 +606,48 @@ std_msgs/Header header
   string frame_id
 string[] name          # URDF와 일치하는 조인트 이름
 float64[] position     # 라디안 단위의 조인트 position
-float64[] velocity     # NULL
-float64[] effort       # NULL
+float64[] velocity     # NULL (현재 지원하지 않음)
+float64[] effort       # NULL (현재 지원하지 않음)
 ```
 
-**퍼블리싱 주기**: 50 Hz (`publish_rate` 매개변수를 통해 구성 가능)
-
-
-### 변환 정보
-
-#### `/tf` 및 `/tf_static` (tf2_msgs/msg/TFMessage)
-**설명**: 로봇 기구학 체인 변환
-
-**퍼블리시되는 변환**:
-- `base_link` → `link1` → `link2` → ... → `tool0`
-- 로봇 장착 및 교정을 위한 정적 변환# 사용 가능한 action
+**퍼블리싱 주기**: 50 Hz (`publish_rate` 매개변수를 통해 구성 가능)# 사용 가능한 action
 
 ## 개요
 
-ROS2 드라이버는 로봇 궤적 실행에 대한 action 인터페이스를 제공합니다. action은 진행 상황 피드백 및 취소 기능과 함께 비동기 작업을 가능하게 합니다.
+ROS2 드라이버는 로봇 joint trajectory 제어에 대한 action 인터페이스를 제공합니다. action은 진행 상황 피드백 및 취소 기능과 함께 비동기 작업을 가능하게 합니다.
 
-## 궤적 실행 action
+## joint trajectory control action
 
-### `/follow_joint_trajectory` (control_msgs/action/FollowJointTrajectory)
+### `/joint_trajectory_controller/follow_joint_trajectory` (control_msgs/action/FollowJointTrajectory)
 
-**설명**: 조인트 공간 궤적을 실행합니다
+**설명**: joint trajectory 제어를 실행합니다.
 
-**목표 필드**:
+**action_goal**:
 ```yaml
 trajectory_msgs/JointTrajectory trajectory
   std_msgs/Header header
-  string[] joint_names
-  JointTrajectoryPoint[] points
-    float64[] positions
-    float64[] velocities  
-    float64[] accelerations
-    float64[] effort
-    builtin_interfaces/Duration time_from_start
-path_tolerance[] goal_tolerance
-  string name
-  float64 position
-  float64 velocity  
-  float64 acceleration
-builtin_interfaces/Duration goal_time_tolerance
+  actionlib_msgs/GoalID goal_id
+    time stamp
+    string id
+  control_msgs/FollowJointTrajectoryGoal goal
+    trajectory_msgs/JointTrajectory trajectory
+      std_msgs/Header header
+      string[] joint_names
+      trajectory_msgs/JointTrajectoryPoint[] points
+    control_msgs/JointTolerance[] path_tolerance
+      string name
+      float64 position
+      float64 velocity
+      float64 acceleration
+    control_msgs/JointTolerance[] goal_tolerance
+      string name
+      float64 position
+      float64 velocity
+      float64 acceleration
+    duration goal_time_tolerance
 ```
 
-**피드백 필드**:
+**action_feedback**:
 ```yaml
 std_msgs/Header header
 string[] joint_names
@@ -912,10 +656,11 @@ trajectory_msgs/JointTrajectoryPoint actual
 trajectory_msgs/JointTrajectoryPoint error
 ```
 
-**결과 필드**:
+**action_result**:
 ```yaml
-int32 error_code
-string error_string
+std_msgs/Header header
+actionlib_msgs/GoalStatus status
+control_msgs/FollowJointTrajectoryResult result
 ```# ROS2 드라이버 서비스
 
 ## 개요
@@ -951,7 +696,7 @@ ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 ros2 service call /hdr_ros2_driver/robot/get/motor_state std_srvs/srv/Trigger
 
 # 모터 전원 켜기
-ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/SetBool "data: true"
+ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/Trigger
 ```# 로봇 제어 서비스
 
 ## 개요
@@ -1266,15 +1011,9 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
 | `/controller_manager/list_hardware_interfaces` | controller_manager_msgs/srv/ListHardwareInterfaces | 사용 가능한 조인트 명령 및 상태 인터페이스를 반환합니다 |
 | `/controller_manager/switch_controller`        | controller_manager_msgs/srv/SwitchController       | controller를 활성화하거나 비활성화합니다  |
 | `/controller_manager/load_controller`          | controller_manager_msgs/srv/LoadController         | controller를 로드합니다             |
-| `/controller_manager/unload_controller`        | controller_manager_msgs/srv/UnloadController       | 지정된 controller를 언로드하고 제거합니다    |
+| `/controller_manager/unload_controller`        | controller_manager_msgs/srv/UnloadController       | 지정된 controller를 언로드합니다.    |
 
----
-
-## 4. 문제 해결
-- **제어기를 찾을 수 없음**: URDF의 플러그인 이름을 확인하고 다시 빌드하세요.
-- **실행 시 타임아웃**: OpenAPI IP 주소가 host PC에서 접근 가능한지 확인하세요.
-- **조인트 상태 없음**: 드라이버가 실행 중이고 `robot_pose` 기능이 활성화되어 있는지 확인하세요.
-- **인터페이스 시작 실패**: 지원되는 펌웨어 버전 ≥ **60.34-00**인지 확인하세요. (이 버전은 **10월**에 릴리스 예정입니다.)# 로봇 URDF (`hdr_description`)
+---# 로봇 URDF (`hdr_description`)
 
 `hdr_description` 패키지는 ROS2에서 HD현대로보틱스 로봇을 위한 로봇 URDF, mesh, 시각화 구성을 포함합니다. 이 패키지는 시뮬레이션, 시각화, 모션 플래닝에 필요한 기본적인 URDF/XACRO 정의를 제공합니다.
 
@@ -1583,7 +1322,7 @@ I/O API 카테고리는 HD 현대로보틱스 제어기의 PLC 통신 기능을 
 
 ### 로봇 생성
 ```bash
-# ros2_control이 포함된 로봇을 Gazebo에서 생성
+# ros2_control이 포함된 로봇을 Gazebo에서 spawn
 ros2 launch hdr_simulation_gz hdr_gz_spawn.launch.py robot_model:=ha006b
 ```
 
@@ -1606,46 +1345,6 @@ ros2 launch hdr_simulation_gz hdr_gz_moveit.launch.py robot_model:=hdr50_22
 | `initial_positions_file` | string | `initial_positions.yaml` | 시작 조인트 위치 |
 | `kinematics_file` | string | `kinematics.yaml` | 기구학 솔버 구성 |
 
-## Gazebo 물리
-
-시뮬레이션에서 제공하는 기능:
-- **현실적인 동역학**: 조인트 마찰, 관성 및 댐핑
-- **충돌 감지**: 안전 테스트 및 장애물 회피
-- **센서 시뮬레이션**: 향후 카메라, 힘 센서 지원
-- **환경 상호작용**: 객체 조작 기능
-
-## 제어기 구성
-
-시뮬레이션은 표준 ros2_control 인터페이스를 사용합니다:
-
-```yaml
-# 제어기 구성 예제
-joint_trajectory_controller:
-  type: joint_trajectory_controller/JointTrajectoryController
-  joints:
-    - joint1
-    - joint2
-    - joint3
-    - joint4
-    - joint5
-    - joint6
-```
-
-## 궤적 실행 예제
-
-```bash
-# 조인트 궤적 명령 전송
-ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
-  control_msgs/action/FollowJointTrajectory "{
-  trajectory: {
-    joint_names: ['j1', 'j2', 'j3', 'j4', 'j5', 'j6'],
-    points: [{
-      positions: [0.0, 1.571, 1.0, 0.0, 0.0, 0.0],
-      time_from_start: {sec: 2, nanosec: 0}
-    }]
-  }
-}"
-```
 
 ## 향후 개선사항
 - 센서 및 툴 시뮬레이션 지원
@@ -1653,14 +1352,7 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 
 ## 개요
 
-`hdr_msgs` 패키지는 HD현대로보틱스 소프트웨어 스택에서 사용되는 사용자 정의 ROS2 message 타입을 정의합니다. ROS2 생태계와 산업용 로봇 제어기 간의 로봇 제어, 모니터링 및 API 통합을 위한 통신을 지원하도록 설계되었습니다.
-
-## 상세 문서
-- [카테고리별 서비스 정의](1-service-definitions/README.md)# 서비스 정의
-
-## 개요
-
-`hdr_msgs` 패키지는 HD현대로보틱스 제어기와의 통합을 위한 ROS2 message 정의를 제공합니다.
+`hdr_msgs` 패키지는 HD현대로보틱스 소프트웨어 스택에서 사용되는 사용자 정의 ROS2 message 타입을 정의합니다. 
 
 
 ## ROS2 messages
@@ -1683,46 +1375,11 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 | `srv/OpCnd.srv`       | 재생 모드나 사용자 좌표계와 같은 작동 조건을 읽거나 씁니다. |
 | `srv/PoseCur.srv`     | 내부 구성에 따라 관절 공간 또는 작업 공간에서 현재 로봇 포즈(위치 + 방향)를 가져옵니다. |
 | `srv/ProgramCnt.srv`  | 작업 로직의 특정 위치로 이동하기 위해 프로그램 실행 포인터(pno, sno, fno 등)를 설정합니다. |
-| `srv/ProgramVar.srv`  | 변수를 읽거나 할당합니다. 범위(로컬/글로벌), 표현식 및 지속성을 지정할 수 있습니다. |
-
----
-
-## 사용법
-
-package.xml과 CMakeLists.txt 파일에서 `hdr_msgs`가 의존성으로 등록되어 있는지 확인하세요.
-
-##### 패키지 의존성 설정
-
-**package.xml**:
-
-```xml
-<depend>hdr_msgs</depend>
-```
-
-**CMakeLists.txt**:
-
-```cmake
-find_package(hdr_msgs REQUIRED)
-ament_target_dependencies(your_node hdr_msgs)
-```
-
-
-##### Python 예제
-
-```python
-from hdr_msgs.srv import ExecuteCmd
-```
-
-##### C++ 예제
-
-```cpp
-#include "hdr_msgs/srv/execute_cmd.hpp"
-```
-# 로봇 실행 및 제어
+| `srv/ProgramVar.srv`  | 변수를 읽거나 할당합니다. 범위(로컬/글로벌), 표현식 및 지속성을 지정할 수 있습니다. |# ROS2 드라이버 실행 및 로봇 제어
 
 ## 개요
 
-이 섹션에서는 ROS2 드라이버 에코시스템을 사용하여 HD현대로보틱스 로봇을 조작하는 포괄적인 가이드를 제공합니다.
+이 섹션에서는 ROS2 드라이버를 사용하여 HD현대로보틱스 로봇을 조작하는 포괄적인 가이드를 제공합니다.
 
 HD현대로보틱스 ROS2 시스템은 다음과 같은 제어 방법을 제공합니다:
 
@@ -1733,8 +1390,7 @@ HD현대로보틱스 ROS2 시스템은 다음과 같은 제어 방법을 제공�
 ## 다음 단계
 
 - [MoveIt2 실행 절차](1-launch-moveit2/README.md)
-- [ros2_control 직접 제어](2-launch-ros2_control/README.md)
-- [비상정지 절차](3-emg-stop/README.md)# MoveIt2로 실행하기
+- [ros2_control 직접 제어](2-launch-ros2_control/README.md)# MoveIt2로 실행하기
 
 ## 개요
 
@@ -1774,18 +1430,6 @@ ros2 topic echo /joint_states --once
 ros2 service list | grep move_group
 ```
 
-### 3. 기본 동작 테스트
-```bash
-# MoveIt Commander 실행
-ros2 run moveit_commander moveit_commander_cmdline.py
-
-# Commander에서 실행할 명령:
-# > use manipulator
-# > go home
-# > plan
-# > execute
-```
-
 ## 지원되는 로봇 모델
 
 - ha006b
@@ -1799,10 +1443,6 @@ ros2 run moveit_commander moveit_commander_cmdline.py
 
 ### 비상 정지
 - 하드웨어 비상 정지 버튼을 항상 접근 가능한 곳에 두세요
-- 소프트웨어 정지:
-  ```bash
-  ros2 service call /move_group/stop_trajectory_execution std_srvs/srv/Empty
-  ```
 
 ### 안전한 종료
 1. 모든 동작 정지
@@ -1815,7 +1455,6 @@ ros2 run moveit_commander moveit_commander_cmdline.py
 ### 연결 문제
 - 네트워크 연결 확인: `ping 192.168.1.150`
 - 로봇 제어기가 REMOTE 모드인지 확인
-- 방화벽 설정 확인
 
 ### 계획 실패
 - 목표 위치가 작업 영역 내에 있는지 확인
@@ -1922,107 +1561,9 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 - 목표 위치가 유효한지 확인
 - 제어기 오류 메시지 확인
 
-### 디버그 명령어
-```bash
-# 제어기 매니저 로그 확인
-ros2 topic echo /rosout | grep controller_manager
-
-# 하드웨어 인터페이스 상태 확인
-ros2 service call /controller_manager/list_hardware_interfaces \
-    controller_manager_msgs/srv/ListHardwareInterfaces
-
-# 로봇 설명 확인
-ros2 param get /controller_manager robot_description
-```
-
-## MoveIt2와 함께 사용
-
-ros2_control을 MoveIt2와 함께 사용하려면:
-
-```bash
-# 통합 실행
-ros2 launch hdr_moveit_config hdr_moveit.launch.py robot_model:=ha006b
-```
-
-이 명령은 ros2_control과 MoveIt2를 모두 실행합니다.
 
 ## 안전 주의사항
 
 - 실제 로봇과 작업할 때는 항상 비상 정지 버튼을 접근 가능한 곳에 두세요
 - 로봇이 예상치 못한 동작을 할 경우 즉시 비상 정지하세요
-- 처음 사용할 때는 낮은 속도로 테스트하세요# 비상 정지 절차
-
-## 개요
-
-HD현대로보틱스 로봇의 비상 정지 절차와 안전 운영 방법을 설명합니다.
-
-## 비상 정지 방법
-
-### 하드웨어 비상 정지
-- 제어기 패널의 빨간색 비상 정지 버튼 누르기
-- 외부 비상 정지 스위치 (설치된 경우) 사용
-
-
-## 비상 정지 해제 절차
-
-### 1. 안전 확인
-- 비상 정지 원인이 해결되었는지 확인
-- 로봇 주변에 사람이나 장애물이 없는지 확인
-- 로봇이 안전한 위치에 있는지 확인
-
-### 2. 하드웨어 해제
-- 비상 정지 버튼을 시계방향으로 돌려서 해제
-- 제어기 상태가 정상으로 돌아왔는지 확인
-
-
-## 비상 상황 유형
-
-### 즉시 비상 정지해야 하는 상황
-- 사람이 로봇 작업 영역에 들어간 경우
-- 로봇이 예상치 못한 움직임을 보이는 경우
-- 충돌 위험이 감지된 경우
-- 비정상적인 소음이나 진동이 발생하는 경우
-
-### 일반적인 오류 상황
-- 통신 오류: 네트워크 연결 확인
-- 제어기 오류: 제어기 재시작 필요
-- 궤적 계획 실패: 목표 위치 재설정
-
-## 안전 운영 수칙
-
-### 운영 전 확인사항
-1. 비상 정지 버튼이 정상 작동하는지 테스트
-2. 작업 영역에 장애물이 없는지 확인
-3. 로봇 상태가 정상인지 확인
-
-### 운영 중 주의사항
-1. 로봇 작업 영역에 들어가지 마세요
-2. 로봇 동작을 지속적으로 모니터링하세요
-3. 비정상적인 상황 발견 시 즉시 비상 정지하세요
-
-### 운영 후 절차
-1. 로봇을 안전 위치로 이동
-2. 모든 시스템 정지
-3. 전원 차단 전 안전 확인
-
-## 문제 해결
-
-### 비상 정지가 해제되지 않는 경우
-1. 비상 정지 버튼이 완전히 해제되었는지 확인
-2. 제어기 오류 상태 확인
-3. 전원을 껐다가 다시 켜기
-
-### 소프트웨어가 응답하지 않는 경우
-1. 하드웨어 비상 정지 사용
-2. 제어기 전원 차단
-3. 시스템 재시작 후 점검
-
-## 유용한 모니터링 명령어
-
-```bash
-# 로봇 상태 확인
-ros2 topic echo /joint_states
-
-# 제어기 상태 확인  
-ros2 control list_controllers
-```
+- 처음 사용할 때는 낮은 속도로 테스트하세요

@@ -95,29 +95,6 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 - 목표 위치가 유효한지 확인
 - 제어기 오류 메시지 확인
 
-### 디버그 명령어
-```bash
-# 제어기 매니저 로그 확인
-ros2 topic echo /rosout | grep controller_manager
-
-# 하드웨어 인터페이스 상태 확인
-ros2 service call /controller_manager/list_hardware_interfaces \
-    controller_manager_msgs/srv/ListHardwareInterfaces
-
-# 로봇 설명 확인
-ros2 param get /controller_manager robot_description
-```
-
-## MoveIt2와 함께 사용
-
-ros2_control을 MoveIt2와 함께 사용하려면:
-
-```bash
-# 통합 실행
-ros2 launch hdr_moveit_config hdr_moveit.launch.py robot_model:=ha006b
-```
-
-이 명령은 ros2_control과 MoveIt2를 모두 실행합니다.
 
 ## 안전 주의사항
 

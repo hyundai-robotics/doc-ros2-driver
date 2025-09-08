@@ -4,15 +4,15 @@
 
 ## 주요 기능
 
-- **로봇 상태 퍼블리싱**: `/joint_states` 토픽을 통한 실시간 조인트 상태 정보
-- **모션 제어**: ROS2 action을 통한 조인트 궤적 실행
+- **로봇 상태 퍼블리싱**: `/joint_states` 토픽을 통한 실시간 joint state 정보
+- **모션 제어**: ROS2 action을 통한 joint trajectory 제어
 - **포괄적인 서비스**: 기능별로 구성된 30개 이상의 서비스 엔드포인트
-- **테스팅 프레임워크**: 분류된 테스트 스크립트를 포함한 내장 서비스 테스트
+
 
 ## 상세 문서
 
-- [실행 지침](1-launch/README.md) - 다양한 구성으로 드라이버를 시작하는 방법
-- [구성 매개변수](2-parameters/README.md) - 사용 가능한 실행 매개변수 및 의미
-- [제공되는 토픽](3-topics/README.md) - 퍼블리시되는 로봇 상태 정보  
-- [사용 가능한 action](4-actions/README.md) - 궤적 실행 및 모션 제어
-- [지원되는 서비스](5-services/README.md) - 완전한 API 서비스 참조
+- [실행 지침](1-launch/README.md) - 드라이버 실행을 위한 launch 파일
+- [구성 매개변수](2-parameters/README.md) - 사용 가능한 launch 내 매개변수
+- [제공되는 토픽](3-topics/README.md) - 퍼블리시되는 로봇 상태 정보
+- [사용 가능한 action](4-actions/README.md) - joint trajectory 실행 및 모션 제어
+- [지원 ROS2 서비스](5-services/README.md) - API 서비스 참조
