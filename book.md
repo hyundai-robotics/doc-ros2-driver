@@ -1153,12 +1153,12 @@ ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 </group>
 
 <group_state name="home" group="manipulator">
-    <joint name="joint1" value="0"/>
-    <joint name="joint2" value="0"/>
-    <joint name="joint3" value="0"/>
-    <joint name="joint4" value="0"/>
-    <joint name="joint5" value="0"/>
-    <joint name="joint6" value="0"/>
+    <joint name="j1" value="0"/>
+    <joint name="j2" value="0"/>
+    <joint name="j3" value="0"/>
+    <joint name="j4" value="0"/>
+    <joint name="j5" value="0"/>
+    <joint name="j6" value="0"/>
 </group_state>
 ```
 
