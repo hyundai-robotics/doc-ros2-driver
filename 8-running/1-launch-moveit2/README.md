@@ -43,6 +43,8 @@ ros2 service list | grep move_group
 - ha006b
 - hdf7_9
 - hdf8_8
+- hdr10l_19
+- hdr20_17
 - hdr50_22
 - hdr220_26
 - hh020

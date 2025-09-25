@@ -29,6 +29,8 @@
 - `ha006b.urdf.xacro`
 - `hdf7_9.urdf.xacro` 
 - `hdf8_8.urdf.xacro`
+- `hdr10l_19.urdf.xacro`
+- `hdr20_17.urdf.xacro`
 - `hdr50_22.urdf.xacro`
 - `hdr220_26.urdf.xacro`
 - `hh020.urdf.xacro`

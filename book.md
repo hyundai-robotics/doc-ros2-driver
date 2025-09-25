@@ -67,13 +67,15 @@ ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 �
 - ha006b
 - hdf7_9
 - hdf8_8
+- hdr10l_19
+- hdr20_17
 - hdr50_22
 - hdr220_26
 - hh020  
 
 ## 모델명 변경사항
 
-> ❗ **참고:** 로봇 모델 `hdf7_9`, `hdf8_8`, `hdr50_22`, `hdr220_26`은 각각 모델 `HH7`, `HH8`, `HH050`, `HS220`의 변경된 이름입니다.
+> ❗ **참고:** 로봇 모델 `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`은 각각 모델 `HH7`, `HH8`, `UH020`, `HH050`, `HS220`의 변경된 이름입니다.
 
 ## 각 모델에 포함된 내용
 
@@ -1044,6 +1046,8 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
 - `ha006b.urdf.xacro`
 - `hdf7_9.urdf.xacro` 
 - `hdf8_8.urdf.xacro`
+- `hdr10l_19.urdf.xacro`
+- `hdr20_17.urdf.xacro`
 - `hdr50_22.urdf.xacro`
 - `hdr220_26.urdf.xacro`
 - `hh020.urdf.xacro`
@@ -1096,6 +1100,8 @@ ros2 launch hdr_description display_robot.launch.py robot_model:=ha006b
 - `ha006b_moveit_config/`
 - `hdf7_9_moveit_config/` 
 - `hdf8_8_moveit_config/`
+- `hdr10l_19_moveit_config/`
+- `hdr20_17_moveit_config/`
 - `hdr50_22_moveit_config/`
 - `hdr220_26_moveit_config/`
 - `hh020_moveit_config/`
@@ -1435,6 +1441,8 @@ ros2 service list | grep move_group
 - ha006b
 - hdf7_9
 - hdf8_8
+- hdr10l_19
+- hdr20_17
 - hdr50_22
 - hdr220_26
 - hh020

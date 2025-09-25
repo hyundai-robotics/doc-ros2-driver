@@ -17,6 +17,8 @@
 - `ha006b_moveit_config/`
 - `hdf7_9_moveit_config/` 
 - `hdf8_8_moveit_config/`
+- `hdr10l_19_moveit_config/`
+- `hdr20_17_moveit_config/`
 - `hdr50_22_moveit_config/`
 - `hdr220_26_moveit_config/`
 - `hh020_moveit_config/`
