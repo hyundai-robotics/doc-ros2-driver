@@ -1,15 +1,15 @@
-# API 카테고리
+# API Categories
 
-HDR 클라이언트 드라이버는 다음과 같은 API 카테고리를 지원합니다:
+The HDR client driver supports the following API categories:
 
-## 지원되는 API 카테고리
+## Supported API Categories
 
-HDR 클라이언트 드라이버는 로봇 제어기의 다양한 기능에 대응하는 다음과 같은 API 카테고리를 제공합니다:
+The HDR client driver provides the following API categories corresponding to various functions of the robot controller:
 
-- **[제어](1-control/README.md)** - 기본 로봇 제어 작업
-- **[로봇](2-robot/README.md)** - 로봇 모션 및 상태 관리
-- **[프로젝트](3-project/README.md)** - 프로젝트 및 작업 관리
-- **[파일](4-file/README.md)** - 파일 시스템 작업
-- **[I/O](5-io/README.md)** - 입력/출력 제어
-- **[작업](6-task/README.md)** - 작업 실행 및 변수 관리
-- **[기타](7-etc/README.md)** - 시스템 유틸리티
+- **[Control](1-control/README.md)** - Basic robot control operations
+- **[Robot](2-robot/README.md)** - Robot motion and status management
+- **[Project](3-project/README.md)** - Project and job management
+- **[File](4-file/README.md)** - File system operations
+- **[I/O](5-io/README.md)** - Input/output control
+- **[Task](6-task/README.md)** - Task execution and variable management
+- **[Miscellaneous](7-etc/README.md)** - System utilities

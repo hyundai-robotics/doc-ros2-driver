@@ -1,92 +1,77 @@
-# MoveIt2로 실행하기
+# Running with MoveIt2
 
-## 개요
+## Overview
 
-HD현대로보틱스 로봇을 MoveIt2로 실행하는 기본 절차입니다.
+Basic procedures for running HD Hyundai Robotics robots with MoveIt2.
 
-## 실행 전 준비사항
+## Pre-launch Preparations
 
-### 하드웨어 준비
-- 로봇 제어기 전원 켜고 REMOTE 모드 설정
-- 비상 정지 버튼이 접근 가능한 위치에 있는지 확인
-- 네트워크 연결 확인 (ping 192.168.1.150)
-- 작업 공간에 장애물이 없는지 확인
+### Hardware Preparation
+- Power on robot controller and set to REMOTE mode
+- Ensure emergency stop button is accessible
+- Verify network connection (ping 192.168.1.150)
+- Confirm workspace is clear of obstacles
 
-### 소프트웨어 준비
-- ROS2 환경 설정: `source ~/ros2_ws/install/setup.bash`
-- 로봇 모델 확인
+### Software Preparation
+- Set up ROS2 environment: `source ~/ros2_ws/install/setup.bash`
+- Verify robot model
 
-## 기본 실행 절차
+## Basic Launch Procedures
 
-### 1. MoveIt2 실행
+### 1. Launch MoveIt2
 ```bash
-# 기본 MoveIt2 실행
+# Basic MoveIt2 launch
 ros2 launch hdr_moveit_config hdr_moveit.launch.py robot_model:=ha006b
 
-# IP 주소 지정해서 실행  
+# Launch with specified IP address
 ros2 launch hdr_moveit_config hdr_moveit.launch.py \
     robot_model:=ha006b \
     robot_ip:=192.168.1.150
 ```
 
-### 2. 연결 상태 확인
+### 2. Verify Connection Status
 ```bash
-# 조인트 상태 확인
+# Check joint states
 ros2 topic echo /joint_states --once
 
-# MoveIt2 서비스 확인
+# Check MoveIt2 services
 ros2 service list | grep move_group
 ```
 
-### 3. 기본 동작 테스트
-```bash
-# MoveIt Commander 실행
-ros2 run moveit_commander moveit_commander_cmdline.py
-
-# Commander에서 실행할 명령:
-# > use manipulator
-# > go home
-# > plan
-# > execute
-```
-
-## 지원되는 로봇 모델
+## Supported Robot Models
 
 - ha006b
 - hdf7_9
 - hdf8_8
+- hdr10l_19
+- hdr20_17
 - hdr50_22
 - hdr220_26
 - hh020
 
-## 안전 주의사항
+## Safety Precautions
 
-### 비상 정지
-- 하드웨어 비상 정지 버튼을 항상 접근 가능한 곳에 두세요
-- 소프트웨어 정지:
-  ```bash
-  ros2 service call /move_group/stop_trajectory_execution std_srvs/srv/Empty
-  ```
+### Emergency Stop
+- Always keep hardware emergency stop button accessible
 
-### 안전한 종료
-1. 모든 동작 정지
-2. 로봇을 안전 위치로 이동
-3. MoveIt2 노드 종료
-4. 로봇 제어기 전원 끄기
+### Safe Shutdown
+1. Stop all motion
+2. Move robot to safe position
+3. Terminate MoveIt2 nodes
+4. Power off robot controller
 
-## 일반적인 문제 해결
+## Common Troubleshooting
 
-### 연결 문제
-- 네트워크 연결 확인: `ping 192.168.1.150`
-- 로봇 제어기가 REMOTE 모드인지 확인
-- 방화벽 설정 확인
+### Connection Issues
+- Verify network connection: `ping 192.168.1.150`
+- Confirm robot controller is in REMOTE mode
 
-### 계획 실패
-- 목표 위치가 작업 영역 내에 있는지 확인
-- 충돌 검사 설정 확인
-- 조인트 한계값 확인
+### Planning Failures
+- Verify target position is within workspace
+- Check collision detection settings
+- Verify joint limits
 
-### 실행 문제
-- 로봇이 비상 정지 상태가 아닌지 확인
-- 제어기 오류 상태 확인
-- ROS2 토픽 연결 상태 확인
+### Execution Issues
+- Confirm robot is not in emergency stop state
+- Check controller error status
+- Verify ROS2 topic connection status

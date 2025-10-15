@@ -1,16 +1,16 @@
-# HD현대로보틱스 클라이언트 드라이버
+# HD Hyundai Robotics Client Driver
 
-HDR 클라이언트 드라이버는 HD현대로보틱스의 로봇 제어기와 HTTP (Open API) 및 소켓 (TCP/UDP) 인터페이스를 통해 통신하기 위한 포괄적인 C++ 라이브러리를 제공합니다. 이 라이브러리는 양쪽 통신 계층을 추상화하고 로봇 제어 및 모니터링, 파일 관리, 실시간 명령 실행, ROS2와의 통합을 위한 객체지향 인터페이스를 제공합니다.
+The HDR client driver provides a comprehensive C++ library for communicating with HD Hyundai Robotics robot controllers via HTTP (Open API) and socket (TCP/UDP) interfaces. This library abstracts both communication layers and provides object-oriented interfaces for robot control and monitoring, file management, real-time command execution, and integration with ROS2.
 
-> ❗ **참고**: 모션 제어, 상태 피드백 및 I/O 작업을 위한 실시간 인터페이스 (2ms 주기)가 **2025년 11월**에 출시될 예정입니다.
+> ❗ **Note**: Real-time interface (2ms cycle) for motion control, status feedback, and I/O operations is scheduled for release in **November 2025**.
 
-> ❗ 중요: 모든 REST API 기반 통신은 로봇이 REMOTE 모드에 있어야 동작 합니다.
+> ❗ Important: All REST API-based communication requires the robot to be in REMOTE mode.
 
-## 패키지 구조
+## Package Structure
 
-| 디렉터리 | 설명 |
-|----------|------|
-| `include/` | HDR 클라이언트 드라이버 라이브러리를 위한 헤더 파일 |
-| `src/` | 클라이언트 드라이버 함수의 소스 구현 |
-| `src/functions/` | 다양한 로봇 제어기 기능을 위한 API 카테고리 구현 |
-| `examples/` | 드라이버 API 사용 방법을 보여주는 예제 프로그램 |
+| Directory | Description |
+|-----------|-------------|
+| `include/` | Header files for the HDR client driver library |
+| `src/` | Source implementation of client driver functions |
+| `src/functions/` | API category implementations for various robot controller functions |
+| `examples/` | Example programs demonstrating how to use the driver APIs |

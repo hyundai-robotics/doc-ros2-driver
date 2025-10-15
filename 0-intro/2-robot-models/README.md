@@ -1,27 +1,29 @@
-# 지원 로봇 모델
+# Supported Robot Models
 
-현재 HD현대로보틱스 드라이버에서 공식적으로 지원하는 로봇 모델은 다음와 같습니다.
+The robot models currently officially supported by the HD Hyundai Robotics driver are as follows:
 
 - ha006b
 - hdf7_9
 - hdf8_8
+- hdr10l_19
+- hdr20_17
 - hdr50_22
 - hdr220_26
-- hh020  
+- hh020
 
-## 모델명 변경사항
+## Model Name Changes
 
-> ❗ **참고:** 로봇 모델 `hdf7_9`, `hdf8_8`, `hdr50_22`, `hdr220_26`은 각각 모델 `HH7`, `HH8`, `HH050`, `HS220`의 변경된 이름입니다.
+> ❗ **Note:** Robot models `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26` are the renamed versions of models `HH7`, `HH8`, `UH020`, `HH050`, `HS220` respectively.
 
-## 각 모델에 포함된 내용
+## Contents Included for Each Model
 
-지원되는 각 로봇 모델에는 다음이 포함됩니다:
+Each supported robot model includes the following:
 
-- **URDF**: 충돌 메쉬가 포함된 로봇 URDF
-- **Mesh**: 시각화를 위한 3D 모델
-- **MoveIt2 구성**: 모델 별 soft limit가 포함된 모션 플래닝 설정
-- **Gazebo 지원**: 시뮬레이션 통합 지원
+- **URDF**: Robot URDF with collision meshes
+- **Mesh**: 3D models for visualization
+- **MoveIt2 Configuration**: Motion planning setup with model-specific soft limits
+- **Gazebo Support**: Simulation integration support
 
-## 다음 단계
+## Next Steps
 
-로봇 모델을 확인한 후, [시스템 요구사항](../3-requirements/README.md)으로 진행하여 시스템이 올바르게 구성되었는지 확인하십시오.
+After confirming the robot model, proceed to [System Requirements](../3-requirements/README.md) to verify that your system is properly configured.

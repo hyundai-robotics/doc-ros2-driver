@@ -1,12 +1,12 @@
 # I/O API
 
-## 개요
+## Overview
 
-I/O API 카테고리는 HD 현대로보틱스 제어기의 PLC 통신 기능을 제공합니다. 이러한 API들은 Hi6 PLC의 릴레이 값 조회 및 설정을 가능하게 합니다.
+The I/O API category provides PLC communication functions for the HD Hyundai Robotics controller. These APIs enable querying and setting relay values in the Hi6 PLC.
 
-## 사용 가능한 I/O API
+## Available I/O APIs
 
-| 함수 | 설명 |
-|------|------|
-| `GetRelayValue` | "FB{인덱스}.{릴레이_유형}" 형식 또는 "M", "S"와 같은 간단한 형식을 사용하여 Hi6 PLC에서 릴레이 값 조회 |
-| `SetRelayValue` | 로봇 제어기의 내부 PLC에서 특정 릴레이 값 설정. 다양한 데이터 유형 접미사 지원 |
+| Function | Description |
+|----------|-------------|
+| `GetRelayValue` | Query relay values from Hi6 PLC using "FB{index}.{relay_type}" format or simple formats like "M", "S" |
+| `SetRelayValue` | Set specific relay values in the robot controller's internal PLC. Supports various data type suffixes |

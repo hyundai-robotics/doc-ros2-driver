@@ -1,11 +1,12 @@
-﻿# HD현대로보틱스 ROS2 드라이버 매뉴얼
+# HD Hyundai Robotics ROS2 Driver Manual
 
-본 제품 매뉴얼에 제공되는 정보는 HD현대로보틱스의 재산입니다.
+The information provided in this product manual is the property of HD Hyundai Robotics.
 
-HD현대로보틱스의 서면 동의 없이 전체 또는 일부를 복제하거나 재배포할 수 없으며, 제3자에게 제공하거나 기타 목적으로 사용할 수 없습니다.
+It may not be reproduced or redistributed in whole or in part without written consent from HD Hyundai Robotics, and may not be provided to third parties or used for any other purpose.
 
-본 매뉴얼은 사전 고지 없이 변경될 수 있습니다.
+This manual is subject to change without prior notice.
 
-**Copyright ⓒ 2025 by HD현대로보틱스**
+**Copyright ⓒ 2025 by HD Hyundai Robotics**
 
-현재 ROS2 호환 제어기는 Hi6 시리즈이며, 제어기 소프트웨어 버전 **v60.34-00** 이상에서 지원됩니다. </br> **v60.34-00** 버전은 2025년 10월 중 공식 릴리스가 예정되어 있으므로 참고하시기 바랍니다.
+Currently, ROS2-compatible controllers are the Hi6 series, supported from controller software version **v60.34-00** or higher. </br>
+Version **v60.34-00** is scheduled for official release in October 2025. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release.

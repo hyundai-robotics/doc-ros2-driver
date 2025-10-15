@@ -1,15 +1,15 @@
-# 태스크 API
+# Task API
 
-## 개요
+## Overview
 
-태스크 API 카테고리는 HD 현대로보틱스 제어기의 태스크 실행 및 변수 관리 기능을 제공합니다. 이러한 API들은 변수 할당, 대기 상태 해제, 프로그램 카운터 제어, 표현식 평가 및 직접 모션 명령 실행을 가능하게 합니다.
+The Task API category provides task execution and variable management functions for the HD Hyundai Robotics controller. These APIs enable variable assignment, wait state release, program counter control, expression evaluation, and direct motion command execution.
 
-## 사용 가능한 태스크 API
+## Available Task APIs
 
-| 함수 | 설명 |
-|------|------|
-| `PostAssignVar` | 표현식 또는 JSON 값을 사용하여 태스크에 변수 할당 (로컬/전역 범위 및 지속성 지원) |
-| `PostReleaseWait` | task[0]을 WAIT 상태에서 해제하여 일시정지된 태스크 재개 |
-| `PostSetCurPcIdx` | task[0]의 프로그램 카운터(PC) 인덱스를 수동으로 설정 (디버깅 또는 특정 로직으로 점프에 유용) |
-| `PostSolveExpr` | 태스크 범위 내에서 표현식 평가 (수학, 논리 및 변수 접근 지원) |
-| `PostExecuteMove` | 로봇 태스크에서 직접 이동 명령 실행 (L, P, SP 등) |
+| Function | Description |
+|----------|-------------|
+| `PostAssignVar` | Assign variables to task using expressions or JSON values (supports local/global scope and persistence) |
+| `PostReleaseWait` | Release task[0] from WAIT state to resume paused task |
+| `PostSetCurPcIdx` | Manually set program counter (PC) index for task[0] (useful for debugging or jumping to specific logic) |
+| `PostSolveExpr` | Evaluate expressions within task scope (supports math, logic, and variable access) |
+| `PostExecuteMove` | Execute direct movement commands in robot task (L, P, SP, etc.) |

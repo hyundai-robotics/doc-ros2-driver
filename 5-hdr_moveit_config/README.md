@@ -1,62 +1,64 @@
-# MoveIt2 구성 (`hdr_moveit_config`)
+# MoveIt2 Configuration (`hdr_moveit_config`)
 
-`hdr_moveit_config` 패키지는 실제 환경과 시뮬레이션 환경에서 HD현대로보틱스 로봇을 제어하기 위한 MoveIt2 구성 패키지를 제공합니다. 이 패키지는 SRDF 정의, 조인트 제한 및 제어기 설정을 포함한 로봇별 모션 플래닝 구성을 포함합니다.
+The `hdr_moveit_config` package provides MoveIt2 configuration packages for controlling HD Hyundai Robotics robots in both real and simulation environments. This package includes robot-specific motion planning configurations with SRDF definitions, joint limits, and controller settings.
 
-## 주요 기능
+## Key Features
 
-- **로봇별 구성**: 지원되는 각 로봇 모델에 대한 개별 MoveIt2 설정
-- **SRDF 정의**: 플래닝 그룹 및 자세가 포함된 의미적 로봇 기술서
-- **조인트 제한 관리**: 안전한 작동을 위한 속도 및 가속도 스케일링
-- **기구학 통합**: 순기구학/역기구학 솔버 구성
-- **제어기 통합**: ros2_control 및 궤적 실행 설정
+- **Robot-Specific Configuration**: Individual MoveIt2 settings for each supported robot model
+- **SRDF Definitions**: Semantic robot description with planning groups and poses
+- **Joint Limits Management**: Velocity and acceleration scaling for safe operation
+- **Kinematics Integration**: Forward/inverse kinematics solver configuration
+- **Controller Integration**: ros2_control and trajectory execution setup
 
-## 패키지 조직
+## Package Organization
 
-각 로봇 모델은 고유한 MoveIt2 구성 패키지를 가집니다:
+Each robot model has its own MoveIt2 configuration package:
 
 - `ha006b_moveit_config/`
-- `hdf7_9_moveit_config/` 
+- `hdf7_9_moveit_config/`
 - `hdf8_8_moveit_config/`
+- `hdr10l_19_moveit_config/`
+- `hdr20_17_moveit_config/`
 - `hdr50_22_moveit_config/`
 - `hdr220_26_moveit_config/`
 - `hh020_moveit_config/`
 
-## 구성 파일
+## Configuration Files
 
-각 로봇 구성에는 다음이 포함됩니다:
+Each robot configuration includes:
 
-### 핵심 구성
-- **SRDF 파일**: 플래닝 그룹이 포함된 의미적 로봇 기술서
-- **joint_limits.yaml**: 스케일링 팩터가 있는 속도 및 가속도 제한
-- **kinematics.yaml**: 기구학 솔버 플러그인 구성
-- **controllers.yaml**: ros2_control 궤적 제어기 설정
+### Core Configuration
+- **SRDF Files**: Semantic robot description with planning groups
+- **joint_limits.yaml**: Velocity and acceleration limits with scaling factors
+- **kinematics.yaml**: Kinematics solver plugin configuration
+- **controllers.yaml**: ros2_control trajectory controller settings
 
-### 고급 설정
-- **ompl_planning.yaml**: OMPL 모션 플래너 구성
-- **pilz_cartesian_limits.yaml**: Pilz 플래너용 직교 모션 제한
-- **sensors_3d.yaml**: 3D 센서 통합 (해당하는 경우)
-- **initial_positions.yaml**: 기본 시작 자세
+### Advanced Settings
+- **ompl_planning.yaml**: OMPL motion planner configuration
+- **pilz_cartesian_limits.yaml**: Cartesian motion limits for Pilz planner
+- **sensors_3d.yaml**: 3D sensor integration (if applicable)
+- **initial_positions.yaml**: Default starting poses
 
-## 안전 고려사항
+## Safety Considerations
 
-### 속도 스케일링
-현재 제어기 제한으로 인해, 안정적인 작동을 위해 **≤ 0.2**의 스케일링 팩터 사용을 강력히 권장합니다:
+### Velocity Scaling
+Due to current controller limitations, **≤ 0.2** scaling factors are strongly recommended for stable operation:
 
 ```yaml
 default_velocity_scaling_factor: 0.1
 default_acceleration_scaling_factor: 0.1
 ```
 
-> ⚠ 이 제한은 **2025년 11월** 실시간 인터페이스 릴리스와 함께 해결될 예정입니다.
+> ⚠ This limitation is expected to be resolved with the **November 2025** real-time interface release.
 
-### 조인트 제한
-`joint_limits.yaml` 파일은 다음을 정의합니다:
-- 최대 조인트 속도
-- 최대 조인트 가속도  
-- 소프트웨어 위치 제한
-- 모션 플래닝용 스케일링 팩터
+### Joint Limits
+The `joint_limits.yaml` file defines:
+- Maximum joint velocities
+- Maximum joint accelerations
+- Software position limits
+- Scaling factors for motion planning
 
-## 실행
+## Launch
 
 ```bash
 ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
@@ -64,9 +66,9 @@ ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 
 ![hdr_moveit](../_assets/hdr_moveit.png)
 
-## 플래닝 그룹
+## Planning Groups
 
-일반적인 SRDF 플래닝 그룹 구성:
+Typical SRDF planning group configuration:
 
 ```xml
 <group name="manipulator">
@@ -74,20 +76,20 @@ ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 </group>
 
 <group_state name="home" group="manipulator">
-    <joint name="joint1" value="0"/>
-    <joint name="joint2" value="0"/>
-    <joint name="joint3" value="0"/>
-    <joint name="joint4" value="0"/>
-    <joint name="joint5" value="0"/>
-    <joint name="joint6" value="0"/>
+    <joint name="j1" value="0"/>
+    <joint name="j2" value="0"/>
+    <joint name="j3" value="0"/>
+    <joint name="j4" value="0"/>
+    <joint name="j5" value="0"/>
+    <joint name="j6" value="0"/>
 </group_state>
 ```
 
 
-## 사용자 정의
+## Customization
 
-모션 플래닝 동작을 수정하려면:
-1. 속도/가속도 제한을 위해 `joint_limits.yaml` 편집 (URDF 상에 정의된 조인트 별 최대 속도 초과하여 적용 불가능)
-2. 플래너별 설정을 위해 `ompl_planning.yaml` 수정
-3. 새로운 플래닝 그룹 또는 자세를 위해 SRDF 업데이트
-4. `controllers.yaml`에서 제어기 매개변수 조정
+To modify motion planning behavior:
+1. Edit `joint_limits.yaml` for velocity/acceleration limits (cannot exceed maximum velocities defined per joint in URDF)
+2. Modify `ompl_planning.yaml` for planner-specific settings
+3. Update SRDF for new planning groups or poses
+4. Adjust controller parameters in `controllers.yaml`

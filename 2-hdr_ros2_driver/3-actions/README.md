@@ -1,45 +1,52 @@
-# 사용 가능한 action
+# Available Actions
 
-## 개요
+## Overview
 
-ROS2 드라이버는 로봇 궤적 실행에 대한 action 인터페이스를 제공합니다. action은 진행 상황 피드백 및 취소 기능과 함께 비동기 작업을 가능하게 합니다.
+The ROS2 driver provides action interfaces for robot joint trajectory control. Actions enable asynchronous operations with progress feedback and cancellation capabilities.
 
-## 궤적 실행 action
+## Joint Trajectory Control Action
 
-### `/follow_joint_trajectory` (control_msgs/action/FollowJointTrajectory)
+### `/joint_trajectory_controller/follow_joint_trajectory` (control_msgs/action/FollowJointTrajectory)
 
-**설명**: 조인트 공간 궤적을 실행합니다
+**Description**: Executes joint trajectory control.
 
-**목표 필드**:
+**action_goal**:
 ```yaml
 trajectory_msgs/JointTrajectory trajectory
   std_msgs/Header header
-  string[] joint_names
-  JointTrajectoryPoint[] points
-    float64[] positions
-    float64[] velocities  
-    float64[] accelerations
-    float64[] effort
-    builtin_interfaces/Duration time_from_start
-path_tolerance[] goal_tolerance
-  string name
-  float64 position
-  float64 velocity  
-  float64 acceleration
-builtin_interfaces/Duration goal_time_tolerance
+  actionlib_msgs/GoalID goal_id
+    time stamp
+    string id
+  control_msgs/FollowJointTrajectoryGoal goal
+    trajectory_msgs/JointTrajectory trajectory
+      std_msgs/Header header
+      string[] joint_names
+      trajectory_msgs/JointTrajectoryPoint[] points
+    control_msgs/JointTolerance[] path_tolerance
+      string name
+      float64 position
+      float64 velocity
+      float64 acceleration
+    control_msgs/JointTolerance[] goal_tolerance
+      string name
+      float64 position
+      float64 velocity
+      float64 acceleration
+    duration goal_time_tolerance
 ```
 
-**피드백 필드**:
+**action_feedback**:
 ```yaml
 std_msgs/Header header
 string[] joint_names
 trajectory_msgs/JointTrajectoryPoint desired
-trajectory_msgs/JointTrajectoryPoint actual  
+trajectory_msgs/JointTrajectoryPoint actual
 trajectory_msgs/JointTrajectoryPoint error
 ```
 
-**결과 필드**:
+**action_result**:
 ```yaml
-int32 error_code
-string error_string
+std_msgs/Header header
+actionlib_msgs/GoalStatus status
+control_msgs/FollowJointTrajectoryResult result
 ```

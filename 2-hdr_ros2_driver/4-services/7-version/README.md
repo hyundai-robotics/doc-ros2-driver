@@ -1,17 +1,17 @@
-# 버전 정보 서비스
+# Version Information Services
 
-## 개요
+## Overview
 
-`hdr_ros2_driver`에서 제공하는 버전 정보 관련 ROS2 서비스입니다.
+Version information related ROS2 services provided by `hdr_ros2_driver`.
 
-## 버전 정보 서비스
+## Version Information Services
 
-### 시스템 버전 조회
+### System Version Queries
 
 ```bash
-# API 버전 조회
+# Get API version
 ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 
-# 시스템 버전 조회
+# Get system version
 ros2 service call /hdr_ros2_driver/get/system_ver std_srvs/srv/Trigger
 ```

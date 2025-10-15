@@ -1,18 +1,18 @@
-# 파일 API
+# File API
 
-## 개요
+## Overview
 
-파일 API 카테고리는 HD 현대로보틱스 제어기의 파일 시스템 작업을 제공합니다. 이러한 API들은 원격 파일 관리, 파일 업로드/다운로드, 디렉터리 관리를 가능하게 합니다.
+The File API category provides file system operations for the HD Hyundai Robotics controller. These APIs enable remote file management, file upload/download, and directory management.
 
-## 사용 가능한 파일 API
+## Available File APIs
 
-| 함수 | 설명 |
-|------|------|
-| `GetFiles` | 지정된 경로의 파일 및 폴더 목록 조회 |
-| `GetFileInfo` | 파일 또는 디렉터리의 메타데이터 조회 (크기, 타임스탬프, 유형) |
-| `GetFileList` | 파일만, 디렉터리만, 또는 모두 포함하는 필터링된 목록 조회 |
-| `GetFileExist` | 지정된 파일 또는 디렉터리의 존재 여부 확인 |
-| `PostRenameFile` | 파일 또는 디렉터리를 한 경로에서 다른 경로로 이름 변경 또는 이동 |
-| `PostMkdir` | 지정된 경로에 새 디렉터리 생성 |
-| `PostFiles` | 로컬 파일을 제어기의 지정된 위치에 업로드 |
-| `PostDeleteFile` | 제어기의 파일 또는 디렉터리 삭제 |
+| Function | Description |
+|----------|-------------|
+| `GetFiles` | Retrieve list of files and folders at specified path |
+| `GetFileInfo` | Query metadata of file or directory (size, timestamp, type) |
+| `GetFileList` | Retrieve filtered list including files only, directories only, or all |
+| `GetFileExist` | Check existence of specified file or directory |
+| `PostRenameFile` | Rename or move file or directory from one path to another |
+| `PostMkdir` | Create new directory at specified path |
+| `PostFiles` | Upload local file to specified location on controller |
+| `PostDeleteFile` | Delete file or directory on controller |

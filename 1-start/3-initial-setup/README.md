@@ -1,70 +1,78 @@
-# 초기 설정
+# Controller and PC Communication Setup
 
-이 섹션에서는 개발 PC와 HD현대로보틱스 로봇 제어기 간의 통신을 설정하는 데 필요한 초기 구성을 안내합니다.
+This guide covers the configuration of network interfaces on your development PC for communication with HD Hyundai Robotics robot controllers.
 
-## 설정 개요
+## Prerequisites
+⚠️ Please verify the following before starting setup:
+- **Robot Controller SW Version**: Hi6 series controller with SW version **60.34-00** or higher
 
-초기 설정 과정은 세 가지 주요 단계로 구성됩니다:
+## Network Configuration Overview
 
-1. **[제어기 PC 설정](1-controller-PC/README.md)** - 로봇 제어기의 네트워크 설정 구성
-2. **[제어기 구성](2-controller-set/README.md)** - 로봇을 REMOTE 모드로 설정하고 시스템 매개변수 구성  
-3. **[네트워크 테스트](3-network-test/README.md)** - 연결성 확인 및 기본 통신 테스트
+The PC must be configured to communicate with the robot controller via Ethernet. The default configuration uses a 192.168.1.x subnet with the controller at 192.168.1.150.
 
-## 전제조건
+## Default Network Configuration (Using LAN1)
 
-초기 설정을 시작하기 전에:
+| Component | Parameter | Default Value |
+|-----------|-----------|---------------|
+| **PC IP Address** | Static IP | 192.168.1.x (user configured)|
+| **Robot Controller IP** | Static IP | 192.168.1.150 |
+| **Subnet Mask** | Network Mask | 255.255.255.0 |
+| **Gateway** | Default Gateway | 192.168.1.1  |
 
-- **로봇 제어기**: SW 버전 **60.34-00** 이상의 Hi6 시리즈 제어기
-- **네트워크 연결**: PC와 로봇 제어기를 연결하는 이더넷 케이블
-- **PC 설정**: HDR ROS2 패키지의 [설치 및 빌드](../2-installation/README.md) 완료
-- **물리적 접근**: 로봇 제어기 티칭 펜던트에 대한 접근
+## Cable Connection
+
+![controller](../../_assets/controller.png)
+
+1. **Locate Robot Controller Ethernet Port**
+   - **Hi6-N Controller**: Ethernet port on top of main module
+   - **Hi6-T Controller**: Ethernet port on controller front panel
+
+2. **Connect Ethernet Cable**
+   - Use Cat5e or Cat6 Ethernet cable
+   - **Recommendation**: Use LAN1 (typically pre-configured to 192.168.1.x)
+   - LAN2, LAN3 ports are also available with different default controller IPs: </br>
+      LAN2: 192.168.4.150 → PC needs to be configured to 192.168.4.x range </br>
+      LAN3: 192.168.3.150 → PC needs to be configured to 192.168.3.x range
+
+3. **Verify Physical Connection**
+   - Ensure cable connection is secure
+   - Check network port LED indicators (if available)
 
 
-## 기본 네트워크 구성
+## PC Network Interface Configuration
 
-자세한 네트워크 구성 정보는 [네트워크 구성 참조](../../9-reference/network-config.md)를 참조하십시오.
+![LAN_com](../../_assets/LAN_com.png)
 
-**빠른 참조**:
-- 로봇 제어기 IP: `192.168.1.150` (기본값)
-- PC IP: `192.168.1.100` (예시) 
-- API 포트: `8888`
+### Using Network Manager GUI
 
+#### Ubuntu Desktop (GNOME)
 
-## 안전 요구사항
+1. **Open Network Settings**
+   - Click on the network icon in the top-right corner
+   - Select "Wired Settings" or go to Settings → Network
 
-### 설정 시작 전
+2. **Configure Wired Connection**
+   - Click the gear icon next to the wired connection
+   - Navigate to the "IPv4" tab
 
-> **안전 경고**: 설정을 시작하기 전에 다음 안전 조치를 확인하십시오:
+3. **Set Static IP Configuration (Using LAN1)**
+   - **Method**: Manual
+   - **Address**: 192.168.1.100
+   - **Netmask**: 255.255.255.0
+   - **Gateway**: 192.168.1.1
 
-- **비상 정지 접근**: 비상 정지 버튼이 접근 가능하고 작동하는지 확인
-- **안전한 작업 공간**: 로봇 작업 공간에서 사람과 장애물 제거
-- **전원 제어**: 주 전원 차단기의 위치 파악
-- **교육**: 운영자가 로봇 안전 절차에 대해 교육받았는지 확인
+4. **Apply Settings**
+   - Click "Apply" and disconnect then reconnect the network interface
 
-### 구성 중
+![ip_setup](../../_assets/ip_setup.png)
 
-- **티칭 펜던트 접근**: 비상 정지를 위해 티칭 펜던트를 접근 가능한 상태로 유지
-- **REMOTE 모드 이해**: REMOTE 모드가 외부 제어를 허용한다는 점 이해
-- **네트워크 보안**: 가능한 경우 로봇 통신에 격리된 네트워크 사용
+## Verification
 
-## 문제 해결 빠른 참조
+### Verify Network Configuration
 
-### 일반적인 네트워크 문제
+```bash
+# Test network connectivity
+ping -c 4 192.168.1.150
+```
 
-**로봇 제어기에 연결할 수 없음**
-1. 이더넷 케이블 연결 확인
-2. PC와 제어기 모두의 IP 주소 구성 확인
-3. ping 명령으로 테스트
-4. 제어기의 전원이 켜져 있고 작동 중인지 확인
-
-**로봇이 명령에 응답하지 않음**
-1. 로봇이 REMOTE 모드에 있는지 확인
-2. OpenAPI 포트 구성 확인 (8888)
-3. SW 버전 버전 호환성 확인
-4. 기본 서비스 호출로 테스트
-
-**서비스 호출 실패**
-1. ROS2 환경이 올바르게 소스되었는지 확인
-2. HDR 패키지가 빌드되고 설치되었는지 확인
-3. 티칭 펜던트를 통해 로봇 제어기 상태 확인
-4. 네트워크 연결성 검토
+![ping_test](../../_assets/ping_test.png)

@@ -1,72 +1,72 @@
-# 실행 지침
+# Launch Instructions
 
-이 섹션에서는 HDR ROS2 드라이버를 실행하는 방법을 다룹니다.
+This section covers how to launch the HDR ROS2 driver.
 
-## 기본 실행
+## Basic Launch
 
-### HDR ROS2 드라이버 실행
+### HDR ROS2 Driver Launch
 ```bash
-# 기본 매개변수 실행
+# Launch with default parameters
 ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py
 ```
 
-다음과 같이 드라이버를 시작합니다:
-- 기본 IP: 192.168.1.150
-- 기본 포트: 8888
+This will start the driver with:
+- Default IP: 192.168.1.150
+- Default Port: 8888
 
-## 사용자 정의 구성
+## Custom Configuration
 
-### 사용자 정의 IP 및 포트
+### Custom IP and Port
 ```bash
-# 사용자 정의 네트워크 설정으로 실행
+# Launch with custom network settings
 ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
   openapi_ip:=192.168.0.10 \
   openapi_port:=8080
 ```
 
-## 실행 매개변수
+## Launch Parameters
 
-| 매개변수 | 타입 | 기본값 | 설명 |
+| Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `openapi_ip` | string | `192.168.1.150` | 로봇 제어기 서버 IP 주소 |
-| `openapi_port` | int | `8888` | 제어기 서버의 포트 번호 |
-| `robot_model` | string | `ha006b` | 로봇 모델명 |
+| `openapi_ip` | string | `192.168.1.150` | Robot controller server IP address |
+| `openapi_port` | int | `8888` | Controller server port number |
+| `robot_model` | string | `ha006b` | Robot model name |
 
-## 확인
+## Verification
 
-실행 후, 드라이버가 실행 중인지 확인하십시오:
+After launch, verify the driver is running:
 
 ```bash
-# 드라이버 노드가 활성화되었는지 확인
+# Check if driver node is active
 ros2 node list | grep hdr_ros2_driver
 
-# 사용 가능한 서비스 나열
+# List available services
 ros2 service list | grep hdr_ros2_driver
 
-# 기본 연결 테스트
+# Test basic connection
 ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 ```
 
-## 네트워크 설정 전제조건
+## Network Setup Prerequisites
 
-실행하기 전에 적절한 네트워크 구성을 확인하십시오:
+Before launching, ensure proper network configuration:
 
-1. **이더넷 연결**: LAN1, LAN2 또는 LAN3을 통해 PC를 로봇 제어기에 연결
-2. **제어기 IP**: 기본값 192.168.1.150 (티칭 펜던트를 통해 구성 가능)  
-3. **PC IP**: 192.168.1.x 범위로 설정 (x ≠ 150)
-4. **REMOTE 모드**: 로봇 제어기가 REMOTE 모드에 있는지 확인
+1. **Ethernet Connection**: Connect PC to robot controller via LAN1, LAN2, or LAN3
+2. **Controller IP**: Default 192.168.1.150 (configurable through teaching pendant)
+3. **PC IP**: Set to 192.168.1.x range (x ≠ 150)
+4. **REMOTE Mode**: Ensure robot controller is in REMOTE mode
 
-## 문제 해결
+## Troubleshooting
 
-### 일반적인 문제
+### Common Issues
 
-1. **연결 시간 초과**
-   - 로봇 IP 및 포트 확인: `ping 192.168.1.150`
-   - 이더넷 케이블 연결 확인
+1. **Connection Timeout**
+   - Verify robot IP and port: `ping 192.168.1.150`
+   - Check ethernet cable connection
 
-2. **서비스 사용 불가**
-   - 드라이버가 성공적으로 실행되었는지 확인
-   - ROS2 환경이 소스되었는지 확인
-   - 실행 출력에서 오류 메시지 확인
-   - 로봇이 REMOTE 모드에 있는지 확인
-   - 제어기 SW 버전이 **60.34-00** 이상인지 확인
+2. **Service Unavailable**
+   - Verify driver launched successfully
+   - Check ROS2 environment is sourced
+   - Check launch output for error messages
+   - Ensure robot is in REMOTE mode
+   - Verify controller SW version is **60.34-00** or higher

@@ -1,24 +1,24 @@
-# ROS2 제어 통합 (`hdr_hardware_interface`)
+# ROS2 Control Integration (`hdr_hardware_interface`)
 
-## 개요
+## Overview
 
-`hdr_hardware_interface` 패키지는 HD 현대로보틱스의 Open API 기반 제어기를 ROS2 제어 프레임워크와 연결하기 위한 `ros2_control` SystemInterface를 제공합니다. 조인트 position 상태 및 명령 인터페이스를 HTTP 기반 로봇 서비스에 매핑하며 제어기 라이프사이클, 실시간 pose 추적을 처리합니다.
+The `hdr_hardware_interface` package provides a `ros2_control` SystemInterface to connect HD Hyundai Robotics' Open API-based controllers with the ROS2 control framework. It maps joint position state and command interfaces to HTTP-based robot services, handling controller lifecycle and real-time pose tracking.
 
-## 패키지 구조
+## Package Structure
 
-| 디렉토리                           | 설명                                                                 |
+| Directory                           | Description                                                                 |
 | ----------------------------------- | ----------------------------------------------------------------------------|
-| `include/`                          | `HDRRobotHardware` 및 유틸리티 헬퍼를 포함한 C++ 헤더                |
-| `src/`                              | SystemInterface 로직 구현                                     |
-| `launch/`                           | `ros2_control` 인터페이스를 실행하기 위한 런치 파일 제공             |
-| `config/`                           | 제어기 및 기구학 설정을 위한 YAML 구성 파일 포함   |
-| `hdr_hardware_interface_plugin.xml` | pluginlib용 메타데이터                                               |
+| `include/`                          | C++ headers including `HDRRobotHardware` and utility helpers                |
+| `src/`                              | SystemInterface logic implementation                                     |
+| `launch/`                           | Launch files for executing the `ros2_control` interface             |
+| `config/`                           | YAML configuration files for controller and kinematics settings   |
+| `hdr_hardware_interface_plugin.xml` | Metadata for pluginlib                                               |
 
 ---
 
-## 사용법
+## Usage
 
-##### ros2_control로 HDR 하드웨어 인터페이스 실행
+##### Launch HDR hardware interface with ros2_control
 
 ```bash
 ros2 launch hdr_hardware_interface ros2_control.launch.py \
@@ -27,8 +27,8 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
   openapi_port:=8888
 ```
 
-##### 플러그인 구성
-하드웨어 인터페이스를 활성화하려면 URDF 또는 xacro의 `<ros2_control>` 내에 포함시킵니다
+##### Plugin Configuration
+To enable the hardware interface, include it within the `<ros2_control>` in URDF or xacro
 
 ```xml
 <ros2_control name="HDRRobotHardware" type="system">
@@ -41,51 +41,45 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
 </ros2_control>
 ```
 
-#### 구성 옵션
+#### Configuration Options
 
-| 매개변수                      | 타입   | 기본값                         | 설명                                                                 |
+| Parameter                      | Type   | Default                         | Description                                                                 |
 |---------------------------|--------|----------------------------------|-----------------------------------------------------------------------------|
-| `robot_model`             | string | `"ha006b"`                      | 로봇 모델 이름                               |
-| `openapi_ip`              | string | `"192.168.1.150"`               | 로봇 제어기의 HTTP API IP 주소                                  |
-| `openapi_port`            | int    | `8888`                          | 로봇 OpenAPI 서버가 사용하는 HTTP 포트                                     |
-| `command_port`         | int    | `8000`                          | 궤적 명령 전송을 위한 포트 번호                              |
-| `command_start_time`   | float  | `-1.0`                          | 명령 실행 시간 (즉시 실행의 경우 -1.0)             |
-| `command_buffer_size`  | int    | `5`                             | 명령 데이터 버퍼 크기                                 |
-| `use_sim`                 | bool   | `false`                         | `gz_ros2_control/GazeboSimSystem` 플러그인을 사용하여 시뮬레이션 모드를 활성화하며, 일반적으로 Ignition Gazebo와의 통합에 사용됩니다<br>`use_sim_time` 매개변수도 true로 설정되어 시뮬레이션 시간과 동기화됩니다     |
-| `use_mock_hardware`       | bool   | `false`                         | 로봇 없이 테스트하기 위해 `mock_components/GenericSystem`을 사용하는 mock 하드웨어 인터페이스를 활성화합니다   |
-| `initial_positions_file`  | string | `""`                            | 초기 조인트 위치를 지정하는 선택적 YAML 파일                       |
-| `controllers_config_package` | string | `"hdr_hardware_interface"`     | config YAML이 포함된 패키지 이름                                       |
-| `controllers_file`        | string | `"default_controllers.yaml"`   | 제어기 구성 YAML 파일명                                     |
-| `kinematics_file`         | string | `"default_kinematics.yaml"`    | 기구학 플러그인 구성 YAML 파일명                              |
+| `robot_model`             | string | `"ha006b"`                      | Robot model name                               |
+| `openapi_ip`              | string | `"192.168.1.150"`               | HTTP API IP address of the robot controller                                  |
+| `openapi_port`            | int    | `8888`                          | HTTP port used by the robot OpenAPI server                                     |
+| `command_port`         | int    | `8000`                          | Port number for trajectory command transmission                              |
+| `command_start_time`   | float  | `-1.0`                          | Command execution time (-1.0 for immediate execution)             |
+| `command_buffer_size`  | int    | `5`                             | Command data buffer size                                 |
+| `use_sim`                 | bool   | `false`                         | Enable simulation mode using the `gz_ros2_control/GazeboSimSystem` plugin, typically used for integration with Ignition Gazebo<br>The `use_sim_time` parameter is also set to true for synchronization with simulation time     |
+| `use_mock_hardware`       | bool   | `false`                         | Enable mock hardware interface using `mock_components/GenericSystem` for testing without a robot   |
+| `initial_positions_file`  | string | `""`                            | Optional YAML file specifying initial joint positions                       |
+| `controllers_config_package` | string | `"hdr_hardware_interface"`     | Package name containing config YAML                                       |
+| `controllers_file`        | string | `"default_controllers.yaml"`   | Controller configuration YAML filename                                     |
+| `kinematics_file`         | string | `"default_kinematics.yaml"`    | Kinematics plugin configuration YAML filename                              |
 
 
-#### 토픽
+#### Topics
 
-| 토픽 이름                   | 메시지 타입                   | 설명                               |
+| Topic Name                   | Message Type                   | Description                               |
 | ---------------------------- | ------------------------------ | ----------------------------------------- |
-| `/joint_states`              | sensor_msgs::msg::JointState | position 정보를 포함한 현재 조인트 상태를 퍼블리시합니다 |
-| `/controller_manager/status` | lifecycle_msgs::msg::State   | ros2_control 매니저의 라이프사이클 상태 |
+| `/joint_states`              | sensor_msgs::msg::JointState | Publishes current joint states including position information |
+| `/controller_manager/status` | lifecycle_msgs::msg::State   | Lifecycle state of the ros2_control manager |
 
-#### 액션
+#### Actions
 
-| 액션 이름                                            | 액션 타입                                   | 설명                                |
+| Action Name                                            | Action Type                                   | Description                                |
 | ------------------------------------------------------ | --------------------------------------------- | ------------------------------------------ |
-| `/joint_trajectory_controller/follow_joint_trajectory` | control_msgs::action::FollowJointTrajectory | ROS2 action을 통해 조인트 궤적 명령을 실행합니다 |
+| `/joint_trajectory_controller/follow_joint_trajectory` | control_msgs::action::FollowJointTrajectory | Execute joint trajectory commands through ROS2 action |
 
-#### 서비스
+#### Services
 
-| 서비스 이름                                   | 서비스 타입                                         | 설명                         |
+| Service Name                                   | Service Type                                         | Description                         |
 | ---------------------------------------------- | ---------------------------------------------------- | ----------------------------------- |
-| `/controller_manager/list_controllers`         | controller_manager_msgs/srv/ListControllers        | 활성화된 controller 목록을 반환합니다     |
-| `/controller_manager/list_hardware_interfaces` | controller_manager_msgs/srv/ListHardwareInterfaces | 사용 가능한 조인트 명령 및 상태 인터페이스를 반환합니다 |
-| `/controller_manager/switch_controller`        | controller_manager_msgs/srv/SwitchController       | controller를 활성화하거나 비활성화합니다  |
-| `/controller_manager/load_controller`          | controller_manager_msgs/srv/LoadController         | controller를 로드합니다             |
-| `/controller_manager/unload_controller`        | controller_manager_msgs/srv/UnloadController       | 지정된 controller를 언로드하고 제거합니다    |
+| `/controller_manager/list_controllers`         | controller_manager_msgs/srv/ListControllers        | Return list of active controllers     |
+| `/controller_manager/list_hardware_interfaces` | controller_manager_msgs/srv/ListHardwareInterfaces | Return available joint command and state interfaces |
+| `/controller_manager/switch_controller`        | controller_manager_msgs/srv/SwitchController       | Activate or deactivate controllers  |
+| `/controller_manager/load_controller`          | controller_manager_msgs/srv/LoadController         | Load a controller             |
+| `/controller_manager/unload_controller`        | controller_manager_msgs/srv/UnloadController       | Unload the specified controller.    |
 
 ---
-
-## 4. 문제 해결
-- **제어기를 찾을 수 없음**: URDF의 플러그인 이름을 확인하고 다시 빌드하세요.
-- **실행 시 타임아웃**: OpenAPI IP 주소가 host PC에서 접근 가능한지 확인하세요.
-- **조인트 상태 없음**: 드라이버가 실행 중이고 `robot_pose` 기능이 활성화되어 있는지 확인하세요.
-- **인터페이스 시작 실패**: 지원되는 펌웨어 버전 ≥ **60.34-00**인지 확인하세요. (이 버전은 **10월**에 릴리스 예정입니다.)

@@ -1,13 +1,13 @@
-# 기타 API
+# Miscellaneous API
 
-## 개요
+## Overview
 
-기타 API 카테고리는 HD 현대로보틱스 제어기의 추가 유틸리티 및 시스템 관리 기능을 제공합니다. 이러한 API들은 시스템 시간 관리 및 로그 조회 기능을 포함합니다.
+The Miscellaneous API category provides additional utility and system management functions for the HD Hyundai Robotics controller. These APIs include system time management and log query capabilities.
 
-## 사용 가능한 기타 API
+## Available Miscellaneous APIs
 
-| 함수 | 설명 |
-|------|------|
-| `GetDateTime` | 로봇 제어기에서 현재 시스템 날짜 및 시간 조회 (년, 월, 일, 시, 분, 초) |
-| `PutDateTime` | 로봇 제어기의 시스템 날짜 및 시간 설정 (입력 검증 포함) |
-| `GetLogManager` | 필터링 옵션이 있는 제어기 로그 조회 (항목 수, 카테고리 E,W,N,S,O,I,P,H,C,M, ID 범위, 타임스탬프 범위) |
+| Function | Description |
+|----------|-------------|
+| `GetDateTime` | Query current system date and time from robot controller (year, month, day, hour, minute, second) |
+| `PutDateTime` | Set system date and time on robot controller (includes input validation) |
+| `GetLogManager` | Query controller logs with filtering options (entry count, categories E,W,N,S,O,I,P,H,C,M, ID range, timestamp range) |
