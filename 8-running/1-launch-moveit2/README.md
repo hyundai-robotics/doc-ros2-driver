@@ -21,10 +21,10 @@ HD현대로보틱스 로봇을 MoveIt2로 실행하는 기본 절차입니다.
 ### 1. MoveIt2 실행
 ```bash
 # 기본 MoveIt2 실행
-ros2 launch hdr_moveit_config hdr_moveit.launch.py robot_model:=ha006b
+ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 
 # IP 주소 지정해서 실행  
-ros2 launch hdr_moveit_config hdr_moveit.launch.py \
+ros2 launch hdr_bringup hdr_moveit.launch.py \
     robot_model:=ha006b \
     robot_ip:=192.168.1.150
 ```
