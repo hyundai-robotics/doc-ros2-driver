@@ -36,18 +36,13 @@ ros2 control list_hardware_interfaces
 ros2 topic echo /joint_states
 ```
 
-### 제어기 시작/정지
+### 제어기 활성화/비활성화
 ```bash
-# 제어기 시작
-ros2 control switch_controllers --start joint_trajectory_controller
+# 제어기 활성화
+ros2 control switch_controllers --activate joint_trajectory_controller
 
-# 제어기 정지
-ros2 control switch_controllers --stop joint_trajectory_controller
-
-# 제어기 다시 시작
-ros2 control switch_controllers \
-    --stop joint_trajectory_controller \
-    --start joint_trajectory_controller
+# 제어기 비활성화
+ros2 control switch_controllers --deactivate joint_trajectory_controller
 ```
 
 ## 기본 제어기 설정
@@ -66,7 +61,7 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
     control_msgs/action/FollowJointTrajectory \
     "{
       trajectory: {
-        joint_names: ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6'],
+        joint_names: ['j1', 'j2', 'j3', 'j4', 'j5', 'j6'],
         points: [
           {
             positions: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
