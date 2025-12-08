@@ -34,6 +34,7 @@
 - `hdr50_22.urdf.xacro`
 - `hdr220_26.urdf.xacro`
 - `hh020.urdf.xacro`
+- `hdr35_20.urdf.xacro`
 
 ## 사용 예제
 

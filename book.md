@@ -8,8 +8,8 @@ HD현대로보틱스의 서면 동의 없이 전체 또는 일부를 복제하�
 
 **Copyright ⓒ 2025 by HD현대로보틱스**
 
-현재 ROS2 호환 제어기는 Hi6 시리즈이며, 제어기 소프트웨어 버전 **v60.34-00** 이상에서 지원됩니다. </br>
-**v60.34-00** 버전은 2025년 10월 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 HD현대로보틱스 ROS2 드라이버 사용을 지양하시기 바랍니다.# 개요
+현재 ROS2 호환 제어기는 Hi6 시리즈이며, 제어기 소프트웨어 버전 **v60.32-00** 이상에서 지원됩니다. </br>
+**v60.32-00** 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 HD현대로보틱스 ROS2 드라이버 사용을 지양하시기 바랍니다.# 개요
 
 본 매뉴얼에서는 HD현대로보틱스 (HDR) ROS2 드라이버에 대한 설명을 제공합니다.
 
@@ -40,23 +40,22 @@ HDR ROS2 드라이버 사용에 앞서 아래 항목을 반드시 확인하시�
 
 ⚠️ **반드시 사전 확인 사항을 확인하고 설치 및 초기 설정을 모두 완료한 뒤 진행하시기 바랍니다.** 
 
-⚠️ **현재 HD현대로보틱스 ROS2 드라이버는 제어기 소프트웨어 버전 *v60.34-00* 이상에서 지원됩니다. </br> *v60.34-00* 버전은 2025년 10월 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 ROS2 드라이버 사용을 지양하시기 바랍니다.**# 지원 제어기 모델
+⚠️ **현재 HD현대로보틱스 ROS2 드라이버는 제어기 소프트웨어 버전 *v60.32-00* 이상에서 지원됩니다. </br> *v60.32-00* 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 ROS2 드라이버 사용을 지양하시기 바랍니다.**# 지원 제어기 모델
 ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 모델은 아래와 같습니다.
 
 - Hi6-N10
 - Hi6-N20
 - Hi6-N00(HK)
+- Hi6-N00-60(HK)
 - Hi6-N30(HK)
 - Hi6-N80(HK)
 - Hi6-T15
 
 **제어기 요구사항**:
-- SW 버전 버전: **60.34-00** 이상 (10월 중 배포 예정)
+- SW 버전 버전: **60.32-00** 이상
 - 동작 모드: **REMOTE 모드**
 
 > ⚠️ **참고:** HD현대로보틱스 ROS2 드라이버는 **Hi5** 제어기 시리즈를 **지원하지 않습니다**.
-
-> ⚠️ **실시간 인터페이스**: 2025년 11월 예정 (모션 제어, 상태 피드백 및 I/O 작업을 위한 2ms 주기 제어)
 
 ## 다음 단계
 
@@ -72,10 +71,11 @@ ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 �
 - hdr50_22
 - hdr220_26
 - hh020  
+- hdr35_20
 
 ## 모델명 변경사항
 
-> ❗ **참고:** 로봇 모델 `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`은 각각 모델 `HH7`, `HH8`, `UH020`, `HH050`, `HS220`의 변경된 이름입니다.
+> ❗ **참고:** 로봇 모델 `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`, `hdr35_20`은 각각 모델 `HH7`, `HH8`, `UH020`, `HH050`, `HS220`, `UH035`의 변경된 이름입니다.
 
 ## 각 모델에 포함된 내용
 
@@ -95,8 +95,8 @@ ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 �
 ## 하드웨어 요구사항
 
 ### 로봇 제어기
-- **호환 제어기**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
-- **제어기 SW 버전 버전**: **60.34-00** 이상 (10월 중 배포 예정)
+- **호환 제어기**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N00-60(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
+- **제어기 SW 버전 버전**: **60.32-00** 이상
 - **동작 모드**: 로봇이 **REMOTE** 모드로 설정되어야 함
 - **네트워크 인터페이스**: 이더넷 연결 (LAN1, LAN2 또는 LAN3)
 
@@ -387,7 +387,7 @@ echo "source ~/hdr_ws/install/setup.bash" >> ~/.bashrc
 
 ## 전제조건
 ⚠️ 설정을 시작하기 전에 아래 내용을 확인하세요:
-- **로봇 제어기 SW 버전**: SW 버전 **60.34-00** 이상의 Hi6 시리즈 제어기
+- **로봇 제어기 SW 버전**: SW 버전 **60.32-00** 이상의 Hi6 시리즈 제어기
 
 ## 네트워크 구성 개요
 
@@ -587,7 +587,7 @@ ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
    - ROS2 환경이 소스되었는지 확인
    - 실행 출력에서 오류 메시지 확인
    - 로봇이 REMOTE 모드에 있는지 확인
-   - 제어기 SW 버전이 **60.34-00** 이상인지 확인# 제공되는 토픽
+   - 제어기 SW 버전이 **60.32-00** 이상인지 확인# 제공되는 토픽
 
 ## 개요
 
@@ -608,8 +608,8 @@ std_msgs/Header header
   string frame_id
 string[] name          # URDF와 일치하는 조인트 이름
 float64[] position     # 라디안 단위의 조인트 position
-float64[] velocity     # NULL (현재 지원하지 않음)
-float64[] effort       # NULL (현재 지원하지 않음)
+float64[] velocity     # 라디안/초 단위의 조인트 velocity
+float64[] effort       # 조인트 torque
 ```
 
 **퍼블리싱 주기**: 50 Hz (`publish_rate` 매개변수를 통해 구성 가능)# 사용 가능한 action
@@ -979,9 +979,7 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
 | 매개변수                      | 타입   | 기본값                         | 설명                                                                 |
 |---------------------------|--------|----------------------------------|-----------------------------------------------------------------------------|
 | `robot_model`             | string | `"ha006b"`                      | 로봇 모델 이름                               |
-| `openapi_ip`              | string | `"192.168.1.150"`               | 로봇 제어기의 HTTP API IP 주소                                  |
-| `openapi_port`            | int    | `8888`                          | 로봇 OpenAPI 서버가 사용하는 HTTP 포트                                     |
-| `command_port`         | int    | `8000`                          | 궤적 명령 전송을 위한 포트 번호                              |
+| `openapi_ip`              | string | `"192.168.1.150"`               | 로봇 제어기의 HTTP API IP 주소                                  |                              |
 | `command_start_time`   | float  | `-1.0`                          | 명령 실행 시간 (즉시 실행의 경우 -1.0)             |
 | `command_buffer_size`  | int    | `5`                             | 명령 데이터 버퍼 크기                                 |
 | `use_sim`                 | bool   | `false`                         | `gz_ros2_control/GazeboSimSystem` 플러그인을 사용하여 시뮬레이션 모드를 활성화하며, 일반적으로 Ignition Gazebo와의 통합에 사용됩니다<br>`use_sim_time` 매개변수도 true로 설정되어 시뮬레이션 시간과 동기화됩니다     |
@@ -1051,6 +1049,7 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
 - `hdr50_22.urdf.xacro`
 - `hdr220_26.urdf.xacro`
 - `hh020.urdf.xacro`
+- `hdr35_20.urdf.xacro`
 
 ## 사용 예제
 
@@ -1105,6 +1104,7 @@ ros2 launch hdr_description display_robot.launch.py robot_model:=ha006b
 - `hdr50_22_moveit_config/`
 - `hdr220_26_moveit_config/`
 - `hh020_moveit_config/`
+- `hdr35_20_moveit_config/`
 
 ## 구성 파일
 
@@ -1125,14 +1125,12 @@ ros2 launch hdr_description display_robot.launch.py robot_model:=ha006b
 ## 안전 고려사항
 
 ### 속도 스케일링
-현재 제어기 제한으로 인해, 안정적인 작동을 위해 **≤ 0.2**의 스케일링 팩터 사용을 강력히 권장합니다:
+안정적인 작동을 위해 **≤ 0.5**의 스케일링 팩터 사용을 권장합니다:
 
 ```yaml
-default_velocity_scaling_factor: 0.1
-default_acceleration_scaling_factor: 0.1
+default_velocity_scaling_factor: 0.5
+default_acceleration_scaling_factor: 0.5
 ```
-
-> ⚠ 이 제한은 **2025년 11월** 실시간 인터페이스 릴리스와 함께 해결될 예정입니다.
 
 ### 조인트 제한
 `joint_limits.yaml` 파일은 다음을 정의합니다:
@@ -1178,8 +1176,6 @@ ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 4. `controllers.yaml`에서 제어기 매개변수 조정# HD현대로보틱스 클라이언트 드라이버
 
 HDR 클라이언트 드라이버는 HD현대로보틱스의 로봇 제어기와 HTTP (Open API) 및 소켓 (TCP/UDP) 인터페이스를 통해 통신하기 위한 포괄적인 C++ 라이브러리를 제공합니다. 이 라이브러리는 양쪽 통신 계층을 추상화하고 로봇 제어 및 모니터링, 파일 관리, 실시간 명령 실행, ROS2와의 통합을 위한 객체지향 인터페이스를 제공합니다.
-
-> ❗ **참고**: 모션 제어, 상태 피드백 및 I/O 작업을 위한 실시간 인터페이스 (2ms 주기)가 **2025년 11월**에 출시될 예정입니다.
 
 > ❗ 중요: 모든 REST API 기반 통신은 로봇이 REMOTE 모드에 있어야 동작 합니다.
 
@@ -1235,11 +1231,14 @@ HDR 클라이언트 드라이버는 로봇 제어기의 다양한 기능에 대�
 | `GetRobotCurTool` | 현재 선택된 도구 정보 조회 (TCP 구성, 무게 등) |
 | `GetRobotTools` | 시스템에 등록된 모든 도구 목록 조회 (TCP 오프셋, 무게 등) |
 | `GetRobotToolsT` | 도구 번호(0-31)별 특정 도구의 상세 정보 조회 |
+| `GetJointTrajBuffAvail` | 궤적 버퍼의 사용 가능한 크기를 반환 |
 | `PostRobotMotorPower` | 로봇 모터 전원 ON 또는 OFF |
 | `PostRobotOperation` | 로봇 프로그램 실행 시작 또는 중지 |
 | `PostRobotToolNo` | 사용할 활성 도구 번호 설정 (0-31) |
 | `PostRobotCrdSys` | 모션 및 I/O에 사용할 좌표계 지정 (-1: 기본값, 0: 베이스, 1: 도구, 2: 사용자1, 3: 사용자2) |
-| `PostRobotEmergencyStop` | 안전 대응을 위해 모든 로봇 모션의 즉시 비상 정지 |# 프로젝트 API
+| `PostRobotEmergencyStop` | 안전 대응을 위해 모든 로봇 모션의 즉시 비상 정지 |
+| `PostInitJointTrajectory` | 궤적 버퍼 초기화 |
+| `PostInsertJointTrajectoryPoints` | 모션 실행을 위한 궤적 지점을 컨트롤러 버퍼에 입력 |# 프로젝트 API
 
 ## 개요
 
@@ -1376,6 +1375,7 @@ ros2 launch hdr_simulation_gz hdr_gz_moveit.launch.py robot_model:=hdr50_22
 | `srv/IoplcGet.srv`    | PLC 메모리(예: 릴레이, M, S, R)를 읽습니다. 직접 주소 지정과 이름 기반 신호 주소 지정을 모두 지원합니다. |
 | `srv/IoplcPost.srv`   | M, S, R 또는 FBx.y와 같은 심볼릭 이름을 사용하여 PLC 메모리(릴레이)에 씁니다. |
 | `srv/IoRequest.srv`   | 디지털, 시리얼 또는 사용자 I/O에 접근하는 데 사용됩니다. type 필드는 'di', 'do', 'si' 또는 'so'와 같은 I/O 종류를 지정합니다. blk_no와 sig_no는 블록 및 신호 인덱스를 지정합니다. 'val' 필드는 I/O 값을 설정할 때 사용되며 읽기 작업을 수행할 때는 무시됩니다. |
+| `srv/JointTrajecotryPoints.srv` | 모션 실행을 위한 궤적 정보를 제공합니다. |
 | `srv/LogManager.srv`  | 카테고리(E, W 등), ID 범위 및 타임스탬프 필터를 사용하여 로그 항목을 조회합니다. |
 | `srv/Number.srv`      | 정수를 전송/수신하는 범용 서비스입니다. 도구 번호, 좌표계, 인덱스 설정 등에 사용됩니다. |
 | `srv/OpCnd.srv`       | 재생 모드나 사용자 좌표계와 같은 작동 조건을 읽거나 씁니다. |
@@ -1446,33 +1446,44 @@ ros2 service list | grep move_group
 - hdr50_22
 - hdr220_26
 - hh020
+- hdr35_20
 
-## 안전 주의사항
+### 일반적인 문제
 
-### 비상 정지
-- 하드웨어 비상 정지 버튼을 항상 접근 가능한 곳에 두세요
-
-### 안전한 종료
-1. 모든 동작 정지
-2. 로봇을 안전 위치로 이동
-3. MoveIt2 노드 종료
-4. 로봇 제어기 전원 끄기
-
-## 일반적인 문제 해결
-
-### 연결 문제
+**연결 문제**
 - 네트워크 연결 확인: `ping 192.168.1.150`
 - 로봇 제어기가 REMOTE 모드인지 확인
 
-### 계획 실패
-- 목표 위치가 작업 영역 내에 있는지 확인
-- 충돌 검사 설정 확인
-- 조인트 한계값 확인
-
-### 실행 문제
+**제어기가 시작되지 않는 경우:**
+- 로봇 제어기가 REMOTE 모드인지 확인
+- 네트워크 연결 확인
 - 로봇이 비상 정지 상태가 아닌지 확인
-- 제어기 오류 상태 확인
-- ROS2 토픽 연결 상태 확인# ros2_control 시스템 실행
+
+**조인트 상태가 발행되지 않는 경우:**
+- 하드웨어 인터페이스 연결 상태 확인
+- 로봇 제어기 상태 확인
+
+**궤적 실행 실패:**
+- 조인트 한계값 확인
+- 목표 위치가 유효한지 확인
+- 제어기 오류 메시지 확인
+
+### 모터 ON & START 모드 상태에서 로봇이 동작하지 않을 떄
+
+**정상 동작**
+- 모터 ON과 START 모드가 모두 활성화되어 있을 때 로봇은 정상적으로 동작
+
+**로봇이 동작하지 않는 경우**
+- 모터 ON은 켜져 있지만 START 모드가 활성화되어 있지 않으면 E01554 오류 발생
+- 조인트 한계값을 넘어가는 등 실행할 수 없는 명령어를 입력한 경우 회전 축의 속도 초과 오류가 발생하여 로봇이 정지
+- 해당 상황에서는 모터 ON + START 모드를 다시 활성화하여 시스템을 복구
+
+## 안전 주의사항
+
+- 실제 로봇과 작업할 때는 항상 비상 정지 버튼을 접근 가능한 곳에 두세요
+- 로봇이 예상치 못한 동작을 할 경우 즉시 비상 정지하세요
+- 처음 사용할 때는 낮은 속도로 테스트하세요
+# ros2_control 시스템 실행
 
 ## 개요
 
@@ -1489,11 +1500,6 @@ ros2 launch hdr_bringup hdr_control.launch.py robot_model:=ha006b
 ros2 launch hdr_bringup hdr_control.launch.py \
     robot_model:=ha006b \
     robot_ip:=192.168.1.150
-
-# 시뮬레이션 모드
-ros2 launch hdr_bringup hdr_control.launch.py \
-    robot_model:=ha006b \
-    use_sim_time:=true
 ```
 
 ## 제어기
@@ -1550,6 +1556,10 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 
 ### 일반적인 문제
 
+**연결 문제**
+- 네트워크 연결 확인: `ping 192.168.1.150`
+- 로봇 제어기가 REMOTE 모드인지 확인
+
 **제어기가 시작되지 않는 경우:**
 - 로봇 제어기가 REMOTE 모드인지 확인
 - 네트워크 연결 확인
@@ -1564,6 +1574,15 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 - 목표 위치가 유효한지 확인
 - 제어기 오류 메시지 확인
 
+### 모터 ON & START 모드 상태에서 로봇이 동작하지 않을 떄
+
+**정상 동작**
+- 모터 ON과 START 모드가 모두 활성화되어 있을 때 로봇은 정상적으로 동작
+
+**로봇이 동작하지 않는 경우**
+- 모터 ON은 켜져 있지만 START 모드가 활성화되어 있지 않으면 E01554 오류 발생
+- 조인트 한계값을 넘어가는 등 실행할 수 없는 명령어를 입력한 경우 회전 축의 속도 초과 오류가 발생하여 로봇이 정지
+- 해당 상황에서는 모터 ON + START 모드를 다시 활성화하여 시스템을 복구
 
 ## 안전 주의사항
 

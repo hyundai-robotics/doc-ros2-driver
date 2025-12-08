@@ -46,9 +46,7 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
 | 매개변수                      | 타입   | 기본값                         | 설명                                                                 |
 |---------------------------|--------|----------------------------------|-----------------------------------------------------------------------------|
 | `robot_model`             | string | `"ha006b"`                      | 로봇 모델 이름                               |
-| `openapi_ip`              | string | `"192.168.1.150"`               | 로봇 제어기의 HTTP API IP 주소                                  |
-| `openapi_port`            | int    | `8888`                          | 로봇 OpenAPI 서버가 사용하는 HTTP 포트                                     |
-| `command_port`         | int    | `8000`                          | 궤적 명령 전송을 위한 포트 번호                              |
+| `openapi_ip`              | string | `"192.168.1.150"`               | 로봇 제어기의 HTTP API IP 주소                                  |                              |
 | `command_start_time`   | float  | `-1.0`                          | 명령 실행 시간 (즉시 실행의 경우 -1.0)             |
 | `command_buffer_size`  | int    | `5`                             | 명령 데이터 버퍼 크기                                 |
 | `use_sim`                 | bool   | `false`                         | `gz_ros2_control/GazeboSimSystem` 플러그인을 사용하여 시뮬레이션 모드를 활성화하며, 일반적으로 Ignition Gazebo와의 통합에 사용됩니다<br>`use_sim_time` 매개변수도 true로 설정되어 시뮬레이션 시간과 동기화됩니다     |

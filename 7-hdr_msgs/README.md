@@ -20,6 +20,7 @@
 | `srv/IoplcGet.srv`    | PLC 메모리(예: 릴레이, M, S, R)를 읽습니다. 직접 주소 지정과 이름 기반 신호 주소 지정을 모두 지원합니다. |
 | `srv/IoplcPost.srv`   | M, S, R 또는 FBx.y와 같은 심볼릭 이름을 사용하여 PLC 메모리(릴레이)에 씁니다. |
 | `srv/IoRequest.srv`   | 디지털, 시리얼 또는 사용자 I/O에 접근하는 데 사용됩니다. type 필드는 'di', 'do', 'si' 또는 'so'와 같은 I/O 종류를 지정합니다. blk_no와 sig_no는 블록 및 신호 인덱스를 지정합니다. 'val' 필드는 I/O 값을 설정할 때 사용되며 읽기 작업을 수행할 때는 무시됩니다. |
+| `srv/JointTrajecotryPoints.srv` | 모션 실행을 위한 궤적 정보를 제공합니다. |
 | `srv/LogManager.srv`  | 카테고리(E, W 등), ID 범위 및 타임스탬프 필터를 사용하여 로그 항목을 조회합니다. |
 | `srv/Number.srv`      | 정수를 전송/수신하는 범용 서비스입니다. 도구 번호, 좌표계, 인덱스 설정 등에 사용됩니다. |
 | `srv/OpCnd.srv`       | 재생 모드나 사용자 좌표계와 같은 작동 조건을 읽거나 씁니다. |

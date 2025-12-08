@@ -13,8 +13,11 @@
 | `GetRobotCurTool` | 현재 선택된 도구 정보 조회 (TCP 구성, 무게 등) |
 | `GetRobotTools` | 시스템에 등록된 모든 도구 목록 조회 (TCP 오프셋, 무게 등) |
 | `GetRobotToolsT` | 도구 번호(0-31)별 특정 도구의 상세 정보 조회 |
+| `GetJointTrajBuffAvail` | 궤적 버퍼의 사용 가능한 크기를 반환 |
 | `PostRobotMotorPower` | 로봇 모터 전원 ON 또는 OFF |
 | `PostRobotOperation` | 로봇 프로그램 실행 시작 또는 중지 |
 | `PostRobotToolNo` | 사용할 활성 도구 번호 설정 (0-31) |
 | `PostRobotCrdSys` | 모션 및 I/O에 사용할 좌표계 지정 (-1: 기본값, 0: 베이스, 1: 도구, 2: 사용자1, 3: 사용자2) |
 | `PostRobotEmergencyStop` | 안전 대응을 위해 모든 로봇 모션의 즉시 비상 정지 |
+| `PostInitJointTrajectory` | 궤적 버퍼 초기화 |
+| `PostInsertJointTrajectoryPoints` | 모션 실행을 위한 궤적 지점을 컨트롤러 버퍼에 입력 |

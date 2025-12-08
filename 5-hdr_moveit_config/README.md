@@ -22,6 +22,7 @@
 - `hdr50_22_moveit_config/`
 - `hdr220_26_moveit_config/`
 - `hh020_moveit_config/`
+- `hdr35_20_moveit_config/`
 
 ## 구성 파일
 
@@ -42,14 +43,12 @@
 ## 안전 고려사항
 
 ### 속도 스케일링
-현재 제어기 제한으로 인해, 안정적인 작동을 위해 **≤ 0.2**의 스케일링 팩터 사용을 강력히 권장합니다:
+안정적인 작동을 위해 **≤ 0.5**의 스케일링 팩터 사용을 권장합니다:
 
 ```yaml
-default_velocity_scaling_factor: 0.1
-default_acceleration_scaling_factor: 0.1
+default_velocity_scaling_factor: 0.5
+default_acceleration_scaling_factor: 0.5
 ```
-
-> ⚠ 이 제한은 **2025년 11월** 실시간 인터페이스 릴리스와 함께 해결될 예정입니다.
 
 ### 조인트 제한
 `joint_limits.yaml` 파일은 다음을 정의합니다:

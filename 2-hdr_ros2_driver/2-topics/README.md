@@ -19,8 +19,8 @@ std_msgs/Header header
   string frame_id
 string[] name          # URDF와 일치하는 조인트 이름
 float64[] position     # 라디안 단위의 조인트 position
-float64[] velocity     # NULL (현재 지원하지 않음)
-float64[] effort       # NULL (현재 지원하지 않음)
+float64[] velocity     # 라디안/초 단위의 조인트 velocity
+float64[] effort       # 조인트 torque
 ```
 
 **퍼블리싱 주기**: 50 Hz (`publish_rate` 매개변수를 통해 구성 가능)
