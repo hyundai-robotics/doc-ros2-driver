@@ -4,7 +4,7 @@ This guide covers the configuration of network interfaces on your development PC
 
 ## Prerequisites
 ⚠️ Please verify the following before starting setup:
-- **Robot Controller SW Version**: Hi6 series controller with SW version **60.34-00** or higher
+- **Robot Controller SW Version**: Hi6 series controller with SW version **60.32-00** or higher
 
 ## Network Configuration Overview
 

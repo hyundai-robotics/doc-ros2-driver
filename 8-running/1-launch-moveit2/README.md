@@ -48,6 +48,7 @@ ros2 service list | grep move_group
 - hdr50_22
 - hdr220_26
 - hh020
+- hdr35_20
 
 ## Safety Precautions
 
@@ -62,16 +63,29 @@ ros2 service list | grep move_group
 
 ## Common Troubleshooting
 
-### Connection Issues
+**Connection Issues**
 - Verify network connection: `ping 192.168.1.150`
 - Confirm robot controller is in REMOTE mode
 
-### Planning Failures
-- Verify target position is within workspace
-- Check collision detection settings
-- Verify joint limits
-
-### Execution Issues
+**When controllers fail to start:**
+- Verify robot controller is in REMOTE mode
+- Check network connection
 - Confirm robot is not in emergency stop state
-- Check controller error status
-- Verify ROS2 topic connection status
+
+**When joint states are not published:**
+- Check hardware interface connection status
+- Verify robot controller status
+
+**Trajectory execution failures:**
+- Check joint limits
+- Verify target position is valid
+- Check controller error messages
+
+### When the robot does not operate in Motor ON & Start Mode
+**Normal Operation**
+When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
+
+**When the robot does not operate**
+If Start Mode is not activated while **Motor ON** is enabled, the system generates the error “External Command Operation Disabled (E01554).”
+If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
+In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.

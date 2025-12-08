@@ -4,17 +4,16 @@ The HD Hyundai Robotics Hi6 controller models that officially support ROS2 funct
 - Hi6-N10
 - Hi6-N20
 - Hi6-N00(HK)
+- Hi6-N00-60(HK)
 - Hi6-N30(HK)
 - Hi6-N80(HK)
 - Hi6-T15
 
 **Controller Requirements**:
-- SW Version: **60.34-00** or higher (scheduled for release in October)
+- SW Version: **60.32-00** or higher (scheduled for release in October)
 - Operation Mode: **REMOTE mode**
 
 > ⚠️ **Note:** The HD Hyundai Robotics ROS2 driver does **not support** the **Hi5** controller series.
-
-> ⚠️ **Real-time Interface**: Scheduled for November 2025 (2ms cycle control for motion control, status feedback, and I/O operations)
 
 ## Next Steps
 

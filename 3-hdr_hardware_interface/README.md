@@ -47,8 +47,6 @@ To enable the hardware interface, include it within the `<ros2_control>` in URDF
 |---------------------------|--------|----------------------------------|-----------------------------------------------------------------------------|
 | `robot_model`             | string | `"ha006b"`                      | Robot model name                               |
 | `openapi_ip`              | string | `"192.168.1.150"`               | HTTP API IP address of the robot controller                                  |
-| `openapi_port`            | int    | `8888`                          | HTTP port used by the robot OpenAPI server                                     |
-| `command_port`         | int    | `8000`                          | Port number for trajectory command transmission                              |
 | `command_start_time`   | float  | `-1.0`                          | Command execution time (-1.0 for immediate execution)             |
 | `command_buffer_size`  | int    | `5`                             | Command data buffer size                                 |
 | `use_sim`                 | bool   | `false`                         | Enable simulation mode using the `gz_ros2_control/GazeboSimSystem` plugin, typically used for integration with Ignition Gazebo<br>The `use_sim_time` parameter is also set to true for synchronization with simulation time     |

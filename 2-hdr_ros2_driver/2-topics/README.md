@@ -19,8 +19,8 @@ std_msgs/Header header
   string frame_id
 string[] name          # Joint names matching URDF
 float64[] position     # Joint positions in radians
-float64[] velocity     # NULL (not currently supported)
-float64[] effort       # NULL (not currently supported)
+float64[] velocity     # Joint velocity in radians/sec
+float64[] effort       # Joint effort in torque
 ```
 
 **Publishing Frequency**: 50 Hz (configurable via `publish_rate` parameter)

@@ -20,6 +20,7 @@ The `hdr_msgs` package defines custom ROS2 message types used in the HD Hyundai 
 | `srv/IoplcGet.srv`    | Reads PLC memory (e.g., relays, M, S, R). Supports both direct addressing and name-based signal addressing. |
 | `srv/IoplcPost.srv`   | Writes to PLC memory (relays) using symbolic names such as M, S, R, or FBx.y. |
 | `srv/IoRequest.srv`   | Used to access digital, serial, or user I/O. The type field specifies I/O kind like 'di', 'do', 'si', or 'so'. blk_no and sig_no specify block and signal indices. The 'val' field is used when setting I/O values and ignored during read operations. |
+| `srv/JointTrajecotryPoints.srv` | Provides trajectory points for executing motion |
 | `srv/LogManager.srv`  | Queries log entries using category (E, W, etc.), ID ranges, and timestamp filters. |
 | `srv/Number.srv`      | General-purpose service for sending/receiving integers. Used for tool numbers, coordinate systems, index settings, etc. |
 | `srv/OpCnd.srv`       | Reads or writes operating conditions such as playback mode or user coordinate systems. |

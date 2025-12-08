@@ -8,8 +8,8 @@ This manual is subject to change without prior notice.
 
 **Copyright ⓒ 2025 by HD Hyundai Robotics**
 
-Currently, ROS2-compatible controllers are the Hi6 series, supported from controller software version **v60.34-00** or higher. </br>
-Version **v60.34-00** is scheduled for official release in October 2025. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release.# Overview
+Currently, ROS2-compatible controllers are the Hi6 series, supported from controller software version **v60.32-00** or higher. </br>
+Version **v60.32-00** is scheduled for official release in 2Q 2026. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release.# Overview
 
 This manual provides a description of the HD Hyundai Robotics (HDR) ROS2 driver.
 
@@ -40,23 +40,22 @@ After completing all the installation and initial setup processes above, you can
 
 ⚠️ **Please make sure to check the prerequisites and complete all installation and initial setup before proceeding.**
 
-⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v60.34-00* or higher. </br> The *v60.34-00* version is scheduled for official release in October 2025, so please refrain from using the ROS2 driver before the official release.**# Supported Controller Models
+⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v60.32-00* or higher. </br> The *v60.32-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.**# Supported Controller Models
 The HD Hyundai Robotics Hi6 controller models that officially support ROS2 functionality are as follows:
 
 - Hi6-N10
 - Hi6-N20
 - Hi6-N00(HK)
+- Hi6-N00-60(HK)
 - Hi6-N30(HK)
 - Hi6-N80(HK)
 - Hi6-T15
 
 **Controller Requirements**:
-- SW Version: **60.34-00** or higher (scheduled for release in October)
+- SW Version: **60.32-00** or higher (scheduled for release in October)
 - Operation Mode: **REMOTE mode**
 
 > ⚠️ **Note:** The HD Hyundai Robotics ROS2 driver does **not support** the **Hi5** controller series.
-
-> ⚠️ **Real-time Interface**: Scheduled for November 2025 (2ms cycle control for motion control, status feedback, and I/O operations)
 
 ## Next Steps
 
@@ -72,10 +71,11 @@ The robot models currently officially supported by the HD Hyundai Robotics drive
 - hdr50_22
 - hdr220_26
 - hh020
+- hdr35_20
 
 ## Model Name Changes
 
-> ❗ **Note:** Robot models `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26` are the renamed versions of models `HH7`, `HH8`, `UH020`, `HH050`, `HS220` respectively.
+> ❗ **Note:** Robot models `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`, `hdr35_20` are the renamed versions of models `HH7`, `HH8`, `UH020`, `HH050`, `HS220`, `UH035` respectively.
 
 ## Contents Included for Each Model
 
@@ -95,8 +95,8 @@ This page describes the hardware and software requirements for running the HD Hy
 ## Hardware Requirements
 
 ### Robot Controller
-- **Compatible Controllers**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
-- **Controller SW Version**: **60.34-00** or higher (scheduled for release in October)
+- **Compatible Controllers**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N00-60(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
+- **Controller SW Version**: **60.32-00** or higher
 - **Operation Mode**: Robot must be set to **REMOTE** mode
 - **Network Interface**: Ethernet connection (LAN1, LAN2, or LAN3)
 
@@ -387,7 +387,7 @@ This guide covers the configuration of network interfaces on your development PC
 
 ## Prerequisites
 ⚠️ Please verify the following before starting setup:
-- **Robot Controller SW Version**: Hi6 series controller with SW version **60.34-00** or higher
+- **Robot Controller SW Version**: Hi6 series controller with SW version **60.32-00** or higher
 
 ## Network Configuration Overview
 
@@ -587,7 +587,7 @@ Before launching, ensure proper network configuration:
    - Check ROS2 environment is sourced
    - Check launch output for error messages
    - Ensure robot is in REMOTE mode
-   - Verify controller SW version is **60.34-00** or higher# Provided Topics
+   - Verify controller SW version is **60.32-00** or higher# Provided Topics
 
 ## Overview
 
@@ -608,8 +608,8 @@ std_msgs/Header header
   string frame_id
 string[] name          # Joint names matching URDF
 float64[] position     # Joint positions in radians
-float64[] velocity     # NULL (not currently supported)
-float64[] effort       # NULL (not currently supported)
+float64[] velocity     # Joint velocity in radians/sec
+float64[] effort       # Joint effort in torque
 ```
 
 **Publishing Frequency**: 50 Hz (configurable via `publish_rate` parameter)# Available Actions
@@ -980,8 +980,6 @@ To enable the hardware interface, include it within the `<ros2_control>` in URDF
 |---------------------------|--------|----------------------------------|-----------------------------------------------------------------------------|
 | `robot_model`             | string | `"ha006b"`                      | Robot model name                               |
 | `openapi_ip`              | string | `"192.168.1.150"`               | HTTP API IP address of the robot controller                                  |
-| `openapi_port`            | int    | `8888`                          | HTTP port used by the robot OpenAPI server                                     |
-| `command_port`         | int    | `8000`                          | Port number for trajectory command transmission                              |
 | `command_start_time`   | float  | `-1.0`                          | Command execution time (-1.0 for immediate execution)             |
 | `command_buffer_size`  | int    | `5`                             | Command data buffer size                                 |
 | `use_sim`                 | bool   | `false`                         | Enable simulation mode using the `gz_ros2_control/GazeboSimSystem` plugin, typically used for integration with Ignition Gazebo<br>The `use_sim_time` parameter is also set to true for synchronization with simulation time     |
@@ -1051,6 +1049,7 @@ Each robot model has its own directory under `urdf/robots/`:
 - `hdr50_22.urdf.xacro`
 - `hdr220_26.urdf.xacro`
 - `hh020.urdf.xacro`
+- `hdr35_20.urdf.xacro`
 
 ## Usage Examples
 
@@ -1105,6 +1104,7 @@ Each robot model has its own MoveIt2 configuration package:
 - `hdr50_22_moveit_config/`
 - `hdr220_26_moveit_config/`
 - `hh020_moveit_config/`
+- `hdr35_20_moveit_config/`
 
 ## Configuration Files
 
@@ -1125,14 +1125,12 @@ Each robot configuration includes:
 ## Safety Considerations
 
 ### Velocity Scaling
-Due to current controller limitations, **≤ 0.2** scaling factors are strongly recommended for stable operation:
+**≤ 0.5** scaling factors are recommended for stable operation:
 
 ```yaml
-default_velocity_scaling_factor: 0.1
-default_acceleration_scaling_factor: 0.1
+default_velocity_scaling_factor: 0.5
+default_acceleration_scaling_factor: 0.5
 ```
-
-> ⚠ This limitation is expected to be resolved with the **November 2025** real-time interface release.
 
 ### Joint Limits
 The `joint_limits.yaml` file defines:
@@ -1178,8 +1176,6 @@ To modify motion planning behavior:
 4. Adjust controller parameters in `controllers.yaml`# HD Hyundai Robotics Client Driver
 
 The HDR client driver provides a comprehensive C++ library for communicating with HD Hyundai Robotics robot controllers via HTTP (Open API) and socket (TCP/UDP) interfaces. This library abstracts both communication layers and provides object-oriented interfaces for robot control and monitoring, file management, real-time command execution, and integration with ROS2.
-
-> ❗ **Note**: Real-time interface (2ms cycle) for motion control, status feedback, and I/O operations is scheduled for release in **November 2025**.
 
 > ❗ Important: All REST API-based communication requires the robot to be in REMOTE mode.
 
@@ -1234,11 +1230,14 @@ The Robot API category handles core robot operations including motion control, p
 | `GetRobotCurTool` | Retrieve currently selected tool information (TCP configuration, weight, etc.) |
 | `GetRobotTools` | Retrieve list of all tools registered in the system (TCP offsets, weights, etc.) |
 | `GetRobotToolsT` | Query specific tool's detailed information by tool number (0-31) |
+| `GetJointTrajBuffAvail` | Get the available size of the trajectory buffer |
 | `PostRobotMotorPower` | Turn robot motor power ON or OFF |
 | `PostRobotOperation` | Start or stop robot program execution |
 | `PostRobotToolNo` | Set active tool number to use (0-31) |
 | `PostRobotCrdSys` | Specify coordinate system to use for motion and I/O (-1: default, 0: base, 1: tool, 2: user1, 3: user2) |
-| `PostRobotEmergencyStop` | Immediate emergency stop of all robot motion for safety response |# Project API
+| `PostRobotEmergencyStop` | Immediate emergency stop of all robot motion for safety response |
+| `PostInitJointTrajectory` | Initialize the joint trajectory buffer |
+| `PostInsertJointTrajectoryPoints` | Insert joint trajectory points into the controller buffer for motion execution |# Project API
 
 ## Overview
 
@@ -1375,6 +1374,7 @@ The `hdr_msgs` package defines custom ROS2 message types used in the HD Hyundai 
 | `srv/IoplcGet.srv`    | Reads PLC memory (e.g., relays, M, S, R). Supports both direct addressing and name-based signal addressing. |
 | `srv/IoplcPost.srv`   | Writes to PLC memory (relays) using symbolic names such as M, S, R, or FBx.y. |
 | `srv/IoRequest.srv`   | Used to access digital, serial, or user I/O. The type field specifies I/O kind like 'di', 'do', 'si', or 'so'. blk_no and sig_no specify block and signal indices. The 'val' field is used when setting I/O values and ignored during read operations. |
+| `srv/JointTrajecotryPoints.srv` | Provides trajectory points for executing motion |
 | `srv/LogManager.srv`  | Queries log entries using category (E, W, etc.), ID ranges, and timestamp filters. |
 | `srv/Number.srv`      | General-purpose service for sending/receiving integers. Used for tool numbers, coordinate systems, index settings, etc. |
 | `srv/OpCnd.srv`       | Reads or writes operating conditions such as playback mode or user coordinate systems. |
@@ -1445,6 +1445,7 @@ ros2 service list | grep move_group
 - hdr50_22
 - hdr220_26
 - hh020
+- hdr35_20
 
 ## Safety Precautions
 
@@ -1459,19 +1460,32 @@ ros2 service list | grep move_group
 
 ## Common Troubleshooting
 
-### Connection Issues
+**Connection Issues**
 - Verify network connection: `ping 192.168.1.150`
 - Confirm robot controller is in REMOTE mode
 
-### Planning Failures
-- Verify target position is within workspace
-- Check collision detection settings
-- Verify joint limits
-
-### Execution Issues
+**When controllers fail to start:**
+- Verify robot controller is in REMOTE mode
+- Check network connection
 - Confirm robot is not in emergency stop state
-- Check controller error status
-- Verify ROS2 topic connection status# ros2_control System Execution
+
+**When joint states are not published:**
+- Check hardware interface connection status
+- Verify robot controller status
+
+**Trajectory execution failures:**
+- Check joint limits
+- Verify target position is valid
+- Check controller error messages
+
+### When the robot does not operate in Motor ON & Start Mode
+**Normal Operation**
+When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
+
+**When the robot does not operate**
+If Start Mode is not activated while **Motor ON** is enabled, the system generates the error “External Command Operation Disabled (E01554).”
+If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
+In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.# ros2_control System Execution
 
 ## Overview
 
@@ -1544,6 +1558,10 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 
 ### Common Issues
 
+**Connection Issues**
+- Verify network connection: `ping 192.168.1.150`
+- Confirm robot controller is in REMOTE mode
+
 **When controllers fail to start:**
 - Verify robot controller is in REMOTE mode
 - Check network connection
@@ -1558,6 +1576,14 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 - Verify target position is valid
 - Check controller error messages
 
+### When the robot does not operate in Motor ON & Start Mode
+**Normal Operation**
+When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
+
+**When the robot does not operate**
+If Start Mode is not activated while **Motor ON** is enabled, the system generates the error “External Command Operation Disabled (E01554).”
+If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
+In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.
 
 ## Safety Precautions
 

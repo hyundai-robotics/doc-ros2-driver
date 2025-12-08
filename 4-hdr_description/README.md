@@ -34,6 +34,7 @@ Each robot model has its own directory under `urdf/robots/`:
 - `hdr50_22.urdf.xacro`
 - `hdr220_26.urdf.xacro`
 - `hh020.urdf.xacro`
+- `hdr35_20.urdf.xacro`
 
 ## Usage Examples
 

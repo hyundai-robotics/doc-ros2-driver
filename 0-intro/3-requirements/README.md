@@ -5,8 +5,8 @@ This page describes the hardware and software requirements for running the HD Hy
 ## Hardware Requirements
 
 ### Robot Controller
-- **Compatible Controllers**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
-- **Controller SW Version**: **60.34-00** or higher (scheduled for release in October)
+- **Compatible Controllers**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N00-60(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
+- **Controller SW Version**: **60.32-00** or higher
 - **Operation Mode**: Robot must be set to **REMOTE** mode
 - **Network Interface**: Ethernet connection (LAN1, LAN2, or LAN3)
 

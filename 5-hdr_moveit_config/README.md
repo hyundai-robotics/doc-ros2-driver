@@ -22,6 +22,7 @@ Each robot model has its own MoveIt2 configuration package:
 - `hdr50_22_moveit_config/`
 - `hdr220_26_moveit_config/`
 - `hh020_moveit_config/`
+- `hdr35_20_moveit_config/`
 
 ## Configuration Files
 
@@ -42,14 +43,12 @@ Each robot configuration includes:
 ## Safety Considerations
 
 ### Velocity Scaling
-Due to current controller limitations, **≤ 0.2** scaling factors are strongly recommended for stable operation:
+**≤ 0.5** scaling factors are recommended for stable operation:
 
 ```yaml
-default_velocity_scaling_factor: 0.1
-default_acceleration_scaling_factor: 0.1
+default_velocity_scaling_factor: 0.5
+default_acceleration_scaling_factor: 0.5
 ```
-
-> ⚠ This limitation is expected to be resolved with the **November 2025** real-time interface release.
 
 ### Joint Limits
 The `joint_limits.yaml` file defines:

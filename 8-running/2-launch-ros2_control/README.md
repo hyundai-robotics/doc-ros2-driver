@@ -71,6 +71,10 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 
 ### Common Issues
 
+**Connection Issues**
+- Verify network connection: `ping 192.168.1.150`
+- Confirm robot controller is in REMOTE mode
+
 **When controllers fail to start:**
 - Verify robot controller is in REMOTE mode
 - Check network connection
@@ -85,6 +89,14 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 - Verify target position is valid
 - Check controller error messages
 
+### When the robot does not operate in Motor ON & Start Mode
+**Normal Operation**
+When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
+
+**When the robot does not operate**
+If Start Mode is not activated while **Motor ON** is enabled, the system generates the error “External Command Operation Disabled (E01554).”
+If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
+In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.
 
 ## Safety Precautions
 
