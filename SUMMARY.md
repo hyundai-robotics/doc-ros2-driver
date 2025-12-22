@@ -45,10 +45,10 @@
     * [6.1.6 태스크](6-hdr_client_driver/1-api-categories/6-task/README.md)
     * [6.1.7 기타](6-hdr_client_driver/1-api-categories/7-etc/README.md)
 
-* [6. Gazebo 시뮬레이션 (hdr_simulation_gz)](6-hdr_simulation_gz/README.md)
+* [7. Gazebo 시뮬레이션 (hdr_simulation_gz)](7-hdr_simulation_gz/README.md)
 
-* [7. ROS 메시지 정의 (hdr_msgs)](7-hdr_msgs/README.md)
+* [8. ROS 메시지 정의 (hdr_msgs)](8-hdr_msgs/README.md)
 
-* [8. 실행](8-running/README.md)
-  * [8.1 MoveIt2 실행](8-running/1-launch-moveit2/README.md)
-  * [8.2 ROS2 Control 실행](8-running/2-launch-ros2_control/README.md)
+* [9. 실행](9-running/README.md)
+  * [9.1 MoveIt2 실행](9-running/1-launch-moveit2/README.md)
+  * [9.2 ROS2 Control 실행](9-running/2-launch-ros2_control/README.md)
