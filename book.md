@@ -8,8 +8,8 @@ This manual is subject to change without prior notice.
 
 **Copyright ⓒ 2025 by HD Hyundai Robotics**
 
-Currently, ROS2-compatible controllers are the Hi6 series, supported from controller software version **v60.32-00** or higher. </br>
-Version **v60.32-00** is scheduled for official release in 2Q 2026. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release.# Overview
+Currently, ROS2-compatible controllers are the Hi6 series, supported from controller software version **v60.34-00** or higher. </br>
+Version **v60.34-00** is scheduled for official release in 2Q 2026. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release.# Overview
 
 This manual provides a description of the HD Hyundai Robotics (HDR) ROS2 driver.
 
@@ -40,7 +40,7 @@ After completing all the installation and initial setup processes above, you can
 
 ⚠️ **Please make sure to check the prerequisites and complete all installation and initial setup before proceeding.**
 
-⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v60.32-00* or higher. </br> The *v60.32-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.**# Supported Controller Models
+⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v60.34-00* or higher. </br> The *v60.34-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.**# Supported Controller Models
 The HD Hyundai Robotics Hi6 controller models that officially support ROS2 functionality are as follows:
 
 - Hi6-N10
