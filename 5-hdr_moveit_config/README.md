@@ -1,4 +1,4 @@
-# MoveIt2 구성 (`hdr_moveit_config`)
+﻿# MoveIt2 구성 (`hdr_moveit_config`)
 
 `hdr_moveit_config` 패키지는 실제 환경과 시뮬레이션 환경에서 HD현대로보틱스 로봇을 제어하기 위한 MoveIt2 구성 패키지를 제공합니다. 이 패키지는 SRDF 정의, 조인트 제한 및 제어기 설정을 포함한 로봇별 모션 플래닝 구성을 포함합니다.
 

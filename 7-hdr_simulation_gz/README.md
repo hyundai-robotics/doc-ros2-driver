@@ -1,4 +1,4 @@
-# Gazebo 시뮬레이션 (`hdr_simulation_gz`)
+﻿# Gazebo 시뮬레이션 (`hdr_simulation_gz`)
 
 `hdr_simulation_gz` 패키지는 HD현대로보틱스 산업용 로봇을 위한 ROS2 + Gazebo (Ignition) 시뮬레이션 환경을 제공합니다. 이 패키지는 물리적 하드웨어 없이도 로봇 응용 프로그램의 개발, 테스트 및 검증을 가능하게 합니다.
 

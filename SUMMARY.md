@@ -1,6 +1,6 @@
-# Table of contents
+﻿# Table of contents
 
-* [HD현대로보틱스 ROS2 드라이버 매뉴얼](README.md)
+* [${cont_model} 제어기 기능설명서 - ROS2 드라이버](README.md)
 
 * [0. 개요](0-intro/README.md)
   * [0.1 제어기 모델](0-intro/1-controller-models/README.md)

@@ -1,15 +1,12 @@
-﻿# HD현대로보틱스 ROS2 드라이버 매뉴얼
-
-본 제품 매뉴얼에 제공되는 정보는 HD현대로보틱스의 재산입니다.
-
-HD현대로보틱스의 서면 동의 없이 전체 또는 일부를 복제하거나 재배포할 수 없으며, 제3자에게 제공하거나 기타 목적으로 사용할 수 없습니다.
-
-본 매뉴얼은 사전 고지 없이 변경될 수 있습니다.
-
-**Copyright ⓒ 2025 by HD현대로보틱스**
+﻿
+[__SOURCE](README.md)
+# ${cont_model} 제어기 기능설명서 - ROS2 드라이버
 
 현재 ROS2 호환 제어기는 Hi6 시리즈이며, 제어기 소프트웨어 버전 **v60.34-00** 이상에서 지원됩니다. </br>
-**v60.34-00** 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 HD현대로보틱스 ROS2 드라이버 사용을 지양하시기 바랍니다.# 개요
+**v60.34-00** 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 HD현대로보틱스 ROS2 드라이버 사용을 지양하시기 바랍니다.
+
+[__SOURCE](0-intro/README.md)
+# 개요
 
 본 매뉴얼에서는 HD현대로보틱스 (HDR) ROS2 드라이버에 대한 설명을 제공합니다.
 
@@ -40,7 +37,9 @@ HDR ROS2 드라이버 사용에 앞서 아래 항목을 반드시 확인하시�
 
 ⚠️ **반드시 사전 확인 사항을 확인하고 설치 및 초기 설정을 모두 완료한 뒤 진행하시기 바랍니다.** 
 
-⚠️ **현재 HD현대로보틱스 ROS2 드라이버는 제어기 소프트웨어 버전 *v60.34-00* 이상에서 지원됩니다. </br> *v60.34-00* 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 ROS2 드라이버 사용을 지양하시기 바랍니다.**# 지원 제어기 모델
+⚠️ **현재 HD현대로보틱스 ROS2 드라이버는 제어기 소프트웨어 버전 *v60.34-00* 이상에서 지원됩니다. </br> *v60.34-00* 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 ROS2 드라이버 사용을 지양하시기 바랍니다.**
+[__SOURCE](0-intro/1-controller-models/README.md)
+# 지원 제어기 모델
 ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 모델은 아래와 같습니다.
 
 - Hi6-N10
@@ -59,7 +58,9 @@ ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 �
 
 ## 다음 단계
 
-제어기 호환성을 확인한 후, [지원 로봇 모델](../2-robot-models/README.md)을 확인하여 귀하의 로봇이 지원되는지 확인하십시오.# 지원 로봇 모델
+제어기 호환성을 확인한 후, [지원 로봇 모델](../2-robot-models/README.md)을 확인하여 귀하의 로봇이 지원되는지 확인하십시오.
+[__SOURCE](0-intro/2-robot-models/README.md)
+# 지원 로봇 모델
 
 현재 HD현대로보틱스 드라이버에서 공식적으로 지원하는 로봇 모델은 다음와 같습니다.
 
@@ -88,7 +89,9 @@ ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 �
 
 ## 다음 단계
 
-로봇 모델을 확인한 후, [시스템 요구사항](../3-requirements/README.md)으로 진행하여 시스템이 올바르게 구성되었는지 확인하십시오.# 시스템 요구사항
+로봇 모델을 확인한 후, [시스템 요구사항](../3-requirements/README.md)으로 진행하여 시스템이 올바르게 구성되었는지 확인하십시오.
+[__SOURCE](0-intro/3-requirements/README.md)
+# 시스템 요구사항
 
 본 페이지에서는 HD현대로보틱스 ROS2 드라이버를 실행하기 위한 하드웨어 및 소프트웨어 요구사항을 설명합니다.
 
@@ -109,7 +112,9 @@ ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 �
 
 ## 다음 단계
 
-시스템이 모든 요구사항을 충족하면 [지원 ROS2 버전](../4-ros2-version/README.md)을 확인하세요.# 지원 ROS2 버전
+시스템이 모든 요구사항을 충족하면 [지원 ROS2 버전](../4-ros2-version/README.md)을 확인하세요.
+[__SOURCE](0-intro/4-ros2-version/README.md)
+# 지원 ROS2 버전
 
 HD현대로보틱스 ROS2 드라이버는 로봇 제어기 및 시뮬레이션 환경에서 테스트되고 검증된 특정 ROS2 배포판을 지원합니다.
 
@@ -132,7 +137,9 @@ ros2 doctor
 
 ## 다음 단계
 
-ROS2 호환성을 확인한 후 설치를 위해 [시작하기](../../1-start/README.md)로 진행하세요.# 로봇 joint 및 link 명칭
+ROS2 호환성을 확인한 후 설치를 위해 [시작하기](../../1-start/README.md)로 진행하세요.
+[__SOURCE](0-intro/5-hdr-robot/README.md)
+# 로봇 joint 및 link 명칭
 
 HD현대로보틱스 로봇은 URDF 내에서 아래와 같은 joint 및 link 명칭을 따릅니다.
 
@@ -175,7 +182,9 @@ HD현대로보틱스 로봇은 URDF 내에서 아래와 같은 joint 및 link �
 |5|wrist_holder_link|j5|wrist_body_link|revolute||
 |6|flange_link|j6|wrist_holder_link|revolute||
 ||flange|flange_link-flange|flange_link|fixed|ROS-Industrial 표준 좌표계|
-||tool0|flange-tool0|flange|fixed|ROS-Industrial 표준 좌표계|# 시작하기
+||tool0|flange-tool0|flange|fixed|ROS-Industrial 표준 좌표계|
+[__SOURCE](1-start/README.md)
+# 시작하기
 
 본 섹션에서는 HD현대로보틱스 ROS2 드라이버의 설치, 구성 및 실행을 위한 단계별 지침을 제공합니다. 이 가이드를 따라 개발 환경을 설정하고 로봇과의 통신을 구축하세요.
 
@@ -184,7 +193,9 @@ HD현대로보틱스 로봇은 URDF 내에서 아래와 같은 joint 및 link �
 1. [레포지토리 개요](1-repo-overview/README.md) - 패키지 구조와 관계 이해
 2. [설치](2-installation/README.md) - 레포지토리 클론 및 빌드
 3. [초기 설정](3-initial-setup/README.md) - 네트워킹 설정 구성
-4. [설정 검증](4-verifying/README.md) - 설치 테스트# 레포지토리 개요
+4. [설정 검증](4-verifying/README.md) - 설치 테스트
+[__SOURCE](1-start/1-repo-overview/README.md)
+# 레포지토리 개요
 
 HD현대로보틱스 ROS2 드라이버는 로봇 제어, 시뮬레이션 및 모션 플래닝 기능을 제공하기 위해 함께 작동하는 여러 상호 연결된 패키지로 구성됩니다.
 
@@ -235,7 +246,9 @@ HD현대로보틱스 제어기와의 통신을 위한 커스텀 ROS2 서비스 �
 
 1. 위 링크된 개별 패키지 문서를 검토하십시오.
 2. [설치](../2-installation/README.md)로 진행하여 패키지를 빌드하십시오.
-3. [초기 설정](../3-initial-setup/README.md)에서 로봇 연결을 구성하십시오.# 패키지 빌드 및 설치
+3. [초기 설정](../3-initial-setup/README.md)에서 로봇 연결을 구성하십시오.
+[__SOURCE](1-start/2-installation/README.md)
+# 패키지 빌드 및 설치
 이 섹션에서는 레포지토리 복제, 종속성 설치 및 패키지 빌드를 포함한 HD현대로보틱스 ROS2 드라이버의 설치 과정을 다룹니다.
 
 ## 작업공간 설정
@@ -308,7 +321,9 @@ echo "source ~/hdr_ws/install/setup.bash" >> ~/.bashrc
 
 패키지 설치 및 빌드 성공 후:
 1. 제어기 및 PC 설정을 위해 [초기 설정](../3-initial-setup/README.md)을 진행하십시오
-2. [설치 검증](../4-verifying/README.md) 테스트를 실행하십시오# 패키지 빌드 및 설치
+2. [설치 검증](../4-verifying/README.md) 테스트를 실행하십시오
+[__SOURCE](1-start/2-installation/README.md)
+# 패키지 빌드 및 설치
 이 섹션에서는 레포지토리 복제, 종속성 설치 및 패키지 빌드를 포함한 HD현대로보틱스 ROS2 드라이버의 설치 과정을 다룹니다.
 
 ## 작업공간 설정
@@ -381,7 +396,9 @@ echo "source ~/hdr_ws/install/setup.bash" >> ~/.bashrc
 
 패키지 설치 및 빌드 성공 후:
 1. 제어기 및 PC 설정을 위해 [초기 설정](../3-initial-setup/README.md)을 진행하십시오
-2. [설치 검증](../4-verifying/README.md) 테스트를 실행하십시오# 제어기 및 PC 통신 설정
+2. [설치 검증](../4-verifying/README.md) 테스트를 실행하십시오
+[__SOURCE](1-start/3-initial-setup/README.md)
+# 제어기 및 PC 통신 설정
 
 본 가이드는 HD현대로보틱스 로봇 제어기와 통신하기 위한 개발 PC의 네트워크 인터페이스 구성을 다룹니다.
 
@@ -458,7 +475,9 @@ PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 �
 ping -c 4 192.168.1.150
 ```
 
-![ping_test](../../_assets/ping_test.png)# 설치 검증
+![ping_test](../../_assets/ping_test.png)
+[__SOURCE](1-start/4-verifying/README.md)
+# 설치 검증
 
 본 가이드는 HD현대로보틱스 ROS2 드라이버가 올바르게 설치, 구성되고 작동할 준비가 되었는지 확인하는 검증 절차를 제공합니다.
 
@@ -499,7 +518,9 @@ ros2 topic echo /joint_states --once
 
 # 발행 hz 확인
 ros2 topic hz /joint_states
-```# ROS2 드라이버 (`hdr_ros2_driver`)
+```
+[__SOURCE](2-hdr_ros2_driver/README.md)
+# ROS2 드라이버 (`hdr_ros2_driver`)
 
 `hdr_ros2_driver` 패키지는 HD현대로보틱스의 Open API와 인터페이스하기 위한 핵심 ROS2 드라이버를 제공합니다. 이 드라이버는 REST API를 통해 로봇 제어기와의 포괄적인 통신을 가능하게 하며, 로봇 제어, 모니터링, 파일 작업 및 시스템 관리를 위한 서비스를 지원합니다.
 
@@ -516,7 +537,9 @@ ros2 topic hz /joint_states
 - [구성 매개변수](2-parameters/README.md) - 사용 가능한 launch 내 매개변수
 - [제공되는 토픽](3-topics/README.md) - 퍼블리시되는 로봇 상태 정보
 - [사용 가능한 action](4-actions/README.md) - joint trajectory 실행 및 모션 제어
-- [지원 ROS2 서비스](5-services/README.md) - API 서비스 참조# 실행 지침
+- [지원 ROS2 서비스](5-services/README.md) - API 서비스 참조
+[__SOURCE](2-hdr_ros2_driver/1-launch/README.md)
+# 실행 지침
 
 이 섹션에서는 HDR ROS2 드라이버를 실행하는 방법을 다룹니다.
 
@@ -587,7 +610,9 @@ ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
    - ROS2 환경이 소스되었는지 확인
    - 실행 출력에서 오류 메시지 확인
    - 로봇이 REMOTE 모드에 있는지 확인
-   - 제어기 SW 버전이 **60.32-00** 이상인지 확인# 제공되는 토픽
+   - 제어기 SW 버전이 **60.32-00** 이상인지 확인
+[__SOURCE](2-hdr_ros2_driver/2-topics/README.md)
+# 제공되는 토픽
 
 ## 개요
 
@@ -612,7 +637,9 @@ float64[] velocity     # 라디안/초 단위의 조인트 velocity
 float64[] effort       # 조인트 torque
 ```
 
-**퍼블리싱 주기**: 50 Hz (`publish_rate` 매개변수를 통해 구성 가능)# 사용 가능한 action
+**퍼블리싱 주기**: 50 Hz (`publish_rate` 매개변수를 통해 구성 가능)
+[__SOURCE](2-hdr_ros2_driver/3-actions/README.md)
+# 사용 가능한 action
 
 ## 개요
 
@@ -663,7 +690,9 @@ trajectory_msgs/JointTrajectoryPoint error
 std_msgs/Header header
 actionlib_msgs/GoalStatus status
 control_msgs/FollowJointTrajectoryResult result
-```# ROS2 드라이버 서비스
+```
+[__SOURCE](2-hdr_ros2_driver/4-services/README.md)
+# ROS2 드라이버 서비스
 
 ## 개요
 
@@ -699,7 +728,9 @@ ros2 service call /hdr_ros2_driver/robot/get/motor_state std_srvs/srv/Trigger
 
 # 모터 전원 켜기
 ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/Trigger
-```# 로봇 제어 서비스
+```
+[__SOURCE](2-hdr_ros2_driver/4-services/1-control/README.md)
+# 로봇 제어 서비스
 
 ## 개요
 
@@ -771,7 +802,9 @@ ros2 service call /hdr_ros2_driver/control/get/ios/sio hdr_msgs/srv/IoRequest "{
 
 # 디지털 I/O 설정
 ros2 service call /hdr_ros2_driver/control/post/ios/dio hdr_msgs/srv/IoRequest "{type: 'do', blk_no: 1, sig_no: 1, val: 1}"
-```# 작업 관리 서비스
+```
+[__SOURCE](2-hdr_ros2_driver/4-services/2-task/README.md)
+# 작업 관리 서비스
 
 ## 개요
 
@@ -800,7 +833,9 @@ ros2 service call /hdr_ros2_driver/task/post/release_wait std_srvs/srv/Trigger
 
 # 프로그램 카운터 인덱스 설정
 ros2 service call /hdr_ros2_driver/task/post/set_cur_pc_idx hdr_msgs/srv/Number "{data: 0}"
-```# 파일 관리 서비스
+```
+[__SOURCE](2-hdr_ros2_driver/4-services/3-file/README.md)
+# 파일 관리 서비스
 
 ## 개요
 
@@ -838,7 +873,9 @@ ros2 service call /hdr_ros2_driver/file/post/rename_file hdr_msgs/srv/FileRename
 
 # 파일 삭제
 ros2 service call /hdr_ros2_driver/file/delete/files hdr_msgs/srv/FilePath "{path: 'project/jobs/0001.job'}"
-```# PLC 통신 서비스
+```
+[__SOURCE](2-hdr_ros2_driver/4-services/4-plc/README.md)
+# PLC 통신 서비스
 
 ## 개요
 
@@ -854,7 +891,9 @@ ros2 service call /hdr_ros2_driver/plc/get/relay_value hdr_msgs/srv/IoplcGet "{n
 
 # 릴레이 값 설정
 ros2 service call /hdr_ros2_driver/plc/post/relay_value hdr_msgs/srv/IoplcPost "{name: 'fb1.do0', value: 1}"
-```# 콘솔 명령 서비스
+```
+[__SOURCE](2-hdr_ros2_driver/4-services/5-console/README.md)
+# 콘솔 명령 서비스
 
 ## 개요
 
@@ -889,7 +928,9 @@ ros2 service call /hdr_ros2_driver/clock/put/date_time hdr_msgs/srv/DateTime "{y
 ```bash
 # 로그 관리자 정보 가져오기
 ros2 service call /hdr_ros2_driver/log/get/manager hdr_msgs/srv/LogManager "{n_item: 50, cat_p: 'E,W,N', id_min: 0, ts_min: '2025/05/01 00:00:00.000', ts_max: '2025/05/13 23:59:59.999'}"
-```# 프로젝트 관리 서비스
+```
+[__SOURCE](2-hdr_ros2_driver/4-services/6-project/README.md)
+# 프로젝트 관리 서비스
 
 ## 개요
 
@@ -915,7 +956,9 @@ ros2 service call /hdr_ros2_driver/project/post/delete_job hdr_msgs/srv/FilePath
 
 # 업데이트된 작업 다시 로드
 ros2 service call /hdr_ros2_driver/project/post/reload_updated_jobs std_srvs/srv/Trigger
-```# 버전 정보 서비스
+```
+[__SOURCE](2-hdr_ros2_driver/4-services/7-version/README.md)
+# 버전 정보 서비스
 
 ## 개요
 
@@ -931,7 +974,9 @@ ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 
 # 시스템 버전 조회
 ros2 service call /hdr_ros2_driver/get/system_ver std_srvs/srv/Trigger
-```# ROS2 제어 통합 (`hdr_hardware_interface`)
+```
+[__SOURCE](3-hdr_hardware_interface/README.md)
+# ROS2 제어 통합 (`hdr_hardware_interface`)
 
 ## 개요
 
@@ -1013,7 +1058,9 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
 | `/controller_manager/load_controller`          | controller_manager_msgs/srv/LoadController         | controller를 로드합니다             |
 | `/controller_manager/unload_controller`        | controller_manager_msgs/srv/UnloadController       | 지정된 controller를 언로드합니다.    |
 
----# 로봇 URDF (`hdr_description`)
+---
+[__SOURCE](4-hdr_description/README.md)
+# 로봇 URDF (`hdr_description`)
 
 `hdr_description` 패키지는 ROS2에서 HD현대로보틱스 로봇을 위한 로봇 URDF, mesh, 시각화 구성을 포함합니다. 이 패키지는 시뮬레이션, 시각화, 모션 플래닝에 필요한 기본적인 URDF/XACRO 정의를 제공합니다.
 
@@ -1080,7 +1127,9 @@ ros2 launch hdr_description display_robot.launch.py robot_model:=ha006b
 - 계산 효율성에 최적화됨
 - 물리 엔진 및 모션 플래너에서 사용
 
-모델별 세부사항은 [지원되는 로봇 모델](../0-intro/2-robot-models/README.md)을 참조하세요.# MoveIt2 구성 (`hdr_moveit_config`)
+모델별 세부사항은 [지원되는 로봇 모델](../0-intro/2-robot-models/README.md)을 참조하세요.
+[__SOURCE](5-hdr_moveit_config/README.md)
+# MoveIt2 구성 (`hdr_moveit_config`)
 
 `hdr_moveit_config` 패키지는 실제 환경과 시뮬레이션 환경에서 HD현대로보틱스 로봇을 제어하기 위한 MoveIt2 구성 패키지를 제공합니다. 이 패키지는 SRDF 정의, 조인트 제한 및 제어기 설정을 포함한 로봇별 모션 플래닝 구성을 포함합니다.
 
@@ -1173,7 +1222,9 @@ ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 1. 속도/가속도 제한을 위해 `joint_limits.yaml` 편집 (URDF 상에 정의된 조인트 별 최대 속도 초과하여 적용 불가능)
 2. 플래너별 설정을 위해 `ompl_planning.yaml` 수정
 3. 새로운 플래닝 그룹 또는 자세를 위해 SRDF 업데이트
-4. `controllers.yaml`에서 제어기 매개변수 조정# HD현대로보틱스 클라이언트 드라이버
+4. `controllers.yaml`에서 제어기 매개변수 조정
+[__SOURCE](6-hdr_client_driver/README.md)
+# HD현대로보틱스 클라이언트 드라이버
 
 HDR 클라이언트 드라이버는 HD현대로보틱스의 로봇 제어기와 HTTP (Open API) 및 소켓 (TCP/UDP) 인터페이스를 통해 통신하기 위한 포괄적인 C++ 라이브러리를 제공합니다. 이 라이브러리는 양쪽 통신 계층을 추상화하고 로봇 제어 및 모니터링, 파일 관리, 실시간 명령 실행, ROS2와의 통합을 위한 객체지향 인터페이스를 제공합니다.
 
@@ -1186,7 +1237,9 @@ HDR 클라이언트 드라이버는 HD현대로보틱스의 로봇 제어기와 
 | `include/` | HDR 클라이언트 드라이버 라이브러리를 위한 헤더 파일 |
 | `src/` | 클라이언트 드라이버 함수의 소스 구현 |
 | `src/functions/` | 다양한 로봇 제어기 기능을 위한 API 카테고리 구현 |
-| `examples/` | 드라이버 API 사용 방법을 보여주는 예제 프로그램 |# API 카테고리
+| `examples/` | 드라이버 API 사용 방법을 보여주는 예제 프로그램 |
+[__SOURCE](6-hdr_client_driver/1-api-categories/README.md)
+# API 카테고리
 
 HDR 클라이언트 드라이버는 다음과 같은 API 카테고리를 지원합니다:
 
@@ -1200,7 +1253,9 @@ HDR 클라이언트 드라이버는 로봇 제어기의 다양한 기능에 대�
 - **[파일](4-file/README.md)** - 파일 시스템 작업
 - **[I/O](5-io/README.md)** - 입력/출력 제어
 - **[작업](6-task/README.md)** - 작업 실행 및 변수 관리
-- **[기타](7-etc/README.md)** - 시스템 유틸리티# 제어 API
+- **[기타](7-etc/README.md)** - 시스템 유틸리티
+[__SOURCE](6-hdr_client_driver/1-api-categories/1-control/README.md)
+# 제어 API
 
 ## 개요
 
@@ -1216,6 +1271,8 @@ HDR 클라이언트 드라이버는 로봇 제어기의 다양한 기능에 대�
 | `GetControlUcsNos` | 모션 프로그래밍을 위한 사용 가능한 사용자 좌표계 (UCS) 번호 목록 조회 |
 | `PostControlIosDio` | 디지털 출력(DO) 신호 값 설정 (유형, 블록 번호, 신호 번호, 값) |
 | `PutControlOpCnd` | 동작 조건 매개변수 업데이트 (재생 모드, 역방향 모션 최대 속도, 사용자 좌표계) |
+
+[__SOURCE](6-hdr_client_driver/1-api-categories/2-robot/README.md)
 # 로봇 API
 
 ## 개요
@@ -1238,7 +1295,9 @@ HDR 클라이언트 드라이버는 로봇 제어기의 다양한 기능에 대�
 | `PostRobotCrdSys` | 모션 및 I/O에 사용할 좌표계 지정 (-1: 기본값, 0: 베이스, 1: 도구, 2: 사용자1, 3: 사용자2) |
 | `PostRobotEmergencyStop` | 안전 대응을 위해 모든 로봇 모션의 즉시 비상 정지 |
 | `PostInitJointTrajectory` | 궤적 버퍼 초기화 |
-| `PostInsertJointTrajectoryPoints` | 모션 실행을 위한 궤적 지점을 컨트롤러 버퍼에 입력 |# 프로젝트 API
+| `PostInsertJointTrajectoryPoints` | 모션 실행을 위한 궤적 지점을 컨트롤러 버퍼에 입력 |
+[__SOURCE](6-hdr_client_driver/1-api-categories/3-project/README.md)
+# 프로젝트 API
 
 ## 개요
 
@@ -1251,7 +1310,9 @@ HDR 클라이언트 드라이버는 로봇 제어기의 다양한 기능에 대�
 | `GetProjectRgen` | 현재 프로젝트 실행 상태 조회 (0: 실행 중 아님, 1: 실행 중, 2: 일시정지) |
 | `GetProjectJobsInfo` | 프로젝트에 등록된 모든 작업의 메타데이터 조회 (이름, 경로, 수정 상태) |
 | `PostProjectReloadUpdateJobs` | 외부에서 수정된 작업을 다시 로드하고 동기화하여 메모리 내 작업 상태 업데이트 |
-| `PostProjectDeleteJob` | 프로젝트 경로에서 지정된 작업 파일 삭제 |# 파일 API
+| `PostProjectDeleteJob` | 프로젝트 경로에서 지정된 작업 파일 삭제 |
+[__SOURCE](6-hdr_client_driver/1-api-categories/4-file/README.md)
+# 파일 API
 
 ## 개요
 
@@ -1268,7 +1329,9 @@ HDR 클라이언트 드라이버는 로봇 제어기의 다양한 기능에 대�
 | `PostRenameFile` | 파일 또는 디렉터리를 한 경로에서 다른 경로로 이름 변경 또는 이동 |
 | `PostMkdir` | 지정된 경로에 새 디렉터리 생성 |
 | `PostFiles` | 로컬 파일을 제어기의 지정된 위치에 업로드 |
-| `PostDeleteFile` | 제어기의 파일 또는 디렉터리 삭제 |# I/O API
+| `PostDeleteFile` | 제어기의 파일 또는 디렉터리 삭제 |
+[__SOURCE](6-hdr_client_driver/1-api-categories/5-io/README.md)
+# I/O API
 
 ## 개요
 
@@ -1279,7 +1342,9 @@ I/O API 카테고리는 HD 현대로보틱스 제어기의 PLC 통신 기능을 
 | 함수 | 설명 |
 |------|------|
 | `GetRelayValue` | "FB{인덱스}.{릴레이_유형}" 형식 또는 "M", "S"와 같은 간단한 형식을 사용하여 Hi6 PLC에서 릴레이 값 조회 |
-| `SetRelayValue` | 로봇 제어기의 내부 PLC에서 특정 릴레이 값 설정. 다양한 데이터 유형 접미사 지원 |# 태스크 API
+| `SetRelayValue` | 로봇 제어기의 내부 PLC에서 특정 릴레이 값 설정. 다양한 데이터 유형 접미사 지원 |
+[__SOURCE](6-hdr_client_driver/1-api-categories/6-task/README.md)
+# 태스크 API
 
 ## 개요
 
@@ -1293,7 +1358,9 @@ I/O API 카테고리는 HD 현대로보틱스 제어기의 PLC 통신 기능을 
 | `PostReleaseWait` | task[0]을 WAIT 상태에서 해제하여 일시정지된 태스크 재개 |
 | `PostSetCurPcIdx` | task[0]의 프로그램 카운터(PC) 인덱스를 수동으로 설정 (디버깅 또는 특정 로직으로 점프에 유용) |
 | `PostSolveExpr` | 태스크 범위 내에서 표현식 평가 (수학, 논리 및 변수 접근 지원) |
-| `PostExecuteMove` | 로봇 태스크에서 직접 이동 명령 실행 (L, P, SP 등) |# 기타 API
+| `PostExecuteMove` | 로봇 태스크에서 직접 이동 명령 실행 (L, P, SP 등) |
+[__SOURCE](6-hdr_client_driver/1-api-categories/7-etc/README.md)
+# 기타 API
 
 ## 개요
 
@@ -1305,7 +1372,9 @@ I/O API 카테고리는 HD 현대로보틱스 제어기의 PLC 통신 기능을 
 |------|------|
 | `GetDateTime` | 로봇 제어기에서 현재 시스템 날짜 및 시간 조회 (년, 월, 일, 시, 분, 초) |
 | `PutDateTime` | 로봇 제어기의 시스템 날짜 및 시간 설정 (입력 검증 포함) |
-| `GetLogManager` | 필터링 옵션이 있는 제어기 로그 조회 (항목 수, 카테고리 E,W,N,S,O,I,P,H,C,M, ID 범위, 타임스탬프 범위) |# Gazebo 시뮬레이션 (`hdr_simulation_gz`)
+| `GetLogManager` | 필터링 옵션이 있는 제어기 로그 조회 (항목 수, 카테고리 E,W,N,S,O,I,P,H,C,M, ID 범위, 타임스탬프 범위) |
+[__SOURCE](7-hdr_simulation_gz/README.md)
+# Gazebo 시뮬레이션 (`hdr_simulation_gz`)
 
 `hdr_simulation_gz` 패키지는 HD현대로보틱스 산업용 로봇을 위한 ROS2 + Gazebo (Ignition) 시뮬레이션 환경을 제공합니다. 이 패키지는 물리적 하드웨어 없이도 로봇 응용 프로그램의 개발, 테스트 및 검증을 가능하게 합니다.
 
@@ -1353,7 +1422,9 @@ ros2 launch hdr_simulation_gz hdr_gz_moveit.launch.py robot_model:=hdr50_22
 
 ## 향후 개선사항
 - 센서 및 툴 시뮬레이션 지원
-- world 및 예제 지원# HD현대로보틱스 ROS2 메시지
+- world 및 예제 지원
+[__SOURCE](8-hdr_msgs/README.md)
+# HD현대로보틱스 ROS2 메시지
 
 ## 개요
 
@@ -1381,7 +1452,9 @@ ros2 launch hdr_simulation_gz hdr_gz_moveit.launch.py robot_model:=hdr50_22
 | `srv/OpCnd.srv`       | 재생 모드나 사용자 좌표계와 같은 작동 조건을 읽거나 씁니다. |
 | `srv/PoseCur.srv`     | 내부 구성에 따라 관절 공간 또는 작업 공간에서 현재 로봇 포즈(위치 + 방향)를 가져옵니다. |
 | `srv/ProgramCnt.srv`  | 작업 로직의 특정 위치로 이동하기 위해 프로그램 실행 포인터(pno, sno, fno 등)를 설정합니다. |
-| `srv/ProgramVar.srv`  | 변수를 읽거나 할당합니다. 범위(로컬/글로벌), 표현식 및 지속성을 지정할 수 있습니다. |# ROS2 드라이버 실행 및 로봇 제어
+| `srv/ProgramVar.srv`  | 변수를 읽거나 할당합니다. 범위(로컬/글로벌), 표현식 및 지속성을 지정할 수 있습니다. |
+[__SOURCE](9-running/README.md)
+# ROS2 드라이버 실행 및 로봇 제어
 
 ## 개요
 
@@ -1396,7 +1469,9 @@ HD현대로보틱스 ROS2 시스템은 다음과 같은 제어 방법을 제공�
 ## 다음 단계
 
 - [MoveIt2 실행 절차](1-launch-moveit2/README.md)
-- [ros2_control 직접 제어](2-launch-ros2_control/README.md)# MoveIt2로 실행하기
+- [ros2_control 직접 제어](2-launch-ros2_control/README.md)
+[__SOURCE](9-running/1-launch-moveit2/README.md)
+# MoveIt2로 실행하기
 
 ## 개요
 
@@ -1483,6 +1558,8 @@ ros2 service list | grep move_group
 - 실제 로봇과 작업할 때는 항상 비상 정지 버튼을 접근 가능한 곳에 두세요
 - 로봇이 예상치 못한 동작을 할 경우 즉시 비상 정지하세요
 - 처음 사용할 때는 낮은 속도로 테스트하세요
+
+[__SOURCE](9-running/2-launch-ros2_control/README.md)
 # ros2_control 시스템 실행
 
 ## 개요
