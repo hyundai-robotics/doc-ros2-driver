@@ -1,4 +1,4 @@
-# ros2_control System Execution
+﻿# ros2_control System Execution
 
 ## Overview
 
@@ -94,7 +94,7 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
 
 **When the robot does not operate**
-If Start Mode is not activated while **Motor ON** is enabled, the system generates the error “External Command Operation Disabled (E01554).”
+If Start Mode is not activated while **Motor ON** is enabled, the system generates the error "External Command Operation Disabled (E01554)."
 If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
 In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.
 

@@ -1,4 +1,4 @@
-# API Categories
+﻿# API Categories
 
 The HDR client driver supports the following API categories:
 

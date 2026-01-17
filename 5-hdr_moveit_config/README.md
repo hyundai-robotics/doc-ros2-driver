@@ -1,4 +1,4 @@
-# MoveIt2 Configuration (`hdr_moveit_config`)
+﻿# MoveIt2 Configuration (`hdr_moveit_config`)
 
 The `hdr_moveit_config` package provides MoveIt2 configuration packages for controlling HD Hyundai Robotics robots in both real and simulation environments. This package includes robot-specific motion planning configurations with SRDF definitions, joint limits, and controller settings.
 

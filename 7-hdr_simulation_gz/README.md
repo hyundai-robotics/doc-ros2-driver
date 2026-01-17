@@ -1,4 +1,4 @@
-# Gazebo Simulation (`hdr_simulation_gz`)
+﻿# Gazebo Simulation (`hdr_simulation_gz`)
 
 The `hdr_simulation_gz` package provides a ROS2 + Gazebo (Ignition) simulation environment for HD Hyundai Robotics industrial robots. This package enables development, testing, and validation of robotic applications without physical hardware.
 

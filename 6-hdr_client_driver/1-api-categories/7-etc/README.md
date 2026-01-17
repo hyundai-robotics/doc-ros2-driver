@@ -1,4 +1,4 @@
-# Miscellaneous API
+﻿# Miscellaneous API
 
 ## Overview
 

@@ -1,4 +1,4 @@
-# Robot Joint and Link Names
+﻿# Robot Joint and Link Names
 
 HD Hyundai Robotics robots follow the joint and link naming conventions as shown below within the URDF.
 

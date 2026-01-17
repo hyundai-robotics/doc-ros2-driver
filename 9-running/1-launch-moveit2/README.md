@@ -1,4 +1,4 @@
-# Running with MoveIt2
+﻿# Running with MoveIt2
 
 ## Overview
 
@@ -86,6 +86,6 @@ ros2 service list | grep move_group
 When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
 
 **When the robot does not operate**
-If Start Mode is not activated while **Motor ON** is enabled, the system generates the error “External Command Operation Disabled (E01554).”
+If Start Mode is not activated while **Motor ON** is enabled, the system generates the error "External Command Operation Disabled (E01554)."
 If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
 In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.

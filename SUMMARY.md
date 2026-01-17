@@ -1,6 +1,6 @@
-# Table of contents
+﻿# Table of contents
 
-* [HD Hyundai Robotics ROS2 Driver Manual](README.md)
+* [${cont_model} Controller Function Manual - ROS2 Driver](README.md)
 
 * [0. Overview](0-intro/README.md)
   * [0.1 Controller Models](0-intro/1-controller-models/README.md)
