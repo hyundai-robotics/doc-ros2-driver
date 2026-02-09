@@ -1,6 +1,6 @@
 ﻿{
     "langCode": "en",
-    "series": "${cont_model} Controller",
+    "series": "Hi6 & Hi7 Controller",
     "title": "Function Manual - ROS2 Driver",
     "publisher": "HD Hyundai Robotics",
     "tocTitle": "Table of Contents",

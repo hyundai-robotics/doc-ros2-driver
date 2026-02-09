@@ -1,44 +1,41 @@
-﻿
-[__SOURCE](README.md)
-# ${cont_model} Controller Function Manual - ROS2 Driver
+﻿# Hi6 & Hi7 Controller Function Manual - ROS2 Driver
 
 Currently, ROS2-compatible controllers are the Hi6 series, supported from controller software version **v60.34-00** or higher. </br>
-Version **v60.34-00** is scheduled for official release in 2Q 2026. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release.
-[__SOURCE](0-intro/README.md)
-# Overview
+Version **v60.34-00** is scheduled for official release in 2Q 2026. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release. </br>
+⚠️ **The Hi7 model is scheduled for release, and the specific support timeline has not yet been finalized. We will provide further details via an official announcement as soon as the formal release schedule is established. Please keep this in mind.**
+# 1. Overview
 
 This manual provides a description of the HD Hyundai Robotics (HDR) ROS2 driver.
 
-The HDR ROS2 driver integrates HD Hyundai Robotics industrial robot controllers (Hi6 series) with ROS2 systems to support both simulation environments and real robot control functions.
+The HDR ROS2 driver integrates HD Hyundai Robotics industrial robot controllers (Hi6, Hi7 series) with ROS2 systems to support both simulation environments and real robot control functions.
 
 ![hdr_main](../_assets/0_hdr_main.png)
 
 
-## Prerequisites
+### Prerequisites
 Before using the HDR ROS2 driver, please make sure to check the following items:
-- [Supported Controllers](1-controller-models/README.md) - Compatible Hi6 series controllers
+- [Supported Controllers](1-controller-models/README.md) - Compatible Hi6, Hi7 series controllers
 - [Supported Robot Models](2-robot-models/README.md) - Compatible HD Hyundai Robotics robot models
 - [System Requirements](3-requirements/README.md) - Hardware and software requirements
 - [ROS2 Version](4-ros2-version/README.md) - Supported ROS2 versions
 - [Robot Joint and Link Names](5-hdr-robot/README.md) - Robot joint and link naming conventions in ROS2
 
-## Installation and Initial Setup
+### Installation and Initial Setup
 After verifying all the above items, please proceed with the ROS2 driver installation and initial setup according to the following procedures:
 - [Repository Overview](1-repo-overview/README.md) - HDR ROS2 driver repository structure and architecture overview
 - [Package Installation](2-installation/README.md) - HDR ROS2 driver build and installation method
 - [Controller and PC Setup](3-initial-setup/README.md) - Initial setup method for using HDR ROS2 driver
 - [Installation Verification](4-verifying/README.md) - Verify that installation and setup are completed correctly
 
-## Quick Start with ROS2 Driver
+### Quick Start with ROS2 Driver
 After completing all the installation and initial setup processes above, you can start the HDR ROS2 driver and begin robot control through the following procedures:
 
-- [Running ROS2 Driver](8-running/README.md) - ROS2 driver execution and robot control methods
+- [Running ROS2 Driver](10-running/README.md) - ROS2 driver execution and robot control methods
 
 ⚠️ **Please make sure to check the prerequisites and complete all installation and initial setup before proceeding.**
 
-⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v60.34-00* or higher. </br> The *v60.34-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.**
-[__SOURCE](0-intro/1-controller-models/README.md)
-# Supported Controller Models
+⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v60.34-00* or higher. </br> The *v60.34-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.** 
+# 1.1 Supported Controller Models
 The HD Hyundai Robotics Hi6 controller models that officially support ROS2 functionality are as follows:
 
 - Hi6-N10
@@ -53,13 +50,14 @@ The HD Hyundai Robotics Hi6 controller models that officially support ROS2 funct
 - SW Version: **60.32-00** or higher (scheduled for release in October)
 - Operation Mode: **REMOTE mode**
 
+The Hi7 controller series, including future model lineups and support schedules, will be updated on this list as soon as they are finalized.
+
 > ⚠️ **Note:** The HD Hyundai Robotics ROS2 driver does **not support** the **Hi5** controller series.
 
-## Next Steps
+### Next Steps
 
 After confirming controller compatibility, check [Supported Robot Models](../2-robot-models/README.md) to verify that your robot is supported.
-[__SOURCE](0-intro/2-robot-models/README.md)
-# Supported Robot Models
+# 1.2 Supported Robot Models
 
 The robot models currently officially supported by the HD Hyundai Robotics driver are as follows:
 
@@ -73,11 +71,11 @@ The robot models currently officially supported by the HD Hyundai Robotics drive
 - hh020
 - hdr35_20
 
-## Model Name Changes
+### Model Name Changes
 
 > ❗ **Note:** Robot models `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`, `hdr35_20` are the renamed versions of models `HH7`, `HH8`, `UH020`, `HH050`, `HS220`, `UH035` respectively.
 
-## Contents Included for Each Model
+### Contents Included for Each Model
 
 Each supported robot model includes the following:
 
@@ -86,43 +84,41 @@ Each supported robot model includes the following:
 - **MoveIt2 Configuration**: Motion planning setup with model-specific soft limits
 - **Gazebo Support**: Simulation integration support
 
-## Next Steps
+### Next Steps
 
 After confirming the robot model, proceed to [System Requirements](../3-requirements/README.md) to verify that your system is properly configured.
-[__SOURCE](0-intro/3-requirements/README.md)
-# System Requirements
+# 1.3 System Requirements
 
 This page describes the hardware and software requirements for running the HD Hyundai Robotics ROS2 driver.
 
-## Hardware Requirements
+### Hardware Requirements
 
-### Robot Controller
+#### Robot Controller
 - **Compatible Controllers**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N00-60(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
 - **Controller SW Version**: **60.32-00** or higher
 - **Operation Mode**: Robot must be set to **REMOTE** mode
 - **Network Interface**: Ethernet connection (LAN1, LAN2, or LAN3)
 
-### Development PC
+#### Development PC
 - **Operating System**: Ubuntu 22.04 LTS or Ubuntu 24.04 LTS
 - **Memory**: Minimum 8GB RAM (16GB recommended for simulation)
 - **Network**: Ethernet interface for robot communication
 - **CPU**: Multi-core processor (4 cores or more recommended)
 
 
-## Next Steps
+### Next Steps
 
 Once your system meets all requirements, check [Supported ROS2 Versions](../4-ros2-version/README.md).
-[__SOURCE](0-intro/4-ros2-version/README.md)
-# Supported ROS2 Versions
+# 1.4 Supported ROS2 Versions
 
 The HD Hyundai Robotics ROS2 driver supports specific ROS2 distributions that have been tested and validated in robot controller and simulation environments.
 
-## Supported ROS2 Distributions
+### Supported ROS2 Distributions
 
 - **ROS2 Humble Hawksbill** (Ubuntu 22.04 LTS)
 - **ROS2 Jazzy Jalisco** (Ubuntu 24.04 LTS)
 
-## Version Verification
+### Version Verification
 
 After installation, verify your ROS2 setup:
 
@@ -134,16 +130,15 @@ source /opt/ros/$ROS_DISTRO/setup.bash
 ros2 doctor
 ```
 
-## Next Steps
+### Next Steps
 
 After confirming ROS2 compatibility, proceed to [Getting Started](../../1-start/README.md) for installation.
-[__SOURCE](0-intro/5-hdr-robot/README.md)
-# Robot Joint and Link Names
+# 1.5 Robot Joint and Link Names
 
 HD Hyundai Robotics robots follow the joint and link naming conventions as shown below within the URDF.
 
 
-## Joint Names
+### Joint Names
 
 |joint no|joint name </br>(URDF)|joint name </br>(TP)|
 |:------:|:---:|:---:|
@@ -155,7 +150,7 @@ HD Hyundai Robotics robots follow the joint and link naming conventions as shown
 |6|j6|R1|
 
 
-## Link Names
+### Link Names
 
 |link No|link Name|
 |:------:|:---:|
@@ -168,7 +163,7 @@ HD Hyundai Robotics robots follow the joint and link naming conventions as shown
 |6|flange_link|
 
 
-## Link Relationships
+### Link Relationships
 
 |link No|link Name|joint|parent link|joint type|note|
 |:------:|:---:|:---:|:------:|:---:|:---:|
@@ -182,23 +177,21 @@ HD Hyundai Robotics robots follow the joint and link naming conventions as shown
 |6|flange_link|j6|wrist_holder_link|revolute||
 ||flange|flange_link-flange|flange_link|fixed|ROS-Industrial standard coordinate system|
 ||tool0|flange-tool0|flange|fixed|ROS-Industrial standard coordinate system|
-[__SOURCE](1-start/README.md)
-# Getting Started
+# 2. Getting Started
 
 This section provides step-by-step instructions for installation, configuration, and execution of the HD Hyundai Robotics ROS2 driver. Follow this guide to set up your development environment and establish communication with the robot.
 
-## Installation and Setup Process
+### Installation and Setup Process
 
 1. [Repository Overview](1-repo-overview/README.md) - Understanding package structure and relationships
 2. [Installation](2-installation/README.md) - Repository cloning and build
 3. [Initial Setup](3-initial-setup/README.md) - Networking configuration setup
 4. [Verification](4-verifying/README.md) - Installation testing
-[__SOURCE](1-start/1-repo-overview/README.md)
-# Repository Overview
+# 2.1 Repository Overview
 
 The HD Hyundai Robotics ROS2 driver consists of multiple interconnected packages that work together to provide robot control, simulation, and motion planning capabilities.
 
-## Repository Architecture
+### Repository Architecture
 
 ```
 HD Hyundai Robotics ROS2 Driver
@@ -217,7 +210,7 @@ hdr_description            # Robot URDF models and mesh
 hdr_simulation_gz          # Gazebo simulation integration
 ```
 
-## Package Details within Repository
+### Package Details within Repository
 
 - **[ROS2 Driver (`hdr_ros2_driver`)](../../2-hdr_ros2_driver/README.md)** </br>
 Primary ROS2 node providing services for robot control, file management, I/O operations, and system monitoring
@@ -241,18 +234,17 @@ Gazebo Ignition simulation integration
 Custom ROS2 service and message definitions for communication with HD Hyundai Robotics controllers
 
 
-## Next Steps
+### Next Steps
 
 1. Review the individual package documentation linked above.
 2. Proceed to [Installation](../2-installation/README.md) to build the packages.
 3. Configure robot connection in [Initial Setup](../3-initial-setup/README.md).
-[__SOURCE](1-start/2-installation/README.md)
-# Package Build and Installation
+# 2.2 Package Build and Installation
 This section covers the installation process of the HD Hyundai Robotics ROS2 driver, including repository cloning, dependencies installation, and package build.
 
-## Workspace Setup
+### Workspace Setup
 
-### Create ROS2 Workspace
+#### Create ROS2 Workspace
 
 ```bash
 # Create workspace directory
@@ -260,7 +252,7 @@ mkdir -p ~/hdr_ws/src
 cd ~/hdr_ws
 ```
 
-### Clone Source Repositories
+#### Clone Source Repositories
 
 ```bash
 cd ~/hdr_ws/src
@@ -276,9 +268,9 @@ git clone https://github.com/hyundai-robotics/hdr_description.git
 git clone https://github.com/hyundai-robotics/hdr_simulation_gz.git
 ```
 
-## Dependencies Installation
+### Dependencies Installation
 
-### Install ROS2 Dependencies
+#### Install ROS2 Dependencies
 
 ```bash
 cd ~/hdr_ws
@@ -290,9 +282,9 @@ rosdep update
 rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
-## Build Process
+### Build Process
 
-### Standard Build
+#### Standard Build
 
 ```bash
 cd ~/hdr_ws
@@ -301,13 +293,13 @@ cd ~/hdr_ws
 colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Release
 ```
 
-### Build Configuration Options
+#### Build Configuration Options
 ```bash
 # Build with debug symbols
 colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Debug
 ```
 
-### Environment Setup
+#### Environment Setup
 
 ```bash
 cd ~/hdr_ws
@@ -316,18 +308,17 @@ source install/setup.bash
 echo "source ~/hdr_ws/install/setup.bash" >> ~/.bashrc
 ```
 
-## Next Steps
+### Next Steps
 
 After successful package installation and build:
 1. Proceed to [Initial Setup](../3-initial-setup/README.md) for controller and PC configuration
 2. Run [Installation Verification](../4-verifying/README.md) tests
-[__SOURCE](1-start/2-installation/README.md)
-# Package Build and Installation
+# 2.2 Package Build and Installation
 This section covers the installation process of the HD Hyundai Robotics ROS2 driver, including repository cloning, dependencies installation, and package build.
 
-## Workspace Setup
+### Workspace Setup
 
-### Create ROS2 Workspace
+#### Create ROS2 Workspace
 
 ```bash
 # Create workspace directory
@@ -335,7 +326,7 @@ mkdir -p ~/hdr_ws/src
 cd ~/hdr_ws
 ```
 
-### Clone Source Repositories
+#### Clone Source Repositories
 
 ```bash
 cd ~/hdr_ws/src
@@ -351,9 +342,9 @@ git clone https://github.com/hyundai-robotics/hdr_description.git
 git clone https://github.com/hyundai-robotics/hdr_simulation_gz.git
 ```
 
-## Dependencies Installation
+### Dependencies Installation
 
-### Install ROS2 Dependencies
+#### Install ROS2 Dependencies
 
 ```bash
 cd ~/hdr_ws
@@ -365,9 +356,9 @@ rosdep update
 rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
-## Build Process
+### Build Process
 
-### Standard Build
+#### Standard Build
 
 ```bash
 cd ~/hdr_ws
@@ -376,13 +367,13 @@ cd ~/hdr_ws
 colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Release
 ```
 
-### Build Configuration Options
+#### Build Configuration Options
 ```bash
 # Build with debug symbols
 colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Debug
 ```
 
-### Environment Setup
+#### Environment Setup
 
 ```bash
 cd ~/hdr_ws
@@ -391,25 +382,24 @@ source install/setup.bash
 echo "source ~/hdr_ws/install/setup.bash" >> ~/.bashrc
 ```
 
-## Next Steps
+### Next Steps
 
 After successful package installation and build:
 1. Proceed to [Initial Setup](../3-initial-setup/README.md) for controller and PC configuration
 2. Run [Installation Verification](../4-verifying/README.md) tests
-[__SOURCE](1-start/3-initial-setup/README.md)
-# Controller and PC Communication Setup
+# 2.3 Controller and PC Communication Setup
 
 This guide covers the configuration of network interfaces on your development PC for communication with HD Hyundai Robotics robot controllers.
 
-## Prerequisites
+### Prerequisites
 ⚠️ Please verify the following before starting setup:
-- **Robot Controller SW Version**: Hi6 series controller with SW version **60.32-00** or higher
+- **Robot Controller SW Version**: Hi6, Hi7 series controller with SW version **60.32-00** or higher
 
-## Network Configuration Overview
+### Network Configuration Overview
 
 The PC must be configured to communicate with the robot controller via Ethernet. The default configuration uses a 192.168.1.x subnet with the controller at 192.168.1.150.
 
-## Default Network Configuration (Using LAN1)
+### Default Network Configuration (Using LAN1)
 
 | Component | Parameter | Default Value |
 |-----------|-----------|---------------|
@@ -418,7 +408,7 @@ The PC must be configured to communicate with the robot controller via Ethernet.
 | **Subnet Mask** | Network Mask | 255.255.255.0 |
 | **Gateway** | Default Gateway | 192.168.1.1  |
 
-## Cable Connection
+### Cable Connection
 
 ![controller](../../_assets/controller.png)
 
@@ -438,13 +428,13 @@ The PC must be configured to communicate with the robot controller via Ethernet.
    - Check network port LED indicators (if available)
 
 
-## PC Network Interface Configuration
+### PC Network Interface Configuration
 
 ![LAN_com](../../_assets/LAN_com.png)
 
-### Using Network Manager GUI
+#### Using Network Manager GUI
 
-#### Ubuntu Desktop (GNOME)
+##### Ubuntu Desktop (GNOME)
 
 1. **Open Network Settings**
    - Click on the network icon in the top-right corner
@@ -465,9 +455,9 @@ The PC must be configured to communicate with the robot controller via Ethernet.
 
 ![ip_setup](../../_assets/ip_setup.png)
 
-## Verification
+### Verification
 
-### Verify Network Configuration
+#### Verify Network Configuration
 
 ```bash
 # Test network connectivity
@@ -475,13 +465,12 @@ ping -c 4 192.168.1.150
 ```
 
 ![ping_test](../../_assets/ping_test.png)
-[__SOURCE](1-start/4-verifying/README.md)
-# Installation Verification
+# 2.4 Installation Verification
 
 This guide provides verification procedures to confirm that the HD Hyundai Robotics ROS2 driver is properly installed, configured, and ready to operate.
 
 
-### Robot Mode Configuration
+#### Robot Mode Configuration
 
 The HDR ROS2 driver operates only when the robot is in **REMOTE** mode.
 
@@ -490,7 +479,7 @@ Please set the controller to remote control mode by switching the mode switch on
 ![ip_setup](../../_assets/tp_operate.png)
 
 
-### HDR ROS2 Driver Execution Test
+#### HDR ROS2 Driver Execution Test
 
 ```bash
 # Run HDR ROS2 driver (ensure robot is in REMOTE mode)
@@ -506,7 +495,7 @@ ros2 control list_controllers
 # joint_trajectory_controller[joint_trajectory_controller/JointTrajectoryController] active
 ```
 
-### Joint State Publishing Test
+#### Joint State Publishing Test
 
 ```bash
 # Verify joint state is being published
@@ -518,33 +507,31 @@ ros2 topic echo /joint_states --once
 # Check publishing frequency
 ros2 topic hz /joint_states
 ```
-[__SOURCE](2-hdr_ros2_driver/README.md)
-# ROS2 Driver (`hdr_ros2_driver`)
+# 3. ROS2 Driver (`hdr_ros2_driver`)
 
 The `hdr_ros2_driver` package provides a core ROS2 driver for interfacing with HD Hyundai Robotics' Open API. This driver enables comprehensive communication with robot controllers through REST API, supporting services for robot control, monitoring, file operations, and system management.
 
-## Key Features
+### Key Features
 
 - **Robot State Publishing**: Real-time joint state information via `/joint_states` topic
 - **Motion Control**: Joint trajectory control through ROS2 actions
 - **Comprehensive Services**: Over 30 service endpoints organized by functionality
 
 
-## Detailed Documentation
+### Detailed Documentation
 
 - [Launch Instructions](1-launch/README.md) - Launch files for driver execution
 - [Configuration Parameters](2-parameters/README.md) - Available parameters within launch
 - [Provided Topics](3-topics/README.md) - Published robot state information
 - [Available Actions](4-actions/README.md) - Joint trajectory execution and motion control
 - [Supported ROS2 Services](5-services/README.md) - API service reference
-[__SOURCE](2-hdr_ros2_driver/1-launch/README.md)
-# Launch Instructions
+# 3.1 HDR ROS2 Driver launch
 
 This section covers how to launch the HDR ROS2 driver.
 
-## Basic Launch
+### Basic Launch
 
-### HDR ROS2 Driver Launch
+#### HDR ROS2 Driver Launch
 ```bash
 # Launch with default parameters
 ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py
@@ -554,9 +541,9 @@ This will start the driver with:
 - Default IP: 192.168.1.150
 - Default Port: 8888
 
-## Custom Configuration
+### Custom Configuration
 
-### Custom IP and Port
+#### Custom IP and Port
 ```bash
 # Launch with custom network settings
 ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
@@ -564,7 +551,7 @@ ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
   openapi_port:=8080
 ```
 
-## Launch Parameters
+### Launch Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -572,7 +559,7 @@ ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
 | `openapi_port` | int | `8888` | Controller server port number |
 | `robot_model` | string | `ha006b` | Robot model name |
 
-## Verification
+### Verification
 
 After launch, verify the driver is running:
 
@@ -587,7 +574,7 @@ ros2 service list | grep hdr_ros2_driver
 ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 ```
 
-## Network Setup Prerequisites
+### Network Setup Prerequisites
 
 Before launching, ensure proper network configuration:
 
@@ -596,9 +583,9 @@ Before launching, ensure proper network configuration:
 3. **PC IP**: Set to 192.168.1.x range (x ≠ 150)
 4. **REMOTE Mode**: Ensure robot controller is in REMOTE mode
 
-## Troubleshooting
+### Troubleshooting
 
-### Common Issues
+#### Common Issues
 
 1. **Connection Timeout**
    - Verify robot IP and port: `ping 192.168.1.150`
@@ -610,18 +597,17 @@ Before launching, ensure proper network configuration:
    - Check launch output for error messages
    - Ensure robot is in REMOTE mode
    - Verify controller SW version is **60.32-00** or higher
-[__SOURCE](2-hdr_ros2_driver/2-topics/README.md)
-# Provided Topics
+   # 3.2 Provided Topics
 
-## Overview
+### Overview
 
 The ROS2 driver publishes real-time robot data through standardized ROS2 topics. These topics provide joint states, robot status information, and diagnostic data for monitoring and control applications.
 
-## Published Topics
+### Published Topics
 
-### Joint State Information
+#### Joint State Information
 
-#### `/joint_states` (sensor_msgs/msg/JointState)
+##### `/joint_states` (sensor_msgs/msg/JointState)
 **Description**: Real-time joint position data
 
 **Message Fields**:
@@ -637,16 +623,15 @@ float64[] effort       # Joint effort in torque
 ```
 
 **Publishing Frequency**: 50 Hz (configurable via `publish_rate` parameter)
-[__SOURCE](2-hdr_ros2_driver/3-actions/README.md)
-# Available Actions
+# 3.3 Available Actions
 
-## Overview
+### Overview
 
 The ROS2 driver provides action interfaces for robot joint trajectory control. Actions enable asynchronous operations with progress feedback and cancellation capabilities.
 
-## Joint Trajectory Control Action
+### Joint Trajectory Control Action
 
-### `/joint_trajectory_controller/follow_joint_trajectory` (control_msgs/action/FollowJointTrajectory)
+#### `/joint_trajectory_controller/follow_joint_trajectory` (control_msgs/action/FollowJointTrajectory)
 
 **Description**: Executes joint trajectory control.
 
@@ -690,14 +675,13 @@ std_msgs/Header header
 actionlib_msgs/GoalStatus status
 control_msgs/FollowJointTrajectoryResult result
 ```
-[__SOURCE](2-hdr_ros2_driver/4-services/README.md)
-# ROS2 Driver Services
+# 3.4 ROS2 Driver Services
 
-## Overview
+### Overview
 
 The `hdr_ros2_driver` provides various ROS2 services for communicating with HD Hyundai Robotics Hi6 controllers.
 
-## Service Categories
+### Service Categories
 
 | Category | Description |
 |----------|-------------|
@@ -709,15 +693,15 @@ The `hdr_ros2_driver` provides various ROS2 services for communicating with HD H
 | **[Project Management](6-project/README.md)** | Job information, job deletion/reload |
 | **[Version Information](7-version/README.md)** | API version, system version queries |
 
-## Basic Usage
+### Basic Usage
 
-### Check Service List
+#### Check Service List
 ```bash
 # List all HDR driver services
 ros2 service list | grep hdr_ros2_driver
 ```
 
-### Common Service Calls
+#### Common Service Calls
 ```bash
 # Check API version
 ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
@@ -728,16 +712,15 @@ ros2 service call /hdr_ros2_driver/robot/get/motor_state std_srvs/srv/Trigger
 # Turn on motor power
 ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/Trigger
 ```
-[__SOURCE](2-hdr_ros2_driver/4-services/1-control/README.md)
-# Robot Control Services
+# 3.4.1 Robot Control Services
 
-## Overview
+### Overview
 
 Robot control related ROS2 services provided by `hdr_ros2_driver`.
 
-## Robot Control Services
+### Robot Control Services
 
-### Motor Status and Control
+#### Motor Status and Control
 
 ```bash
 # Get motor status
@@ -750,7 +733,7 @@ ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/Trigger
 ros2 service call /hdr_ros2_driver/robot/post/emergency_stop std_srvs/srv/Trigger
 ```
 
-### Position and Tool Management
+#### Position and Tool Management
 
 ```bash
 # Get current robot position
@@ -772,9 +755,9 @@ ros2 service call /hdr_ros2_driver/robot/post/tool_no hdr_msgs/srv/Number "{data
 ros2 service call /hdr_ros2_driver/robot/post/crd_sys hdr_msgs/srv/Number "{data: 0}"
 ```
 
-## System Control Services
+### System Control Services
 
-### Operating Conditions
+#### Operating Conditions
 
 ```bash
 # Get operating conditions
@@ -787,7 +770,7 @@ ros2 service call /hdr_ros2_driver/control/put/op_cnd hdr_msgs/srv/OpCnd "{playb
 ros2 service call /hdr_ros2_driver/control/get/ucs_nos std_srvs/srv/Trigger
 ```
 
-### Digital I/O
+#### Digital I/O
 
 ```bash
 # Read digital input
@@ -802,16 +785,15 @@ ros2 service call /hdr_ros2_driver/control/get/ios/sio hdr_msgs/srv/IoRequest "{
 # Set digital I/O
 ros2 service call /hdr_ros2_driver/control/post/ios/dio hdr_msgs/srv/IoRequest "{type: 'do', blk_no: 1, sig_no: 1, val: 1}"
 ```
-[__SOURCE](2-hdr_ros2_driver/4-services/2-task/README.md)
-# Task Management Services
+# 3.4.2 Task Management Services
 
-## Overview
+### Overview
 
 Task and variable management related ROS2 services provided by `hdr_ros2_driver`.
 
-## Task Management Services
+### Task Management Services
 
-### Variable Management
+#### Variable Management
 
 ```bash
 # Assign variable
@@ -821,7 +803,7 @@ ros2 service call /hdr_ros2_driver/task/post/assign_var hdr_msgs/srv/ProgramVar 
 ros2 service call /hdr_ros2_driver/task/post/solve_expr hdr_msgs/srv/ProgramVar "{name: 'a', scope: 'local'}"
 ```
 
-### Motion Control
+#### Motion Control
 
 ```bash
 # Execute move command
@@ -833,16 +815,15 @@ ros2 service call /hdr_ros2_driver/task/post/release_wait std_srvs/srv/Trigger
 # Set program counter index
 ros2 service call /hdr_ros2_driver/task/post/set_cur_pc_idx hdr_msgs/srv/Number "{data: 0}"
 ```
-[__SOURCE](2-hdr_ros2_driver/4-services/3-file/README.md)
-# File Management Services
+# 3.4.3 File Management Services
 
-## Overview
+### Overview
 
 File management related ROS2 services provided by `hdr_ros2_driver`.
 
-## File Management Services
+### File Management Services
 
-### File Query and Information
+#### File Query and Information
 
 ```bash
 # Get file contents
@@ -858,7 +839,7 @@ ros2 service call /hdr_ros2_driver/file/get/file_info hdr_msgs/srv/FilePath "{pa
 ros2 service call /hdr_ros2_driver/file/get/file_exist hdr_msgs/srv/FilePath "{path: 'project/jobs/0001.job'}"
 ```
 
-### File Operations
+#### File Operations
 
 ```bash
 # Upload file
@@ -873,16 +854,15 @@ ros2 service call /hdr_ros2_driver/file/post/rename_file hdr_msgs/srv/FileRename
 # Delete file
 ros2 service call /hdr_ros2_driver/file/delete/files hdr_msgs/srv/FilePath "{path: 'project/jobs/0001.job'}"
 ```
-[__SOURCE](2-hdr_ros2_driver/4-services/4-plc/README.md)
-# PLC Communication Services
+# 3.4.4 PLC Communication Services
 
-## Overview
+### Overview
 
 PLC communication related ROS2 services provided by `hdr_ros2_driver`.
 
-## PLC Communication Services
+### PLC Communication Services
 
-### Relay Value Control
+#### Relay Value Control
 
 ```bash
 # Get relay value
@@ -891,16 +871,15 @@ ros2 service call /hdr_ros2_driver/plc/get/relay_value hdr_msgs/srv/IoplcGet "{n
 # Set relay value
 ros2 service call /hdr_ros2_driver/plc/post/relay_value hdr_msgs/srv/IoplcPost "{name: 'fb1.do0', value: 1}"
 ```
-[__SOURCE](2-hdr_ros2_driver/4-services/5-console/README.md)
-# Console Command Services
+# 3.4.5 Console Command Services
 
-## Overview
+### Overview
 
 Console command and system management related ROS2 services provided by `hdr_ros2_driver`.
 
-## Console Command Services
+### Console Command Services
 
-### Command Execution
+#### Command Execution
 
 ```bash
 # Execute console command
@@ -910,9 +889,9 @@ ros2 service call /hdr_ros2_driver/console/post/execute_cmd hdr_msgs/srv/Execute
 ros2 service call /hdr_ros2_driver/console/post/operation std_srvs/srv/SetBool "data: true"
 ```
 
-## System Information Services
+### System Information Services
 
-### Date and Time
+#### Date and Time
 
 ```bash
 # Get system date and time
@@ -922,22 +901,21 @@ ros2 service call /hdr_ros2_driver/clock/get/date_time std_srvs/srv/Trigger
 ros2 service call /hdr_ros2_driver/clock/put/date_time hdr_msgs/srv/DateTime "{year: 2025, month: 5, day: 13, hour: 14, minute: 30, second: 0}"
 ```
 
-### Log Management
+#### Log Management
 
 ```bash
 # Get log manager information
 ros2 service call /hdr_ros2_driver/log/get/manager hdr_msgs/srv/LogManager "{n_item: 50, cat_p: 'E,W,N', id_min: 0, ts_min: '2025/05/01 00:00:00.000', ts_max: '2025/05/13 23:59:59.999'}"
 ```
-[__SOURCE](2-hdr_ros2_driver/4-services/6-project/README.md)
-# Project Management Services
+# 3.4.6 Project Management Services
 
-## Overview
+### Overview
 
 Project and job management related ROS2 services provided by `hdr_ros2_driver`.
 
-## Project Management Services
+### Project Management Services
 
-### Job Information
+#### Job Information
 
 ```bash
 # Get job information
@@ -947,7 +925,7 @@ ros2 service call /hdr_ros2_driver/project/get/jobs_info std_srvs/srv/Trigger
 ros2 service call /hdr_ros2_driver/project/get/rgen std_srvs/srv/Trigger
 ```
 
-### Job Operations
+#### Job Operations
 
 ```bash
 # Delete job
@@ -956,16 +934,15 @@ ros2 service call /hdr_ros2_driver/project/post/delete_job hdr_msgs/srv/FilePath
 # Reload updated jobs
 ros2 service call /hdr_ros2_driver/project/post/reload_updated_jobs std_srvs/srv/Trigger
 ```
-[__SOURCE](2-hdr_ros2_driver/4-services/7-version/README.md)
-# Version Information Services
+# 3.4.7 Version Information Services
 
-## Overview
+### Overview
 
 Version information related ROS2 services provided by `hdr_ros2_driver`.
 
-## Version Information Services
+### Version Information Services
 
-### System Version Queries
+#### System Version Queries
 
 ```bash
 # Get API version
@@ -974,14 +951,13 @@ ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 # Get system version
 ros2 service call /hdr_ros2_driver/get/system_ver std_srvs/srv/Trigger
 ```
-[__SOURCE](3-hdr_hardware_interface/README.md)
-# ROS2 Control Integration (`hdr_hardware_interface`)
+# 4. ROS2 Control Integration (`hdr_hardware_interface`)
 
-## Overview
+### Overview
 
 The `hdr_hardware_interface` package provides a `ros2_control` SystemInterface to connect HD Hyundai Robotics' Open API-based controllers with the ROS2 control framework. It maps joint position state and command interfaces to HTTP-based robot services, handling controller lifecycle and real-time pose tracking.
 
-## Package Structure
+### Package Structure
 
 | Directory                           | Description                                                                 |
 | ----------------------------------- | ----------------------------------------------------------------------------|
@@ -993,9 +969,9 @@ The `hdr_hardware_interface` package provides a `ros2_control` SystemInterface t
 
 ---
 
-## Usage
+### Usage
 
-##### Launch HDR hardware interface with ros2_control
+###### Launch HDR hardware interface with ros2_control
 
 ```bash
 ros2 launch hdr_hardware_interface ros2_control.launch.py \
@@ -1004,7 +980,7 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
   openapi_port:=8888
 ```
 
-##### Plugin Configuration
+###### Plugin Configuration
 To enable the hardware interface, include it within the `<ros2_control>` in URDF or xacro
 
 ```xml
@@ -1018,7 +994,7 @@ To enable the hardware interface, include it within the `<ros2_control>` in URDF
 </ros2_control>
 ```
 
-#### Configuration Options
+##### Configuration Options
 
 | Parameter                      | Type   | Default                         | Description                                                                 |
 |---------------------------|--------|----------------------------------|-----------------------------------------------------------------------------|
@@ -1034,20 +1010,20 @@ To enable the hardware interface, include it within the `<ros2_control>` in URDF
 | `kinematics_file`         | string | `"default_kinematics.yaml"`    | Kinematics plugin configuration YAML filename                              |
 
 
-#### Topics
+##### Topics
 
 | Topic Name                   | Message Type                   | Description                               |
 | ---------------------------- | ------------------------------ | ----------------------------------------- |
 | `/joint_states`              | sensor_msgs::msg::JointState | Publishes current joint states including position information |
 | `/controller_manager/status` | lifecycle_msgs::msg::State   | Lifecycle state of the ros2_control manager |
 
-#### Actions
+##### Actions
 
 | Action Name                                            | Action Type                                   | Description                                |
 | ------------------------------------------------------ | --------------------------------------------- | ------------------------------------------ |
 | `/joint_trajectory_controller/follow_joint_trajectory` | control_msgs::action::FollowJointTrajectory | Execute joint trajectory commands through ROS2 action |
 
-#### Services
+##### Services
 
 | Service Name                                   | Service Type                                         | Description                         |
 | ---------------------------------------------- | ---------------------------------------------------- | ----------------------------------- |
@@ -1058,19 +1034,18 @@ To enable the hardware interface, include it within the `<ros2_control>` in URDF
 | `/controller_manager/unload_controller`        | controller_manager_msgs/srv/UnloadController       | Unload the specified controller.    |
 
 ---
-[__SOURCE](4-hdr_description/README.md)
-# Robot URDF (`hdr_description`)
+# 5. Robot URDF (`hdr_description`)
 
 The `hdr_description` package contains robot URDF, meshes, and visualization configurations for HD Hyundai Robotics robots in ROS2. This package provides essential URDF/XACRO definitions needed for simulation, visualization, and motion planning.
 
-## Key Features
+### Key Features
 
 - **Robot Model-Specific URDF**: URDF/XACRO files for all supported robot models
 - **3D Meshes**: Collision and visual meshes for accurate simulation
 - **RViz Integration**: Pre-configured visualization settings
 - **ros2_control Integration**: Joint interface definitions
 
-## Package Structure
+### Package Structure
 
 | Directory | Contents | Purpose |
 |-----------|----------|----------|
@@ -1079,13 +1054,13 @@ The `hdr_description` package contains robot URDF, meshes, and visualization con
 | `launch/` | Visualization launch files | RViz display configuration |
 | `rviz/` | RViz configuration files | Display settings and plugins |
 
-## URDF Configuration
+### URDF Configuration
 
-### Main Files
+#### Main Files
 - **`hdr.urdf.xacro`**: Top-level macro including all components
 - **`hdr.ros2_control.xacro`**: ros2_control hardware interface macro
 
-### Robot-Specific Files
+#### Robot-Specific Files
 Each robot model has its own directory under `urdf/robots/`:
 - `ha006b.urdf.xacro`
 - `hdf7_9.urdf.xacro`
@@ -1097,14 +1072,14 @@ Each robot model has its own directory under `urdf/robots/`:
 - `hh020.urdf.xacro`
 - `hdr35_20.urdf.xacro`
 
-## Usage Examples
+### Usage Examples
 
-### Visualization in RViz
+#### Visualization in RViz
 ```bash
 ros2 launch hdr_description display_robot.launch.py robot_model:=ha006b
 ```
 
-### Launch Parameters
+#### Launch Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -1112,27 +1087,26 @@ ros2 launch hdr_description display_robot.launch.py robot_model:=ha006b
 | `description_package` | string | `hdr_description` | Package containing URDF files |
 | `description_file` | string | `hdr.urdf.xacro` | Main URDF/XACRO file |
 
-## Mesh Quality
+### Mesh Quality
 
 The package provides two types of meshes for each robot:
 
-### Visual Meshes
+#### Visual Meshes
 - High-resolution meshes for realistic visualization
 - Detailed surface textures and materials
 - Used for visual representation in RViz and Gazebo
 
-### Collision Meshes
+#### Collision Meshes
 - Simplified meshes for collision detection
 - Optimized for computational efficiency
 - Used by physics engines and motion planners
 
 For model-specific details, see [Supported Robot Models](../0-intro/2-robot-models/README.md).
-[__SOURCE](5-hdr_moveit_config/README.md)
-# MoveIt2 Configuration (`hdr_moveit_config`)
+# 6. MoveIt2 Configuration (`hdr_moveit_config`)
 
 The `hdr_moveit_config` package provides MoveIt2 configuration packages for controlling HD Hyundai Robotics robots in both real and simulation environments. This package includes robot-specific motion planning configurations with SRDF definitions, joint limits, and controller settings.
 
-## Key Features
+### Key Features
 
 - **Robot-Specific Configuration**: Individual MoveIt2 settings for each supported robot model
 - **SRDF Definitions**: Semantic robot description with planning groups and poses
@@ -1140,7 +1114,7 @@ The `hdr_moveit_config` package provides MoveIt2 configuration packages for cont
 - **Kinematics Integration**: Forward/inverse kinematics solver configuration
 - **Controller Integration**: ros2_control and trajectory execution setup
 
-## Package Organization
+### Package Organization
 
 Each robot model has its own MoveIt2 configuration package:
 
@@ -1154,25 +1128,25 @@ Each robot model has its own MoveIt2 configuration package:
 - `hh020_moveit_config/`
 - `hdr35_20_moveit_config/`
 
-## Configuration Files
+### Configuration Files
 
 Each robot configuration includes:
 
-### Core Configuration
+#### Core Configuration
 - **SRDF Files**: Semantic robot description with planning groups
 - **joint_limits.yaml**: Velocity and acceleration limits with scaling factors
 - **kinematics.yaml**: Kinematics solver plugin configuration
 - **controllers.yaml**: ros2_control trajectory controller settings
 
-### Advanced Settings
+#### Advanced Settings
 - **ompl_planning.yaml**: OMPL motion planner configuration
 - **pilz_cartesian_limits.yaml**: Cartesian motion limits for Pilz planner
 - **sensors_3d.yaml**: 3D sensor integration (if applicable)
 - **initial_positions.yaml**: Default starting poses
 
-## Safety Considerations
+### Safety Considerations
 
-### Velocity Scaling
+#### Velocity Scaling
 **≤ 0.5** scaling factors are recommended for stable operation:
 
 ```yaml
@@ -1180,14 +1154,14 @@ default_velocity_scaling_factor: 0.5
 default_acceleration_scaling_factor: 0.5
 ```
 
-### Joint Limits
+#### Joint Limits
 The `joint_limits.yaml` file defines:
 - Maximum joint velocities
 - Maximum joint accelerations
 - Software position limits
 - Scaling factors for motion planning
 
-## Launch
+### Launch
 
 ```bash
 ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
@@ -1195,7 +1169,7 @@ ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 
 ![hdr_moveit](../_assets/hdr_moveit.png)
 
-## Planning Groups
+### Planning Groups
 
 Typical SRDF planning group configuration:
 
@@ -1215,21 +1189,20 @@ Typical SRDF planning group configuration:
 ```
 
 
-## Customization
+### Customization
 
 To modify motion planning behavior:
 1. Edit `joint_limits.yaml` for velocity/acceleration limits (cannot exceed maximum velocities defined per joint in URDF)
 2. Modify `ompl_planning.yaml` for planner-specific settings
 3. Update SRDF for new planning groups or poses
 4. Adjust controller parameters in `controllers.yaml`
-[__SOURCE](6-hdr_client_driver/README.md)
-# HD Hyundai Robotics Client Driver
+# 7. HD Hyundai Robotics Client Driver
 
 The HDR client driver provides a comprehensive C++ library for communicating with HD Hyundai Robotics robot controllers via HTTP (Open API) and socket (TCP/UDP) interfaces. This library abstracts both communication layers and provides object-oriented interfaces for robot control and monitoring, file management, real-time command execution, and integration with ROS2.
 
 > ❗ Important: All REST API-based communication requires the robot to be in REMOTE mode.
 
-## Package Structure
+### Package Structure
 
 | Directory | Description |
 |-----------|-------------|
@@ -1237,12 +1210,11 @@ The HDR client driver provides a comprehensive C++ library for communicating wit
 | `src/` | Source implementation of client driver functions |
 | `src/functions/` | API category implementations for various robot controller functions |
 | `examples/` | Example programs demonstrating how to use the driver APIs |
-[__SOURCE](6-hdr_client_driver/1-api-categories/README.md)
-# API Categories
+# 7.1 API Categories
 
 The HDR client driver supports the following API categories:
 
-## Supported API Categories
+### Supported API Categories
 
 The HDR client driver provides the following API categories corresponding to various functions of the robot controller:
 
@@ -1253,14 +1225,13 @@ The HDR client driver provides the following API categories corresponding to var
 - **[I/O](5-io/README.md)** - Input/output control
 - **[Task](6-task/README.md)** - Task execution and variable management
 - **[Miscellaneous](7-etc/README.md)** - System utilities
-[__SOURCE](6-hdr_client_driver/1-api-categories/1-control/README.md)
-# Control API
+# 7.1.1 Control API
 
-## Overview
+### Overview
 
 The Control API category provides basic robot control operations including motor management, coordinate system handling, and motion mode control. These APIs form the foundation for all robot operations.
 
-## Available Control APIs
+### Available Control APIs
 
 | Function | Description |
 |----------|-------------|
@@ -1270,14 +1241,13 @@ The Control API category provides basic robot control operations including motor
 | `GetControlUcsNos` | Retrieve list of available user coordinate system (UCS) numbers for motion programming |
 | `PostControlIosDio` | Set digital output (DO) signal values (type, block number, signal number, value) |
 | `PutControlOpCnd` | Update operation condition parameters (playback mode, reverse motion maximum speed, user coordinate system) |
-[__SOURCE](6-hdr_client_driver/1-api-categories/2-robot/README.md)
-# Robot API
+# 7.1.2 Robot API
 
-## Overview
+### Overview
 
 The Robot API category handles core robot operations including motion control, position management, tool configuration, and safety systems. These APIs provide direct control over robot movement and status monitoring.
 
-## Available Robot APIs
+### Available Robot APIs
 
 | Function | Description |
 |----------|-------------|
@@ -1294,14 +1264,13 @@ The Robot API category handles core robot operations including motion control, p
 | `PostRobotEmergencyStop` | Immediate emergency stop of all robot motion for safety response |
 | `PostInitJointTrajectory` | Initialize the joint trajectory buffer |
 | `PostInsertJointTrajectoryPoints` | Insert joint trajectory points into the controller buffer for motion execution |
-[__SOURCE](6-hdr_client_driver/1-api-categories/3-project/README.md)
-# Project API
+# 7.1.3 Project API
 
-## Overview
+### Overview
 
 The Project API category provides project and job management functions for the HD Hyundai Robotics controller. These APIs enable monitoring project execution status, querying job information, and managing jobs.
 
-## Available Project APIs
+### Available Project APIs
 
 | Function | Description |
 |----------|-------------|
@@ -1309,14 +1278,13 @@ The Project API category provides project and job management functions for the H
 | `GetProjectJobsInfo` | Retrieve metadata of all jobs registered in the project (name, path, modification status) |
 | `PostProjectReloadUpdateJobs` | Reload and synchronize externally modified jobs to update in-memory job status |
 | `PostProjectDeleteJob` | Delete specified job file from project path |
-[__SOURCE](6-hdr_client_driver/1-api-categories/4-file/README.md)
-# File API
+# 7.1.4 File API
 
-## Overview
+### Overview
 
 The File API category provides file system operations for the HD Hyundai Robotics controller. These APIs enable remote file management, file upload/download, and directory management.
 
-## Available File APIs
+### Available File APIs
 
 | Function | Description |
 |----------|-------------|
@@ -1328,27 +1296,25 @@ The File API category provides file system operations for the HD Hyundai Robotic
 | `PostMkdir` | Create new directory at specified path |
 | `PostFiles` | Upload local file to specified location on controller |
 | `PostDeleteFile` | Delete file or directory on controller |
-[__SOURCE](6-hdr_client_driver/1-api-categories/5-io/README.md)
-# I/O API
+# 7.1.5 I/O API
 
-## Overview
+### Overview
 
-The I/O API category provides PLC communication functions for the HD Hyundai Robotics controller. These APIs enable querying and setting relay values in the Hi6 PLC.
+The I/O API category provides PLC communication functions for the HD Hyundai Robotics controller. These APIs enable querying and setting relay values in the Hi6, Hi7 PLC.
 
-## Available I/O APIs
+### Available I/O APIs
 
 | Function | Description |
 |----------|-------------|
-| `GetRelayValue` | Query relay values from Hi6 PLC using "FB{index}.{relay_type}" format or simple formats like "M", "S" |
+| `GetRelayValue` | Query relay values from Hi6, Hi7 PLC using "FB{index}.{relay_type}" format or simple formats like "M", "S" |
 | `SetRelayValue` | Set specific relay values in the robot controller's internal PLC. Supports various data type suffixes |
-[__SOURCE](6-hdr_client_driver/1-api-categories/6-task/README.md)
-# Task API
+# 7.1.6 Task API
 
-## Overview
+### Overview
 
 The Task API category provides task execution and variable management functions for the HD Hyundai Robotics controller. These APIs enable variable assignment, wait state release, program counter control, expression evaluation, and direct motion command execution.
 
-## Available Task APIs
+### Available Task APIs
 
 | Function | Description |
 |----------|-------------|
@@ -1357,54 +1323,52 @@ The Task API category provides task execution and variable management functions 
 | `PostSetCurPcIdx` | Manually set program counter (PC) index for task[0] (useful for debugging or jumping to specific logic) |
 | `PostSolveExpr` | Evaluate expressions within task scope (supports math, logic, and variable access) |
 | `PostExecuteMove` | Execute direct movement commands in robot task (L, P, SP, etc.) |
-[__SOURCE](6-hdr_client_driver/1-api-categories/7-etc/README.md)
-# Miscellaneous API
+# 7.1.7 Miscellaneous API
 
-## Overview
+### Overview
 
 The Miscellaneous API category provides additional utility and system management functions for the HD Hyundai Robotics controller. These APIs include system time management and log query capabilities.
 
-## Available Miscellaneous APIs
+### Available Miscellaneous APIs
 
 | Function | Description |
 |----------|-------------|
 | `GetDateTime` | Query current system date and time from robot controller (year, month, day, hour, minute, second) |
 | `PutDateTime` | Set system date and time on robot controller (includes input validation) |
 | `GetLogManager` | Query controller logs with filtering options (entry count, categories E,W,N,S,O,I,P,H,C,M, ID range, timestamp range) |
-[__SOURCE](7-hdr_simulation_gz/README.md)
-# Gazebo Simulation (`hdr_simulation_gz`)
+# 8. Gazebo Simulation (`hdr_simulation_gz`)
 
 The `hdr_simulation_gz` package provides a ROS2 + Gazebo (Ignition) simulation environment for HD Hyundai Robotics industrial robots. This package enables development, testing, and validation of robotic applications without physical hardware.
 
-## Key Features
+### Key Features
 
 - **Gazebo Integration**: Ignition Gazebo simulation support
 - **Physics Simulation**: Realistic robot dynamics and collision detection
 - **MoveIt2 Compatibility**: Motion planning in simulation environment
 - **ros2_control Integration**: Uses `gz_ros2_control/GazeboSimSystem` plugin
 
-## Package Structure
+### Package Structure
 
 | Directory | Contents | Purpose |
 |-----------|----------|----------|
 | `launch/` | Simulation launch files | Robot spawning and controller setup |
 | `config/` | Controller configuration files | ros2_control YAML files |
 
-## Launch Files
+### Launch Files
 
-### Robot Spawning
+#### Robot Spawning
 ```bash
 # Spawn robot with ros2_control in Gazebo
 ros2 launch hdr_simulation_gz hdr_gz_spawn.launch.py robot_model:=ha006b
 ```
 
-### MoveIt2 Integration
+#### MoveIt2 Integration
 ```bash
 # Run simulation with MoveIt2 motion planning
 ros2 launch hdr_simulation_gz hdr_gz_moveit.launch.py robot_model:=hdr50_22
 ```
 
-## Configuration Options
+### Configuration Options
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -1418,18 +1382,17 @@ ros2 launch hdr_simulation_gz hdr_gz_moveit.launch.py robot_model:=hdr50_22
 | `kinematics_file` | string | `kinematics.yaml` | Kinematics solver configuration |
 
 
-## Future Improvements
+### Future Improvements
 - Sensor and tool simulation support
 - World and example scenario support
-[__SOURCE](8-hdr_msgs/README.md)
-# HD Hyundai Robotics ROS2 Messages
+# 9. HD Hyundai Robotics ROS2 Messages
 
-## Overview
+### Overview
 
 The `hdr_msgs` package defines custom ROS2 message types used in the HD Hyundai Robotics software stack.
 
 
-## ROS2 Messages
+### ROS2 Messages
 
 | Message Type          | Description                                           |
 |-----------------------|-------------------------------------------------------|
@@ -1451,10 +1414,9 @@ The `hdr_msgs` package defines custom ROS2 message types used in the HD Hyundai 
 | `srv/PoseCur.srv`     | Gets current robot pose (position + orientation) in joint space or workspace according to internal configuration. |
 | `srv/ProgramCnt.srv`  | Sets program execution pointer (pno, sno, fno, etc.) to move to specific positions in task logic. |
 | `srv/ProgramVar.srv`  | Reads or assigns variables. Can specify scope (local/global), expressions, and persistence. |
-[__SOURCE](9-running/README.md)
-# ROS2 Driver Execution and Robot Control
+# 10. ROS2 Driver Execution and Robot Control
 
-## Overview
+### Overview
 
 This section provides a comprehensive guide for operating HD Hyundai Robotics robots using the ROS2 driver.
 
@@ -1464,32 +1426,31 @@ The HD Hyundai Robotics ROS2 system provides the following control methods:
 - **ros2_control**: Hardware interface control
 - **ROS2 Services**: Controller API access
 
-## Next Steps
+### Next Steps
 
 - [MoveIt2 Launch Procedures](1-launch-moveit2/README.md)
 - [Direct ros2_control Control](2-launch-ros2_control/README.md)
-[__SOURCE](9-running/1-launch-moveit2/README.md)
-# Running with MoveIt2
+# 10.1 Running with MoveIt2
 
-## Overview
+### Overview
 
 Basic procedures for running HD Hyundai Robotics robots with MoveIt2.
 
-## Pre-launch Preparations
+### Pre-launch Preparations
 
-### Hardware Preparation
+#### Hardware Preparation
 - Power on robot controller and set to REMOTE mode
 - Ensure emergency stop button is accessible
 - Verify network connection (ping 192.168.1.150)
 - Confirm workspace is clear of obstacles
 
-### Software Preparation
+#### Software Preparation
 - Set up ROS2 environment: `source ~/ros2_ws/install/setup.bash`
 - Verify robot model
 
-## Basic Launch Procedures
+### Basic Launch Procedures
 
-### 1. Launch MoveIt2
+#### 1. Launch MoveIt2
 ```bash
 # Basic MoveIt2 launch
 ros2 launch hdr_moveit_config hdr_moveit.launch.py robot_model:=ha006b
@@ -1500,7 +1461,7 @@ ros2 launch hdr_moveit_config hdr_moveit.launch.py \
     robot_ip:=192.168.1.150
 ```
 
-### 2. Verify Connection Status
+#### 2. Verify Connection Status
 ```bash
 # Check joint states
 ros2 topic echo /joint_states --once
@@ -1509,7 +1470,7 @@ ros2 topic echo /joint_states --once
 ros2 service list | grep move_group
 ```
 
-## Supported Robot Models
+### Supported Robot Models
 
 - ha006b
 - hdf7_9
@@ -1521,18 +1482,18 @@ ros2 service list | grep move_group
 - hh020
 - hdr35_20
 
-## Safety Precautions
+### Safety Precautions
 
-### Emergency Stop
+#### Emergency Stop
 - Always keep hardware emergency stop button accessible
 
-### Safe Shutdown
+#### Safe Shutdown
 1. Stop all motion
 2. Move robot to safe position
 3. Terminate MoveIt2 nodes
 4. Power off robot controller
 
-## Common Troubleshooting
+### Common Troubleshooting
 
 **Connection Issues**
 - Verify network connection: `ping 192.168.1.150`
@@ -1552,7 +1513,7 @@ ros2 service list | grep move_group
 - Verify target position is valid
 - Check controller error messages
 
-### When the robot does not operate in Motor ON & Start Mode
+#### When the robot does not operate in Motor ON & Start Mode
 **Normal Operation**
 When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
 
@@ -1560,16 +1521,15 @@ When both **Motor ON** and **Start Mode** are enabled, the robot operates normal
 If Start Mode is not activated while **Motor ON** is enabled, the system generates the error "External Command Operation Disabled (E01554)."
 If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
 In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.
-[__SOURCE](9-running/2-launch-ros2_control/README.md)
-# ros2_control System Execution
+# 10.2 ros2_control System Execution
 
-## Overview
+### Overview
 
 Explains basic execution methods for the ros2_control system for HD Hyundai Robotics robots.
 
-## Basic Execution
+### Basic Execution
 
-### Launch ros2_control
+#### Launch ros2_control
 ```bash
 # Basic launch
 ros2 launch hdr_bringup hdr_control.launch.py robot_model:=ha006b
@@ -1580,9 +1540,9 @@ ros2 launch hdr_bringup hdr_control.launch.py \
     robot_ip:=192.168.1.150
 ```
 
-## Controllers
+### Controllers
 
-### Check Controller Status
+#### Check Controller Status
 ```bash
 # List controllers
 ros2 control list_controllers
@@ -1594,7 +1554,7 @@ ros2 control list_hardware_interfaces
 ros2 topic echo /joint_states
 ```
 
-### Activate/Deactivate Controllers
+#### Activate/Deactivate Controllers
 ```bash
 # Activate controller
 ros2 control switch_controllers --activate joint_trajectory_controller 
@@ -1603,16 +1563,16 @@ ros2 control switch_controllers --activate joint_trajectory_controller
 ros2 control switch_controllers --deactivate joint_trajectory_controller
 ```
 
-## Default Controller Configuration
+### Default Controller Configuration
 
 ros2_control provides the following controllers:
 
 - **joint_state_broadcaster**: Publishes joint states
 - **joint_trajectory_controller**: Trajectory following control
 
-## Simple Testing
+### Simple Testing
 
-### Joint Trajectory Test
+#### Joint Trajectory Test
 ```bash
 # Simple joint movement test
 ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
@@ -1630,9 +1590,9 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
     }"
 ```
 
-## Troubleshooting
+### Troubleshooting
 
-### Common Issues
+#### Common Issues
 
 **Connection Issues**
 - Verify network connection: `ping 192.168.1.150`
@@ -1652,7 +1612,7 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
 - Verify target position is valid
 - Check controller error messages
 
-### When the robot does not operate in Motor ON & Start Mode
+#### When the robot does not operate in Motor ON & Start Mode
 **Normal Operation**
 When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
 
@@ -1661,7 +1621,7 @@ If Start Mode is not activated while **Motor ON** is enabled, the system generat
 If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
 In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.
 
-## Safety Precautions
+### Safety Precautions
 
 - Always keep emergency stop button accessible when working with actual robots
 - Immediately emergency stop if robot exhibits unexpected behavior
