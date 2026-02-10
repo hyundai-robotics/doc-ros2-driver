@@ -12,7 +12,6 @@
 * [2. Getting Started](2-start/README.md)
   * [2.1 Repository Overview](2-start/1-repo-overview/README.md)
   * [2.2 Installation](2-start/2-installation/README.md)
-    * [2.2.1 Build and Installation](2-start/2-installation/README.md)
   * [2.3 PC Setup](2-start/3-initial-setup/README.md)
   * [2.4 Installation Verification](2-start/4-verifying/README.md)
 
@@ -21,13 +20,6 @@
   * [3.2 Topics](3-hdr_ros2_driver/2-topics/README.md)
   * [3.3 Actions](3-hdr_ros2_driver/3-actions/README.md)
   * [3.4 Services](3-hdr_ros2_driver/4-services/README.md)
-    * [3.4.1 Control](3-hdr_ros2_driver/4-services/1-control/README.md)
-    * [3.4.2 Task](3-hdr_ros2_driver/4-services/2-task/README.md)
-    * [3.4.3 File](3-hdr_ros2_driver/4-services/3-file/README.md)
-    * [3.4.4 PLC](3-hdr_ros2_driver/4-services/4-plc/README.md)
-    * [3.4.5 Console](3-hdr_ros2_driver/4-services/5-console/README.md)
-    * [3.4.6 Project](3-hdr_ros2_driver/4-services/6-project/README.md)
-    * [3.4.7 Version](3-hdr_ros2_driver/4-services/7-version/README.md)
 
 * [4. ROS2 Control Integration (hdr_hardware_interface)](4-hdr_hardware_interface/README.md)
 
@@ -37,13 +29,6 @@
 
 * [7. C++ Client Library (hdr_client_driver)](7-hdr_client_driver/README.md)
   * [7.1 API Categories](7-hdr_client_driver/1-api-categories/README.md)
-    * [7.1.1 Control](7-hdr_client_driver/1-api-categories/1-control/README.md)
-    * [7.1.2 Robot](7-hdr_client_driver/1-api-categories/2-robot/README.md)
-    * [7.1.3 Project](7-hdr_client_driver/1-api-categories/3-project/README.md)
-    * [7.1.4 File](7-hdr_client_driver/1-api-categories/4-file/README.md)
-    * [7.1.5 IO](7-hdr_client_driver/1-api-categories/5-io/README.md)
-    * [7.1.6 Task](7-hdr_client_driver/1-api-categories/6-task/README.md)
-    * [7.1.7 Miscellaneous](7-hdr_client_driver/1-api-categories/7-etc/README.md)
 
 * [8. Gazebo Simulation (hdr_simulation_gz)](8-hdr_simulation_gz/README.md)
 
