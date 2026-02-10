@@ -12,7 +12,6 @@
 * [2. 시작하기](2-start/README.md)
   * [2.1 레포지토리 개요](2-start/1-repo-overview/README.md)
   * [2.2 설치](2-start/2-installation/README.md)
-    * [2.2.1 빌드 및 설치](2-start/2-installation/README.md)
   * [2.3 PC 설정](2-start/3-initial-setup/README.md)
   * [2.4 설치 검증](2-start/4-verifying/README.md)
 
@@ -21,13 +20,6 @@
   * [3.2 토픽](3-hdr_ros2_driver/2-topics/README.md)
   * [3.3 액션](3-hdr_ros2_driver/3-actions/README.md)
   * [3.4 서비스](3-hdr_ros2_driver/4-services/README.md)
-    * [3.4.1 제어](3-hdr_ros2_driver/4-services/1-control/README.md)
-    * [3.4.2 태스크](3-hdr_ros2_driver/4-services/2-task/README.md)
-    * [3.4.3 파일](3-hdr_ros2_driver/4-services/3-file/README.md)
-    * [3.4.4 PLC](3-hdr_ros2_driver/4-services/4-plc/README.md)
-    * [3.4.5 콘솔](3-hdr_ros2_driver/4-services/5-console/README.md)
-    * [3.4.6 프로젝트](3-hdr_ros2_driver/4-services/6-project/README.md)
-    * [3.4.7 버전](3-hdr_ros2_driver/4-services/7-version/README.md)
 
 * [4. ROS2 제어 통합 (hdr_hardware_interface)](4-hdr_hardware_interface/README.md)
 
@@ -37,13 +29,6 @@
 
 * [7. C++ 클라이언트 라이브러리 (hdr_client_driver)](7-hdr_client_driver/README.md)
   * [7.1 API 카테고리](7-hdr_client_driver/1-api-categories/README.md)
-    * [7.1.1 제어](7-hdr_client_driver/1-api-categories/1-control/README.md)
-    * [7.1.2 로봇](7-hdr_client_driver/1-api-categories/2-robot/README.md)
-    * [7.1.3 프로젝트](7-hdr_client_driver/1-api-categories/3-project/README.md)
-    * [7.1.4 파일](7-hdr_client_driver/1-api-categories/4-file/README.md)
-    * [7.1.5 IO](7-hdr_client_driver/1-api-categories/5-io/README.md)
-    * [7.1.6 태스크](7-hdr_client_driver/1-api-categories/6-task/README.md)
-    * [7.1.7 기타](7-hdr_client_driver/1-api-categories/7-etc/README.md)
 
 * [8. Gazebo 시뮬레이션 (hdr_simulation_gz)](8-hdr_simulation_gz/README.md)
 
