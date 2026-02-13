@@ -6,6 +6,11 @@
 **v60.34-00** 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 HD현대로보틱스 ROS2 드라이버 사용을 지양하시기 바랍니다. </br>
 ⚠️ **Hi7 모델의 경우 출시 예정이며, 상세 지원 일정은 아직 확정되지 않았습니다. 정식 릴리즈 일정이 수립되는 대로 공지를 통해 안내해 드릴 예정이오니 참고하시기 바랍니다.**
 
+[__SOURCE](0-precautions.md)
+# 사전 주의사항
+
+{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/ko/precautions.md" %}
+
 [__SOURCE](1-intro/README.md)
 # 1. 개요
 

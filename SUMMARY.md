@@ -2,6 +2,7 @@
 
 * [Hi6 & Hi7 제어기 기능설명서 - ROS2 드라이버](README.md)
 
+* [0. 사전 주의사항](0-precautions.md)
 * [1. 개요](1-intro/README.md)
   * [1.1 제어기 모델](1-intro/1-controller-models/README.md)
   * [1.2 로봇 모델](1-intro/2-robot-models/README.md)
