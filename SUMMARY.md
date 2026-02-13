@@ -2,6 +2,8 @@
 
 * [Hi6 & Hi7 Controller Function Manual - ROS2 Driver](README.md)
 
+* [Precautions](0-about-this-manual/precautions.md)
+
 * [1. Overview](1-intro/README.md)
   * [1.1 Controller Models](1-intro/1-controller-models/README.md)
   * [1.2 Robot Models](1-intro/2-robot-models/README.md)
