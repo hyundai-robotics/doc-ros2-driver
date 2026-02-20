@@ -1,27 +1,27 @@
-﻿# 3.4.6 Project Management Services
+﻿# 3.4.6 项目管理服务
 
-### Overview
+### 概述
 
-Project and job management related ROS2 services provided by `hdr_ros2_driver`.
+由 `hdr_ros2_driver` 提供的项目和工作管理相关的 ROS2 服务。
 
-### Project Management Services
+### 项目管理服务
 
-#### Job Information
+#### 工作信息
 
 ```bash
-# Get job information
+# 获取工作信息
 ros2 service call /hdr_ros2_driver/project/get/jobs_info std_srvs/srv/Trigger
 
-# Get robot generation information
+# 获取机器人生成信息
 ros2 service call /hdr_ros2_driver/project/get/rgen std_srvs/srv/Trigger
 ```
 
-#### Job Operations
+#### 工作操作
 
 ```bash
-# Delete job
+# 删除工作
 ros2 service call /hdr_ros2_driver/project/post/delete_job hdr_msgs/srv/FilePath "{path: '0001.job'}"
 
-# Reload updated jobs
+# 重新加载更新的工作
 ros2 service call /hdr_ros2_driver/project/post/reload_updated_jobs std_srvs/srv/Trigger
 ```

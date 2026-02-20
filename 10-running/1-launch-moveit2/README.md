@@ -1,44 +1,44 @@
-﻿# 10.1 Running with MoveIt2
+﻿# 10.1 使用 MoveIt2 运行
 
-### Overview
+### 概述
 
-Basic procedures for running HD Hyundai Robotics robots with MoveIt2.
+通过 MoveIt2 运行 HD 韩国现代机器人机器人的基本程序。
 
-### Pre-launch Preparations
+### 启动前准备
 
-#### Hardware Preparation
-- Power on robot controller and set to REMOTE mode
-- Ensure emergency stop button is accessible
-- Verify network connection (ping 192.168.1.150)
-- Confirm workspace is clear of obstacles
+#### 硬件准备
+- 打开机器人控制器并设置为 REMOTE 模式
+- 确保紧急停止按钮可以访问
+- 验证网络连接（ping 192.168.1.150）
+- 确认工作区域没有障碍物
 
-#### Software Preparation
-- Set up ROS2 environment: `source ~/ros2_ws/install/setup.bash`
-- Verify robot model
+#### 软件准备
+- 设置 ROS2 环境： `source ~/ros2_ws/install/setup.bash`
+- 验证机器人模型
 
-### Basic Launch Procedures
+### 基本启动程序
 
-#### 1. Launch MoveIt2
+#### 1. 启动 MoveIt2
 ```bash
-# Basic MoveIt2 launch
+# 基本 MoveIt2 启动
 ros2 launch hdr_moveit_config hdr_moveit.launch.py robot_model:=ha006b
 
-# Launch with specified IP address
+# 使用指定的 IP 地址启动
 ros2 launch hdr_moveit_config hdr_moveit.launch.py \
     robot_model:=ha006b \
     robot_ip:=192.168.1.150
 ```
 
-#### 2. Verify Connection Status
+#### 2. 验证连接状态
 ```bash
-# Check joint states
+# 检查关节状态
 ros2 topic echo /joint_states --once
 
-# Check MoveIt2 services
+# 检查 MoveIt2 服务
 ros2 service list | grep move_group
 ```
 
-### Supported Robot Models
+### 支持的机器人模型
 
 - ha006b
 - hdf7_9
@@ -50,42 +50,42 @@ ros2 service list | grep move_group
 - hh020
 - hdr35_20
 
-### Safety Precautions
+### 安全预防措施
 
-#### Emergency Stop
-- Always keep hardware emergency stop button accessible
+#### 紧急停止
+- 始终保持硬件紧急停止按钮易于接触
 
-#### Safe Shutdown
-1. Stop all motion
-2. Move robot to safe position
-3. Terminate MoveIt2 nodes
-4. Power off robot controller
+#### 安全关闭
+1. 停止所有运动
+2. 将机器人移动到安全位置
+3. 终止 MoveIt2 节点
+4. 关闭机器人控制器电源
 
-### Common Troubleshooting
+### 常见故障排除
 
-**Connection Issues**
-- Verify network connection: `ping 192.168.1.150`
-- Confirm robot controller is in REMOTE mode
+**连接问题**
+- 验证网络连接: `ping 192.168.1.150`
+- 确认机器人控制器处于遥控模式
 
-**When controllers fail to start:**
-- Verify robot controller is in REMOTE mode
-- Check network connection
-- Confirm robot is not in emergency stop state
+**当控制器无法启动时:**
+- 验证机器人控制器处于遥控制模式
+- 检查网络连接
+- 确认机器人不处于紧急停止状态
 
-**When joint states are not published:**
-- Check hardware interface connection status
-- Verify robot controller status
+**当关节状态未发布时:**
+- 检查硬件接口连接状态
+- 验证机器人控制器状态
 
-**Trajectory execution failures:**
-- Check joint limits
-- Verify target position is valid
-- Check controller error messages
+**轨迹执行失败:**
+- 检查关节限制
+- 验证目标位置有效
+- 检查控制器错误消息
 
-#### When the robot does not operate in Motor ON & Start Mode
-**Normal Operation**
-When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
+#### 当机器人在电机开启和启动模式下不工作时
+**正常操作**
+当 **电机开启** 和 **启动模式** 同时启用时，机器人正常工作。
 
-**When the robot does not operate**
-If Start Mode is not activated while **Motor ON** is enabled, the system generates the error "External Command Operation Disabled (E01554)."
-If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
-In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.
+**当机器人不工作时**
+如果在启用 **电机开启** 的情况下未激活启动模式，则系统会生成错误 "外部命令操作已禁用 (E01554)。"  
+如果给出不可行的命令值（例如，超出物理限制），可能会发生轴超速错误，导致机器人停止。  
+在这种情况下，可以通过重新激活 **电机开启 + 启动模式** 来恢复系统。

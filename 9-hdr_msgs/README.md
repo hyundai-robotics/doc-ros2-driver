@@ -1,29 +1,29 @@
-﻿# 9. HD Hyundai Robotics ROS2 Messages
+﻿# 9. HD 현대 로보틱스 ROS2 메시지
 
-### Overview
+### 개요
 
-The `hdr_msgs` package defines custom ROS2 message types used in the HD Hyundai Robotics software stack.
+`hdr_msgs` 패키지는 HD 현대 로보틱스 소프트웨어 스택에서 사용하는 맞춤형 ROS2 메시지 유형을 정의합니다.
 
 
-### ROS2 Messages
+### ROS2 메시지
 
-| Message Type          | Description                                           |
-|-----------------------|-------------------------------------------------------|
-| `srv/DateTime.srv`    | Gets or sets the system time of the robot controller. Input includes full date/time fields (year, mon, day, hour, min, sec). |
-| `srv/Emergency.srv`   | Tests emergency stop logic using step parameters (step_no, stop_at, stop_mode). Used for simulation/testing scenarios. |
-| `srv/ExecuteCmd.srv`  | Executes console commands as a list of string lines with configurable execution intervals. Useful for raw low-level commands like rl.stop. |
-| `srv/ExecuteMove.srv` | Executes robot movement commands using string-based statements. Example: "move L,spd=1sec,tool=1 [0, 0, 0, 0, 90, 0]". task_no identifies the task index (typically 0). |
-| `srv/FileList.srv`    | Queries directory contents on the robot. Can filter to include files or directories through boolean values. |
-| `srv/FilePath.srv`    | Sends or queries file paths for operations like reading, deletion, or existence checking. |
-| `srv/FileRename.srv`  | Renames or moves files in the robot controller's file system. |
-| `srv/FileSend.srv`    | Uploads files from local PC to robot controller. Requires source and destination paths. |
-| `srv/IoplcGet.srv`    | Reads PLC memory (e.g., relays, M, S, R). Supports both direct addressing and name-based signal addressing. |
-| `srv/IoplcPost.srv`   | Writes to PLC memory (relays) using symbolic names such as M, S, R, or FBx.y. |
-| `srv/IoRequest.srv`   | Used to access digital, serial, or user I/O. The type field specifies I/O kind like 'di', 'do', 'si', or 'so'. blk_no and sig_no specify block and signal indices. The 'val' field is used when setting I/O values and ignored during read operations. |
-| `srv/JointTrajecotryPoints.srv` | Provides trajectory points for executing motion |
-| `srv/LogManager.srv`  | Queries log entries using category (E, W, etc.), ID ranges, and timestamp filters. |
-| `srv/Number.srv`      | General-purpose service for sending/receiving integers. Used for tool numbers, coordinate systems, index settings, etc. |
-| `srv/OpCnd.srv`       | Reads or writes operating conditions such as playback mode or user coordinate systems. |
-| `srv/PoseCur.srv`     | Gets current robot pose (position + orientation) in joint space or workspace according to internal configuration. |
-| `srv/ProgramCnt.srv`  | Sets program execution pointer (pno, sno, fno, etc.) to move to specific positions in task logic. |
-| `srv/ProgramVar.srv`  | Reads or assigns variables. Can specify scope (local/global), expressions, and persistence. |
+| 메시지 유형           | 설명                                                |
+|-----------------------|-----------------------------------------------------|
+| `srv/DateTime.srv`    | 로봇 컨트롤러의 시스템 시간을 가져오거나 설정합니다. 입력에는 전체 날짜/시간 필드(연도, 월, 일, 시, 분, 초)가 포함됩니다. |
+| `srv/Emergency.srv`   | 단계 매개변수(단계_no, 정지_at, 정지_모드)를 사용하여 비상 정지 논리를 테스트합니다. 시뮬레이션/테스트 시나리오에 사용됩니다. |
+| `srv/ExecuteCmd.srv`  | 구성 가능한 실행 간격으로 문자열 목록으로 콘솔 명령을 실행합니다. rl.stop과 같은 원시 저수준 명령에 유용합니다. |
+| `srv/ExecuteMove.srv` | 문자열 기반 설명을 사용하여 로봇 이동 명령을 실행합니다. 예: "move L,spd=1sec,tool=1 [0, 0, 0, 0, 90, 0]". task_no는 작업 인덱스(일반적으로 0)를 식별합니다. |
+| `srv/FileList.srv`    | 로봇의 디렉토리 내용을 조회합니다. 부울 값을 통해 파일 또는 디렉토리를 포함하도록 필터링할 수 있습니다. |
+| `srv/FilePath.srv`    | 읽기, 삭제 또는 존재 여부 확인과 같은 작업을 위한 파일 경로를 전송하거나 조회합니다. |
+| `srv/FileRename.srv`  | 로봇 컨트롤러의 파일 시스템에서 파일을 이름 변경하거나 이동합니다. |
+| `srv/FileSend.srv`    | 로컬 PC에서 로봇 컨트롤러로 파일을 업로드합니다. 소스 및 대상 경로가 필요합니다. |
+| `srv/IoplcGet.srv`    | PLC 메모리(예: 중계기, M, S, R)를 읽습니다. 직접 주소 지정 및 이름 기반 신호 주소 지정을 모두 지원합니다. |
+| `srv/IoplcPost.srv`   | M, S, R 또는 FBx.y와 같은 기호 이름을 사용하여 PLC 메모리(중계기)에 씁니다. |
+| `srv/IoRequest.srv`   | 디지털, 직렬 또는 사용자 I/O에 접근하는 데 사용됩니다. 유형 필드는 'di', 'do', 'si' 또는 'so'와 같은 I/O 종류를 지정합니다. blk_no와 sig_no는 블록 및 신호 인덱스를 지정합니다. 'val' 필드는 I/O 값을 설정할 때 사용되며 읽기 작업 중에는 무시됩니다. |
+| `srv/JointTrajecotryPoints.srv` | 모션 실행을 위한 궤적 포인트를 제공합니다. |
+| `srv/LogManager.srv`  | 카테고리(E, W 등), ID 범위 및 타임스탬프 필터를 사용하여 로그 항목을 조회합니다. |
+| `srv/Number.srv`      | 정수를 전송/수신하기 위한 범용 서비스입니다. 도구 번호, 좌표계, 인덱스 설정 등에 사용됩니다. |
+| `srv/OpCnd.srv`       | 재생 모드 또는 사용자 좌표계와 같은 운영 조건을 읽거나 씁니다. |
+| `srv/PoseCur.srv`     | 내부 구성에 따라 관절 공간 또는 작업 영역에서 현재 로봇 포즈(위치 + 방향)를 가져옵니다. |
+| `srv/ProgramCnt.srv`  | 특정 작업 논리에서 특정 위치로 이동하기 위해 프로그램 실행 포인터(pno, sno, fno 등)를 설정합니다. |
+| `srv/ProgramVar.srv`  | 변수를 읽거나 할당합니다. 범위(로컬/전역), 표현식 및 지속성을 지정할 수 있습니다. |

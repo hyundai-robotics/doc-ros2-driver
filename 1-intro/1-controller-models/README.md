@@ -1,5 +1,5 @@
-﻿# 1.1 Supported Controller Models
-The HD Hyundai Robotics Hi6 controller models that officially support ROS2 functionality are as follows:
+﻿# 1.1 支持的控制器模型
+官方支持 ROS2 功能的 HD 现代机器人 Hi6 控制器模型如下：
 
 - Hi6-N10
 - Hi6-N20
@@ -9,14 +9,14 @@ The HD Hyundai Robotics Hi6 controller models that officially support ROS2 funct
 - Hi6-N80(HK)
 - Hi6-T15
 
-**Controller Requirements**:
-- SW Version: **60.32-00** or higher (scheduled for release in October)
-- Operation Mode: **REMOTE mode**
+**控制器要求**：
+- 软件版本：**60.32-00** 或更高（计划于十月发布）
+- 操作模式：**REMOTE mode**
 
-The Hi7 controller series, including future model lineups and support schedules, will be updated on this list as soon as they are finalized.
+Hi7 控制器系列，包括未来的型号和支持计划，一旦最终确定，将立即在此列表中更新。
 
-> ⚠️ **Note:** The HD Hyundai Robotics ROS2 driver does **not support** the **Hi5** controller series.
+> ⚠️ **注意：** HD 现代机器人 ROS2 驱动程序**不支持** **Hi5** 控制器系列。
 
-### Next Steps
+### 下一步
 
-After confirming controller compatibility, check [Supported Robot Models](../2-robot-models/README.md) to verify that your robot is supported.
+确认控制器兼容性后，请检查 [支持的机器人模型](../2-robot-models/README.md) 以验证您的机器人是否受到支持。

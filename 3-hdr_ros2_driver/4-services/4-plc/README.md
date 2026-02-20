@@ -1,17 +1,17 @@
-﻿# 3.4.4 PLC Communication Services
+﻿# 3.4.4 PLC通信服务
 
-### Overview
+### 概述
 
-PLC communication related ROS2 services provided by `hdr_ros2_driver`.
+由`hdr_ros2_driver`提供的与PLC通信相关的ROS2服务。
 
-### PLC Communication Services
+### PLC通信服务
 
-#### Relay Value Control
+#### 继电器值控制
 
 ```bash
-# Get relay value
+# 获取继电器值
 ros2 service call /hdr_ros2_driver/plc/get/relay_value hdr_msgs/srv/IoplcGet "{name: 'M', st: 100, len: 10}"
 
-# Set relay value
+# 设置继电器值
 ros2 service call /hdr_ros2_driver/plc/post/relay_value hdr_msgs/srv/IoplcPost "{name: 'fb1.do0', value: 1}"
 ```

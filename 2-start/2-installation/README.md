@@ -1,64 +1,63 @@
-﻿# 2.2 Package Build and Installation
-This section covers the installation process of the HD Hyundai Robotics ROS2 driver, including repository cloning, dependencies installation, and package build.
+﻿# 2.2 包构建与安装
+本节涵盖 HD Hyundai Robotics ROS2 驱动程序的安装过程，包括库克隆、依赖项安装和包构建。
 
-### Workspace Setup
+### 工作区设置
 
-#### Create ROS2 Workspace
+#### 创建 ROS2 工作区
 
 ```bash
-# Create workspace directory
+# 创建工作区目录
 mkdir -p ~/hdr_ws/src
 cd ~/hdr_ws
 ```
 
-#### Clone Source Repositories
+#### 克隆源代码库
 
 ```bash
 cd ~/hdr_ws/src
 
-# HDR core driver and client library
+# HDR 核心驱动程序和客户端库
 git clone https://github.com/hyundai-robotics/hdr_ros2_driver.git
 git clone https://github.com/hyundai-robotics/hdr_client_driver.git
 
-# HDR description package
+# HDR 描述包
 git clone https://github.com/hyundai-robotics/hdr_description.git
 
-# Gazebo simulation
+# Gazebo 模拟
 git clone https://github.com/hyundai-robotics/hdr_simulation_gz.git
 ```
 
-### Dependencies Installation
+### 依赖项安装
 
-#### Install ROS2 Dependencies
+#### 安装 ROS2 依赖项
 
 ```bash
 cd ~/hdr_ws
 
-# Update package database
+# 更新软件包数据库
 rosdep update
 
-# Install all dependencies for HDR packages
+# 安装 HDR 包的所有依赖项
 rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
-### Build Process
+### 构建过程
 
-#### Standard Build
+#### 标准构建
 
 ```bash
 cd ~/hdr_ws
 
-# Build all packages with optimization
+# 构建所有带优化的包
 colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Release
 ```
-
-#### Build Configuration Options
+#### 构建配置选项
 ```bash
-# Build with debug symbols
+# 使用调试符号进行构建
 colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Debug
 ```
 
-#### Environment Setup
+#### 环境设置
 
 ```bash
 cd ~/hdr_ws
@@ -67,8 +66,8 @@ source install/setup.bash
 echo "source ~/hdr_ws/install/setup.bash" >> ~/.bashrc
 ```
 
-### Next Steps
+### 下一步
 
-After successful package installation and build:
-1. Proceed to [Initial Setup](../3-initial-setup/README.md) for controller and PC configuration
-2. Run [Installation Verification](../4-verifying/README.md) tests
+在成功安装和构建包后：
+1. 继续进行 [初始设置](../3-initial-setup/README.md) 以配置控制器和PC
+2. 运行 [安装验证](../4-verifying/README.md) 测试

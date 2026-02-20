@@ -1,11 +1,10 @@
-﻿# 1.5 Robot Joint and Link Names
+﻿# 1.5 机器人关节和连接件名称
 
-HD Hyundai Robotics robots follow the joint and link naming conventions as shown below within the URDF.
+HD现代机器人遵循以下URDF中的关节和连接件命名约定。
 
+### 关节名称
 
-### Joint Names
-
-|joint no|joint name </br>(URDF)|joint name </br>(TP)|
+|关节编号|关节名称 </br>(URDF)|关节名称 </br>(TP)|
 |:------:|:---:|:---:|
 |1|j1|S|
 |2|j2|H|
@@ -15,9 +14,9 @@ HD Hyundai Robotics robots follow the joint and link naming conventions as shown
 |6|j6|R1|
 
 
-### Link Names
+### 连接件名称
 
-|link No|link Name|
+|连接件编号|连接件名称|
 |:------:|:---:|
 |0|base_link|
 |1|lower_frame_link|
@@ -28,17 +27,17 @@ HD Hyundai Robotics robots follow the joint and link naming conventions as shown
 |6|flange_link|
 
 
-### Link Relationships
+### 连接件关系
 
-|link No|link Name|joint|parent link|joint type|note|
+|连接件编号|连接件名称|关节|父连接件|关节类型|备注|
 |:------:|:---:|:---:|:------:|:---:|:---:|
-||world||||||
-|0|base_link|world_joint|world|fixed|||
-|1|lower_frame_link|j1|base_link|revolute||
-|2|upper_frame_link|j2|lower_frame_link|revolute||
-|3|arm_link|j3|upper_frame_link|revolute||
-|4|wrist_body_link|j4|arm_link|revolute||
-|5|wrist_holder_link|j5|wrist_body_link|revolute||
-|6|flange_link|j6|wrist_holder_link|revolute||
-||flange|flange_link-flange|flange_link|fixed|ROS-Industrial standard coordinate system|
-||tool0|flange-tool0|flange|fixed|ROS-Industrial standard coordinate system|
+||世界||||||
+|0|base_link|world_joint|世界|固定|||
+|1|lower_frame_link|j1|base_link|旋转||
+|2|upper_frame_link|j2|lower_frame_link|旋转||
+|3|arm_link|j3|upper_frame_link|旋转||
+|4|wrist_body_link|j4|arm_link|旋转||
+|5|wrist_holder_link|j5|wrist_body_link|旋转||
+|6|flange_link|j6|wrist_holder_link|旋转||
+||flange|flange_link-flange|flange_link|固定|ROS工业标准坐标系|
+||tool0|flange-tool0|flange|固定|ROS工业标准坐标系|

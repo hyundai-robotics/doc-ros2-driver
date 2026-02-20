@@ -1,37 +1,37 @@
-﻿# 3.4 ROS2 Driver Services
+# 3.4 ROS2 驱动服务
 
-### Overview
+### 概述
 
-The `hdr_ros2_driver` provides various ROS2 services for communicating with HD Hyundai Robotics Hi6 controllers.
+`hdr_ros2_driver` 提供多种 ROS2 服务用于与 HD 现代机器人 Hi6 控制器进行通信。
 
-### Service Categories
+### 服务类别
 
-| Category | Description |
+| 类别 | 描述 |
 |----------|-------------|
-| **[Control Services](1-control/README.md)** | Robot control, motor power, emergency stop, coordinate systems, I/O management |
-| **[Task Management](2-task/README.md)** | Variable assignment, motion execution, program control |
-| **[File Management](3-file/README.md)** | File upload/download, directory manipulation |
-| **[PLC Communication](4-plc/README.md)** | PLC relay value control |
-| **[Console Commands](5-console/README.md)** | Console command execution, system time, log management |
-| **[Project Management](6-project/README.md)** | Job information, job deletion/reload |
-| **[Version Information](7-version/README.md)** | API version, system version queries |
+| **[控制服务](1-control/README.md)** | 机器人控制，电机电源，应急停止，坐标系统，I/O 管理 |
+| **[任务管理](2-task/README.md)** | 变量赋值，运动执行，程序控制 |
+| **[文件管理](3-file/README.md)** | 文件上传/下载，目录操作 |
+| **[PLC 通信](4-plc/README.md)** | PLC 继电器值控制 |
+| **[控制台命令](5-console/README.md)** | 控制台命令执行，系统时间，日志管理 |
+| **[项目管理](6-project/README.md)** | 作业信息，作业删除/重载 |
+| **[版本信息](7-version/README.md)** | API 版本，系统版本查询 |
 
-### Basic Usage
+### 基本用法
 
-#### Check Service List
+#### 检查服务列表
 ```bash
-# List all HDR driver services
+# 列出所有 HDR 驱动服务
 ros2 service list | grep hdr_ros2_driver
 ```
 
-#### Common Service Calls
+#### 常见服务调用
 ```bash
-# Check API version
+# 检查 API 版本
 ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 
-# Check motor status
+# 检查电机状态
 ros2 service call /hdr_ros2_driver/robot/get/motor_state std_srvs/srv/Trigger
 
-# Turn on motor power
+# 打开电机电源
 ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/Trigger
 ```

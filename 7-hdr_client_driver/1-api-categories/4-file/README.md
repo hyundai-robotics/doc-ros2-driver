@@ -1,18 +1,18 @@
-﻿# 7.1.4 File API
+﻿# 7.1.4 文件 API
 
-### Overview
+### 概述
 
-The File API category provides file system operations for the HD Hyundai Robotics controller. These APIs enable remote file management, file upload/download, and directory management.
+文件 API 类别为 HD 现代机器人控制器提供文件系统操作。这些 API 使远程文件管理、文件上传/下载和目录管理成为可能。
 
-### Available File APIs
+### 可用的文件 API
 
-| Function | Description |
+| 功能 | 描述 |
 |----------|-------------|
-| `GetFiles` | Retrieve list of files and folders at specified path |
-| `GetFileInfo` | Query metadata of file or directory (size, timestamp, type) |
-| `GetFileList` | Retrieve filtered list including files only, directories only, or all |
-| `GetFileExist` | Check existence of specified file or directory |
-| `PostRenameFile` | Rename or move file or directory from one path to another |
-| `PostMkdir` | Create new directory at specified path |
-| `PostFiles` | Upload local file to specified location on controller |
-| `PostDeleteFile` | Delete file or directory on controller |
+| `GetFiles` | 检索指定路径下的文件和文件夹列表 |
+| `GetFileInfo` | 查询文件或目录的元数据（大小、时间戳、类型） |
+| `GetFileList` | 检索包括仅文件、仅目录或所有的过滤列表 |
+| `GetFileExist` | 检查指定文件或目录是否存在 |
+| `PostRenameFile` | 从一个路径重命名或移动文件或目录到另一个路径 |
+| `PostMkdir` | 在指定路径创建新目录 |
+| `PostFiles` | 将本地文件上传到控制器上的指定位置 |
+| `PostDeleteFile` | 删除控制器上的文件或目录 |

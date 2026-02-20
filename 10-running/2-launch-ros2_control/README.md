@@ -1,57 +1,56 @@
-﻿# 10.2 ros2_control System Execution
+﻿# 10.2 ros2_control 系统执行
 
-### Overview
+### 概述
 
-Explains basic execution methods for the ros2_control system for HD Hyundai Robotics robots.
+解释 HD 现代机器人机器人的 ros2_control 系统的基本执行方法。
 
-### Basic Execution
+### 基本执行
 
-#### Launch ros2_control
+#### 启动 ros2_control
 ```bash
-# Basic launch
+# 基本启动
 ros2 launch hdr_bringup hdr_control.launch.py robot_model:=ha006b
 
-# Specify IP address
+# 指定 IP 地址
 ros2 launch hdr_bringup hdr_control.launch.py \
     robot_model:=ha006b \
     robot_ip:=192.168.1.150
 ```
 
-### Controllers
+### 控制器
 
-#### Check Controller Status
+#### 检查控制器状态
 ```bash
-# List controllers
+# 列出控制器
 ros2 control list_controllers
 
-# Check hardware interfaces
+# 检查硬件接口
 ros2 control list_hardware_interfaces
 
-# Check joint states
+# 检查关节状态
 ros2 topic echo /joint_states
 ```
 
-#### Activate/Deactivate Controllers
+#### 激活/停用控制器
 ```bash
-# Activate controller
+# 激活控制器
 ros2 control switch_controllers --activate joint_trajectory_controller 
 
-# Deactivate controller
+# 停用控制器
 ros2 control switch_controllers --deactivate joint_trajectory_controller
 ```
 
-### Default Controller Configuration
+### 默认控制器配置
 
-ros2_control provides the following controllers:
+ros2_control 提供以下控制器：
 
-- **joint_state_broadcaster**: Publishes joint states
-- **joint_trajectory_controller**: Trajectory following control
+- **joint_state_broadcaster**: 发布关节状态
+- **joint_trajectory_controller**: 轨迹跟随控制
 
-### Simple Testing
-
-#### Joint Trajectory Test
+### 简单测试
+#### 关节轨迹测试
 ```bash
-# Simple joint movement test
+# 简单关节运动测试
 ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
     control_msgs/action/FollowJointTrajectory \
     "{
@@ -67,39 +66,38 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
     }"
 ```
 
-### Troubleshooting
+### 故障排除
 
-#### Common Issues
+#### 常见问题
 
-**Connection Issues**
-- Verify network connection: `ping 192.168.1.150`
-- Confirm robot controller is in REMOTE mode
+**连接问题**
+- 验证网络连接: `ping 192.168.1.150`
+- 确认机器人控制器处于远程模式
 
-**When controllers fail to start:**
-- Verify robot controller is in REMOTE mode
-- Check network connection
-- Confirm robot is not in emergency stop state
+**当控制器无法启动时：**
+- 验证机器人控制器处于远程模式
+- 检查网络连接
+- 确认机器人不处于紧急停止状态
 
-**When joint states are not published:**
-- Check hardware interface connection status
-- Verify robot controller status
+**当关节状态未发布时：**
+- 检查硬件接口连接状态
+- 验证机器人控制器状态
 
-**Trajectory execution failures:**
-- Check joint limits
-- Verify target position is valid
-- Check controller error messages
+**轨迹执行失败：**
+- 检查关节限制
+- 验证目标位置是否有效
+- 检查控制器错误消息
 
-#### When the robot does not operate in Motor ON & Start Mode
-**Normal Operation**
-When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
+#### 当机器人不在电机开启和启动模式下操作时
+**正常操作**
+当两个**电机开启**和**启动模式**都启用时，机器人正常操作。
 
-**When the robot does not operate**
-If Start Mode is not activated while **Motor ON** is enabled, the system generates the error "External Command Operation Disabled (E01554)."
-If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
-In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.
+**当机器人不操作时**
+如果在启用**电机开启**的情况下没有激活启动模式，系统将生成错误 "外部命令操作被禁用 (E01554)"。
+如果给出不合理的命令值（例如，超出物理限制），可能会发生轴过速错误，导致机器人停止。
+在这种情况下，可以通过重新激活**电机开启 + 启动模式**来恢复系统。
+### 安全注意事项
 
-### Safety Precautions
-
-- Always keep emergency stop button accessible when working with actual robots
-- Immediately emergency stop if robot exhibits unexpected behavior
-- Test at low speeds when using for the first time
+- 在实际操作机器人时，始终保持紧急停止按钮可及
+- 如果机器人出现意外行为，立即进行紧急停止
+- 第一次使用时应以低速进行测试

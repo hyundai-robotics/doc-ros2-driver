@@ -1,53 +1,39 @@
 ﻿
-[__SOURCE](README.md)
-# Hi6 & Hi7 Controller Function Manual - ROS2 Driver
-
-Currently, ROS2-compatible controllers are the Hi6 series, supported from controller software version **v60.34-00** or higher. </br>
-Version **v60.34-00** is scheduled for official release in 2Q 2026. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release. </br>
-⚠️ **The Hi7 model is scheduled for release, and the specific support timeline has not yet been finalized. We will provide further details via an official announcement as soon as the formal release schedule is established. Please keep this in mind.**
-
-[__SOURCE](0-about-this-manual/precautions.md)
-# Precautions
-
-{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/en/precautions.md" %}
-
 [__SOURCE](1-intro/README.md)
-# 1. Overview
+# 1. 概述
 
-This manual provides a description of the HD Hyundai Robotics (HDR) ROS2 driver.
+本手册提供了 HD 现代机器人 (HDR) ROS2 驱动程序的说明。
 
-The HDR ROS2 driver integrates HD Hyundai Robotics industrial robot controllers (Hi6, Hi7 series) with ROS2 systems to support both simulation environments and real robot control functions.
+HDR ROS2 驱动程序将 HD 现代机器人工业机器人控制器 (Hi6、Hi7 系列) 与 ROS2 系统集成，以支持仿真环境和实际机器人控制功能。
 
 ![hdr_main](../_assets/0_hdr_main.png)
 
+### 先决条件
+在使用 HDR ROS2 驱动程序之前，请确保检查以下项目：
+- [支持的控制器](1-controller-models/README.md) - 兼容的 Hi6、Hi7 系列控制器
+- [支持的机器人模型](2-robot-models/README.md) - 兼容的 HD 现代机器人模型
+- [系统要求](3-requirements/README.md) - 硬件和软件要求
+- [ROS2 版本](4-ros2-version/README.md) - 支持的 ROS2 版本
+- [机器人关节和链接名称](5-hdr-robot/README.md) - ROS2 中的机器人关节和链接命名约定
 
-### Prerequisites
-Before using the HDR ROS2 driver, please make sure to check the following items:
-- [Supported Controllers](1-controller-models/README.md) - Compatible Hi6, Hi7 series controllers
-- [Supported Robot Models](2-robot-models/README.md) - Compatible HD Hyundai Robotics robot models
-- [System Requirements](3-requirements/README.md) - Hardware and software requirements
-- [ROS2 Version](4-ros2-version/README.md) - Supported ROS2 versions
-- [Robot Joint and Link Names](5-hdr-robot/README.md) - Robot joint and link naming conventions in ROS2
+### 安装和初始设置
+在验证所有上述项目后，请按照以下步骤进行 ROS2 驱动程序的安装和初始设置：
+- [代码库概述](1-repo-overview/README.md) - HDR ROS2 驱动程序代码库结构和架构概述
+- [软件包安装](2-installation/README.md) - HDR ROS2 驱动程序的构建和安装方法
+- [控制器和 PC 设置](3-initial-setup/README.md) - 使用 HDR ROS2 驱动程序的初始设置方法
+- [安装验证](4-verifying/README.md) - 验证安装和设置是否正确完成
 
-### Installation and Initial Setup
-After verifying all the above items, please proceed with the ROS2 driver installation and initial setup according to the following procedures:
-- [Repository Overview](1-repo-overview/README.md) - HDR ROS2 driver repository structure and architecture overview
-- [Package Installation](2-installation/README.md) - HDR ROS2 driver build and installation method
-- [Controller and PC Setup](3-initial-setup/README.md) - Initial setup method for using HDR ROS2 driver
-- [Installation Verification](4-verifying/README.md) - Verify that installation and setup are completed correctly
+### 使用 ROS2 驱动程序的快速入门
+在完成上述所有安装和初始设置过程后，您可以启动 HDR ROS2 驱动程序并通过以下程序开始机器人控制：
 
-### Quick Start with ROS2 Driver
-After completing all the installation and initial setup processes above, you can start the HDR ROS2 driver and begin robot control through the following procedures:
+- [运行 ROS2 驱动程序](10-running/README.md) - ROS2 驱动程序执行和机器人控制方法
 
-- [Running ROS2 Driver](10-running/README.md) - ROS2 driver execution and robot control methods
+⚠️ **请确保检查先决条件并完成所有安装和初始设置后再继续。**
 
-⚠️ **Please make sure to check the prerequisites and complete all installation and initial setup before proceeding.**
-
-⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v60.34-00* or higher. </br> The *v60.34-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.** 
-
+⚠️ **目前，HD 现代机器人 ROS2 驱动程序支持控制器软件版本 *v60.34-00* 或更高版本。</br> *v60.34-00* 版本计划于 2026 年第二季度正式发布，请在正式发布之前避免使用 ROS2 驱动程序。**
 [__SOURCE](1-intro/1-controller-models/README.md)
-# 1.1 Supported Controller Models
-The HD Hyundai Robotics Hi6 controller models that officially support ROS2 functionality are as follows:
+# 1.1 支持的控制器模型
+官方支持 ROS2 功能的 HD 现代机器人 Hi6 控制器模型如下：
 
 - Hi6-N10
 - Hi6-N20
@@ -57,22 +43,21 @@ The HD Hyundai Robotics Hi6 controller models that officially support ROS2 funct
 - Hi6-N80(HK)
 - Hi6-T15
 
-**Controller Requirements**:
-- SW Version: **60.32-00** or higher (scheduled for release in October)
-- Operation Mode: **REMOTE mode**
+**控制器要求**：
+- 软件版本：**60.32-00** 或更高（计划于十月发布）
+- 操作模式：**REMOTE mode**
 
-The Hi7 controller series, including future model lineups and support schedules, will be updated on this list as soon as they are finalized.
+Hi7 控制器系列，包括未来的型号和支持计划，一旦最终确定，将立即在此列表中更新。
 
-> ⚠️ **Note:** The HD Hyundai Robotics ROS2 driver does **not support** the **Hi5** controller series.
+> ⚠️ **注意：** HD 现代机器人 ROS2 驱动程序**不支持** **Hi5** 控制器系列。
 
-### Next Steps
+### 下一步
 
-After confirming controller compatibility, check [Supported Robot Models](../2-robot-models/README.md) to verify that your robot is supported.
-
+确认控制器兼容性后，请检查 [支持的机器人模型](../2-robot-models/README.md) 以验证您的机器人是否受到支持。
 [__SOURCE](1-intro/2-robot-models/README.md)
-# 1.2 Supported Robot Models
+# 1.2 支持的机器人型号
 
-The robot models currently officially supported by the HD Hyundai Robotics driver are as follows:
+HD 현대 로보틱스 드라이버当前官方支持的机器人型号如下：
 
 - ha006b
 - hdf7_9
@@ -84,60 +69,57 @@ The robot models currently officially supported by the HD Hyundai Robotics drive
 - hh020
 - hdr35_20
 
-### Model Name Changes
+### 型号名称变更
 
-> ❗ **Note:** Robot models `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`, `hdr35_20` are the renamed versions of models `HH7`, `HH8`, `UH020`, `HH050`, `HS220`, `UH035` respectively.
+> ❗ **注意:** 机器人型号 `hdf7_9`、`hdf8_8`、`hdr20_17`、`hdr50_22`、`hdr220_26`、`hdr35_20` 分别是型号 `HH7`、`HH8`、`UH020`、`HH050`、`HS220`、`UH035` 的重命名版本。
 
-### Contents Included for Each Model
+### 每个型号包含的内容
 
-Each supported robot model includes the following:
+每个支持的机器人型号包括以下内容：
 
-- **URDF**: Robot URDF with collision meshes
-- **Mesh**: 3D models for visualization
-- **MoveIt2 Configuration**: Motion planning setup with model-specific soft limits
-- **Gazebo Support**: Simulation integration support
+- **URDF**: 带碰撞网格的机器人URDF
+- **Mesh**: 用于可视化的3D模型
+- **MoveIt2配置**: 带有型号特定软限制的运动规划设置
+- **Gazebo支持**: 仿真集成支持
 
-### Next Steps
+### 下一步
 
-After confirming the robot model, proceed to [System Requirements](../3-requirements/README.md) to verify that your system is properly configured.
-
+确认机器人型号后，请继续检查 [系统要求](../3-requirements/README.md)，以验证您的系统是否正确配置。
 [__SOURCE](1-intro/3-requirements/README.md)
-# 1.3 System Requirements
+# 1.3 系统要求
 
-This page describes the hardware and software requirements for running the HD Hyundai Robotics ROS2 driver.
+本页描述了运行 HD 现代机器人 ROS2 驱动程序的硬件和软件要求。
 
-### Hardware Requirements
+### 硬件要求
 
-#### Robot Controller
-- **Compatible Controllers**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N00-60(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
-- **Controller SW Version**: **60.32-00** or higher
-- **Operation Mode**: Robot must be set to **REMOTE** mode
-- **Network Interface**: Ethernet connection (LAN1, LAN2, or LAN3)
+#### 机器人控制器
+- **兼容控制器**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N00-60(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
+- **控制器软件版本**: **60.32-00** 或更高
+- **操作模式**: 机器人必须设置为 **REMOTE** 模式
+- **网络接口**: 以太网连接 (LAN1, LAN2 或 LAN3)
 
-#### Development PC
-- **Operating System**: Ubuntu 22.04 LTS or Ubuntu 24.04 LTS
-- **Memory**: Minimum 8GB RAM (16GB recommended for simulation)
-- **Network**: Ethernet interface for robot communication
-- **CPU**: Multi-core processor (4 cores or more recommended)
+#### 开发PC
+- **操作系统**: Ubuntu 22.04 LTS 或 Ubuntu 24.04 LTS
+- **内存**: 最低 8GB RAM (建议 16GB 以进行仿真)
+- **网络**: 以太网接口用于机器人通信
+- **CPU**: 多核处理器 (建议 4 核或更多)
 
+### 下一步
 
-### Next Steps
-
-Once your system meets all requirements, check [Supported ROS2 Versions](../4-ros2-version/README.md).
-
+一旦您的系统满足所有要求，请检查 [支持的 ROS2 版本](../4-ros2-version/README.md)。
 [__SOURCE](1-intro/4-ros2-version/README.md)
-# 1.4 Supported ROS2 Versions
+# 1.4 支持的 ROS2 版本
 
-The HD Hyundai Robotics ROS2 driver supports specific ROS2 distributions that have been tested and validated in robot controller and simulation environments.
+HD 现代机器人 ROS2 驱动程序支持在机器人控制器和仿真环境中经过测试和验证的特定 ROS2 发行版。
 
-### Supported ROS2 Distributions
+### 支持的 ROS2 发行版
 
 - **ROS2 Humble Hawksbill** (Ubuntu 22.04 LTS)
 - **ROS2 Jazzy Jalisco** (Ubuntu 24.04 LTS)
 
-### Version Verification
+### 版本验证
 
-After installation, verify your ROS2 setup:
+安装后，验证您的 ROS2 设置：
 
 ```bash
 # Source ROS2 environment
@@ -147,19 +129,17 @@ source /opt/ros/$ROS_DISTRO/setup.bash
 ros2 doctor
 ```
 
-### Next Steps
+### 后续步骤
 
-After confirming ROS2 compatibility, proceed to [Getting Started](../../1-start/README.md) for installation.
-
+在确认 ROS2 兼容性后，请继续查看 [Getting Started](../../1-start/README.md) 以进行安装。
 [__SOURCE](1-intro/5-hdr-robot/README.md)
-# 1.5 Robot Joint and Link Names
+# 1.5 机器人关节和连接件名称
 
-HD Hyundai Robotics robots follow the joint and link naming conventions as shown below within the URDF.
+HD现代机器人遵循以下URDF中的关节和连接件命名约定。
 
+### 关节名称
 
-### Joint Names
-
-|joint no|joint name </br>(URDF)|joint name </br>(TP)|
+|关节编号|关节名称 </br>(URDF)|关节名称 </br>(TP)|
 |:------:|:---:|:---:|
 |1|j1|S|
 |2|j2|H|
@@ -169,9 +149,9 @@ HD Hyundai Robotics robots follow the joint and link naming conventions as shown
 |6|j6|R1|
 
 
-### Link Names
+### 连接件名称
 
-|link No|link Name|
+|连接件编号|连接件名称|
 |:------:|:---:|
 |0|base_link|
 |1|lower_frame_link|
@@ -182,149 +162,145 @@ HD Hyundai Robotics robots follow the joint and link naming conventions as shown
 |6|flange_link|
 
 
-### Link Relationships
+### 连接件关系
 
-|link No|link Name|joint|parent link|joint type|note|
+|连接件编号|连接件名称|关节|父连接件|关节类型|备注|
 |:------:|:---:|:---:|:------:|:---:|:---:|
-||world||||||
-|0|base_link|world_joint|world|fixed|||
-|1|lower_frame_link|j1|base_link|revolute||
-|2|upper_frame_link|j2|lower_frame_link|revolute||
-|3|arm_link|j3|upper_frame_link|revolute||
-|4|wrist_body_link|j4|arm_link|revolute||
-|5|wrist_holder_link|j5|wrist_body_link|revolute||
-|6|flange_link|j6|wrist_holder_link|revolute||
-||flange|flange_link-flange|flange_link|fixed|ROS-Industrial standard coordinate system|
-||tool0|flange-tool0|flange|fixed|ROS-Industrial standard coordinate system|
-
+||世界||||||
+|0|base_link|world_joint|世界|固定|||
+|1|lower_frame_link|j1|base_link|旋转||
+|2|upper_frame_link|j2|lower_frame_link|旋转||
+|3|arm_link|j3|upper_frame_link|旋转||
+|4|wrist_body_link|j4|arm_link|旋转||
+|5|wrist_holder_link|j5|wrist_body_link|旋转||
+|6|flange_link|j6|wrist_holder_link|旋转||
+||flange|flange_link-flange|flange_link|固定|ROS工业标准坐标系|
+||tool0|flange-tool0|flange|固定|ROS工业标准坐标系|
 [__SOURCE](2-start/README.md)
-# 2. Getting Started
+# 2. 入门
 
-This section provides step-by-step instructions for installation, configuration, and execution of the HD Hyundai Robotics ROS2 driver. Follow this guide to set up your development environment and establish communication with the robot.
+本节提供 HD 现代机器人 ROS2 驱动程序的安装、配置和执行的分步说明。请遵循本指南设置您的开发环境并与机器人建立通信。
 
-### Installation and Setup Process
+### 安装和设置过程
 
-1. [Repository Overview](1-repo-overview/README.md) - Understanding package structure and relationships
-2. [Installation](2-installation/README.md) - Repository cloning and build
-3. [Initial Setup](3-initial-setup/README.md) - Networking configuration setup
-4. [Verification](4-verifying/README.md) - Installation testing
-
+1. [Repository Overview](1-repo-overview/README.md) - 理解包结构和关系
+2. [Installation](2-installation/README.md) - 存储库克隆和构建
+3. [Initial Setup](3-initial-setup/README.md) - 网络配置设置
+4. [Verification](4-verifying/README.md) - 安装测试
 [__SOURCE](2-start/1-repo-overview/README.md)
-# 2.1 Repository Overview
+# 2.1 仓库概述
 
-The HD Hyundai Robotics ROS2 driver consists of multiple interconnected packages that work together to provide robot control, simulation, and motion planning capabilities.
+HD 现代汽车机器人 ROS2 驱动程序由多个互连的包组成，这些包共同提供机器人控制、仿真和运动规划功能。
 
-### Repository Architecture
+### 仓库架构
 
 ```
-HD Hyundai Robotics ROS2 Driver
+HD 现代汽车机器人 ROS2 驱动程序
 
-hdr_ros2_driver            # Main repository
-   hdr_bringup             # Robot integration and control launch files
-   hdr_ros2_driver         # Core communication driver
-   hdr_hardware_interface  # ros2_control integration
-   hdr_moveit_config       # MoveIt configuration
-   hdr_msgs                # HD Robotics custom message definitions
+hdr_ros2_driver            # 主仓库
+   hdr_bringup             # 机器人集成和控制启动文件
+   hdr_ros2_driver         # 核心通信驱动
+   hdr_hardware_interface  # ros2_control 集成
+   hdr_moveit_config       # MoveIt 配置
+   hdr_msgs                # HD 机器人自定义消息定义
 
-hdr_client_driver          # C++ client library
+hdr_client_driver          # C++ 客户端库
 
-hdr_description            # Robot URDF models and mesh
+hdr_description            # 机器人 URDF 模型和网格
 
-hdr_simulation_gz          # Gazebo simulation integration
+hdr_simulation_gz          # Gazebo 仿真集成
 ```
 
-### Package Details within Repository
+### 仓库内各包详细信息
 
-- **[ROS2 Driver (`hdr_ros2_driver`)](../../2-hdr_ros2_driver/README.md)** </br>
-Primary ROS2 node providing services for robot control, file management, I/O operations, and system monitoring
+- **[ROS2 驱动程序 (`hdr_ros2_driver`)](../../2-hdr_ros2_driver/README.md)** </br>
+提供机器人控制、文件管理、I/O 操作和系统监控服务的主要 ROS2 节点
 
-- **[HDR Client Driver (`hdr_client_driver`)](../../6-hdr_client_driver/README.md)** </br>
-C++ library implementing TCP/UDP communication protocols with HD Hyundai Robotics controllers
+- **[HDR 客户端驱动程序 (`hdr_client_driver`)](../../6-hdr_client_driver/README.md)** </br>
+实现与 HD 现代汽车机器人控制器的 TCP/UDP 通信协议的 C++ 库
 
-- **[ROS2 Control Integration (`hdr_hardware_interface`)](../../3-hdr_hardware_interface/README.md)** </br>
-ros2_control SystemInterface for integration with standard ROS2 control framework
+- **[ROS2 控制集成 (`hdr_hardware_interface`)](../../3-hdr_hardware_interface/README.md)** </br>
+与标准 ROS2 控制框架集成的 ros2_control SystemInterface
 
-- **[Robot Description (`hdr_description`)](../../4-hdr_description/README.md)** </br>
-URDF/XACRO, collision/visual mesh, and RViz configuration for supported robot models
+- **[机器人描述 (`hdr_description`)](../../4-hdr_description/README.md)** </br>
+支持的机器人模型的 URDF/XACRO、碰撞/视觉网格和 RViz 配置
 
-- **[MoveIt2 Configuration (`hdr_moveit_config`)](../../5-hdr_moveit_config/README.md)** </br>
-Robot model-specific MoveIt2 configuration including SRDF, soft limits, kinematics, and motion planning settings
+- **[MoveIt2 配置 (`hdr_moveit_config`)](../../5-hdr_moveit_config/README.md)** </br>
+针对特定机器人模型的 MoveIt2 配置，包括 SRDF、软限制、运动学和运动规划设置
 
-- **[Gazebo Simulation (`hdr_simulation_gz`)](../../6-hdr_simulation_gz/README.md)** </br>
-Gazebo Ignition simulation integration
+- **[Gazebo 仿真 (`hdr_simulation_gz`)](../../6-hdr_simulation_gz/README.md)** </br>
+Gazebo Ignition 仿真集成
 
-- **[Custom Messages (`hdr_msgs`)](../../7-hdr_msgs/README.md)** </br>
-Custom ROS2 service and message definitions for communication with HD Hyundai Robotics controllers
+- **[自定义消息 (`hdr_msgs`)](../../7-hdr_msgs/README.md)** </br>
+与 HD 现代汽车机器人控制器通信的自定义 ROS2 服务和消息定义
 
 
-### Next Steps
+### 下一步
 
-1. Review the individual package documentation linked above.
-2. Proceed to [Installation](../2-installation/README.md) to build the packages.
-3. Configure robot connection in [Initial Setup](../3-initial-setup/README.md).
-
+1. 查看上述链接的各个包文档。
+2. 继续到 [Installation](../2-installation/README.md) 来构建软件包。
+3. 在 [Initial Setup](../3-initial-setup/README.md) 中配置机器人连接。
 [__SOURCE](2-start/2-installation/README.md)
-# 2.2 Package Build and Installation
-This section covers the installation process of the HD Hyundai Robotics ROS2 driver, including repository cloning, dependencies installation, and package build.
+# 2.2 包构建与安装
+本节涵盖 HD Hyundai Robotics ROS2 驱动程序的安装过程，包括库克隆、依赖项安装和包构建。
 
-### Workspace Setup
+### 工作区设置
 
-#### Create ROS2 Workspace
+#### 创建 ROS2 工作区
 
 ```bash
-# Create workspace directory
+# 创建工作区目录
 mkdir -p ~/hdr_ws/src
 cd ~/hdr_ws
 ```
 
-#### Clone Source Repositories
+#### 克隆源代码库
 
 ```bash
 cd ~/hdr_ws/src
 
-# HDR core driver and client library
+# HDR 核心驱动程序和客户端库
 git clone https://github.com/hyundai-robotics/hdr_ros2_driver.git
 git clone https://github.com/hyundai-robotics/hdr_client_driver.git
 
-# HDR description package
+# HDR 描述包
 git clone https://github.com/hyundai-robotics/hdr_description.git
 
-# Gazebo simulation
+# Gazebo 模拟
 git clone https://github.com/hyundai-robotics/hdr_simulation_gz.git
 ```
 
-### Dependencies Installation
+### 依赖项安装
 
-#### Install ROS2 Dependencies
+#### 安装 ROS2 依赖项
 
 ```bash
 cd ~/hdr_ws
 
-# Update package database
+# 更新软件包数据库
 rosdep update
 
-# Install all dependencies for HDR packages
+# 安装 HDR 包的所有依赖项
 rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
-### Build Process
+### 构建过程
 
-#### Standard Build
+#### 标准构建
 
 ```bash
 cd ~/hdr_ws
 
-# Build all packages with optimization
+# 构建所有带优化的包
 colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Release
 ```
-
-#### Build Configuration Options
+#### 构建配置选项
 ```bash
-# Build with debug symbols
+# 使用调试符号进行构建
 colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Debug
 ```
 
-#### Environment Setup
+#### 环境设置
 
 ```bash
 cd ~/hdr_ws
@@ -333,270 +309,260 @@ source install/setup.bash
 echo "source ~/hdr_ws/install/setup.bash" >> ~/.bashrc
 ```
 
-### Next Steps
+### 下一步
 
-After successful package installation and build:
-1. Proceed to [Initial Setup](../3-initial-setup/README.md) for controller and PC configuration
-2. Run [Installation Verification](../4-verifying/README.md) tests
-
+在成功安装和构建包后：
+1. 继续进行 [初始设置](../3-initial-setup/README.md) 以配置控制器和PC
+2. 运行 [安装验证](../4-verifying/README.md) 测试
 [__SOURCE](2-start/3-initial-setup/README.md)
-# 2.3 Controller and PC Communication Setup
+# 2.3 控制器与 PC 通信设置
 
-This guide covers the configuration of network interfaces on your development PC for communication with HD Hyundai Robotics robot controllers.
+本指南涵盖了您开发 PC 上网络接口的配置，以便与 HD Hyundai Robotics 机器人控制器进行通信。
 
-### Prerequisites
-⚠️ Please verify the following before starting setup:
-- **Robot Controller SW Version**: Hi6, Hi7 series controller with SW version **60.32-00** or higher
+### 前提条件
+⚠️ 在开始设置之前，请验证以下内容：
+- **机器人控制器软件版本**：Hi6、Hi7 系列控制器，软件版本为 **60.32-00** 或更高
 
-### Network Configuration Overview
+### 网络配置概述
 
-The PC must be configured to communicate with the robot controller via Ethernet. The default configuration uses a 192.168.1.x subnet with the controller at 192.168.1.150.
+PC 必须配置为通过以太网与机器人控制器通信。默认配置使用 192.168.1.x 子网，控制器地址为 192.168.1.150。
 
-### Default Network Configuration (Using LAN1)
+### 默认网络配置（使用 LAN1）
 
-| Component | Parameter | Default Value |
+| 组件 | 参数 | 默认值 |
 |-----------|-----------|---------------|
-| **PC IP Address** | Static IP | 192.168.1.x (user configured)|
-| **Robot Controller IP** | Static IP | 192.168.1.150 |
-| **Subnet Mask** | Network Mask | 255.255.255.0 |
-| **Gateway** | Default Gateway | 192.168.1.1  |
+| **PC IP 地址** | 静态 IP | 192.168.1.x (用户配置) |
+| **机器人控制器 IP** | 静态 IP | 192.168.1.150 |
+| **子网掩码** | 网络掩码 | 255.255.255.0 |
+| **网关** | 默认网关 | 192.168.1.1  |
 
-### Cable Connection
+### 电缆连接
 
 ![controller](../../_assets/controller.png)
 
-1. **Locate Robot Controller Ethernet Port**
-   - **Hi6-N Controller**: Ethernet port on top of main module
-   - **Hi6-T Controller**: Ethernet port on controller front panel
+1. **找到机器人控制器以太网端口**
+   - **Hi6-N 控制器**：主模块顶部的以太网端口
+   - **Hi6-T 控制器**：控制器前面板的以太网端口
 
-2. **Connect Ethernet Cable**
-   - Use Cat5e or Cat6 Ethernet cable
-   - **Recommendation**: Use LAN1 (typically pre-configured to 192.168.1.x)
-   - LAN2, LAN3 ports are also available with different default controller IPs: </br>
-      LAN2: 192.168.4.150 → PC needs to be configured to 192.168.4.x range </br>
-      LAN3: 192.168.3.150 → PC needs to be configured to 192.168.3.x range
+2. **连接以太网电缆**
+   - 使用 Cat5e 或 Cat6 以太网电缆
+   - **建议**：使用 LAN1（通常预配置为 192.168.1.x）
+   - LAN2、LAN3 端口也可用，具有不同的默认控制器 IP： </br>
+      LAN2: 192.168.4.150 → PC 需要配置为 192.168.4.x 范围 </br>
+      LAN3: 192.168.3.150 → PC 需要配置为 192.168.3.x 范围
 
-3. **Verify Physical Connection**
-   - Ensure cable connection is secure
-   - Check network port LED indicators (if available)
+3. **验证物理连接**
+   - 确保电缆连接牢固
+   - 检查网络端口 LED 指示灯（如果可用）
 
-
-### PC Network Interface Configuration
+### PC 网络接口配置
 
 ![LAN_com](../../_assets/LAN_com.png)
 
-#### Using Network Manager GUI
+#### 使用网络管理器 GUI
 
-##### Ubuntu Desktop (GNOME)
+##### Ubuntu 桌面 (GNOME)
 
-1. **Open Network Settings**
-   - Click on the network icon in the top-right corner
-   - Select "Wired Settings" or go to Settings → Network
+1. **打开网络设置**
+   - 点击右上角的网络图标
+   - 选择“有线设置”或转到设置 → 网络
 
-2. **Configure Wired Connection**
-   - Click the gear icon next to the wired connection
-   - Navigate to the "IPv4" tab
+2. **配置有线连接**
+   - 点击有线连接旁边的齿轮图标
+   - 导航到“IPv4”标签
 
-3. **Set Static IP Configuration (Using LAN1)**
-   - **Method**: Manual
-   - **Address**: 192.168.1.100
-   - **Netmask**: 255.255.255.0
-   - **Gateway**: 192.168.1.1
+3. **设置静态IP配置（使用LAN1）**
+   - **方法**：手动
+   - **地址**：192.168.1.100
+   - **子网掩码**：255.255.255.0
+   - **网关**：192.168.1.1
 
-4. **Apply Settings**
-   - Click "Apply" and disconnect then reconnect the network interface
+4. **应用设置**
+   - 点击“应用”，然后断开再重新连接网络接口
 
 ![ip_setup](../../_assets/ip_setup.png)
 
-### Verification
+### 验证
 
-#### Verify Network Configuration
+#### 验证网络配置
 
 ```bash
-# Test network connectivity
+# 测试网络连通性
 ping -c 4 192.168.1.150
 ```
 
 ![ping_test](../../_assets/ping_test.png)
-
 [__SOURCE](2-start/4-verifying/README.md)
-# 2.4 Installation Verification
+# 2.4 安装验证
 
-This guide provides verification procedures to confirm that the HD Hyundai Robotics ROS2 driver is properly installed, configured, and ready to operate.
+本指南提供验证程序，以确认 HD Hyundai Robotics ROS2 驱动程序已正确安装、配置并准备好操作。
 
+#### 机器人模式配置
 
-#### Robot Mode Configuration
+HDR ROS2 驱动程序仅在机器人处于 **REMOTE** 模式时操作。
 
-The HDR ROS2 driver operates only when the robot is in **REMOTE** mode.
-
-Please set the controller to remote control mode by switching the mode switch on the teach pendant (TP) to the REMOTE position before running the ROS2 driver.
+在运行 ROS2 驱动程序之前，请通过将教导挂件 (TP) 上的模式开关切换到 REMOTE 位置来设置控制器为远程控制模式。
 
 ![ip_setup](../../_assets/tp_operate.png)
 
-
-#### HDR ROS2 Driver Execution Test
+#### HDR ROS2 驱动程序执行测试
 
 ```bash
-# Run HDR ROS2 driver (ensure robot is in REMOTE mode)
+# 运行 HDR ROS2 驱动程序（确保机器人处于 REMOTE 模式）
 ros2 launch hdr_bringup hdr_control.py \
-  robot_model:=hdf7_7      # Enter robot model (default: ha006b)
+  robot_model:=hdf7_7      # 输入机器人模型（默认：ha006b）
 
 
-# Verify controller manager in another terminal
+# 在另一个终端验证控制器管理器
 ros2 control list_controllers
 
-# Expected output:
+# 预期输出：
 # joint_state_broadcaster[joint_state_broadcaster/JointStateBroadcaster] active
 # joint_trajectory_controller[joint_trajectory_controller/JointTrajectoryController] active
 ```
 
-#### Joint State Publishing Test
+#### 关节状态发布测试
 
 ```bash
-# Verify joint state is being published
+# 验证关节状态是否被发布
 ros2 topic list | grep joint_states
 
-# Monitor joint state
+# 监控关节状态
 ros2 topic echo /joint_states --once
 
-# Check publishing frequency
+# 检查发布频率
 ros2 topic hz /joint_states
 ```
-
 [__SOURCE](3-hdr_ros2_driver/README.md)
-# 3. ROS2 Driver (`hdr_ros2_driver`)
+# 3. ROS2 驱动程序 (`hdr_ros2_driver`)
 
-The `hdr_ros2_driver` package provides a core ROS2 driver for interfacing with HD Hyundai Robotics' Open API. This driver enables comprehensive communication with robot controllers through REST API, supporting services for robot control, monitoring, file operations, and system management.
+`hdr_ros2_driver` 包提供了一个核心 ROS2 驱动程序，用于与 HD 现代机器人公司的开放 API 进行接口。这种驱动程序通过 REST API 实现与机器人控制器的全面通信，支持机器人控制、监控、文件操作和系统管理的服务。
 
-### Key Features
+### 关键特性
 
-- **Robot State Publishing**: Real-time joint state information via `/joint_states` topic
-- **Motion Control**: Joint trajectory control through ROS2 actions
-- **Comprehensive Services**: Over 30 service endpoints organized by functionality
+- **机器人状态发布**：通过 `/joint_states` 主题提供实时关节状态信息
+- **运动控制**：通过 ROS2 动作进行关节轨迹控制
+- **全面服务**：按功能组织的超过 30 个服务端点
 
 
-### Detailed Documentation
+### 详细文档
 
-- [Launch Instructions](1-launch/README.md) - Launch files for driver execution
-- [Configuration Parameters](2-parameters/README.md) - Available parameters within launch
-- [Provided Topics](3-topics/README.md) - Published robot state information
-- [Available Actions](4-actions/README.md) - Joint trajectory execution and motion control
-- [Supported ROS2 Services](5-services/README.md) - API service reference
-
+- [启动说明](1-launch/README.md) - 驱动程序执行的启动文件
+- [配置参数](2-parameters/README.md) - 启动中可用的参数
+- [提供的话题](3-topics/README.md) - 发布的机器人状态信息
+- [可用的动作](4-actions/README.md) - 关节轨迹执行和运动控制
+- [支持的 ROS2 服务](5-services/README.md) - API 服务参考
 [__SOURCE](3-hdr_ros2_driver/1-launch/README.md)
-# 3.1 HDR ROS2 Driver launch
+# 3.1 HDR ROS2 驱动程序启动
 
-This section covers how to launch the HDR ROS2 driver.
+本节介绍如何启动 HDR ROS2 驱动程序。
 
-### Basic Launch
+### 基本启动
 
-#### HDR ROS2 Driver Launch
+#### HDR ROS2 驱动程序启动
 ```bash
-# Launch with default parameters
+# 使用默认参数启动
 ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py
 ```
 
-This will start the driver with:
-- Default IP: 192.168.1.150
-- Default Port: 8888
+这将启动驱动程序，使用：
+- 默认 IP：192.168.1.150
+- 默认端口：8888
 
-### Custom Configuration
+### 自定义配置
 
-#### Custom IP and Port
+#### 自定义 IP 和端口
 ```bash
-# Launch with custom network settings
+# 使用自定义网络设置启动
 ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
   openapi_ip:=192.168.0.10 \
   openapi_port:=8080
 ```
 
-### Launch Parameters
+### 启动参数
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `openapi_ip` | string | `192.168.1.150` | Robot controller server IP address |
-| `openapi_port` | int | `8888` | Controller server port number |
-| `robot_model` | string | `ha006b` | Robot model name |
+| 参数 | 类型 | 默认 | 描述 |
+|------|------|------|------|
+| `openapi_ip` | 字符串 | `192.168.1.150` | 机器人控制器服务器 IP 地址 |
+| `openapi_port` | 整数 | `8888` | 控制器服务器端口编号 |
+| `robot_model` | 字符串 | `ha006b` | 机器人型号名称 |
 
-### Verification
+### 验证
 
-After launch, verify the driver is running:
+启动后，验证驱动程序是否正在运行：
 
 ```bash
-# Check if driver node is active
+# 检查驱动程序节点是否活动
 ros2 node list | grep hdr_ros2_driver
 
-# List available services
+# 列出可用服务
 ros2 service list | grep hdr_ros2_driver
 
-# Test basic connection
+# 测试基本连接
 ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 ```
 
-### Network Setup Prerequisites
+### 网络设置前提条件
+在启动之前，请确保正确的网络配置：
 
-Before launching, ensure proper network configuration:
+1. **以太网连接**：通过LAN1、LAN2或LAN3将PC连接到机器人控制器
+2. **控制器IP**：默认192.168.1.150（可通过教学挂件配置）
+3. **PC IP**：设置为192.168.1.x范围（x ≠ 150）
+4. **远程模式**：确保机器人控制器处于远程模式
 
-1. **Ethernet Connection**: Connect PC to robot controller via LAN1, LAN2, or LAN3
-2. **Controller IP**: Default 192.168.1.150 (configurable through teaching pendant)
-3. **PC IP**: Set to 192.168.1.x range (x ≠ 150)
-4. **REMOTE Mode**: Ensure robot controller is in REMOTE mode
+### 故障排除
 
-### Troubleshooting
+#### 常见问题
 
-#### Common Issues
+1. **连接超时**
+   - 验证机器人IP和端口：`ping 192.168.1.150`
+   - 检查以太网电缆连接
 
-1. **Connection Timeout**
-   - Verify robot IP and port: `ping 192.168.1.150`
-   - Check ethernet cable connection
-
-2. **Service Unavailable**
-   - Verify driver launched successfully
-   - Check ROS2 environment is sourced
-   - Check launch output for error messages
-   - Ensure robot is in REMOTE mode
-   - Verify controller SW version is **60.32-00** or higher
-   
+2. **服务不可用**
+   - 验证驱动程序是否成功启动
+   - 检查ROS2环境是否已被引入
+   - 检查启动输出中的错误信息
+   - 确保机器人处于远程模式
+   - 验证控制器软件版本为**60.32-00**或更高
 [__SOURCE](3-hdr_ros2_driver/2-topics/README.md)
-# 3.2 Provided Topics
+# 3.2 提供的主题
 
-### Overview
+### 概述
 
-The ROS2 driver publishes real-time robot data through standardized ROS2 topics. These topics provide joint states, robot status information, and diagnostic data for monitoring and control applications.
+ROS2 驱动程序通过标准化的 ROS2 主题发布实时机器人数据。这些主题提供关节状态、机器人状态信息和用于监控和控制应用的诊断数据。
 
-### Published Topics
+### 发布的主题
 
-#### Joint State Information
+#### 关节状态信息
 
 ##### `/joint_states` (sensor_msgs/msg/JointState)
-**Description**: Real-time joint position data
+**描述**：实时关节位置数据
 
-**Message Fields**:
+**消息字段**：
 ```yaml
 std_msgs/Header header
   uint32 seq
   time stamp
   string frame_id
-string[] name          # Joint names matching URDF
-float64[] position     # Joint positions in radians
-float64[] velocity     # Joint velocity in radians/sec
-float64[] effort       # Joint effort in torque
+string[] name          # 与 URDF 匹配的关节名称
+float64[] position     # 以弧度表示的关节位置
+float64[] velocity     # 以弧度/秒表示的关节速度
+float64[] effort       # 以扭矩表示的关节努力
 ```
 
-**Publishing Frequency**: 50 Hz (configurable via `publish_rate` parameter)
-
+**发布频率**：50 Hz（可通过 `publish_rate` 参数配置）
 [__SOURCE](3-hdr_ros2_driver/3-actions/README.md)
-# 3.3 Available Actions
+# 3.3 可用的操作
 
-### Overview
+### 概述
 
-The ROS2 driver provides action interfaces for robot joint trajectory control. Actions enable asynchronous operations with progress feedback and cancellation capabilities.
+ROS2 驱动程序提供了机器人关节轨迹控制的动作接口。动作允许异步操作，具有进度反馈和取消功能。
 
-### Joint Trajectory Control Action
+### 关节轨迹控制操作
 
 #### `/joint_trajectory_controller/follow_joint_trajectory` (control_msgs/action/FollowJointTrajectory)
 
-**Description**: Executes joint trajectory control.
+**描述**: 执行关节轨迹控制。
 
 **action_goal**:
 ```yaml
@@ -640,66 +606,65 @@ control_msgs/FollowJointTrajectoryResult result
 ```
 
 [__SOURCE](3-hdr_ros2_driver/4-services/README.md)
-# 3.4 ROS2 Driver Services
+# 3.4 ROS2 驱动服务
 
-### Overview
+### 概述
 
-The `hdr_ros2_driver` provides various ROS2 services for communicating with HD Hyundai Robotics Hi6 controllers.
+`hdr_ros2_driver` 提供多种 ROS2 服务用于与 HD 现代机器人 Hi6 控制器进行通信。
 
-### Service Categories
+### 服务类别
 
-| Category | Description |
+| 类别 | 描述 |
 |----------|-------------|
-| **[Control Services](1-control/README.md)** | Robot control, motor power, emergency stop, coordinate systems, I/O management |
-| **[Task Management](2-task/README.md)** | Variable assignment, motion execution, program control |
-| **[File Management](3-file/README.md)** | File upload/download, directory manipulation |
-| **[PLC Communication](4-plc/README.md)** | PLC relay value control |
-| **[Console Commands](5-console/README.md)** | Console command execution, system time, log management |
-| **[Project Management](6-project/README.md)** | Job information, job deletion/reload |
-| **[Version Information](7-version/README.md)** | API version, system version queries |
+| **[控制服务](1-control/README.md)** | 机器人控制，电机电源，应急停止，坐标系统，I/O 管理 |
+| **[任务管理](2-task/README.md)** | 变量赋值，运动执行，程序控制 |
+| **[文件管理](3-file/README.md)** | 文件上传/下载，目录操作 |
+| **[PLC 通信](4-plc/README.md)** | PLC 继电器值控制 |
+| **[控制台命令](5-console/README.md)** | 控制台命令执行，系统时间，日志管理 |
+| **[项目管理](6-project/README.md)** | 作业信息，作业删除/重载 |
+| **[版本信息](7-version/README.md)** | API 版本，系统版本查询 |
 
-### Basic Usage
+### 基本用法
 
-#### Check Service List
+#### 检查服务列表
 ```bash
-# List all HDR driver services
+# 列出所有 HDR 驱动服务
 ros2 service list | grep hdr_ros2_driver
 ```
 
-#### Common Service Calls
+#### 常见服务调用
 ```bash
-# Check API version
+# 检查 API 版本
 ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 
-# Check motor status
+# 检查电机状态
 ros2 service call /hdr_ros2_driver/robot/get/motor_state std_srvs/srv/Trigger
 
-# Turn on motor power
+# 打开电机电源
 ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/Trigger
 ```
-
 [__SOURCE](4-hdr_hardware_interface/README.md)
-# 4. ROS2 Control Integration (`hdr_hardware_interface`)
+# 4. ROS2 控制集成 (`hdr_hardware_interface`)
 
-### Overview
+### 概述
 
-The `hdr_hardware_interface` package provides a `ros2_control` SystemInterface to connect HD Hyundai Robotics' Open API-based controllers with the ROS2 control framework. It maps joint position state and command interfaces to HTTP-based robot services, handling controller lifecycle and real-time pose tracking.
+`hdr_hardware_interface` 包提供 `ros2_control` SystemInterface，以将 HD 现代机器人基于开放 API 的控制器与 ROS2 控制框架连接。它将关节位置状态和命令接口映射到基于 HTTP 的机器人服务，处理控制器生命周期和实时姿态跟踪。
 
-### Package Structure
+### 包结构
 
-| Directory                           | Description                                                                 |
-| ----------------------------------- | ----------------------------------------------------------------------------|
-| `include/`                          | C++ headers including `HDRRobotHardware` and utility helpers                |
-| `src/`                              | SystemInterface logic implementation                                     |
-| `launch/`                           | Launch files for executing the `ros2_control` interface             |
-| `config/`                           | YAML configuration files for controller and kinematics settings   |
-| `hdr_hardware_interface_plugin.xml` | Metadata for pluginlib                                               |
+| 目录                               | 描述                                                                     |
+| ---------------------------------- | ------------------------------------------------------------------------ |
+| `include/`                         | 包含 `HDRRobotHardware` 和工具助手的 C++ 头文件                            |
+| `src/`                             | SystemInterface 逻辑实现                                                |
+| `launch/`                          | 用于执行 `ros2_control` 接口的启动文件                                   |
+| `config/`                          | 控制器和运动学设置的 YAML 配置文件                                        |
+| `hdr_hardware_interface_plugin.xml` | 插件库的元数据                                                           |
 
 ---
 
-### Usage
+### 用法
 
-###### Launch HDR hardware interface with ros2_control
+###### 使用 ros2_control 启动 HDR 硬件接口
 
 ```bash
 ros2 launch hdr_hardware_interface ros2_control.launch.py \
@@ -708,8 +673,8 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
   openapi_port:=8888
 ```
 
-###### Plugin Configuration
-To enable the hardware interface, include it within the `<ros2_control>` in URDF or xacro
+###### 插件配置
+要启用硬件接口，请在 URDF 或 xacro 中包含它到 `<ros2_control>` 内
 
 ```xml
 <ros2_control name="HDRRobotHardware" type="system">
@@ -722,76 +687,73 @@ To enable the hardware interface, include it within the `<ros2_control>` in URDF
 </ros2_control>
 ```
 
-##### Configuration Options
+##### 配置选项
 
-| Parameter                      | Type   | Default                         | Description                                                                 |
-|---------------------------|--------|----------------------------------|-----------------------------------------------------------------------------|
-| `robot_model`             | string | `"ha006b"`                      | Robot model name                               |
-| `openapi_ip`              | string | `"192.168.1.150"`               | HTTP API IP address of the robot controller                                  |
-| `command_start_time`   | float  | `-1.0`                          | Command execution time (-1.0 for immediate execution)             |
-| `command_buffer_size`  | int    | `5`                             | Command data buffer size                                 |
-| `use_sim`                 | bool   | `false`                         | Enable simulation mode using the `gz_ros2_control/GazeboSimSystem` plugin, typically used for integration with Ignition Gazebo<br>The `use_sim_time` parameter is also set to true for synchronization with simulation time     |
-| `use_mock_hardware`       | bool   | `false`                         | Enable mock hardware interface using `mock_components/GenericSystem` for testing without a robot   |
-| `initial_positions_file`  | string | `""`                            | Optional YAML file specifying initial joint positions                       |
-| `controllers_config_package` | string | `"hdr_hardware_interface"`     | Package name containing config YAML                                       |
-| `controllers_file`        | string | `"default_controllers.yaml"`   | Controller configuration YAML filename                                     |
-| `kinematics_file`         | string | `"default_kinematics.yaml"`    | Kinematics plugin configuration YAML filename                              |
+| 参数                         | 类型    | 默认                              | 描述                                                                   |
+|---------------------------|---------|----------------------------------|------------------------------------------------------------------------|
+| `robot_model`             | 字符串  | `"ha006b"`                       | 机器人型号名称                                                       |
+| `openapi_ip`              | 字符串  | `"192.168.1.150"`                | 机器人控制器的 HTTP API IP 地址                                      |
+| `command_start_time`   | 浮点数  | `-1.0`                           | 命令执行时间（-1.0 表示立即执行）                                      |
+| `command_buffer_size`  | int    | ` (5)`                             | 命令数据缓冲区大小                                 |
+| `use_sim`                 | bool   | `false`                         | 启用使用`gz_ros2_control/GazeboSimSystem`插件的仿真模式，通常用于与Ignition Gazebo的集成<br>`use_sim_time`参数也设置为true以与仿真时间同步     |
+| `use_mock_hardware`       | bool   | `false`                         | 启用使用`mock_components/GenericSystem`的虚拟硬件接口，以在没有机器人的情况下进行测试   |
+| `initial_positions_file`  | string | `""`                            | 可选的YAML文件，指定初始关节位置                       |
+| `controllers_config_package` | string | `"hdr_hardware_interface"`     | 包含配置YAML的包名称                                       |
+| `controllers_file`        | string | `"default_controllers.yaml"`   | 控制器配置YAML文件名                                     |
+| `kinematics_file`         | string | `"default_kinematics.yaml"`    | 运动学插件配置YAML文件名                              |
 
 
 ##### Topics
 
 | Topic Name                   | Message Type                   | Description                               |
 | ---------------------------- | ------------------------------ | ----------------------------------------- |
-| `/joint_states`              | sensor_msgs::msg::JointState | Publishes current joint states including position information |
-| `/controller_manager/status` | lifecycle_msgs::msg::State   | Lifecycle state of the ros2_control manager |
+| `/joint_states`              | sensor_msgs::msg::JointState | 发布当前关节状态，包括位置信息 |
+| `/controller_manager/status` | lifecycle_msgs::msg::State   | ros2_control管理器的生命周期状态 |
 
 ##### Actions
 
 | Action Name                                            | Action Type                                   | Description                                |
 | ------------------------------------------------------ | --------------------------------------------- | ------------------------------------------ |
-| `/joint_trajectory_controller/follow_joint_trajectory` | control_msgs::action::FollowJointTrajectory | Execute joint trajectory commands through ROS2 action |
+| `/joint_trajectory_controller/follow_joint_trajectory` | control_msgs::action::FollowJointTrajectory | 通过ROS2动作执行关节轨迹命令 |
 
 ##### Services
 
 | Service Name                                   | Service Type                                         | Description                         |
 | ---------------------------------------------- | ---------------------------------------------------- | ----------------------------------- |
-| `/controller_manager/list_controllers`         | controller_manager_msgs/srv/ListControllers        | Return list of active controllers     |
-| `/controller_manager/list_hardware_interfaces` | controller_manager_msgs/srv/ListHardwareInterfaces | Return available joint command and state interfaces |
-| `/controller_manager/switch_controller`        | controller_manager_msgs/srv/SwitchController       | Activate or deactivate controllers  |
-| `/controller_manager/load_controller`          | controller_manager_msgs/srv/LoadController         | Load a controller             |
-| `/controller_manager/unload_controller`        | controller_manager_msgs/srv/UnloadController       | Unload the specified controller.    |
-
----
-
+| `/controller_manager/list_controllers`         | controller_manager_msgs/srv/ListControllers        | 返回活动控制器列表     |
+| `/controller_manager/list_hardware_interfaces` | controller_manager_msgs/srv/ListHardwareInterfaces | 返回可用的关节命令和状态接口 |
+| `/controller_manager/switch_controller`        | controller_manager_msgs/srv/SwitchController       | 激活或停用控制器  |
+| `/controller_manager/load_controller`          | controller_manager_msgs/srv/LoadController         | 加载控制器             |
+| `/controller_manager/unload_controller`        | controller_manager_msgs/srv/UnloadController       | 卸载指定的控制器。    |
 [__SOURCE](5-hdr_description/README.md)
-# 5. Robot URDF (`hdr_description`)
+# 5. 机器人 URDF (`hdr_description`)
 
-The `hdr_description` package contains robot URDF, meshes, and visualization configurations for HD Hyundai Robotics robots in ROS2. This package provides essential URDF/XACRO definitions needed for simulation, visualization, and motion planning.
+`hdr_description` 包含了 ROS2 中 HD 现代机器人机器人的机器人 URDF、网格和可视化配置。该软件包提供了模拟、可视化和运动规划所需的基本 URDF/XACRO 定义。
 
-### Key Features
+### 主要特性
 
-- **Robot Model-Specific URDF**: URDF/XACRO files for all supported robot models
-- **3D Meshes**: Collision and visual meshes for accurate simulation
-- **RViz Integration**: Pre-configured visualization settings
-- **ros2_control Integration**: Joint interface definitions
+- **特定机器人模型的 URDF**：所有支持的机器人模型的 URDF/XACRO 文件
+- **3D 网格**：用于准确模拟的碰撞和视觉网格
+- **RViz 集成**：预配置的可视化设置
+- **ros2_control 集成**：关节接口定义
 
-### Package Structure
+### 包结构
 
-| Directory | Contents | Purpose |
-|-----------|----------|----------|
-| `urdf/` | Robot URDF files | URDF/XACRO definitions |
-| `meshes/` | 3D model mesh files | Collision and visual representation |
-| `launch/` | Visualization launch files | RViz display configuration |
-| `rviz/` | RViz configuration files | Display settings and plugins |
+| 目录      | 内容                     | 目的                   |
+|-----------|-------------------------|------------------------|
+| `urdf/`   | 机器人 URDF 文件        | URDF/XACRO 定义       |
+| `meshes/` | 3D 模型网格文件         | 碰撞和视觉表示       |
+| `launch/` | 可视化启动文件          | RViz 显示配置          |
+| `rviz/`   | RViz 配置文件           | 显示设置和插件        |
 
-### URDF Configuration
+### URDF 配置
 
-#### Main Files
-- **`hdr.urdf.xacro`**: Top-level macro including all components
-- **`hdr.ros2_control.xacro`**: ros2_control hardware interface macro
+#### 主要文件
+- **`hdr.urdf.xacro`**：包含所有组件的顶级宏
+- **`hdr.ros2_control.xacro`**：ros2_control 硬件接口宏
 
-#### Robot-Specific Files
-Each robot model has its own directory under `urdf/robots/`:
+#### 机器人特定文件
+每个机器人模型在 `urdf/robots/` 下有自己的目录：
 - `ha006b.urdf.xacro`
 - `hdf7_9.urdf.xacro`
 - `hdf8_8.urdf.xacro`
@@ -802,53 +764,52 @@ Each robot model has its own directory under `urdf/robots/`:
 - `hh020.urdf.xacro`
 - `hdr35_20.urdf.xacro`
 
-### Usage Examples
+### 使用示例
 
-#### Visualization in RViz
+#### 在 RViz 中可视化
 ```bash
 ros2 launch hdr_description display_robot.launch.py robot_model:=ha006b
 ```
 
-#### Launch Parameters
+#### 启动参数
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `robot_model` | string | `ha006b` | Robot model to display |
-| `description_package` | string | `hdr_description` | Package containing URDF files |
-| `description_file` | string | `hdr.urdf.xacro` | Main URDF/XACRO file |
+| 参数         | 类型    | 默认      | 描述                |
+|--------------|---------|-----------|---------------------|
+| `robot_model`| string  | `ha006b`  | 要显示的机器人模型 |
+| `description_package` | string | `hdr_description` | 包含URDF文件的包 |
+| `description_file` | string | `hdr.urdf.xacro` | 主URDF/XACRO文件 |
 
-### Mesh Quality
+### 网格质量
 
-The package provides two types of meshes for each robot:
+该包为每个机器人提供两种类型的网格：
 
-#### Visual Meshes
-- High-resolution meshes for realistic visualization
-- Detailed surface textures and materials
-- Used for visual representation in RViz and Gazebo
+#### 视觉网格
+- 高分辨率网格以实现真实的可视化
+- 细致的表面纹理和材料
+- 用于RViz和Gazebo中的视觉表示
 
-#### Collision Meshes
-- Simplified meshes for collision detection
-- Optimized for computational efficiency
-- Used by physics engines and motion planners
+#### 碰撞网格
+- 简化的网格用于碰撞检测
+- 针对计算效率进行了优化
+- 被物理引擎和运动规划器使用
 
-For model-specific details, see [Supported Robot Models](../0-intro/2-robot-models/README.md).
-
+有关特定模型的详细信息，请参见 [支持的机器人模型](../0-intro/2-robot-models/README.md)。
 [__SOURCE](6-hdr_moveit_config/README.md)
-# 6. MoveIt2 Configuration (`hdr_moveit_config`)
+# 6. MoveIt2 配置 (`hdr_moveit_config`)
 
-The `hdr_moveit_config` package provides MoveIt2 configuration packages for controlling HD Hyundai Robotics robots in both real and simulation environments. This package includes robot-specific motion planning configurations with SRDF definitions, joint limits, and controller settings.
+`hdr_moveit_config` 包提供了在实际和模拟环境中控制 HD Hyundai Robotics 机器人的 MoveIt2 配置包。该包包括特定于机器人的运动规划配置，带有 SRDF 定义、关节限制和控制器设置。
 
-### Key Features
+### 主要特性
 
-- **Robot-Specific Configuration**: Individual MoveIt2 settings for each supported robot model
-- **SRDF Definitions**: Semantic robot description with planning groups and poses
-- **Joint Limits Management**: Velocity and acceleration scaling for safe operation
-- **Kinematics Integration**: Forward/inverse kinematics solver configuration
-- **Controller Integration**: ros2_control and trajectory execution setup
+- **特定机器人配置**：每个支持的机器人模型的个别 MoveIt2 设置
+- **SRDF 定义**：带有规划组和姿势的语义机器人描述
+- **关节限制管理**：安全操作的速度和加速度缩放
+- **运动学集成**：正/逆运动学求解器配置
+- **控制器集成**：ros2_control 和轨迹执行设置
 
-### Package Organization
+### 包组织
 
-Each robot model has its own MoveIt2 configuration package:
+每个机器人模型都有自己的 MoveIt2 配置包：
 
 - `ha006b_moveit_config/`
 - `hdf7_9_moveit_config/`
@@ -860,40 +821,39 @@ Each robot model has its own MoveIt2 configuration package:
 - `hh020_moveit_config/`
 - `hdr35_20_moveit_config/`
 
-### Configuration Files
+### 配置文件
 
-Each robot configuration includes:
+每个机器人配置包括：
 
-#### Core Configuration
-- **SRDF Files**: Semantic robot description with planning groups
-- **joint_limits.yaml**: Velocity and acceleration limits with scaling factors
-- **kinematics.yaml**: Kinematics solver plugin configuration
-- **controllers.yaml**: ros2_control trajectory controller settings
+#### 核心配置
+- **SRDF 文件**：带有规划组的语义机器人描述
+- **joint_limits.yaml**：带有缩放因子的速度和加速度限制
+- **kinematics.yaml**：运动学求解器插件配置
+- **controllers.yaml**：ros2_control 轨迹控制器设置
 
-#### Advanced Settings
-- **ompl_planning.yaml**: OMPL motion planner configuration
-- **pilz_cartesian_limits.yaml**: Cartesian motion limits for Pilz planner
-- **sensors_3d.yaml**: 3D sensor integration (if applicable)
-- **initial_positions.yaml**: Default starting poses
+#### 高级设置
+- **ompl_planning.yaml**：OMPL 运动规划器配置
+- **pilz_cartesian_limits.yaml**：Pilz 规划器的笛卡尔运动限制
+- **sensors_3d.yaml**：3D 传感器集成（如适用）
+- **initial_positions.yaml**：默认起始姿势
 
-### Safety Considerations
+### 安全考虑
 
-#### Velocity Scaling
-**≤ 0.5** scaling factors are recommended for stable operation:
+#### 速度缩放
+**≤ 0.5** 的缩放因子建议用于稳定操作：
 
 ```yaml
 default_velocity_scaling_factor: 0.5
 default_acceleration_scaling_factor: 0.5
 ```
+#### 关节限制
+文件 `joint_limits.yaml` 定义：
+- 最大关节速度
+- 最大关节加速度
+- 软件位置限制
+- 运动规划的缩放因子
 
-#### Joint Limits
-The `joint_limits.yaml` file defines:
-- Maximum joint velocities
-- Maximum joint accelerations
-- Software position limits
-- Scaling factors for motion planning
-
-### Launch
+### 启动
 
 ```bash
 ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
@@ -901,9 +861,9 @@ ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 
 ![hdr_moveit](../_assets/hdr_moveit.png)
 
-### Planning Groups
+### 规划组
 
-Typical SRDF planning group configuration:
+典型的 SRDF 规划组配置：
 
 ```xml
 <group name="manipulator">
@@ -921,189 +881,182 @@ Typical SRDF planning group configuration:
 ```
 
 
-### Customization
+### 自定义
 
-To modify motion planning behavior:
-1. Edit `joint_limits.yaml` for velocity/acceleration limits (cannot exceed maximum velocities defined per joint in URDF)
-2. Modify `ompl_planning.yaml` for planner-specific settings
-3. Update SRDF for new planning groups or poses
-4. Adjust controller parameters in `controllers.yaml`
-
+要修改运动规划行为：
+1. 编辑 `joint_limits.yaml` 以设置速度/加速度限制（不能超过 URDF 中每个关节定义的最大速度）
+2. 修改 `ompl_planning.yaml` 以进行规划器特定设置
+3. 更新 SRDF 以新增规划组或姿势
+4. 调整 `controllers.yaml` 中的控制器参数
 [__SOURCE](7-hdr_client_driver/README.md)
-# 7. HD Hyundai Robotics Client Driver
+# 7. HD Hyundai Robotics 客户端驱动程序
 
-The HDR client driver provides a comprehensive C++ library for communicating with HD Hyundai Robotics robot controllers via HTTP (Open API) and socket (TCP/UDP) interfaces. This library abstracts both communication layers and provides object-oriented interfaces for robot control and monitoring, file management, real-time command execution, and integration with ROS2.
+HDR 客户端驱动程序提供了一个全面的 C++ 库，用于通过 HTTP (开放 API) 和套接字 (TCP/UDP) 接口与 HD Hyundai Robotics 机器人控制器进行通信。该库抽象了两个通信层，并提供面向对象的接口用于机器人控制和监控、文件管理、实时命令执行以及与 ROS2 的集成。
 
-> ❗ Important: All REST API-based communication requires the robot to be in REMOTE mode.
+> ❗ 重要：所有基于 REST API 的通信要求机器人处于远程模式。
 
-### Package Structure
+### 包结构
 
-| Directory | Description |
-|-----------|-------------|
-| `include/` | Header files for the HDR client driver library |
-| `src/` | Source implementation of client driver functions |
-| `src/functions/` | API category implementations for various robot controller functions |
-| `examples/` | Example programs demonstrating how to use the driver APIs |
-
+| 目录        | 描述                                   |
+|-------------|----------------------------------------|
+| `include/`  | HDR 客户端驱动库的头文件              |
+| `src/`      | 客户端驱动函数的源实现                |
+| `src/functions/` | 各种机器人控制器功能的 API 类别实现 |
+| `examples/` | 演示如何使用驱动 API 的示例程序        |
 [__SOURCE](7-hdr_client_driver/1-api-categories/README.md)
-# 7.1 API Categories
+# 7.1 API类别
 
-The HDR client driver supports the following API categories:
+HDR客户端驱动程序支持以下API类别：
 
-### Supported API Categories
+### 支持的API类别
 
-The HDR client driver provides the following API categories corresponding to various functions of the robot controller:
+HDR客户端驱动程序提供以下API类别，对应于机器人控制器的各种功能：
 
-- **[Control](1-control/README.md)** - Basic robot control operations
-- **[Robot](2-robot/README.md)** - Robot motion and status management
-- **[Project](3-project/README.md)** - Project and job management
-- **[File](4-file/README.md)** - File system operations
-- **[I/O](5-io/README.md)** - Input/output control
-- **[Task](6-task/README.md)** - Task execution and variable management
-- **[Miscellaneous](7-etc/README.md)** - System utilities
-
+- **[控制](1-control/README.md)** - 基本机器人控制操作
+- **[机器人](2-robot/README.md)** - 机器人运动和状态管理
+- **[项目](3-project/README.md)** - 项目和任务管理
+- **[文件](4-file/README.md)** - 文件系统操作
+- **[输入/输出](5-io/README.md)** - 输入/输出控制
+- **[任务](6-task/README.md)** - 任务执行和变量管理
+- **[其他](7-etc/README.md)** - 系统实用工具
 [__SOURCE](8-hdr_simulation_gz/README.md)
-# 8. Gazebo Simulation (`hdr_simulation_gz`)
+# 8. Gazebo模拟 (`hdr_simulation_gz`)
 
-The `hdr_simulation_gz` package provides a ROS2 + Gazebo (Ignition) simulation environment for HD Hyundai Robotics industrial robots. This package enables development, testing, and validation of robotic applications without physical hardware.
+`hdr_simulation_gz`包为HD现代机器人工业机器人提供了一个ROS2 + Gazebo（Ignition）模拟环境。该包使得在没有物理硬件的情况下开发、测试和验证机器人应用成为可能。
 
-### Key Features
+### 主要特点
 
-- **Gazebo Integration**: Ignition Gazebo simulation support
-- **Physics Simulation**: Realistic robot dynamics and collision detection
-- **MoveIt2 Compatibility**: Motion planning in simulation environment
-- **ros2_control Integration**: Uses `gz_ros2_control/GazeboSimSystem` plugin
+- **Gazebo集成**：支持Ignition Gazebo模拟
+- **物理模拟**：逼真的机器人动态和碰撞检测
+- **MoveIt2兼容性**：模拟环境中的运动规划
+- **ros2_control集成**：使用`gz_ros2_control/GazeboSimSystem`插件
 
-### Package Structure
+### 包结构
 
-| Directory | Contents | Purpose |
-|-----------|----------|----------|
-| `launch/` | Simulation launch files | Robot spawning and controller setup |
-| `config/` | Controller configuration files | ros2_control YAML files |
+| 目录      | 内容                  | 目的                   |
+|-----------|-----------------------|------------------------|
+| `launch/` | 模拟启动文件          | 机器人生成和控制器设置 |
+| `config/` | 控制器配置文件        | ros2_control YAML文件   |
 
-### Launch Files
+### 启动文件
 
-#### Robot Spawning
+#### 机器人生成
 ```bash
-# Spawn robot with ros2_control in Gazebo
+# 在Gazebo中使用ros2_control生成机器人
 ros2 launch hdr_simulation_gz hdr_gz_spawn.launch.py robot_model:=ha006b
 ```
 
-#### MoveIt2 Integration
+#### MoveIt2集成
 ```bash
-# Run simulation with MoveIt2 motion planning
+# 使用MoveIt2运动规划运行模拟
 ros2 launch hdr_simulation_gz hdr_gz_moveit.launch.py robot_model:=hdr50_22
 ```
 
-### Configuration Options
+### 配置选项
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `robot_model` | string | `ha006b` | Robot model to simulate |
-| `use_sim` | bool | `true` | Enable Gazebo simulation mode |
-| `runtime_config_package` | string | `hdr_simulation_gz` | Controller configuration package |
-| `controllers_file` | string | `hdr_controllers.yaml` | Controller configuration file |
-| `description_package` | string | `hdr_description` | URDF package name |
-| `description_file` | string | `hdr.urdf.xacro` | Robot description file |
-| `initial_positions_file` | string | `initial_positions.yaml` | Initial joint positions |
-| `kinematics_file` | string | `kinematics.yaml` | Kinematics solver configuration |
+| 参数                     | 类型   | 默认值      | 描述                     |
+|-------------------------|--------|-------------|--------------------------|
+| `robot_model`           | 字符串 | `ha006b`    | 要模拟的机器人模型      |
+| `use_sim`              | 布尔值 | `true`      | 启用Gazebo模拟模式      |
+| `runtime_config_package`| 字符串 | `hdr_simulation_gz` | 控制器配置包        |
+| `controllers_file`      | 字符串 | `hdr_controllers.yaml` | 控制器配置文件     |
+| `description_package`   | 字符串 | `hdr_description` | URDF包名称          |
+| `description_file`      | 字符串 | `hdr.urdf.xacro` | 机器人描述文件      |
+| `initial_positions_file` | 字符串 | `initial_positions.yaml` | 初始关节位置     |
+| `kinematics_file`      | 字符串 | `kinematics.yaml` | 运动学求解器配置     |
 
-
-### Future Improvements
-- Sensor and tool simulation support
-- World and example scenario support
-
+### 未来改进
+- 传感器和工具模拟支持
+- 世界和示例场景支持
 [__SOURCE](9-hdr_msgs/README.md)
-# 9. HD Hyundai Robotics ROS2 Messages
+# 9. HD 현대 로보틱스 ROS2 메시지
 
-### Overview
+### 개요
 
-The `hdr_msgs` package defines custom ROS2 message types used in the HD Hyundai Robotics software stack.
+`hdr_msgs` 패키지는 HD 현대 로보틱스 소프트웨어 스택에서 사용하는 맞춤형 ROS2 메시지 유형을 정의합니다.
 
 
-### ROS2 Messages
+### ROS2 메시지
 
-| Message Type          | Description                                           |
-|-----------------------|-------------------------------------------------------|
-| `srv/DateTime.srv`    | Gets or sets the system time of the robot controller. Input includes full date/time fields (year, mon, day, hour, min, sec). |
-| `srv/Emergency.srv`   | Tests emergency stop logic using step parameters (step_no, stop_at, stop_mode). Used for simulation/testing scenarios. |
-| `srv/ExecuteCmd.srv`  | Executes console commands as a list of string lines with configurable execution intervals. Useful for raw low-level commands like rl.stop. |
-| `srv/ExecuteMove.srv` | Executes robot movement commands using string-based statements. Example: "move L,spd=1sec,tool=1 [0, 0, 0, 0, 90, 0]". task_no identifies the task index (typically 0). |
-| `srv/FileList.srv`    | Queries directory contents on the robot. Can filter to include files or directories through boolean values. |
-| `srv/FilePath.srv`    | Sends or queries file paths for operations like reading, deletion, or existence checking. |
-| `srv/FileRename.srv`  | Renames or moves files in the robot controller's file system. |
-| `srv/FileSend.srv`    | Uploads files from local PC to robot controller. Requires source and destination paths. |
-| `srv/IoplcGet.srv`    | Reads PLC memory (e.g., relays, M, S, R). Supports both direct addressing and name-based signal addressing. |
-| `srv/IoplcPost.srv`   | Writes to PLC memory (relays) using symbolic names such as M, S, R, or FBx.y. |
-| `srv/IoRequest.srv`   | Used to access digital, serial, or user I/O. The type field specifies I/O kind like 'di', 'do', 'si', or 'so'. blk_no and sig_no specify block and signal indices. The 'val' field is used when setting I/O values and ignored during read operations. |
-| `srv/JointTrajecotryPoints.srv` | Provides trajectory points for executing motion |
-| `srv/LogManager.srv`  | Queries log entries using category (E, W, etc.), ID ranges, and timestamp filters. |
-| `srv/Number.srv`      | General-purpose service for sending/receiving integers. Used for tool numbers, coordinate systems, index settings, etc. |
-| `srv/OpCnd.srv`       | Reads or writes operating conditions such as playback mode or user coordinate systems. |
-| `srv/PoseCur.srv`     | Gets current robot pose (position + orientation) in joint space or workspace according to internal configuration. |
-| `srv/ProgramCnt.srv`  | Sets program execution pointer (pno, sno, fno, etc.) to move to specific positions in task logic. |
-| `srv/ProgramVar.srv`  | Reads or assigns variables. Can specify scope (local/global), expressions, and persistence. |
-
+| 메시지 유형           | 설명                                                |
+|-----------------------|-----------------------------------------------------|
+| `srv/DateTime.srv`    | 로봇 컨트롤러의 시스템 시간을 가져오거나 설정합니다. 입력에는 전체 날짜/시간 필드(연도, 월, 일, 시, 분, 초)가 포함됩니다. |
+| `srv/Emergency.srv`   | 단계 매개변수(단계_no, 정지_at, 정지_모드)를 사용하여 비상 정지 논리를 테스트합니다. 시뮬레이션/테스트 시나리오에 사용됩니다. |
+| `srv/ExecuteCmd.srv`  | 구성 가능한 실행 간격으로 문자열 목록으로 콘솔 명령을 실행합니다. rl.stop과 같은 원시 저수준 명령에 유용합니다. |
+| `srv/ExecuteMove.srv` | 문자열 기반 설명을 사용하여 로봇 이동 명령을 실행합니다. 예: "move L,spd=1sec,tool=1 [0, 0, 0, 0, 90, 0]". task_no는 작업 인덱스(일반적으로 0)를 식별합니다. |
+| `srv/FileList.srv`    | 로봇의 디렉토리 내용을 조회합니다. 부울 값을 통해 파일 또는 디렉토리를 포함하도록 필터링할 수 있습니다. |
+| `srv/FilePath.srv`    | 읽기, 삭제 또는 존재 여부 확인과 같은 작업을 위한 파일 경로를 전송하거나 조회합니다. |
+| `srv/FileRename.srv`  | 로봇 컨트롤러의 파일 시스템에서 파일을 이름 변경하거나 이동합니다. |
+| `srv/FileSend.srv`    | 로컬 PC에서 로봇 컨트롤러로 파일을 업로드합니다. 소스 및 대상 경로가 필요합니다. |
+| `srv/IoplcGet.srv`    | PLC 메모리(예: 중계기, M, S, R)를 읽습니다. 직접 주소 지정 및 이름 기반 신호 주소 지정을 모두 지원합니다. |
+| `srv/IoplcPost.srv`   | M, S, R 또는 FBx.y와 같은 기호 이름을 사용하여 PLC 메모리(중계기)에 씁니다. |
+| `srv/IoRequest.srv`   | 디지털, 직렬 또는 사용자 I/O에 접근하는 데 사용됩니다. 유형 필드는 'di', 'do', 'si' 또는 'so'와 같은 I/O 종류를 지정합니다. blk_no와 sig_no는 블록 및 신호 인덱스를 지정합니다. 'val' 필드는 I/O 값을 설정할 때 사용되며 읽기 작업 중에는 무시됩니다. |
+| `srv/JointTrajecotryPoints.srv` | 모션 실행을 위한 궤적 포인트를 제공합니다. |
+| `srv/LogManager.srv`  | 카테고리(E, W 등), ID 범위 및 타임스탬프 필터를 사용하여 로그 항목을 조회합니다. |
+| `srv/Number.srv`      | 정수를 전송/수신하기 위한 범용 서비스입니다. 도구 번호, 좌표계, 인덱스 설정 등에 사용됩니다. |
+| `srv/OpCnd.srv`       | 재생 모드 또는 사용자 좌표계와 같은 운영 조건을 읽거나 씁니다. |
+| `srv/PoseCur.srv`     | 내부 구성에 따라 관절 공간 또는 작업 영역에서 현재 로봇 포즈(위치 + 방향)를 가져옵니다. |
+| `srv/ProgramCnt.srv`  | 특정 작업 논리에서 특정 위치로 이동하기 위해 프로그램 실행 포인터(pno, sno, fno 등)를 설정합니다. |
+| `srv/ProgramVar.srv`  | 변수를 읽거나 할당합니다. 범위(로컬/전역), 표현식 및 지속성을 지정할 수 있습니다. |
 [__SOURCE](10-running/README.md)
-# 10. ROS2 Driver Execution and Robot Control
+# 10. ROS2 驱动程序执行和机器人控制
 
-### Overview
+### 概述
 
-This section provides a comprehensive guide for operating HD Hyundai Robotics robots using the ROS2 driver.
+本节提供了使用 ROS2 驱动程序操作 HD Hyundai Robotics 机器人的全面指南。
 
-The HD Hyundai Robotics ROS2 system provides the following control methods:
+HD Hyundai Robotics ROS2 系统提供以下控制方法：
 
-- **MoveIt2 Integration**: Motion planning and execution
-- **ros2_control**: Hardware interface control
-- **ROS2 Services**: Controller API access
+- **MoveIt2 集成**：运动规划和执行
+- **ros2_control**：硬件接口控制
+- **ROS2 服务**：控制器 API 访问
 
-### Next Steps
+### 下一步
 
-- [MoveIt2 Launch Procedures](1-launch-moveit2/README.md)
-- [Direct ros2_control Control](2-launch-ros2_control/README.md)
-
+- [MoveIt2 启动程序](1-launch-moveit2/README.md)
+- [直接 ros2_control 控制](2-launch-ros2_control/README.md)
 [__SOURCE](10-running/1-launch-moveit2/README.md)
-# 10.1 Running with MoveIt2
+# 10.1 使用 MoveIt2 运行
 
-### Overview
+### 概述
 
-Basic procedures for running HD Hyundai Robotics robots with MoveIt2.
+通过 MoveIt2 运行 HD 韩国现代机器人机器人的基本程序。
 
-### Pre-launch Preparations
+### 启动前准备
 
-#### Hardware Preparation
-- Power on robot controller and set to REMOTE mode
-- Ensure emergency stop button is accessible
-- Verify network connection (ping 192.168.1.150)
-- Confirm workspace is clear of obstacles
+#### 硬件准备
+- 打开机器人控制器并设置为 REMOTE 模式
+- 确保紧急停止按钮可以访问
+- 验证网络连接（ping 192.168.1.150）
+- 确认工作区域没有障碍物
 
-#### Software Preparation
-- Set up ROS2 environment: `source ~/ros2_ws/install/setup.bash`
-- Verify robot model
+#### 软件准备
+- 设置 ROS2 环境： `source ~/ros2_ws/install/setup.bash`
+- 验证机器人模型
 
-### Basic Launch Procedures
+### 基本启动程序
 
-#### 1. Launch MoveIt2
+#### 1. 启动 MoveIt2
 ```bash
-# Basic MoveIt2 launch
+# 基本 MoveIt2 启动
 ros2 launch hdr_moveit_config hdr_moveit.launch.py robot_model:=ha006b
 
-# Launch with specified IP address
+# 使用指定的 IP 地址启动
 ros2 launch hdr_moveit_config hdr_moveit.launch.py \
     robot_model:=ha006b \
     robot_ip:=192.168.1.150
 ```
 
-#### 2. Verify Connection Status
+#### 2. 验证连接状态
 ```bash
-# Check joint states
+# 检查关节状态
 ros2 topic echo /joint_states --once
 
-# Check MoveIt2 services
+# 检查 MoveIt2 服务
 ros2 service list | grep move_group
 ```
 
-### Supported Robot Models
+### 支持的机器人模型
 
 - ha006b
 - hdf7_9
@@ -1115,101 +1068,99 @@ ros2 service list | grep move_group
 - hh020
 - hdr35_20
 
-### Safety Precautions
+### 安全预防措施
 
-#### Emergency Stop
-- Always keep hardware emergency stop button accessible
+#### 紧急停止
+- 始终保持硬件紧急停止按钮易于接触
 
-#### Safe Shutdown
-1. Stop all motion
-2. Move robot to safe position
-3. Terminate MoveIt2 nodes
-4. Power off robot controller
+#### 安全关闭
+1. 停止所有运动
+2. 将机器人移动到安全位置
+3. 终止 MoveIt2 节点
+4. 关闭机器人控制器电源
 
-### Common Troubleshooting
+### 常见故障排除
 
-**Connection Issues**
-- Verify network connection: `ping 192.168.1.150`
-- Confirm robot controller is in REMOTE mode
+**连接问题**
+- 验证网络连接: `ping 192.168.1.150`
+- 确认机器人控制器处于遥控模式
 
-**When controllers fail to start:**
-- Verify robot controller is in REMOTE mode
-- Check network connection
-- Confirm robot is not in emergency stop state
+**当控制器无法启动时:**
+- 验证机器人控制器处于遥控制模式
+- 检查网络连接
+- 确认机器人不处于紧急停止状态
 
-**When joint states are not published:**
-- Check hardware interface connection status
-- Verify robot controller status
+**当关节状态未发布时:**
+- 检查硬件接口连接状态
+- 验证机器人控制器状态
 
-**Trajectory execution failures:**
-- Check joint limits
-- Verify target position is valid
-- Check controller error messages
+**轨迹执行失败:**
+- 检查关节限制
+- 验证目标位置有效
+- 检查控制器错误消息
 
-#### When the robot does not operate in Motor ON & Start Mode
-**Normal Operation**
-When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
+#### 当机器人在电机开启和启动模式下不工作时
+**正常操作**
+当 **电机开启** 和 **启动模式** 同时启用时，机器人正常工作。
 
-**When the robot does not operate**
-If Start Mode is not activated while **Motor ON** is enabled, the system generates the error "External Command Operation Disabled (E01554)."
-If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
-In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.
-
+**当机器人不工作时**
+如果在启用 **电机开启** 的情况下未激活启动模式，则系统会生成错误 "外部命令操作已禁用 (E01554)。"  
+如果给出不可行的命令值（例如，超出物理限制），可能会发生轴超速错误，导致机器人停止。  
+在这种情况下，可以通过重新激活 **电机开启 + 启动模式** 来恢复系统。
 [__SOURCE](10-running/2-launch-ros2_control/README.md)
-# 10.2 ros2_control System Execution
+# 10.2 ros2_control 系统执行
 
-### Overview
+### 概述
 
-Explains basic execution methods for the ros2_control system for HD Hyundai Robotics robots.
+解释 HD 现代机器人机器人的 ros2_control 系统的基本执行方法。
 
-### Basic Execution
+### 基本执行
 
-#### Launch ros2_control
+#### 启动 ros2_control
 ```bash
-# Basic launch
+# 基本启动
 ros2 launch hdr_bringup hdr_control.launch.py robot_model:=ha006b
 
-# Specify IP address
+# 指定 IP 地址
 ros2 launch hdr_bringup hdr_control.launch.py \
     robot_model:=ha006b \
     robot_ip:=192.168.1.150
 ```
 
-### Controllers
+### 控制器
 
-#### Check Controller Status
+#### 检查控制器状态
 ```bash
-# List controllers
+# 列出控制器
 ros2 control list_controllers
 
-# Check hardware interfaces
+# 检查硬件接口
 ros2 control list_hardware_interfaces
 
-# Check joint states
+# 检查关节状态
 ros2 topic echo /joint_states
 ```
 
-#### Activate/Deactivate Controllers
+#### 激活/停用控制器
 ```bash
-# Activate controller
+# 激活控制器
 ros2 control switch_controllers --activate joint_trajectory_controller 
 
-# Deactivate controller
+# 停用控制器
 ros2 control switch_controllers --deactivate joint_trajectory_controller
 ```
 
-### Default Controller Configuration
+### 默认控制器配置
 
-ros2_control provides the following controllers:
+ros2_control 提供以下控制器：
 
-- **joint_state_broadcaster**: Publishes joint states
-- **joint_trajectory_controller**: Trajectory following control
+- **joint_state_broadcaster**: 发布关节状态
+- **joint_trajectory_controller**: 轨迹跟随控制
 
-### Simple Testing
-
-#### Joint Trajectory Test
+### 简单测试
+#### 关节轨迹测试
 ```bash
-# Simple joint movement test
+# 简单关节运动测试
 ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
     control_msgs/action/FollowJointTrajectory \
     "{
@@ -1225,39 +1176,38 @@ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory \
     }"
 ```
 
-### Troubleshooting
+### 故障排除
 
-#### Common Issues
+#### 常见问题
 
-**Connection Issues**
-- Verify network connection: `ping 192.168.1.150`
-- Confirm robot controller is in REMOTE mode
+**连接问题**
+- 验证网络连接: `ping 192.168.1.150`
+- 确认机器人控制器处于远程模式
 
-**When controllers fail to start:**
-- Verify robot controller is in REMOTE mode
-- Check network connection
-- Confirm robot is not in emergency stop state
+**当控制器无法启动时：**
+- 验证机器人控制器处于远程模式
+- 检查网络连接
+- 确认机器人不处于紧急停止状态
 
-**When joint states are not published:**
-- Check hardware interface connection status
-- Verify robot controller status
+**当关节状态未发布时：**
+- 检查硬件接口连接状态
+- 验证机器人控制器状态
 
-**Trajectory execution failures:**
-- Check joint limits
-- Verify target position is valid
-- Check controller error messages
+**轨迹执行失败：**
+- 检查关节限制
+- 验证目标位置是否有效
+- 检查控制器错误消息
 
-#### When the robot does not operate in Motor ON & Start Mode
-**Normal Operation**
-When both **Motor ON** and **Start Mode** are enabled, the robot operates normally.
+#### 当机器人不在电机开启和启动模式下操作时
+**正常操作**
+当两个**电机开启**和**启动模式**都启用时，机器人正常操作。
 
-**When the robot does not operate**
-If Start Mode is not activated while **Motor ON** is enabled, the system generates the error "External Command Operation Disabled (E01554)."
-If an infeasible command value is given (e.g., beyond physical limits), an axis overspeed error may occur, causing the robot to stop.
-In such cases, the system can be recovered by reactivating **Motor ON + Start Mode**.
+**当机器人不操作时**
+如果在启用**电机开启**的情况下没有激活启动模式，系统将生成错误 "外部命令操作被禁用 (E01554)"。
+如果给出不合理的命令值（例如，超出物理限制），可能会发生轴过速错误，导致机器人停止。
+在这种情况下，可以通过重新激活**电机开启 + 启动模式**来恢复系统。
+### 安全注意事项
 
-### Safety Precautions
-
-- Always keep emergency stop button accessible when working with actual robots
-- Immediately emergency stop if robot exhibits unexpected behavior
-- Test at low speeds when using for the first time
+- 在实际操作机器人时，始终保持紧急停止按钮可及
+- 如果机器人出现意外行为，立即进行紧急停止
+- 第一次使用时应以低速进行测试
