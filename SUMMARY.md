@@ -1,7 +1,7 @@
 ﻿# Table of contents
 
-          * [Hi6 & Hi7 控制器功能手册 - ROS2 驱动程序](README.md)
-          * [注意事项](0-about-this-manual/precautions.md)
+* [Hi6 & Hi7 控制器功能手册 - ROS2 驱动程序](README.md)
+* [注意事项](0-about-this-manual/precautions.md)
 * [1. 概述](1-intro/README.md)
   * [1.1 支持的控制器模型](1-intro/1-controller-models/README.md)
   * [1.2 支持的机器人型号](1-intro/2-robot-models/README.md)

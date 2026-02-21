@@ -1,8 +1,8 @@
 ﻿{
     "langCode": "zh",
-    "series": "Hi6 & Hi7 Controller",
+    "series": "Hi6 & Hi7 控制器",
     "title": "功能手册 - ROS2 驱动程序",
-    "publisher": "HD现代机器人",
+    "publisher": "HD HYUNDAI ROBOTICS",
     "tocTitle": "目录",
     "tocTitleElements": "[ \"h1\", \"h2\" ]",
     "docId": "${cont_model:upper}ROS2DRIVER_ZH_001",
