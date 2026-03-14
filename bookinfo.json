@@ -1,4 +1,4 @@
-﻿{
+{
     "langCode": "en",
     "series": "Hi6 & Hi7 Controller",
     "title": "Function Manual - ROS2 Driver",
@@ -7,6 +7,9 @@
     "tocTitleElements": "[ \"h1\", \"h2\" ]",
     "docId": "${cont_model:upper}ROS2DRIVER_EN_001",
     "references": [
-        { "rpath" : "doc-hi6-operation/en-tp630" }
+        {
+            "title": "Operation Manual - TP630",
+            "id": "${cont_model:upper}OPTP630_EN"
+        }
     ]
 }
