@@ -65,4 +65,4 @@ The package provides two types of meshes for each robot:
 - Optimized for computational efficiency
 - Used by physics engines and motion planners
 
-For model-specific details, see [Supported Robot Models](../0-intro/2-robot-models/README.md).
+For model-specific details, see [Supported Robot Models](../1-intro/2-robot-models/README.md).

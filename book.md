@@ -9,7 +9,7 @@ Version **v60.34-00** is scheduled for official release in 2Q 2026. Please refra
 [__SOURCE](0-about-this-manual/precautions.md)
 # Precautions
 
-{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/en/precautions.md" %}
+{% include file="en/precautions.md" %}
 
 [__SOURCE](1-intro/README.md)
 # 1. Overview
@@ -149,7 +149,7 @@ ros2 doctor
 
 ### Next Steps
 
-After confirming ROS2 compatibility, proceed to [Getting Started](../../1-start/README.md) for installation.
+After confirming ROS2 compatibility, proceed to [Getting Started](../../2-start/README.md) for installation.
 
 [__SOURCE](1-intro/5-hdr-robot/README.md)
 # 1.5 Robot Joint and Link Names
@@ -477,11 +477,10 @@ The `hdr_ros2_driver` package provides a core ROS2 driver for interfacing with H
 
 ### Detailed Documentation
 
-- [Launch Instructions](1-launch/README.md) - Launch files for driver execution
-- [Configuration Parameters](2-parameters/README.md) - Available parameters within launch
-- [Provided Topics](3-topics/README.md) - Published robot state information
-- [Available Actions](4-actions/README.md) - Joint trajectory execution and motion control
-- [Supported ROS2 Services](5-services/README.md) - API service reference
+- [Launch](1-launch/README.md) - Launch files for driver execution
+- [Topics](2-topics/README.md) - Published robot state information
+- [Actions](3-actions/README.md) - Joint trajectory execution and motion control
+- [Services](4-services/README.md) - API service reference
 
 [__SOURCE](3-hdr_ros2_driver/1-launch/README.md)
 # 3.1 HDR ROS2 Driver launch
@@ -831,7 +830,7 @@ The package provides two types of meshes for each robot:
 - Optimized for computational efficiency
 - Used by physics engines and motion planners
 
-For model-specific details, see [Supported Robot Models](../0-intro/2-robot-models/README.md).
+For model-specific details, see [Supported Robot Models](../1-intro/2-robot-models/README.md).
 
 [__SOURCE](6-hdr_moveit_config/README.md)
 # 6. MoveIt2 Configuration (`hdr_moveit_config`)
@@ -961,6 +960,131 @@ The HDR client driver provides the following API categories corresponding to var
 - **[I/O](5-io/README.md)** - Input/output control
 - **[Task](6-task/README.md)** - Task execution and variable management
 - **[Miscellaneous](7-etc/README.md)** - System utilities
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/1-control/README.md)
+# 7.1.1 Control API
+
+### Overview
+
+The Control API category provides basic robot control operations including motor management, coordinate system handling, and motion mode control. These APIs form the foundation for all robot operations.
+
+### Available Control APIs
+
+| Function | Description |
+|----------|-------------|
+| `GetControlOpCnd` | Retrieve robot controller's execution condition configuration (playback mode, step back maximum speed, user coordinate number) |
+| `GetControlIosDio` | Read specific digital I/O signal values (supported types: "di", "dib", "diw", "dil", "dif", "do", "dob", "dow", "dol", "dof") |
+| `GetControlIosSio` | Query special I/O (SIO) signal values (input types: "si", "sib" etc., output types: "so", "sob" etc.) |
+| `GetControlUcsNos` | Retrieve list of available user coordinate system (UCS) numbers for motion programming |
+| `PostControlIosDio` | Set digital output (DO) signal values (type, block number, signal number, value) |
+| `PutControlOpCnd` | Update operation condition parameters (playback mode, reverse motion maximum speed, user coordinate system) |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/2-robot/README.md)
+# 7.1.2 Robot API
+
+### Overview
+
+The Robot API category handles core robot operations including motion control, position management, tool configuration, and safety systems. These APIs provide direct control over robot movement and status monitoring.
+
+### Available Robot APIs
+
+| Function | Description |
+|----------|-------------|
+| `GetRobotMotorState` | Check robot servo motor power status (ON/OFF), useful for checking motion command readiness |
+| `GetRobotPoCur` | Current robot pose (position and orientation) with various options (job index, coordinate system, etc.) |
+| `GetRobotCurTool` | Retrieve currently selected tool information (TCP configuration, weight, etc.) |
+| `GetRobotTools` | Retrieve list of all tools registered in the system (TCP offsets, weights, etc.) |
+| `GetRobotToolsT` | Query specific tool's detailed information by tool number (0-31) |
+| `GetJointTrajBuffAvail` | Get the available size of the trajectory buffer |
+| `PostRobotMotorPower` | Turn robot motor power ON or OFF |
+| `PostRobotOperation` | Start or stop robot program execution |
+| `PostRobotToolNo` | Set active tool number to use (0-31) |
+| `PostRobotCrdSys` | Specify coordinate system to use for motion and I/O (-1: default, 0: base, 1: tool, 2: user1, 3: user2) |
+| `PostRobotEmergencyStop` | Immediate emergency stop of all robot motion for safety response |
+| `PostInitJointTrajectory` | Initialize the joint trajectory buffer |
+| `PostInsertJointTrajectoryPoints` | Insert joint trajectory points into the controller buffer for motion execution |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/3-project/README.md)
+# 7.1.3 Project API
+
+### Overview
+
+The Project API category provides project and job management functions for the HD Hyundai Robotics controller. These APIs enable monitoring project execution status, querying job information, and managing jobs.
+
+### Available Project APIs
+
+| Function | Description |
+|----------|-------------|
+| `GetProjectRgen` | Query current project execution status (0: not running, 1: running, 2: paused) |
+| `GetProjectJobsInfo` | Retrieve metadata of all jobs registered in the project (name, path, modification status) |
+| `PostProjectReloadUpdateJobs` | Reload and synchronize externally modified jobs to update in-memory job status |
+| `PostProjectDeleteJob` | Delete specified job file from project path |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/4-file/README.md)
+# 7.1.4 File API
+
+### Overview
+
+The File API category provides file system operations for the HD Hyundai Robotics controller. These APIs enable remote file management, file upload/download, and directory management.
+
+### Available File APIs
+
+| Function | Description |
+|----------|-------------|
+| `GetFiles` | Retrieve list of files and folders at specified path |
+| `GetFileInfo` | Query metadata of file or directory (size, timestamp, type) |
+| `GetFileList` | Retrieve filtered list including files only, directories only, or all |
+| `GetFileExist` | Check existence of specified file or directory |
+| `PostRenameFile` | Rename or move file or directory from one path to another |
+| `PostMkdir` | Create new directory at specified path |
+| `PostFiles` | Upload local file to specified location on controller |
+| `PostDeleteFile` | Delete file or directory on controller |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/5-io/README.md)
+# 7.1.5 I/O API
+
+### Overview
+
+The I/O API category provides PLC communication functions for the HD Hyundai Robotics controller. These APIs enable querying and setting relay values in the Hi6, Hi7 PLC.
+
+### Available I/O APIs
+
+| Function | Description |
+|----------|-------------|
+| `GetRelayValue` | Query relay values from Hi6, Hi7 PLC using "FB{index}.{relay_type}" format or simple formats like "M", "S" |
+| `SetRelayValue` | Set specific relay values in the robot controller's internal PLC. Supports various data type suffixes |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/6-task/README.md)
+# 7.1.6 Task API
+
+### Overview
+
+The Task API category provides task execution and variable management functions for the HD Hyundai Robotics controller. These APIs enable variable assignment, wait state release, program counter control, expression evaluation, and direct motion command execution.
+
+### Available Task APIs
+
+| Function | Description |
+|----------|-------------|
+| `PostAssignVar` | Assign variables to task using expressions or JSON values (supports local/global scope and persistence) |
+| `PostReleaseWait` | Release task[0] from WAIT state to resume paused task |
+| `PostSetCurPcIdx` | Manually set program counter (PC) index for task[0] (useful for debugging or jumping to specific logic) |
+| `PostSolveExpr` | Evaluate expressions within task scope (supports math, logic, and variable access) |
+| `PostExecuteMove` | Execute direct movement commands in robot task (L, P, SP, etc.) |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/7-etc/README.md)
+# 7.1.7 Miscellaneous API
+
+### Overview
+
+The Miscellaneous API category provides additional utility and system management functions for the HD Hyundai Robotics controller. These APIs include system time management and log query capabilities.
+
+### Available Miscellaneous APIs
+
+| Function | Description |
+|----------|-------------|
+| `GetDateTime` | Query current system date and time from robot controller (year, month, day, hour, minute, second) |
+| `PutDateTime` | Set system date and time on robot controller (includes input validation) |
+| `GetLogManager` | Query controller logs with filtering options (entry count, categories E,W,N,S,O,I,P,H,C,M, ID range, timestamp range) |
 
 [__SOURCE](8-hdr_simulation_gz/README.md)
 # 8. Gazebo Simulation (`hdr_simulation_gz`)

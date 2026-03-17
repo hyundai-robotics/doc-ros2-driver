@@ -31,6 +31,13 @@
 
 * [7. C++ Client Library (hdr_client_driver)](7-hdr_client_driver/README.md)
   * [7.1 API Categories](7-hdr_client_driver/1-api-categories/README.md)
+    * [7.1.1 Control](7-hdr_client_driver/1-api-categories/1-control/README.md)
+    * [7.1.2 Robot](7-hdr_client_driver/1-api-categories/2-robot/README.md)
+    * [7.1.3 Project](7-hdr_client_driver/1-api-categories/3-project/README.md)
+    * [7.1.4 File](7-hdr_client_driver/1-api-categories/4-file/README.md)
+    * [7.1.5 IO](7-hdr_client_driver/1-api-categories/5-io/README.md)
+    * [7.1.6 Task](7-hdr_client_driver/1-api-categories/6-task/README.md)
+    * [7.1.7 Etc](7-hdr_client_driver/1-api-categories/7-etc/README.md)
 
 * [8. Gazebo Simulation (hdr_simulation_gz)](8-hdr_simulation_gz/README.md)
 

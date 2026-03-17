@@ -11,8 +11,7 @@ The `hdr_ros2_driver` package provides a core ROS2 driver for interfacing with H
 
 ### Detailed Documentation
 
-- [Launch Instructions](1-launch/README.md) - Launch files for driver execution
-- [Configuration Parameters](2-parameters/README.md) - Available parameters within launch
-- [Provided Topics](3-topics/README.md) - Published robot state information
-- [Available Actions](4-actions/README.md) - Joint trajectory execution and motion control
-- [Supported ROS2 Services](5-services/README.md) - API service reference
+- [Launch](1-launch/README.md) - Launch files for driver execution
+- [Topics](2-topics/README.md) - Published robot state information
+- [Actions](3-actions/README.md) - Joint trajectory execution and motion control
+- [Services](4-services/README.md) - API service reference

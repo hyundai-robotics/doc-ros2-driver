@@ -21,4 +21,4 @@ ros2 doctor
 
 ### Next Steps
 
-After confirming ROS2 compatibility, proceed to [Getting Started](../../1-start/README.md) for installation.
+After confirming ROS2 compatibility, proceed to [Getting Started](../../2-start/README.md) for installation.
