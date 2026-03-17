@@ -14,7 +14,7 @@
 * [2. 시작하기](2-start/README.md)
   * [2.1 레포지토리 개요](2-start/1-repo-overview/README.md)
   * [2.2 설치](2-start/2-installation/README.md)
-  * [2.3 PC 설정](2-start/3-initial-setup/README.md)
+  * [2.3 초기 설정](2-start/3-initial-setup/README.md)
   * [2.4 설치 검증](2-start/4-verifying/README.md)
 
 * [3. ROS2 드라이버 (hdr_ros2_driver)](3-hdr_ros2_driver/README.md)
@@ -31,6 +31,13 @@
 
 * [7. C++ 클라이언트 라이브러리 (hdr_client_driver)](7-hdr_client_driver/README.md)
   * [7.1 API 카테고리](7-hdr_client_driver/1-api-categories/README.md)
+    * [7.1.1 제어](7-hdr_client_driver/1-api-categories/1-control/README.md)
+    * [7.1.2 로봇](7-hdr_client_driver/1-api-categories/2-robot/README.md)
+    * [7.1.3 프로젝트](7-hdr_client_driver/1-api-categories/3-project/README.md)
+    * [7.1.4 파일](7-hdr_client_driver/1-api-categories/4-file/README.md)
+    * [7.1.5 I/O](7-hdr_client_driver/1-api-categories/5-io/README.md)
+    * [7.1.6 작업](7-hdr_client_driver/1-api-categories/6-task/README.md)
+    * [7.1.7 기타](7-hdr_client_driver/1-api-categories/7-etc/README.md)
 
 * [8. Gazebo 시뮬레이션 (hdr_simulation_gz)](8-hdr_simulation_gz/README.md)
 

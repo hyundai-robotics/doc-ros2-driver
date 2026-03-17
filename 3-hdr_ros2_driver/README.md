@@ -11,8 +11,7 @@
 
 ### 상세 문서
 
-- [실행 지침](1-launch/README.md) - 드라이버 실행을 위한 launch 파일
-- [구성 매개변수](2-parameters/README.md) - 사용 가능한 launch 내 매개변수
-- [제공되는 토픽](3-topics/README.md) - 퍼블리시되는 로봇 상태 정보
-- [사용 가능한 action](4-actions/README.md) - joint trajectory 실행 및 모션 제어
-- [지원 ROS2 서비스](5-services/README.md) - API 서비스 참조
+- [런치](1-launch/README.md) - 드라이버 실행을 위한 launch 파일
+- [토픽](2-topics/README.md) - 퍼블리시되는 로봇 상태 정보
+- [액션](3-actions/README.md) - joint trajectory 실행 및 모션 제어
+- [서비스](4-services/README.md) - API 서비스 참조

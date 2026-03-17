@@ -65,4 +65,4 @@ ros2 launch hdr_description display_robot.launch.py robot_model:=ha006b
 - 계산 효율성에 최적화됨
 - 물리 엔진 및 모션 플래너에서 사용
 
-모델별 세부사항은 [지원되는 로봇 모델](../0-intro/2-robot-models/README.md)을 참조하세요.
+모델별 세부사항은 [지원 로봇 모델](../1-intro/2-robot-models/README.md)을 참조하세요.

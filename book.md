@@ -6,10 +6,10 @@
 **v60.34-00** 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 HD현대로보틱스 ROS2 드라이버 사용을 지양하시기 바랍니다. </br>
 ⚠️ **Hi7 모델의 경우 출시 예정이며, 상세 지원 일정은 아직 확정되지 않았습니다. 정식 릴리즈 일정이 수립되는 대로 공지를 통해 안내해 드릴 예정이오니 참고하시기 바랍니다.**
 
-[__SOURCE](0-precautions.md)
+[__SOURCE](0-about-this-manual/precautions.md)
 # 사전 주의사항
 
-{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/ko/precautions.md" %}
+{% include file="ko/precautions.md" %}
 
 [__SOURCE](1-intro/README.md)
 # 1. 개요
@@ -150,7 +150,7 @@ ros2 doctor
 
 ### 다음 단계
 
-ROS2 호환성을 확인한 후 설치를 위해 [시작하기](../../1-start/README.md)로 진행하세요.
+ROS2 호환성을 확인한 후 설치를 위해 [시작하기](../../2-start/README.md)로 진행하세요.
 
 [__SOURCE](1-intro/5-hdr-robot/README.md)
 # 1.5 로봇 joint 및 link 명칭
@@ -478,11 +478,10 @@ ros2 topic hz /joint_states
 
 ### 상세 문서
 
-- [실행 지침](1-launch/README.md) - 드라이버 실행을 위한 launch 파일
-- [구성 매개변수](2-parameters/README.md) - 사용 가능한 launch 내 매개변수
-- [제공되는 토픽](3-topics/README.md) - 퍼블리시되는 로봇 상태 정보
-- [사용 가능한 action](4-actions/README.md) - joint trajectory 실행 및 모션 제어
-- [지원 ROS2 서비스](5-services/README.md) - API 서비스 참조
+- [런치](1-launch/README.md) - 드라이버 실행을 위한 launch 파일
+- [토픽](2-topics/README.md) - 퍼블리시되는 로봇 상태 정보
+- [액션](3-actions/README.md) - joint trajectory 실행 및 모션 제어
+- [서비스](4-services/README.md) - API 서비스 참조
 
 [__SOURCE](3-hdr_ros2_driver/1-launch/README.md)
 # 3.1 HDR ROS2 드라이버 launch
@@ -832,7 +831,7 @@ ros2 launch hdr_description display_robot.launch.py robot_model:=ha006b
 - 계산 효율성에 최적화됨
 - 물리 엔진 및 모션 플래너에서 사용
 
-모델별 세부사항은 [지원되는 로봇 모델](../0-intro/2-robot-models/README.md)을 참조하세요.
+모델별 세부사항은 [지원 로봇 모델](../1-intro/2-robot-models/README.md)을 참조하세요.
 
 [__SOURCE](6-hdr_moveit_config/README.md)
 # 6. MoveIt2 구성 (`hdr_moveit_config`)
@@ -962,6 +961,131 @@ HDR 클라이언트 드라이버는 로봇 제어기의 다양한 기능에 대�
 - **[I/O](5-io/README.md)** - 입력/출력 제어
 - **[작업](6-task/README.md)** - 작업 실행 및 변수 관리
 - **[기타](7-etc/README.md)** - 시스템 유틸리티
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/1-control/README.md)
+# 7.1.1 제어 API
+
+### 개요
+
+제어 API 카테고리는 모터 관리, 좌표계 처리 및 동작 모드 제어를 포함한 기본적인 로봇 제어 작업을 제공합니다. 이러한 API들은 모든 로봇 작업의 기초를 형성합니다.
+
+### 사용 가능한 제어 API
+
+| 함수 | 설명 |
+|------|------|
+| `GetControlOpCnd` | 로봇 제어기의 실행 조건 구성 조회 (재생 모드, 스텝 백 최대 속도, 사용자 좌표 번호) |
+| `GetControlIosDio` | 특정 디지털 I/O 신호 값 읽기 (지원 유형: "di", "dib", "diw", "dil", "dif", "do", "dob", "dow", "dol", "dof") |
+| `GetControlIosSio` | 특수 I/O (SIO) 신호 값 조회 (입력 유형: "si", "sib" 등, 출력 유형: "so", "sob" 등) |
+| `GetControlUcsNos` | 모션 프로그래밍을 위한 사용 가능한 사용자 좌표계 (UCS) 번호 목록 조회 |
+| `PostControlIosDio` | 디지털 출력(DO) 신호 값 설정 (유형, 블록 번호, 신호 번호, 값) |
+| `PutControlOpCnd` | 동작 조건 매개변수 업데이트 (재생 모드, 역방향 모션 최대 속도, 사용자 좌표계) |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/2-robot/README.md)
+# 7.1.2 로봇 API
+
+### 개요
+
+로봇 API 카테고리는 모션 제어, 위치 관리, 도구 구성 및 안전 시스템을 포함한 핵심 로봇 작업을 다룹니다. 이러한 API는 로봇 움직임에 대한 직접적인 제어와 상태 모니터링을 제공합니다.
+
+### 사용 가능한 로봇 API
+
+| 함수 | 설명 |
+|------|------|
+| `GetRobotMotorState` | 로봇 서보 모터 전원 상태 확인 (ON/OFF), 모션 명령 준비 상태 확인에 유용 |
+| `GetRobotPoCur` | 현재 로봇 자세(위치 및 방향) 다양한 옵션 (작업 인덱스, 좌표계 등) |
+| `GetRobotCurTool` | 현재 선택된 도구 정보 조회 (TCP 구성, 무게 등) |
+| `GetRobotTools` | 시스템에 등록된 모든 도구 목록 조회 (TCP 오프셋, 무게 등) |
+| `GetRobotToolsT` | 도구 번호(0-31)별 특정 도구의 상세 정보 조회 |
+| `GetJointTrajBuffAvail` | 궤적 버퍼의 사용 가능한 크기를 반환 |
+| `PostRobotMotorPower` | 로봇 모터 전원 ON 또는 OFF |
+| `PostRobotOperation` | 로봇 프로그램 실행 시작 또는 중지 |
+| `PostRobotToolNo` | 사용할 활성 도구 번호 설정 (0-31) |
+| `PostRobotCrdSys` | 모션 및 I/O에 사용할 좌표계 지정 (-1: 기본값, 0: 베이스, 1: 도구, 2: 사용자1, 3: 사용자2) |
+| `PostRobotEmergencyStop` | 안전 대응을 위해 모든 로봇 모션의 즉시 비상 정지 |
+| `PostInitJointTrajectory` | 궤적 버퍼 초기화 |
+| `PostInsertJointTrajectoryPoints` | 모션 실행을 위한 궤적 지점을 컨트롤러 버퍼에 입력 |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/3-project/README.md)
+# 7.1.3 프로젝트 API
+
+### 개요
+
+프로젝트 API 카테고리는 HD 현대로보틱스 제어기의 프로젝트 및 작업 관리 기능을 제공합니다. 이러한 API들은 프로젝트 실행 상태 모니터링, 작업 정보 조회, 작업 관리를 가능하게 합니다.
+
+### 사용 가능한 프로젝트 API
+
+| 함수 | 설명 |
+|------|------|
+| `GetProjectRgen` | 현재 프로젝트 실행 상태 조회 (0: 실행 중 아님, 1: 실행 중, 2: 일시정지) |
+| `GetProjectJobsInfo` | 프로젝트에 등록된 모든 작업의 메타데이터 조회 (이름, 경로, 수정 상태) |
+| `PostProjectReloadUpdateJobs` | 외부에서 수정된 작업을 다시 로드하고 동기화하여 메모리 내 작업 상태 업데이트 |
+| `PostProjectDeleteJob` | 프로젝트 경로에서 지정된 작업 파일 삭제 |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/4-file/README.md)
+# 7.1.4 파일 API
+
+### 개요
+
+파일 API 카테고리는 HD 현대로보틱스 제어기의 파일 시스템 작업을 제공합니다. 이러한 API들은 원격 파일 관리, 파일 업로드/다운로드, 디렉터리 관리를 가능하게 합니다.
+
+### 사용 가능한 파일 API
+
+| 함수 | 설명 |
+|------|------|
+| `GetFiles` | 지정된 경로의 파일 및 폴더 목록 조회 |
+| `GetFileInfo` | 파일 또는 디렉터리의 메타데이터 조회 (크기, 타임스탬프, 유형) |
+| `GetFileList` | 파일만, 디렉터리만, 또는 모두 포함하는 필터링된 목록 조회 |
+| `GetFileExist` | 지정된 파일 또는 디렉터리의 존재 여부 확인 |
+| `PostRenameFile` | 파일 또는 디렉터리를 한 경로에서 다른 경로로 이름 변경 또는 이동 |
+| `PostMkdir` | 지정된 경로에 새 디렉터리 생성 |
+| `PostFiles` | 로컬 파일을 제어기의 지정된 위치에 업로드 |
+| `PostDeleteFile` | 제어기의 파일 또는 디렉터리 삭제 |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/5-io/README.md)
+# 7.1.5 I/O API
+
+### 개요
+
+I/O API 카테고리는 HD 현대로보틱스 제어기의 PLC 통신 기능을 제공합니다. 이러한 API들은 Hi6, Hi7 PLC의 릴레이 값 조회 및 설정을 가능하게 합니다.
+
+### 사용 가능한 I/O API
+
+| 함수 | 설명 |
+|------|------|
+| `GetRelayValue` | "FB{인덱스}.{릴레이_유형}" 형식 또는 "M", "S"와 같은 간단한 형식을 사용하여 Hi6, Hi7 PLC에서 릴레이 값 조회 |
+| `SetRelayValue` | 로봇 제어기의 내부 PLC에서 특정 릴레이 값 설정. 다양한 데이터 유형 접미사 지원 |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/6-task/README.md)
+# 7.1.6 태스크 API
+
+### 개요
+
+태스크 API 카테고리는 HD 현대로보틱스 제어기의 태스크 실행 및 변수 관리 기능을 제공합니다. 이러한 API들은 변수 할당, 대기 상태 해제, 프로그램 카운터 제어, 표현식 평가 및 직접 모션 명령 실행을 가능하게 합니다.
+
+### 사용 가능한 태스크 API
+
+| 함수 | 설명 |
+|------|------|
+| `PostAssignVar` | 표현식 또는 JSON 값을 사용하여 태스크에 변수 할당 (로컬/전역 범위 및 지속성 지원) |
+| `PostReleaseWait` | task[0]을 WAIT 상태에서 해제하여 일시정지된 태스크 재개 |
+| `PostSetCurPcIdx` | task[0]의 프로그램 카운터(PC) 인덱스를 수동으로 설정 (디버깅 또는 특정 로직으로 점프에 유용) |
+| `PostSolveExpr` | 태스크 범위 내에서 표현식 평가 (수학, 논리 및 변수 접근 지원) |
+| `PostExecuteMove` | 로봇 태스크에서 직접 이동 명령 실행 (L, P, SP 등) |
+
+[__SOURCE](7-hdr_client_driver/1-api-categories/7-etc/README.md)
+# 7.1.7 기타 API
+
+### 개요
+
+기타 API 카테고리는 HD 현대로보틱스 제어기의 추가 유틸리티 및 시스템 관리 기능을 제공합니다. 이러한 API들은 시스템 시간 관리 및 로그 조회 기능을 포함합니다.
+
+### 사용 가능한 기타 API
+
+| 함수 | 설명 |
+|------|------|
+| `GetDateTime` | 로봇 제어기에서 현재 시스템 날짜 및 시간 조회 (년, 월, 일, 시, 분, 초) |
+| `PutDateTime` | 로봇 제어기의 시스템 날짜 및 시간 설정 (입력 검증 포함) |
+| `GetLogManager` | 필터링 옵션이 있는 제어기 로그 조회 (항목 수, 카테고리 E,W,N,S,O,I,P,H,C,M, ID 범위, 타임스탬프 범위) |
 
 [__SOURCE](8-hdr_simulation_gz/README.md)
 # 8. Gazebo 시뮬레이션 (`hdr_simulation_gz`)
