@@ -9,7 +9,7 @@ The HDR ROS2 driver operates only when the robot is in **REMOTE** mode.
 
 Please set the controller to remote control mode by switching the mode switch on the teach pendant (TP) to the REMOTE position before running the ROS2 driver.
 
-![ip_setup](../../_assets/tp_operate.png)
+![](../../_assets/tp_operate.png)
 
 
 #### HDR ROS2 Driver Execution Test

@@ -63,7 +63,7 @@ The `joint_limits.yaml` file defines:
 ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 ```
 
-![hdr_moveit](../_assets/hdr_moveit.png)
+![](../_assets/hdr_moveit.png)
 
 ### Planning Groups
 

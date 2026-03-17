@@ -18,7 +18,7 @@ This manual provides a description of the HD Hyundai Robotics (HDR) ROS2 driver.
 
 The HDR ROS2 driver integrates HD Hyundai Robotics industrial robot controllers (Hi6, Hi7 series) with ROS2 systems to support both simulation environments and real robot control functions.
 
-![hdr_main](../_assets/0_hdr_main.png)
+![](../_assets/0_hdr_main.png)
 
 
 ### Prerequisites
@@ -363,7 +363,7 @@ The PC must be configured to communicate with the robot controller via Ethernet.
 
 ### Cable Connection
 
-![controller](../../_assets/controller.png)
+![](../../_assets/controller.png)
 
 1. **Locate Robot Controller Ethernet Port**
    - **Hi6-N Controller**: Ethernet port on top of main module
@@ -383,7 +383,7 @@ The PC must be configured to communicate with the robot controller via Ethernet.
 
 ### PC Network Interface Configuration
 
-![LAN_com](../../_assets/LAN_com.png)
+![](../../_assets/LAN_com.png)
 
 #### Using Network Manager GUI
 
@@ -406,7 +406,7 @@ The PC must be configured to communicate with the robot controller via Ethernet.
 4. **Apply Settings**
    - Click "Apply" and disconnect then reconnect the network interface
 
-![ip_setup](../../_assets/ip_setup.png)
+![](../../_assets/ip_setup.png)
 
 ### Verification
 
@@ -417,7 +417,7 @@ The PC must be configured to communicate with the robot controller via Ethernet.
 ping -c 4 192.168.1.150
 ```
 
-![ping_test](../../_assets/ping_test.png)
+![](../../_assets/ping_test.png)
 
 [__SOURCE](2-start/4-verifying/README.md)
 # 2.4 Installation Verification
@@ -431,7 +431,7 @@ The HDR ROS2 driver operates only when the robot is in **REMOTE** mode.
 
 Please set the controller to remote control mode by switching the mode switch on the teach pendant (TP) to the REMOTE position before running the ROS2 driver.
 
-![ip_setup](../../_assets/tp_operate.png)
+![](../../_assets/tp_operate.png)
 
 
 #### HDR ROS2 Driver Execution Test
@@ -898,7 +898,7 @@ The `joint_limits.yaml` file defines:
 ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 ```
 
-![hdr_moveit](../_assets/hdr_moveit.png)
+![](../_assets/hdr_moveit.png)
 
 ### Planning Groups
 

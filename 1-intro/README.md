@@ -4,7 +4,7 @@ This manual provides a description of the HD Hyundai Robotics (HDR) ROS2 driver.
 
 The HDR ROS2 driver integrates HD Hyundai Robotics industrial robot controllers (Hi6, Hi7 series) with ROS2 systems to support both simulation environments and real robot control functions.
 
-![hdr_main](../_assets/0_hdr_main.png)
+![](../_assets/0_hdr_main.png)
 
 
 ### Prerequisites

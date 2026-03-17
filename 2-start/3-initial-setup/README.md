@@ -21,7 +21,7 @@ The PC must be configured to communicate with the robot controller via Ethernet.
 
 ### Cable Connection
 
-![controller](../../_assets/controller.png)
+![](../../_assets/controller.png)
 
 1. **Locate Robot Controller Ethernet Port**
    - **Hi6-N Controller**: Ethernet port on top of main module
@@ -41,7 +41,7 @@ The PC must be configured to communicate with the robot controller via Ethernet.
 
 ### PC Network Interface Configuration
 
-![LAN_com](../../_assets/LAN_com.png)
+![](../../_assets/LAN_com.png)
 
 #### Using Network Manager GUI
 
@@ -64,7 +64,7 @@ The PC must be configured to communicate with the robot controller via Ethernet.
 4. **Apply Settings**
    - Click "Apply" and disconnect then reconnect the network interface
 
-![ip_setup](../../_assets/ip_setup.png)
+![](../../_assets/ip_setup.png)
 
 ### Verification
 
@@ -75,4 +75,4 @@ The PC must be configured to communicate with the robot controller via Ethernet.
 ping -c 4 192.168.1.150
 ```
 
-![ping_test](../../_assets/ping_test.png)
+![](../../_assets/ping_test.png)
