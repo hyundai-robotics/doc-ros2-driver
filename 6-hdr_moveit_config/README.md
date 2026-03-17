@@ -63,7 +63,7 @@ default_acceleration_scaling_factor: 0.5
 ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 ```
 
-![hdr_moveit](../_assets/hdr_moveit.png)
+![](../_assets/hdr_moveit.png)
 
 ### 플래닝 그룹
 

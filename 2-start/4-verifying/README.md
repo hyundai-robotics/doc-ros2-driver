@@ -9,7 +9,7 @@ HDR ROS2 드라이버는 로봇이 **REMOTE** 모드일 때만 동작합니다.
 
 티치 펜던트(TP)에서 모드 스위치를 REMOTE 위치로 전환하여 제어기를 원격 제어 모드로 설정한 후 ROS2 드라이버를 실행하시기 바랍니다.
 
-![ip_setup](../../_assets/tp_operate.png)
+![](../../_assets/tp_operate.png)
 
 
 #### HDR ROS2 드라이버 실행 테스트

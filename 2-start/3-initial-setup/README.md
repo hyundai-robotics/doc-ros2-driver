@@ -21,7 +21,7 @@ PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 �
 
 ### 케이블 연결
 
-![controller](../../_assets/controller.png)
+![](../../_assets/controller.png)
 
 1. **로봇 제어기 이더넷 포트 위치 확인**
    - **Hi6-N 제어기**: 메인 모듈 상단 이더넷 포트
@@ -41,7 +41,7 @@ PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 �
 
 ### PC 네트워크 인터페이스 구성
 
-![LAN_com](../../_assets/LAN_com.png)
+![](../../_assets/LAN_com.png)
 
 #### Network Manager GUI 사용
 
@@ -64,7 +64,7 @@ PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 �
 4. **설정 적용**
    - "적용"을 클릭하고 네트워크 인터페이스 연결을 해제한 후 재연결
 
-![ip_setup](../../_assets/ip_setup.png)
+![](../../_assets/ip_setup.png)
 
 ### 검증
 
@@ -75,4 +75,4 @@ PC는 이더넷을 통해 로봇 제어기와 통신하도록 구성되어야 �
 ping -c 4 192.168.1.150
 ```
 
-![ping_test](../../_assets/ping_test.png)
+![](../../_assets/ping_test.png)

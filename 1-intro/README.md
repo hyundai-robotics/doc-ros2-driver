@@ -4,7 +4,7 @@
 
 HDR ROS2 드라이버는 HD현대로보틱스 산업용 로봇 제어기(Hi6, Hi7 시리즈)와 ROS2 시스템을 연동하여 시뮬레이션 환경 및 실제 로봇 제어 기능을 모두 지원합니다.
 
-![hdr_main](../_assets/0_hdr_main.png)
+![](../_assets/0_hdr_main.png)
 
 
 ### 사전 확인 사항
