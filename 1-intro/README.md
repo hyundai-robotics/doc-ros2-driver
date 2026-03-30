@@ -29,4 +29,4 @@ After completing all the installation and initial setup processes above, you can
 
 ⚠️ **Please make sure to check the prerequisites and complete all installation and initial setup before proceeding.**
 
-⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v60.34-00* or higher. </br> The *v60.34-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.** 
+⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v70.00-00* or higher. </br> The *v70.00-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.** 

@@ -2,8 +2,8 @@
 [__SOURCE](README.md)
 # Hi6 & Hi7 Controller Function Manual - ROS2 Driver
 
-Currently, ROS2-compatible controllers are the Hi6 series, supported from controller software version **v60.34-00** or higher. </br>
-Version **v60.34-00** is scheduled for official release in 2Q 2026. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release. </br>
+Currently, ROS2-compatible controllers are the Hi6 series, supported from controller software version **v70.00-00** or higher. </br>
+Version **v70.00-00** is scheduled for official release in 2Q 2026. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release. </br>
 ⚠️ **The Hi7 model is scheduled for release, and the specific support timeline has not yet been finalized. We will provide further details via an official announcement as soon as the formal release schedule is established. Please keep this in mind.**
 
 [__SOURCE](0-about-this-manual/precautions.md)
@@ -43,7 +43,7 @@ After completing all the installation and initial setup processes above, you can
 
 ⚠️ **Please make sure to check the prerequisites and complete all installation and initial setup before proceeding.**
 
-⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v60.34-00* or higher. </br> The *v60.34-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.** 
+⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v70.00-00* or higher. </br> The *v70.00-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.** 
 
 [__SOURCE](1-intro/1-controller-models/README.md)
 # 1.1 Supported Controller Models
@@ -58,7 +58,7 @@ The HD Hyundai Robotics Hi6 controller models that officially support ROS2 funct
 - Hi6-T15
 
 **Controller Requirements**:
-- SW Version: **60.32-00** or higher (scheduled for release in October)
+- SW Version: **70.00-00** or higher (scheduled for release in October)
 - Operation Mode: **REMOTE mode**
 
 The Hi7 controller series, including future model lineups and support schedules, will be updated on this list as soon as they are finalized.
@@ -110,7 +110,7 @@ This page describes the hardware and software requirements for running the HD Hy
 
 #### Robot Controller
 - **Compatible Controllers**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N00-60(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
-- **Controller SW Version**: **60.32-00** or higher
+- **Controller SW Version**: **70.00-00** or higher
 - **Operation Mode**: Robot must be set to **REMOTE** mode
 - **Network Interface**: Ethernet connection (LAN1, LAN2, or LAN3)
 
@@ -346,7 +346,7 @@ This guide covers the configuration of network interfaces on your development PC
 
 ### Prerequisites
 ⚠️ Please verify the following before starting setup:
-- **Robot Controller SW Version**: Hi6, Hi7 series controller with SW version **60.32-00** or higher
+- **Robot Controller SW Version**: Hi6, Hi7 series controller with SW version **70.00-00** or higher
 
 ### Network Configuration Overview
 
@@ -554,7 +554,7 @@ Before launching, ensure proper network configuration:
    - Check ROS2 environment is sourced
    - Check launch output for error messages
    - Ensure robot is in REMOTE mode
-   - Verify controller SW version is **60.32-00** or higher
+   - Verify controller SW version is **70.00-00** or higher
    
 [__SOURCE](3-hdr_ros2_driver/2-topics/README.md)
 # 3.2 Provided Topics

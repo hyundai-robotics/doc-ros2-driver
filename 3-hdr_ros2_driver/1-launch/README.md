@@ -69,5 +69,5 @@ Before launching, ensure proper network configuration:
    - Check ROS2 environment is sourced
    - Check launch output for error messages
    - Ensure robot is in REMOTE mode
-   - Verify controller SW version is **60.32-00** or higher
+   - Verify controller SW version is **70.00-00** or higher
    
