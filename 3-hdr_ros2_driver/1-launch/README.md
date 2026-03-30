@@ -69,5 +69,5 @@ ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
    - ROS2 환경이 소스되었는지 확인
    - 실행 출력에서 오류 메시지 확인
    - 로봇이 REMOTE 모드에 있는지 확인
-   - 제어기 SW 버전이 **60.32-00** 이상인지 확인
+   - 제어기 SW 버전이 **70.00-00** 이상인지 확인
    
