@@ -31,15 +31,15 @@ HDR ROS2 드라이버 사용에 앞서 아래 항목을 반드시 확인하시�
 
 ### 설치 및 초기 설정
 위 항목을 모두 확인한 후 문제가 없다면 아래 절차에 따라 ROS2 드라이버 설치 및 초기 설정을 진행하시기 바랍니다.
-- [레포지토리 개요](1-repo-overview/README.md) - HDR ROS2 드라이버 레포지토리 구조 및 아키텍처 확인
-- [패키지 설치](2-installation/README.md) - HDR ROS2 드라이버 빌드 및 설치 방법
-- [제어기 및 PC 설정](3-initial-setup/README.md) - HDR ROS2 드라이버 사용을 위한 초기 설정 방법
-- [설치 검증](4-verifying/README.md) - 설치 및 설정이 올바르게 완료되었는지 확인
+- [레포지토리 개요](../2-start/1-repo-overview/README.md) - HDR ROS2 드라이버 레포지토리 구조 및 아키텍처 확인
+- [패키지 설치](../2-start/2-installation/README.md) - HDR ROS2 드라이버 빌드 및 설치 방법
+- [제어기 및 PC 설정](../2-start/3-initial-setup/README.md) - HDR ROS2 드라이버 사용을 위한 초기 설정 방법
+- [설치 검증](../2-start/4-verifying/README.md) - 설치 및 설정이 올바르게 완료되었는지 확인
 
 ### ROS2 드라이버 바로 실행하기
 위의 설치 및 초기 설정 과정을 모두 마쳤다면, 아래 절차를 통해 HDR ROS2 드라이버를 실행하고 로봇 제어를 시작할 수 있습니다.
 
-- [ROS2 드라이버 실행](8-running/README.md) - ROS2 드라이버 실행 및 로봇 제어 방법
+- [ROS2 드라이버 실행](../10-running/README.md) - ROS2 드라이버 실행 및 로봇 제어 방법
 
 ⚠️ **반드시 사전 확인 사항을 확인하고 설치 및 초기 설정을 모두 완료한 뒤 진행하시기 바랍니다.** 
 
@@ -208,7 +208,7 @@ HD현대로보틱스 로봇은 URDF 내에서 아래와 같은 joint 및 link �
 1. [레포지토리 개요](1-repo-overview/README.md) - 패키지 구조와 관계 이해
 2. [설치](2-installation/README.md) - 레포지토리 클론 및 빌드
 3. [초기 설정](3-initial-setup/README.md) - 네트워킹 설정 구성
-4. [설정 검증](4-verifying/README.md) - 설치 테스트
+4. [설치 검증](4-verifying/README.md) - 설치 테스트
 
 [__SOURCE](2-start/1-repo-overview/README.md)
 # 2.1 레포지토리 개요
