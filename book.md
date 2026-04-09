@@ -31,15 +31,15 @@ Before using the HDR ROS2 driver, please make sure to check the following items:
 
 ### Installation and Initial Setup
 After verifying all the above items, please proceed with the ROS2 driver installation and initial setup according to the following procedures:
-- [Repository Overview](1-repo-overview/README.md) - HDR ROS2 driver repository structure and architecture overview
-- [Package Installation](2-installation/README.md) - HDR ROS2 driver build and installation method
-- [Controller and PC Setup](3-initial-setup/README.md) - Initial setup method for using HDR ROS2 driver
-- [Installation Verification](4-verifying/README.md) - Verify that installation and setup are completed correctly
+- [Repository Overview](../2-start/1-repo-overview/README.md) - HDR ROS2 driver repository structure and architecture overview
+- [Package Installation](../2-start/2-installation/README.md) - HDR ROS2 driver build and installation method
+- [Controller and PC Setup](../2-start/3-initial-setup/README.md) - Initial setup method for using HDR ROS2 driver
+- [Installation Verification](../2-start/4-verifying/README.md) - Verify that installation and setup are completed correctly
 
 ### Quick Start with ROS2 Driver
 After completing all the installation and initial setup processes above, you can start the HDR ROS2 driver and begin robot control through the following procedures:
 
-- [Running ROS2 Driver](10-running/README.md) - ROS2 driver execution and robot control methods
+- [Running ROS2 Driver](../10-running/README.md) - ROS2 driver execution and robot control methods
 
 ⚠️ **Please make sure to check the prerequisites and complete all installation and initial setup before proceeding.**
 
@@ -207,7 +207,7 @@ This section provides step-by-step instructions for installation, configuration,
 1. [Repository Overview](1-repo-overview/README.md) - Understanding package structure and relationships
 2. [Installation](2-installation/README.md) - Repository cloning and build
 3. [Initial Setup](3-initial-setup/README.md) - Networking configuration setup
-4. [Verification](4-verifying/README.md) - Installation testing
+4. [Installation Verification](4-verifying/README.md) - Installation testing
 
 [__SOURCE](2-start/1-repo-overview/README.md)
 # 2.1 Repository Overview

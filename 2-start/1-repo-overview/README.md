@@ -23,25 +23,25 @@ hdr_simulation_gz          # Gazebo simulation integration
 
 ### Package Details within Repository
 
-- **[ROS2 Driver (`hdr_ros2_driver`)](../../2-hdr_ros2_driver/README.md)** </br>
+- **[ROS2 Driver (`hdr_ros2_driver`)](../../3-hdr_ros2_driver/README.md)** </br>
 Primary ROS2 node providing services for robot control, file management, I/O operations, and system monitoring
 
-- **[HDR Client Driver (`hdr_client_driver`)](../../6-hdr_client_driver/README.md)** </br>
+- **[HDR Client Driver (`hdr_client_driver`)](../../7-hdr_client_driver/README.md)** </br>
 C++ library implementing TCP/UDP communication protocols with HD Hyundai Robotics controllers
 
-- **[ROS2 Control Integration (`hdr_hardware_interface`)](../../3-hdr_hardware_interface/README.md)** </br>
+- **[ROS2 Control Integration (`hdr_hardware_interface`)](../../4-hdr_hardware_interface/README.md)** </br>
 ros2_control SystemInterface for integration with standard ROS2 control framework
 
-- **[Robot Description (`hdr_description`)](../../4-hdr_description/README.md)** </br>
+- **[Robot Description (`hdr_description`)](../../5-hdr_description/README.md)** </br>
 URDF/XACRO, collision/visual mesh, and RViz configuration for supported robot models
 
-- **[MoveIt2 Configuration (`hdr_moveit_config`)](../../5-hdr_moveit_config/README.md)** </br>
+- **[MoveIt2 Configuration (`hdr_moveit_config`)](../../6-hdr_moveit_config/README.md)** </br>
 Robot model-specific MoveIt2 configuration including SRDF, soft limits, kinematics, and motion planning settings
 
-- **[Gazebo Simulation (`hdr_simulation_gz`)](../../6-hdr_simulation_gz/README.md)** </br>
+- **[Gazebo Simulation (`hdr_simulation_gz`)](../../8-hdr_simulation_gz/README.md)** </br>
 Gazebo Ignition simulation integration
 
-- **[Custom Messages (`hdr_msgs`)](../../7-hdr_msgs/README.md)** </br>
+- **[Custom Messages (`hdr_msgs`)](../../9-hdr_msgs/README.md)** </br>
 Custom ROS2 service and message definitions for communication with HD Hyundai Robotics controllers
 
 

@@ -17,15 +17,15 @@ Before using the HDR ROS2 driver, please make sure to check the following items:
 
 ### Installation and Initial Setup
 After verifying all the above items, please proceed with the ROS2 driver installation and initial setup according to the following procedures:
-- [Repository Overview](1-repo-overview/README.md) - HDR ROS2 driver repository structure and architecture overview
-- [Package Installation](2-installation/README.md) - HDR ROS2 driver build and installation method
-- [Controller and PC Setup](3-initial-setup/README.md) - Initial setup method for using HDR ROS2 driver
-- [Installation Verification](4-verifying/README.md) - Verify that installation and setup are completed correctly
+- [Repository Overview](../2-start/1-repo-overview/README.md) - HDR ROS2 driver repository structure and architecture overview
+- [Package Installation](../2-start/2-installation/README.md) - HDR ROS2 driver build and installation method
+- [Controller and PC Setup](../2-start/3-initial-setup/README.md) - Initial setup method for using HDR ROS2 driver
+- [Installation Verification](../2-start/4-verifying/README.md) - Verify that installation and setup are completed correctly
 
 ### Quick Start with ROS2 Driver
 After completing all the installation and initial setup processes above, you can start the HDR ROS2 driver and begin robot control through the following procedures:
 
-- [Running ROS2 Driver](10-running/README.md) - ROS2 driver execution and robot control methods
+- [Running ROS2 Driver](../10-running/README.md) - ROS2 driver execution and robot control methods
 
 ⚠️ **Please make sure to check the prerequisites and complete all installation and initial setup before proceeding.**
 
