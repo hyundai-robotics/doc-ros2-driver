@@ -1,4 +1,10 @@
-﻿# 7.1.5 I/O API
+﻿<script id="page-config" type="application/json">
+{
+	"permittedStrs": ["Hi6", "Hi7"]
+}
+</script>
+
+# 7.1.5 I/O API
 
 ### 개요
 

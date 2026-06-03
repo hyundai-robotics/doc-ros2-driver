@@ -4,7 +4,11 @@
 
 현재 ROS2 호환 제어기는 Hi6 시리즈이며, 제어기 소프트웨어 버전 **v70.00-00** 이상에서 지원됩니다. </br>
 **v70.00-00** 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 HD현대로보틱스 ROS2 드라이버 사용을 지양하시기 바랍니다. </br>
-⚠️ **Hi7 모델의 경우 출시 예정이며, 상세 지원 일정은 아직 확정되지 않았습니다. 정식 릴리즈 일정이 수립되는 대로 공지를 통해 안내해 드릴 예정이오니 참고하시기 바랍니다.**
+
+{% hint style="warning" %}
+Hi7 모델의 경우 출시 예정이며, 상세 지원 일정은 아직 확정되지 않았습니다. 정식 릴리즈 일정이 수립되는 대로 공지를 통해 안내해 드릴 예정이오니 참고하시기 바랍니다.
+{% endhint %}
+
 
 [__SOURCE](0-about-this-manual/precautions.md)
 # 사전 주의사항
@@ -87,7 +91,9 @@ Hi7 제어기 시리즈의 경우, 향후 모델 라인업 및 지원 일정이 
 
 ### 모델명 변경사항
 
-> ❗ **참고:** 로봇 모델 `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`, `hdr35_20`은 각각 모델 `HH7`, `HH8`, `UH020`, `HH050`, `HS220`, `UH035`의 변경된 이름입니다.
+{% hint style="info" %}
+로봇 모델 `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`, `hdr35_20`은 각각 모델 `HH7`, `HH8`, `UH020`, `HH050`, `HS220`, `UH035`의 변경된 이름입니다.
+{% endhint %}
 
 ### 각 모델에 포함된 내용
 
@@ -236,25 +242,25 @@ hdr_simulation_gz          # Gazebo 시뮬레이션 연동
 
 ### 레포지토리 내 패키지 세부사항
 
-- **[ROS2 드라이버 (`hdr_ros2_driver`)](../../2-hdr_ros2_driver/README.md)** </br>
+- **[ROS2 드라이버 (`hdr_ros2_driver`)](../../3-hdr_ros2_driver/README.md)** </br>
 로봇 제어, 파일 관리, I/O 작업 및 시스템 모니터링을 위한 서비스를 제공하는 기본 ROS2 노드
 
-- **[HDR 클라이언트 드라이버 (`hdr_client_driver`)](../../6-hdr_client_driver/README.md)** </br>
+- **[HDR 클라이언트 드라이버 (`hdr_client_driver`)](../../7-hdr_client_driver/README.md)** </br>
 HD현대로보틱스 제어기와 TCP/UDP 통신 프로토콜을 구현하는 C++ 라이브러리
 
-- **[ROS2 제어 통합 (`hdr_hardware_interface`)](../../3-hdr_hardware_interface/README.md)** </br>
+- **[ROS2 제어 통합 (`hdr_hardware_interface`)](../../4-hdr_hardware_interface/README.md)** </br>
 표준 ROS2 제어 프레임워크와의 통합을 위한 ros2_control SystemInterface
 
-- **[로봇 설명 (`hdr_description`)](../../4-hdr_description/README.md)** </br>
+- **[로봇 설명 (`hdr_description`)](../../5-hdr_description/README.md)** </br>
 지원되는 로봇 모델에 대한 URDF/XACRO, 충돌/시각적 mesh 및 RViz 구성
 
-- **[MoveIt2 구성 (`hdr_moveit_config`)](../../5-hdr_moveit_config/README.md)** </br>
+- **[MoveIt2 구성 (`hdr_moveit_config`)](../../6-hdr_moveit_config/README.md)** </br>
 SRDF, Soft limits, 기구학 및 모션 플래닝 설정을 포함한 로봇 모델 별 MoveIt2 구성
 
-- **[Gazebo 시뮬레이션 (`hdr_simulation_gz`)](../../6-hdr_simulation_gz/README.md)** </br>
+- **[Gazebo 시뮬레이션 (`hdr_simulation_gz`)](../../8-hdr_simulation_gz/README.md)** </br>
 Gazebo Ignition 시뮬레이션 연동
 
-- **[커스텀 메시지 (`hdr_msgs`)](../../7-hdr_msgs/README.md)** </br>
+- **[커스텀 메시지 (`hdr_msgs`)](../../9-hdr_msgs/README.md)** </br>
 HD현대로보틱스 제어기와의 통신을 위한 커스텀 ROS2 서비스 및 메시지 정의
 
 
@@ -341,13 +347,23 @@ echo "source ~/hdr_ws/install/setup.bash" >> ~/.bashrc
 2. [설치 검증](../4-verifying/README.md) 테스트를 실행하십시오
 
 [__SOURCE](2-start/3-initial-setup/README.md)
+<script id="page-config" type="application/json">
+{
+	"permittedStrs": ["Hi6", "Hi7"]
+}
+</script>
+
 # 2.3 제어기 및 PC 통신 설정
 
 본 가이드는 HD현대로보틱스 로봇 제어기와 통신하기 위한 개발 PC의 네트워크 인터페이스 구성을 다룹니다.
 
 ### 전제조건
-⚠️ 설정을 시작하기 전에 아래 내용을 확인하세요:
+
+{% hint style="warning" %}
+설정을 시작하기 전에 아래 내용을 확인하세요:
 - **로봇 제어기 SW 버전**: SW 버전 **70.00-00** 이상의 Hi6, Hi7 시리즈 제어기
+{% endhint %}
+
 
 ### 네트워크 구성 개요
 
@@ -934,7 +950,10 @@ ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 
 HDR 클라이언트 드라이버는 HD현대로보틱스의 로봇 제어기와 HTTP (Open API) 및 소켓 (TCP/UDP) 인터페이스를 통해 통신하기 위한 포괄적인 C++ 라이브러리를 제공합니다. 이 라이브러리는 양쪽 통신 계층을 추상화하고 로봇 제어 및 모니터링, 파일 관리, 실시간 명령 실행, ROS2와의 통합을 위한 객체지향 인터페이스를 제공합니다.
 
-> ❗ 중요: 모든 REST API 기반 통신은 로봇이 REMOTE 모드에 있어야 동작 합니다.
+{% hint style="warning" %}
+중요: 모든 REST API 기반 통신은 로봇이 REMOTE 모드에 있어야 동작 합니다.
+{% endhint %}
+
 
 ### 패키지 구조
 
@@ -1042,6 +1061,12 @@ HDR 클라이언트 드라이버는 로봇 제어기의 다양한 기능에 대�
 | `PostDeleteFile` | 제어기의 파일 또는 디렉터리 삭제 |
 
 [__SOURCE](7-hdr_client_driver/1-api-categories/5-io/README.md)
+<script id="page-config" type="application/json">
+{
+	"permittedStrs": ["Hi6", "Hi7"]
+}
+</script>
+
 # 7.1.5 I/O API
 
 ### 개요
