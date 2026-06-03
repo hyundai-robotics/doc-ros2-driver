@@ -14,7 +14,9 @@ The robot models currently officially supported by the HD Hyundai Robotics drive
 
 ### Model Name Changes
 
-> ❗ **Note:** Robot models `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`, `hdr35_20` are the renamed versions of models `HH7`, `HH8`, `UH020`, `HH050`, `HS220`, `UH035` respectively.
+{% hint style="warning" %}
+Robot models `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`, `hdr35_20` are the renamed versions of models `HH7`, `HH8`, `UH020`, `HH050`, `HS220`, `UH035` respectively.
+{% endhint %}
 
 ### Contents Included for Each Model
 

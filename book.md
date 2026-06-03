@@ -86,7 +86,9 @@ The robot models currently officially supported by the HD Hyundai Robotics drive
 
 ### Model Name Changes
 
-> ❗ **Note:** Robot models `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`, `hdr35_20` are the renamed versions of models `HH7`, `HH8`, `UH020`, `HH050`, `HS220`, `UH035` respectively.
+{% hint style="warning" %}
+Robot models `hdf7_9`, `hdf8_8`, `hdr20_17`, `hdr50_22`, `hdr220_26`, `hdr35_20` are the renamed versions of models `HH7`, `HH8`, `UH020`, `HH050`, `HS220`, `UH035` respectively.
+{% endhint %}
 
 ### Contents Included for Each Model
 
@@ -235,25 +237,25 @@ hdr_simulation_gz          # Gazebo simulation integration
 
 ### Package Details within Repository
 
-- **[ROS2 Driver (`hdr_ros2_driver`)](../../2-hdr_ros2_driver/README.md)** </br>
+- **[ROS2 Driver (`hdr_ros2_driver`)](../../3-hdr_ros2_driver/README.md)** </br>
 Primary ROS2 node providing services for robot control, file management, I/O operations, and system monitoring
 
-- **[HDR Client Driver (`hdr_client_driver`)](../../6-hdr_client_driver/README.md)** </br>
+- **[HDR Client Driver (`hdr_client_driver`)](../../7-hdr_client_driver/README.md)** </br>
 C++ library implementing TCP/UDP communication protocols with HD Hyundai Robotics controllers
 
-- **[ROS2 Control Integration (`hdr_hardware_interface`)](../../3-hdr_hardware_interface/README.md)** </br>
+- **[ROS2 Control Integration (`hdr_hardware_interface`)](../../4-hdr_hardware_interface/README.md)** </br>
 ros2_control SystemInterface for integration with standard ROS2 control framework
 
-- **[Robot Description (`hdr_description`)](../../4-hdr_description/README.md)** </br>
+- **[Robot Description (`hdr_description`)](../../5-hdr_description/README.md)** </br>
 URDF/XACRO, collision/visual mesh, and RViz configuration for supported robot models
 
-- **[MoveIt2 Configuration (`hdr_moveit_config`)](../../5-hdr_moveit_config/README.md)** </br>
+- **[MoveIt2 Configuration (`hdr_moveit_config`)](../../6-hdr_moveit_config/README.md)** </br>
 Robot model-specific MoveIt2 configuration including SRDF, soft limits, kinematics, and motion planning settings
 
-- **[Gazebo Simulation (`hdr_simulation_gz`)](../../6-hdr_simulation_gz/README.md)** </br>
+- **[Gazebo Simulation (`hdr_simulation_gz`)](../../8-hdr_simulation_gz/README.md)** </br>
 Gazebo Ignition simulation integration
 
-- **[Custom Messages (`hdr_msgs`)](../../7-hdr_msgs/README.md)** </br>
+- **[Custom Messages (`hdr_msgs`)](../../9-hdr_msgs/README.md)** </br>
 Custom ROS2 service and message definitions for communication with HD Hyundai Robotics controllers
 
 
@@ -933,7 +935,9 @@ To modify motion planning behavior:
 
 The HDR client driver provides a comprehensive C++ library for communicating with HD Hyundai Robotics robot controllers via HTTP (Open API) and socket (TCP/UDP) interfaces. This library abstracts both communication layers and provides object-oriented interfaces for robot control and monitoring, file management, real-time command execution, and integration with ROS2.
 
-> ❗ Important: All REST API-based communication requires the robot to be in REMOTE mode.
+{% hint style="warning" %}
+All REST API-based communication requires the robot to be in REMOTE mode.
+{% endhint %}
 
 ### Package Structure
 
