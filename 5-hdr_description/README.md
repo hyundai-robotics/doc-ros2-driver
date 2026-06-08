@@ -2,6 +2,8 @@
 
 The `hdr_description` package contains robot URDF, meshes, and visualization configurations for HD Hyundai Robotics robots in ROS2. This package provides essential URDF/XACRO definitions needed for simulation, visualization, and motion planning.
 
+[Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_description)
+
 ### Key Features
 
 - **Robot Model-Specific URDF**: URDF/XACRO files for all supported robot models

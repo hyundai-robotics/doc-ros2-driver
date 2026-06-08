@@ -2,6 +2,8 @@
 
 The HDR client driver provides a comprehensive C++ library for communicating with HD Hyundai Robotics robot controllers via HTTP (Open API) and socket (TCP/UDP) interfaces. This library abstracts both communication layers and provides object-oriented interfaces for robot control and monitoring, file management, real-time command execution, and integration with ROS2.
 
+[Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_client_driver)
+
 {% hint style="warning" %}
 All REST API-based communication requires the robot to be in REMOTE mode.
 {% endhint %}

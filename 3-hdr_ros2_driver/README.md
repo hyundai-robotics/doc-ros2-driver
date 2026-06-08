@@ -2,6 +2,8 @@
 
 The `hdr_ros2_driver` package provides a core ROS2 driver for interfacing with HD Hyundai Robotics' Open API. This driver enables comprehensive communication with robot controllers through REST API, supporting services for robot control, monitoring, file operations, and system management.
 
+- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
+
 ### Key Features
 
 - **Robot State Publishing**: Real-time joint state information via `/joint_states` topic

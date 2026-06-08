@@ -9,7 +9,7 @@ The HDR ROS2 driver integrates HD Hyundai Robotics industrial robot controllers 
 
 ### Prerequisites
 Before using the HDR ROS2 driver, please make sure to check the following items:
-- [Supported Controllers](1-controller-models/README.md) - Compatible Hi6, Hi7 series controllers
+- [Supported Controllers](1-controller-models/README.md) - Compatible Hi6, Hi7 series controller SW version
 - [Supported Robot Models](2-robot-models/README.md) - Compatible HD Hyundai Robotics robot models
 - [System Requirements](3-requirements/README.md) - Hardware and software requirements
 - [ROS2 Version](4-ros2-version/README.md) - Supported ROS2 versions
@@ -29,4 +29,4 @@ After completing all the installation and initial setup processes above, you can
 
 ⚠️ **Please make sure to check the prerequisites and complete all installation and initial setup before proceeding.**
 
-⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v70.00-00* or higher. </br> The *v70.00-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.** 
+⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v70.00-00* or higher.**

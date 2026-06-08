@@ -14,24 +14,6 @@ This will start the driver with:
 - Default IP: 192.168.1.150
 - Default Port: 8888
 
-### Custom Configuration
-
-#### Custom IP and Port
-```bash
-# Launch with custom network settings
-ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
-  openapi_ip:=192.168.0.10 \
-  openapi_port:=8080
-```
-
-### Launch Parameters
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `openapi_ip` | string | `192.168.1.150` | Robot controller server IP address |
-| `openapi_port` | int | `8888` | Controller server port number |
-| `robot_model` | string | `ha006b` | Robot model name |
-
 ### Verification
 
 After launch, verify the driver is running:

@@ -2,9 +2,14 @@
 [__SOURCE](README.md)
 # Hi6 & Hi7 Controller Function Manual - ROS2 Driver
 
-Currently, ROS2-compatible controllers are the Hi6 series, supported from controller software version **v70.00-00** or higher. </br>
-Version **v70.00-00** is scheduled for official release in 2Q 2026. Please refrain from using the HD Hyundai Robotics ROS2 driver before the official release. </br>
-⚠️ **The Hi7 model is scheduled for release, and the specific support timeline has not yet been finalized. We will provide further details via an official announcement as soon as the formal release schedule is established. Please keep this in mind.**
+Currently, ROS2-compatible controllers are the Hi6, Hi7 series, supported from controller software version **v70.00-00** or higher. 
+
+- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
+- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_description)
+- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_client_driver)
+- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
+  
+</br>
 
 [__SOURCE](0-about-this-manual/precautions.md)
 # Precautions
@@ -23,7 +28,7 @@ The HDR ROS2 driver integrates HD Hyundai Robotics industrial robot controllers 
 
 ### Prerequisites
 Before using the HDR ROS2 driver, please make sure to check the following items:
-- [Supported Controllers](1-controller-models/README.md) - Compatible Hi6, Hi7 series controllers
+- [Supported Controllers](1-controller-models/README.md) - Compatible Hi6, Hi7 series controller SW version
 - [Supported Robot Models](2-robot-models/README.md) - Compatible HD Hyundai Robotics robot models
 - [System Requirements](3-requirements/README.md) - Hardware and software requirements
 - [ROS2 Version](4-ros2-version/README.md) - Supported ROS2 versions
@@ -43,27 +48,17 @@ After completing all the installation and initial setup processes above, you can
 
 ⚠️ **Please make sure to check the prerequisites and complete all installation and initial setup before proceeding.**
 
-⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v70.00-00* or higher. </br> The *v70.00-00* version is scheduled for official release in 2Q 2026, so please refrain from using the ROS2 driver before the official release.** 
+⚠️ **Currently, the HD Hyundai Robotics ROS2 driver is supported on controller software version *v70.00-00* or higher.**
 
 [__SOURCE](1-intro/1-controller-models/README.md)
 # 1.1 Supported Controller Models
-The HD Hyundai Robotics Hi6 controller models that officially support ROS2 functionality are as follows:
-
-- Hi6-N10
-- Hi6-N20
-- Hi6-N00(HK)
-- Hi6-N00-60(HK)
-- Hi6-N30(HK)
-- Hi6-N80(HK)
-- Hi6-T15
+HD Hyundai Robotics Hi6, Hi7 controller models officially support ROS 2 functionality.
 
 **Controller Requirements**:
-- SW Version: **70.00-00** or higher (scheduled for release in October)
+- SW Version: **70.00-00** or higher
 - Operation Mode: **REMOTE mode**
 
-The Hi7 controller series, including future model lineups and support schedules, will be updated on this list as soon as they are finalized.
-
-> ⚠️ **Note:** The HD Hyundai Robotics ROS2 driver does **not support** the **Hi5** controller series.
+> ⚠️ **Note:** The HD Hyundai Robotics ROS2 driver does **not support** the **Hi5, Hi5a** controller series.
 
 ### Next Steps
 
@@ -111,7 +106,7 @@ This page describes the hardware and software requirements for running the HD Hy
 ### Hardware Requirements
 
 #### Robot Controller
-- **Compatible Controllers**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N00-60(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
+- **Compatible Controllers**: Hi6, Hi7 controller series
 - **Controller SW Version**: **70.00-00** or higher
 - **Operation Mode**: Robot must be set to **REMOTE** mode
 - **Network Interface**: Ethernet connection (LAN1, LAN2, or LAN3)
@@ -470,6 +465,8 @@ ros2 topic hz /joint_states
 
 The `hdr_ros2_driver` package provides a core ROS2 driver for interfacing with HD Hyundai Robotics' Open API. This driver enables comprehensive communication with robot controllers through REST API, supporting services for robot control, monitoring, file operations, and system management.
 
+- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
+
 ### Key Features
 
 - **Robot State Publishing**: Real-time joint state information via `/joint_states` topic
@@ -500,24 +497,6 @@ ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py
 This will start the driver with:
 - Default IP: 192.168.1.150
 - Default Port: 8888
-
-### Custom Configuration
-
-#### Custom IP and Port
-```bash
-# Launch with custom network settings
-ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
-  openapi_ip:=192.168.0.10 \
-  openapi_port:=8080
-```
-
-### Launch Parameters
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `openapi_ip` | string | `192.168.1.150` | Robot controller server IP address |
-| `openapi_port` | int | `8888` | Controller server port number |
-| `robot_model` | string | `ha006b` | Robot model name |
 
 ### Verification
 
@@ -769,6 +748,8 @@ To enable the hardware interface, include it within the `<ros2_control>` in URDF
 
 The `hdr_description` package contains robot URDF, meshes, and visualization configurations for HD Hyundai Robotics robots in ROS2. This package provides essential URDF/XACRO definitions needed for simulation, visualization, and motion planning.
 
+[Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_description)
+
 ### Key Features
 
 - **Robot Model-Specific URDF**: URDF/XACRO files for all supported robot models
@@ -935,6 +916,8 @@ To modify motion planning behavior:
 
 The HDR client driver provides a comprehensive C++ library for communicating with HD Hyundai Robotics robot controllers via HTTP (Open API) and socket (TCP/UDP) interfaces. This library abstracts both communication layers and provides object-oriented interfaces for robot control and monitoring, file management, real-time command execution, and integration with ROS2.
 
+[Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_client_driver)
+
 {% hint style="warning" %}
 All REST API-based communication requires the robot to be in REMOTE mode.
 {% endhint %}
@@ -1094,6 +1077,8 @@ The Miscellaneous API category provides additional utility and system management
 # 8. Gazebo Simulation (`hdr_simulation_gz`)
 
 The `hdr_simulation_gz` package provides a ROS2 + Gazebo (Ignition) simulation environment for HD Hyundai Robotics industrial robots. This package enables development, testing, and validation of robotic applications without physical hardware.
+
+[Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
 
 ### Key Features
 
