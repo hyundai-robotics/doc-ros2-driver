@@ -4,10 +4,10 @@
 
 Currently, ROS2-compatible controllers are the Hi6, Hi7 series, supported from controller software version **v70.00-00** or higher. 
 
-- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
-- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_description)
-- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_client_driver)
-- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
+- [Source Code] [hdr_ros2_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
+- [Source Code] [hdr_description] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_description)
+- [Source Code] [hdr_client_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_client_driver)
+- [Source Code] [hdr_simulation_gz] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
   
 </br>
 
@@ -465,7 +465,7 @@ ros2 topic hz /joint_states
 
 The `hdr_ros2_driver` package provides a core ROS2 driver for interfacing with HD Hyundai Robotics' Open API. This driver enables comprehensive communication with robot controllers through REST API, supporting services for robot control, monitoring, file operations, and system management.
 
-- [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
+- [Source Code] [hdr_ros2_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
 
 ### Key Features
 
@@ -1078,7 +1078,7 @@ The Miscellaneous API category provides additional utility and system management
 
 The `hdr_simulation_gz` package provides a ROS2 + Gazebo (Ignition) simulation environment for HD Hyundai Robotics industrial robots. This package enables development, testing, and validation of robotic applications without physical hardware.
 
-[Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
+[Source Code] [hdr_simulation_gz] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
 
 ### Key Features
 
