@@ -2,6 +2,8 @@
 
 HDR 클라이언트 드라이버는 HD현대로보틱스의 로봇 제어기와 HTTP (Open API) 및 소켓 (TCP/UDP) 인터페이스를 통해 통신하기 위한 포괄적인 C++ 라이브러리를 제공합니다. 이 라이브러리는 양쪽 통신 계층을 추상화하고 로봇 제어 및 모니터링, 파일 관리, 실시간 명령 실행, ROS2와의 통합을 위한 객체지향 인터페이스를 제공합니다.
 
+[소스 코드] [hdr_client_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_client_driver)
+
 {% hint style="warning" %}
 중요: 모든 REST API 기반 통신은 로봇이 REMOTE 모드에 있어야 동작 합니다.
 {% endhint %}

@@ -1,9 +1,11 @@
 ﻿# Hi6 & Hi7 제어기 기능설명서 - ROS2 드라이버
 
-현재 ROS2 호환 제어기는 Hi6 시리즈이며, 제어기 소프트웨어 버전 **v70.00-00** 이상에서 지원됩니다. </br>
-**v70.00-00** 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 HD현대로보틱스 ROS2 드라이버 사용을 지양하시기 바랍니다. </br>
+현재 ROS2 호환 제어기는 Hi6, Hi7 시리즈이며, 제어기 소프트웨어 버전 **v70.00-00** 이상에서 지원됩니다. 
 
-{% hint style="warning" %}
-Hi7 모델의 경우 출시 예정이며, 상세 지원 일정은 아직 확정되지 않았습니다. 정식 릴리즈 일정이 수립되는 대로 공지를 통해 안내해 드릴 예정이오니 참고하시기 바랍니다.
-{% endhint %}
+- [소스 코드] [hdr_ros2_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
+- [소스 코드] [hdr_description] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_description)
+- [소스 코드] [hdr_client_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_client_driver)
+- [소스 코드] [hdr_simulation_gz] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
+
+</br>
 

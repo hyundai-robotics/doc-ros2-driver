@@ -14,24 +14,6 @@ ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py
 - 기본 IP: 192.168.1.150
 - 기본 포트: 8888
 
-### 사용자 정의 구성
-
-#### 사용자 정의 IP 및 포트
-```bash
-# 사용자 정의 네트워크 설정으로 실행
-ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
-  openapi_ip:=192.168.0.10 \
-  openapi_port:=8080
-```
-
-### 실행 매개변수
-
-| 매개변수 | 타입 | 기본값 | 설명 |
-|-----------|------|---------|-------------|
-| `openapi_ip` | string | `192.168.1.150` | 로봇 제어기 서버 IP 주소 |
-| `openapi_port` | int | `8888` | 제어기 서버의 포트 번호 |
-| `robot_model` | string | `ha006b` | 로봇 모델명 |
-
 ### 확인
 
 실행 후, 드라이버가 실행 중인지 확인하십시오:

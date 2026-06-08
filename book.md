@@ -2,12 +2,14 @@
 [__SOURCE](README.md)
 # Hi6 & Hi7 제어기 기능설명서 - ROS2 드라이버
 
-현재 ROS2 호환 제어기는 Hi6 시리즈이며, 제어기 소프트웨어 버전 **v70.00-00** 이상에서 지원됩니다. </br>
-**v70.00-00** 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 HD현대로보틱스 ROS2 드라이버 사용을 지양하시기 바랍니다. </br>
+현재 ROS2 호환 제어기는 Hi6, Hi7 시리즈이며, 제어기 소프트웨어 버전 **v70.00-00** 이상에서 지원됩니다. 
 
-{% hint style="warning" %}
-Hi7 모델의 경우 출시 예정이며, 상세 지원 일정은 아직 확정되지 않았습니다. 정식 릴리즈 일정이 수립되는 대로 공지를 통해 안내해 드릴 예정이오니 참고하시기 바랍니다.
-{% endhint %}
+- [소스 코드] [hdr_ros2_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
+- [소스 코드] [hdr_description] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_description)
+- [소스 코드] [hdr_client_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_client_driver)
+- [소스 코드] [hdr_simulation_gz] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
+
+</br>
 
 
 [__SOURCE](0-about-this-manual/precautions.md)
@@ -27,7 +29,7 @@ HDR ROS2 드라이버는 HD현대로보틱스 산업용 로봇 제어기(Hi6, Hi
 
 ### 사전 확인 사항
 HDR ROS2 드라이버 사용에 앞서 아래 항목을 반드시 확인하시기 바랍니다.
-- [지원 제어기](1-controller-models/README.md) - 호환 가능한 Hi6, Hi7 시리즈 제어기
+- [지원 제어기](1-controller-models/README.md) - 호환 가능한 Hi6, Hi7 시리즈 제어기 SW 버전
 - [지원 로봇 모델](2-robot-models/README.md) - 호환 가능한 HD현대로보틱스 로봇 모델
 - [시스템 요구사항](3-requirements/README.md) - 하드웨어 및 소프트웨어 요구사항
 - [ROS2 버전](4-ros2-version/README.md) - 지원 ROS2 버전
@@ -47,28 +49,18 @@ HDR ROS2 드라이버 사용에 앞서 아래 항목을 반드시 확인하시�
 
 ⚠️ **반드시 사전 확인 사항을 확인하고 설치 및 초기 설정을 모두 완료한 뒤 진행하시기 바랍니다.** 
 
-⚠️ **현재 HD현대로보틱스 ROS2 드라이버는 제어기 소프트웨어 버전 *v70.00-00* 이상에서 지원됩니다. </br> *v70.00-00* 버전은 2026년 2Q 중 공식 릴리스가 예정되어 있으므로, 정식 릴리스 이전에는 ROS2 드라이버 사용을 지양하시기 바랍니다.**
+⚠️ **현재 HD현대로보틱스 ROS2 드라이버는 제어기 소프트웨어 버전 *v70.00-00* 이상에서 지원됩니다.**
 
 
 [__SOURCE](1-intro/1-controller-models/README.md)
 # 1.1 지원 제어기 모델
-ROS2 기능을 공식적으로 지원하는 HD현대로보틱스 Hi6 제어기 모델은 아래와 같습니다.
-
-- Hi6-N10
-- Hi6-N20
-- Hi6-N00(HK)
-- Hi6-N00-60(HK)
-- Hi6-N30(HK)
-- Hi6-N80(HK)
-- Hi6-T15
+HD현대로보틱스의 Hi6, Hi7 제어기 모델은 ROS 2 기능을 공식 지원합니다.
 
 **제어기 요구사항**:
-- SW 버전 버전: **70.00-00** 이상
+- SW 버전: **70.00-00** 이상
 - 동작 모드: **REMOTE 모드**
 
-Hi7 제어기 시리즈의 경우, 향후 모델 라인업 및 지원 일정이 확정되는 대로 본 목록에 업데이트할 예정입니다.
-
-> ⚠️ **참고:** HD현대로보틱스 ROS2 드라이버는 **Hi5** 제어기 시리즈를 **지원하지 않습니다**.
+> ⚠️ **참고:** HD현대로보틱스 ROS2 드라이버는 **Hi5, Hi5a** 제어기 시리즈를 **지원하지 않습니다**.
 
 ### 다음 단계
 
@@ -116,8 +108,8 @@ Hi7 제어기 시리즈의 경우, 향후 모델 라인업 및 지원 일정이 
 ### 하드웨어 요구사항
 
 #### 로봇 제어기
-- **호환 제어기**: Hi6-N10, Hi6-N20, Hi6-N00(HK), Hi6-N00-60(HK), Hi6-N30(HK), Hi6-N80(HK), Hi6-T15
-- **제어기 SW 버전 버전**: **70.00-00** 이상
+- **호환 제어기**: Hi6, Hi7 제어기 시리즈
+- **제어기 SW 버전**: **70.00-00** 이상
 - **동작 모드**: 로봇이 **REMOTE** 모드로 설정되어야 함
 - **네트워크 인터페이스**: 이더넷 연결 (LAN1, LAN2 또는 LAN3)
 
@@ -485,6 +477,8 @@ ros2 topic hz /joint_states
 
 `hdr_ros2_driver` 패키지는 HD현대로보틱스의 Open API와 인터페이스하기 위한 핵심 ROS2 드라이버를 제공합니다. 이 드라이버는 REST API를 통해 로봇 제어기와의 포괄적인 통신을 가능하게 하며, 로봇 제어, 모니터링, 파일 작업 및 시스템 관리를 위한 서비스를 지원합니다.
 
+- [소스 코드] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
+
 ### 주요 기능
 
 - **로봇 상태 퍼블리싱**: `/joint_states` 토픽을 통한 실시간 joint state 정보
@@ -515,24 +509,6 @@ ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py
 다음과 같이 드라이버를 시작합니다:
 - 기본 IP: 192.168.1.150
 - 기본 포트: 8888
-
-### 사용자 정의 구성
-
-#### 사용자 정의 IP 및 포트
-```bash
-# 사용자 정의 네트워크 설정으로 실행
-ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py \
-  openapi_ip:=192.168.0.10 \
-  openapi_port:=8080
-```
-
-### 실행 매개변수
-
-| 매개변수 | 타입 | 기본값 | 설명 |
-|-----------|------|---------|-------------|
-| `openapi_ip` | string | `192.168.1.150` | 로봇 제어기 서버 IP 주소 |
-| `openapi_port` | int | `8888` | 제어기 서버의 포트 번호 |
-| `robot_model` | string | `ha006b` | 로봇 모델명 |
 
 ### 확인
 
