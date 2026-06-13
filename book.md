@@ -12,10 +12,19 @@
 </br>
 
 
+[__SOURCE](0-about-this-manual/README.md)
+# 이 설명서에 대하여
+
+
 [__SOURCE](0-about-this-manual/precautions.md)
 # 사전 주의사항
 
 {% include file="ko/precautions.md" %}
+
+[__SOURCE](0-about-this-manual/safety-notice.md)
+# 안전 주의 사항
+
+{% include file="ko/safety-notice.md" %}
 
 [__SOURCE](1-intro/README.md)
 # 1. 개요
@@ -477,7 +486,7 @@ ros2 topic hz /joint_states
 
 `hdr_ros2_driver` 패키지는 HD현대로보틱스의 Open API와 인터페이스하기 위한 핵심 ROS2 드라이버를 제공합니다. 이 드라이버는 REST API를 통해 로봇 제어기와의 포괄적인 통신을 가능하게 하며, 로봇 제어, 모니터링, 파일 작업 및 시스템 관리를 위한 서비스를 지원합니다.
 
-- [소스 코드] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
+- [소스 코드] [hdr_ros2_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
 
 ### 주요 기능
 
@@ -760,6 +769,8 @@ ros2 launch hdr_hardware_interface ros2_control.launch.py \
 
 `hdr_description` 패키지는 ROS2에서 HD현대로보틱스 로봇을 위한 로봇 URDF, mesh, 시각화 구성을 포함합니다. 이 패키지는 시뮬레이션, 시각화, 모션 플래닝에 필요한 기본적인 URDF/XACRO 정의를 제공합니다.
 
+[소스 코드] [hdr_description] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_description)
+
 ### 주요 기능
 
 - **로봇 모델 별 URDF**: 지원하는 모든 로봇 모델용 URDF/XACRO 파일
@@ -925,6 +936,8 @@ ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 # 7. HD현대로보틱스 클라이언트 드라이버
 
 HDR 클라이언트 드라이버는 HD현대로보틱스의 로봇 제어기와 HTTP (Open API) 및 소켓 (TCP/UDP) 인터페이스를 통해 통신하기 위한 포괄적인 C++ 라이브러리를 제공합니다. 이 라이브러리는 양쪽 통신 계층을 추상화하고 로봇 제어 및 모니터링, 파일 관리, 실시간 명령 실행, ROS2와의 통합을 위한 객체지향 인터페이스를 제공합니다.
+
+[소스 코드] [hdr_client_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_client_driver)
 
 {% hint style="warning" %}
 중요: 모든 REST API 기반 통신은 로봇이 REMOTE 모드에 있어야 동작 합니다.
@@ -1092,6 +1105,8 @@ I/O API 카테고리는 HD 현대로보틱스 제어기의 PLC 통신 기능을 
 # 8. Gazebo 시뮬레이션 (`hdr_simulation_gz`)
 
 `hdr_simulation_gz` 패키지는 HD현대로보틱스 산업용 로봇을 위한 ROS2 + Gazebo (Ignition) 시뮬레이션 환경을 제공합니다. 이 패키지는 물리적 하드웨어 없이도 로봇 응용 프로그램의 개발, 테스트 및 검증을 가능하게 합니다.
+
+[소스 코드] [hdr_simulation_gz] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
 
 ### 주요 기능
 
