@@ -5,10 +5,18 @@
 目前，兼容 ROS2 的控制器是 Hi6 系列，支持从控制器软件版本 **v60.34-00** 或更高版本。</br>
 版本 **v60.34-00** 计划于 2026年第2季度正式发布。在正式发布之前，请避免使用 HD 现代机器人公司的 ROS2 驱动程序。 </br>
 ⚠️ **Hi7 型号计划发布，具体支持时间表尚未 finalized。我们将在正式发布日程确定后通过官方公告提供进一步的细节。请牢记这一点。**
+[__SOURCE](0-about-this-manual/README.md)
+# 关于手册
+
 [__SOURCE](0-about-this-manual/precautions.md)
 # 注意事项
 
-{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/zh/precautions.md" %}
+{% include file="zh/precautions.md" %}
+[__SOURCE](0-about-this-manual/safety-notice.md)
+# 安全注意事项
+
+{% include file="zh/safety-notice.md" %}
+
 [__SOURCE](1-intro/README.md)
 # 1. 概述
 
