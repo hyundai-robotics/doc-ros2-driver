@@ -1,14 +1,14 @@
-﻿# 3.3 Available Actions
+# 3.3 可用操作
 
-### Overview
+### 概述
 
-The ROS2 driver provides action interfaces for robot joint trajectory control. Actions enable asynchronous operations with progress feedback and cancellation capabilities.
+ROS2驱动程序提供机器人关节轨迹控制的操作接口。操作使异步操作成为可能，并提供进度反馈和取消功能。
 
-### Joint Trajectory Control Action
+### 关节轨迹控制操作
 
 #### `/joint_trajectory_controller/follow_joint_trajectory` (control_msgs/action/FollowJointTrajectory)
 
-**Description**: Executes joint trajectory control.
+**描述**: 执行关节轨迹控制。
 
 **action_goal**:
 ```yaml

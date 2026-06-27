@@ -1,73 +1,73 @@
-﻿# 3.4.1 Robot Control Services
+﻿# 3.4.1 机器人控制服务
 
-### Overview
+### 概述
 
-Robot control related ROS2 services provided by `hdr_ros2_driver`.
+由 `hdr_ros2_driver` 提供的与机器人控制相关的 ROS2 服务。
 
-### Robot Control Services
+### 机器人控制服务
 
-#### Motor Status and Control
+#### 电机状态和控制
 
 ```bash
-# Get motor status
+# 获取电机状态
 ros2 service call /hdr_ros2_driver/robot/get/motor_state std_srvs/srv/Trigger
 
-# Turn on motor power
+# 打开电机电源
 ros2 service call /hdr_ros2_driver/robot/post/motor_power std_srvs/srv/Trigger
 
-# Emergency stop
+# 急停
 ros2 service call /hdr_ros2_driver/robot/post/emergency_stop std_srvs/srv/Trigger
 ```
 
-#### Position and Tool Management
+#### 位置和工具管理
 
 ```bash
-# Get current robot position
+# 获取当前机器人位置
 ros2 service call /hdr_ros2_driver/robot/get/po_cur hdr_msgs/srv/PoseCur
 
-# Get current tool information
+# 获取当前工具信息
 ros2 service call /hdr_ros2_driver/robot/get/cur_tool std_srvs/srv/Trigger
 
-# Get available tool list
+# 获取可用工具列表
 ros2 service call /hdr_ros2_driver/robot/get/tools std_srvs/srv/Trigger
 
-# Get specific tool information
+# 获取特定工具信息
 ros2 service call /hdr_ros2_driver/robot/get/tools_t hdr_msgs/srv/Number "{data: 0}"
 
-# Set tool number
+# 设置工具编号
 ros2 service call /hdr_ros2_driver/robot/post/tool_no hdr_msgs/srv/Number "{data: 0}"
 
-# Set coordinate system
+# 设置坐标系统
 ros2 service call /hdr_ros2_driver/robot/post/crd_sys hdr_msgs/srv/Number "{data: 0}"
 ```
 
-### System Control Services
+### 系统控制服务
 
-#### Operating Conditions
+#### 操作条件
 
 ```bash
-# Get operating conditions
+# 获取操作条件
 ros2 service call /hdr_ros2_driver/control/get/op_cnd std_srvs/srv/Trigger
 
-# Set operating conditions
+# 设置操作条件
 ros2 service call /hdr_ros2_driver/control/put/op_cnd hdr_msgs/srv/OpCnd "{playback_mode: 1, step_goback_max_spd: 130, ucrd_num: 2}"
 
-# Get user coordinate system numbers
+# 获取用户坐标系统编号
 ros2 service call /hdr_ros2_driver/control/get/ucs_nos std_srvs/srv/Trigger
 ```
 
-#### Digital I/O
+#### 数字 I/O
 
 ```bash
-# Read digital input
+# 读取数字输入
 ros2 service call /hdr_ros2_driver/control/get/ios/di hdr_msgs/srv/IoRequest "{type: 'di', blk_no: 1, sig_no: 1}"
 
-# Read digital output
+# 读取数字输出
 ros2 service call /hdr_ros2_driver/control/get/ios/do hdr_msgs/srv/IoRequest "{type: 'do', blk_no: 1, sig_no: 1}"
 
-# Read serial I/O
+# 读取串行 I/O
 ros2 service call /hdr_ros2_driver/control/get/ios/sio hdr_msgs/srv/IoRequest "{type: 'sio', blk_no: 1, sig_no: 1}"
 
-# Set digital I/O
+# 设置数字 I/O
 ros2 service call /hdr_ros2_driver/control/post/ios/dio hdr_msgs/srv/IoRequest "{type: 'do', blk_no: 1, sig_no: 1, val: 1}"
 ```

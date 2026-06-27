@@ -1,55 +1,54 @@
-﻿# 3.1 HDR ROS2 Driver launch
+﻿# 3.1 HDR ROS2 Driver 启动
 
-This section covers how to launch the HDR ROS2 driver.
+本节介绍如何启动 HDR ROS2 驱动程序。
 
-### Basic Launch
+### 基本启动
 
-#### HDR ROS2 Driver Launch
+#### HDR ROS2 驱动程序启动
 ```bash
-# Launch with default parameters
+# 使用默认参数启动
 ros2 launch hdr_ros2_driver hdr_ros2_driver_launch.py
 ```
 
-This will start the driver with:
-- Default IP: 192.168.1.150
-- Default Port: 8888
+这将使用以下配置启动驱动程序：
+- 默认 IP：192.168.1.150
+- 默认端口：8888
 
-### Verification
+### 验证
 
-After launch, verify the driver is running:
+启动后，验证驱动程序是否正在运行：
 
 ```bash
-# Check if driver node is active
+# 检查驱动节点是否处于活动状态
 ros2 node list | grep hdr_ros2_driver
 
-# List available services
+# 列出可用服务
 ros2 service list | grep hdr_ros2_driver
 
-# Test basic connection
+# 测试基本连接
 ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 ```
 
-### Network Setup Prerequisites
+### 网络设置前提条件
 
-Before launching, ensure proper network configuration:
+在启动之前，请确保正确的网络配置：
 
-1. **Ethernet Connection**: Connect PC to robot controller via LAN1, LAN2, or LAN3
-2. **Controller IP**: Default 192.168.1.150 (configurable through teaching pendant)
-3. **PC IP**: Set to 192.168.1.x range (x ≠ 150)
-4. **REMOTE Mode**: Ensure robot controller is in REMOTE mode
+1. **以太网连接**：通过 LAN1、LAN2 或 LAN3 将 PC 连接到机器人控制器
+2. **控制器 IP**：默认 192.168.1.150（通过教学挂件可配置）
+3. **PC IP**：设置为 192.168.1.x 范围（x ≠ 150）
+4. **REMOTE 模式**：确保机器人控制器处于 REMOTE 模式
 
-### Troubleshooting
+### 故障排除
 
-#### Common Issues
+#### 常见问题
 
-1. **Connection Timeout**
-   - Verify robot IP and port: `ping 192.168.1.150`
-   - Check ethernet cable connection
+1. **连接超时**
+   - 验证机器人 IP 和端口：`ping 192.168.1.150`
+   - 检查以太网电缆连接
 
-2. **Service Unavailable**
-   - Verify driver launched successfully
-   - Check ROS2 environment is sourced
-   - Check launch output for error messages
-   - Ensure robot is in REMOTE mode
-   - Verify controller SW version is **70.00-00** or higher
-   
+2. **服务不可用**
+   - 验证驱动程序成功启动
+   - 检查 ROS2 环境是否已导入
+   - 检查启动输出是否有错误信息
+   - 确保机器人处于 REMOTE 模式
+   - 验证控制器软件版本为 **70.00-00** 或更高

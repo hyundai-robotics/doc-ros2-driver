@@ -1,17 +1,17 @@
-﻿# 3.4.7 Version Information Services
+﻿# 3.4.7 版本信息服务
 
-### Overview
+### 概述
 
-Version information related ROS2 services provided by `hdr_ros2_driver`.
+与 `hdr_ros2_driver` 提供的 ROS2 服务相关的版本信息。
 
-### Version Information Services
+### 版本信息服务
 
-#### System Version Queries
+#### 系统版本查询
 
 ```bash
-# Get API version
+# 获取 API 版本
 ros2 service call /hdr_ros2_driver/get/api_ver std_srvs/srv/Trigger
 
-# Get system version
+# 获取系统版本
 ros2 service call /hdr_ros2_driver/get/system_ver std_srvs/srv/Trigger
 ```

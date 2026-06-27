@@ -1,10 +1,10 @@
-﻿# Hi6 & Hi7 Controller Function Manual - ROS2 Driver
+# Hi6 & Hi7 控制器功能手册 - ROS2 驱动
 
-Currently, ROS2-compatible controllers are the Hi6, Hi7 series, supported from controller software version **v70.00-00** or higher. 
+目前，ROS2 兼容的控制器是 Hi6、Hi7 系列，支持控制器软件版本 **v70.00-00** 或更高版本。
 
-- [Source Code] [hdr_ros2_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
-- [Source Code] [hdr_description] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_description)
-- [Source Code] [hdr_client_driver] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_client_driver)
-- [Source Code] [hdr_simulation_gz] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
-  
+- [源代码] [hdr_ros2_driver] [GitHub 仓库 ↗](https://github.com/hyundai-robotics/hdr_ros2_driver)
+- [源代码] [hdr_description] [GitHub 仓库 ↗](https://github.com/hyundai-robotics/hdr_description)
+- [源代码] [hdr_client_driver] [GitHub 仓库 ↗](https://github.com/hyundai-robotics/hdr_client_driver)
+- [源代码] [hdr_simulation_gz] [GitHub 仓库 ↗](https://github.com/hyundai-robotics/hdr_simulation_gz)
+
 </br>

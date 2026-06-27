@@ -1,23 +1,23 @@
-﻿# 7.1.2 Robot API
+# 7.1.2 机器人 API
 
-### Overview
+### 概述
 
-The Robot API category handles core robot operations including motion control, position management, tool configuration, and safety systems. These APIs provide direct control over robot movement and status monitoring.
+机器人 API 类别处理核心机器人操作，包括运动控制、位置管理、工具配置和安全系统。这些 API 提供了对机器人运动和状态监控的直接控制。
 
-### Available Robot APIs
+### 可用的机器人 APIs
 
-| Function | Description |
+| 功能 | 描述 |
 |----------|-------------|
-| `GetRobotMotorState` | Check robot servo motor power status (ON/OFF), useful for checking motion command readiness |
-| `GetRobotPoCur` | Current robot pose (position and orientation) with various options (job index, coordinate system, etc.) |
-| `GetRobotCurTool` | Retrieve currently selected tool information (TCP configuration, weight, etc.) |
-| `GetRobotTools` | Retrieve list of all tools registered in the system (TCP offsets, weights, etc.) |
-| `GetRobotToolsT` | Query specific tool's detailed information by tool number (0-31) |
-| `GetJointTrajBuffAvail` | Get the available size of the trajectory buffer |
-| `PostRobotMotorPower` | Turn robot motor power ON or OFF |
-| `PostRobotOperation` | Start or stop robot program execution |
-| `PostRobotToolNo` | Set active tool number to use (0-31) |
-| `PostRobotCrdSys` | Specify coordinate system to use for motion and I/O (-1: default, 0: base, 1: tool, 2: user1, 3: user2) |
-| `PostRobotEmergencyStop` | Immediate emergency stop of all robot motion for safety response |
-| `PostInitJointTrajectory` | Initialize the joint trajectory buffer |
-| `PostInsertJointTrajectoryPoints` | Insert joint trajectory points into the controller buffer for motion execution |
+| `GetRobotMotorState` | 检查机器人伺服电机电源状态 (ON/OFF)，用于检查运动命令的准备情况 |
+| `GetRobotPoCur` | 当前机器人姿态 (位置和方向)，具有多种选项 (作业索引、坐标系统等) |
+| `GetRobotCurTool` | 检索当前选择工具的信息 (TCP 配置、重量等) |
+| `GetRobotTools` | 检索系统中注册的所有工具列表 (TCP 偏移、重量等) |
+| `GetRobotToolsT` | 通过工具编号查询特定工具的详细信息 (0-31) |
+| `GetJointTrajBuffAvail` | 获取轨迹缓冲区的可用大小 |
+| `PostRobotMotorPower` | 打开或关闭机器人电机电源 |
+| `PostRobotOperation` | 开始或停止机器人程序执行 |
+| `PostRobotToolNo` | 设置要使用的活动工具编号 (0-31) |
+| `PostRobotCrdSys` | 指定用于运动和 I/O 的坐标系统 (-1: 默认, 0: 基础, 1: 工具, 2: 用户1, 3: 用户2) |
+| `PostRobotEmergencyStop` | 为安全响应立即停止所有机器人运动 |
+| `PostInitJointTrajectory` | 初始化关节轨迹缓冲区 |
+| `PostInsertJointTrajectoryPoints` | 将关节轨迹点插入控制器缓冲区以执行运动 |

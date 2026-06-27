@@ -1,15 +1,15 @@
-﻿# 7.1.6 Task API
+﻿# 7.1.6 任务 API
 
-### Overview
+### 概述
 
-The Task API category provides task execution and variable management functions for the HD Hyundai Robotics controller. These APIs enable variable assignment, wait state release, program counter control, expression evaluation, and direct motion command execution.
+任务 API 类别为 HD 现代机器人控制器提供任务执行和变量管理功能。这些 API 允许变量赋值、等待状态释放、程序计数器控制、表达式评估以及直接运动命令执行。
 
-### Available Task APIs
+### 可用的任务 API
 
-| Function | Description |
+| 功能 | 描述 |
 |----------|-------------|
-| `PostAssignVar` | Assign variables to task using expressions or JSON values (supports local/global scope and persistence) |
-| `PostReleaseWait` | Release task[0] from WAIT state to resume paused task |
-| `PostSetCurPcIdx` | Manually set program counter (PC) index for task[0] (useful for debugging or jumping to specific logic) |
-| `PostSolveExpr` | Evaluate expressions within task scope (supports math, logic, and variable access) |
-| `PostExecuteMove` | Execute direct movement commands in robot task (L, P, SP, etc.) |
+| `PostAssignVar` | 使用表达式或 JSON 值将变量分配给任务（支持本地/全局作用域和持久性） |
+| `PostReleaseWait` | 将任务[0] 从等待状态释放以恢复暂停的任务 |
+| `PostSetCurPcIdx` | 手动设置任务[0] 的程序计数器（PC）索引（对调试或跳转到特定逻辑很有用） |
+| `PostSolveExpr` | 在任务作用域内评估表达式（支持数学、逻辑和变量访问） |
+| `PostExecuteMove` | 在机器人任务中执行直接运动命令（L、P、SP 等） |

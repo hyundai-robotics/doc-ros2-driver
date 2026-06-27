@@ -1,13 +1,13 @@
-﻿# 7.1.7 Miscellaneous API
+﻿# 7.1.7 杂项 API
 
-### Overview
+### 概述
 
-The Miscellaneous API category provides additional utility and system management functions for the HD Hyundai Robotics controller. These APIs include system time management and log query capabilities.
+杂项 API 类别为 HD 现代机器人控制器提供额外的实用程序和系统管理功能。这些 API 包括系统时间管理和日志查询功能。
 
-### Available Miscellaneous APIs
+### 可用的杂项 API
 
-| Function | Description |
-|----------|-------------|
-| `GetDateTime` | Query current system date and time from robot controller (year, month, day, hour, minute, second) |
-| `PutDateTime` | Set system date and time on robot controller (includes input validation) |
-| `GetLogManager` | Query controller logs with filtering options (entry count, categories E,W,N,S,O,I,P,H,C,M, ID range, timestamp range) |
+| 功能 | 描述 |
+|------|------|
+| `GetDateTime` | 从机器人控制器查询当前系统日期和时间（年、月、日、小时、分钟、秒） |
+| `PutDateTime` | 在机器人控制器上设置系统日期和时间（包括输入验证） |
+| `GetLogManager` | 查询控制器日志并带有过滤选项（条目计数、类别 E、W、N、S、O、I、P、H、C、M、ID 范围、时间戳范围） |

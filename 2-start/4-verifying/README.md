@@ -1,42 +1,41 @@
-﻿# 2.4 Installation Verification
+﻿# 2.4 安装验证
 
-This guide provides verification procedures to confirm that the HD Hyundai Robotics ROS2 driver is properly installed, configured, and ready to operate.
+本指南提供验证程序，以确认 HD Hyundai Robotics ROS2 驱动程序已正确安装、配置并准备好操作。
 
+#### 机器人模式配置
 
-#### Robot Mode Configuration
+HDR ROS2 驱动程序仅在机器人处于 **REMOTE** 模式时才能工作。
 
-The HDR ROS2 driver operates only when the robot is in **REMOTE** mode.
-
-Please set the controller to remote control mode by switching the mode switch on the teach pendant (TP) to the REMOTE position before running the ROS2 driver.
+请在运行 ROS2 驱动程序之前，通过将教学挂件 (TP) 上的模式开关切换到 REMOTE 位置来将控制器设置为遥控模式。
 
 ![](../../_assets/tp_operate.png)
 
 
-#### HDR ROS2 Driver Execution Test
+#### HDR ROS2 驱动程序执行测试
 
 ```bash
-# Run HDR ROS2 driver (ensure robot is in REMOTE mode)
+# 运行 HDR ROS2 驱动程序（确保机器人处于 REMOTE 模式）
 ros2 launch hdr_bringup hdr_control.py \
-  robot_model:=hdf7_7      # Enter robot model (default: ha006b)
+  robot_model:=hdf7_7      # 输入机器人模型（默认：ha006b）
 
 
-# Verify controller manager in another terminal
+# 在另一个终端验证控制器管理器
 ros2 control list_controllers
 
-# Expected output:
+# 预期输出：
 # joint_state_broadcaster[joint_state_broadcaster/JointStateBroadcaster] active
 # joint_trajectory_controller[joint_trajectory_controller/JointTrajectoryController] active
 ```
 
-#### Joint State Publishing Test
+#### 关节状态发布测试
 
 ```bash
-# Verify joint state is being published
+# 验证关节状态是否正在发布
 ros2 topic list | grep joint_states
 
-# Monitor joint state
+# 监控关节状态
 ros2 topic echo /joint_states --once
 
-# Check publishing frequency
+# 检查发布频率
 ros2 topic hz /joint_states
 ```

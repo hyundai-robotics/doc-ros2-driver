@@ -1,14 +1,14 @@
-﻿# 7.1.3 Project API
+﻿# 7.1.3 项目 API
 
-### Overview
+### 概述
 
-The Project API category provides project and job management functions for the HD Hyundai Robotics controller. These APIs enable monitoring project execution status, querying job information, and managing jobs.
+项目 API 类别为 HD Hyundai Robotics 控制器提供项目和作业管理功能。这些 API 使得监控项目执行状态、查询作业信息和管理作业成为可能。
 
-### Available Project APIs
+### 可用的项目 API
 
-| Function | Description |
+| 功能 | 描述 |
 |----------|-------------|
-| `GetProjectRgen` | Query current project execution status (0: not running, 1: running, 2: paused) |
-| `GetProjectJobsInfo` | Retrieve metadata of all jobs registered in the project (name, path, modification status) |
-| `PostProjectReloadUpdateJobs` | Reload and synchronize externally modified jobs to update in-memory job status |
-| `PostProjectDeleteJob` | Delete specified job file from project path |
+| `GetProjectRgen` | 查询当前项目执行状态 (0: 未运行, 1: 运行中, 2: 暂停) |
+| `GetProjectJobsInfo` | 检索项目中所有已注册作业的元数据 (名称, 路径, 修改状态) |
+| `PostProjectReloadUpdateJobs` | 重新加载并同步外部修改的作业以更新内存作业状态 |
+| `PostProjectDeleteJob` | 从项目路径中删除指定的作业文件 |

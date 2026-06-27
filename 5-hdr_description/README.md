@@ -1,33 +1,33 @@
 ﻿# 5. Robot URDF (`hdr_description`)
 
-The `hdr_description` package contains robot URDF, meshes, and visualization configurations for HD Hyundai Robotics robots in ROS2. This package provides essential URDF/XACRO definitions needed for simulation, visualization, and motion planning.
+`hdr_description`  包含 HD 现代机器人在 ROS2 中的机器人 URDF、网格和可视化配置。该包提供了模拟、可视化和运动规划所需的基本 URDF/XACRO 定义。
 
 [Source Code] [GitHub Repository ↗](https://github.com/hyundai-robotics/hdr_description)
 
 ### Key Features
 
-- **Robot Model-Specific URDF**: URDF/XACRO files for all supported robot models
-- **3D Meshes**: Collision and visual meshes for accurate simulation
-- **RViz Integration**: Pre-configured visualization settings
-- **ros2_control Integration**: Joint interface definitions
+- **机器人模型特定 URDF**：所有支持的机器人模型的 URDF/XACRO 文件
+- **3D 网格**：用于准确模拟的碰撞和视觉网格
+- **RViz 集成**：预配置的可视化设置
+- **ros2_control 集成**：关节接口定义
 
 ### Package Structure
 
 | Directory | Contents | Purpose |
 |-----------|----------|----------|
-| `urdf/` | Robot URDF files | URDF/XACRO definitions |
-| `meshes/` | 3D model mesh files | Collision and visual representation |
-| `launch/` | Visualization launch files | RViz display configuration |
-| `rviz/` | RViz configuration files | Display settings and plugins |
+| `urdf/` | 机器人 URDF 文件 | URDF/XACRO 定义 |
+| `meshes/` | 3D 模型网格文件 | 碰撞和视觉表示 |
+| `launch/` | 可视化启动文件 | RViz 显示配置 |
+| `rviz/` | RViz 配置文件 | 显示设置和插件 |
 
 ### URDF Configuration
 
 #### Main Files
-- **`hdr.urdf.xacro`**: Top-level macro including all components
-- **`hdr.ros2_control.xacro`**: ros2_control hardware interface macro
+- **`hdr.urdf.xacro`**：包含所有组件的顶层宏
+- **`hdr.ros2_control.xacro`**：ros2_control 硬件接口宏
 
 #### Robot-Specific Files
-Each robot model has its own directory under `urdf/robots/`:
+每个机器人模型在 `urdf/robots/` 下都有自己的目录：
 - `ha006b.urdf.xacro`
 - `hdf7_9.urdf.xacro`
 - `hdf8_8.urdf.xacro`
@@ -49,22 +49,22 @@ ros2 launch hdr_description display_robot.launch.py robot_model:=ha006b
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `robot_model` | string | `ha006b` | Robot model to display |
-| `description_package` | string | `hdr_description` | Package containing URDF files |
-| `description_file` | string | `hdr.urdf.xacro` | Main URDF/XACRO file |
+| `robot_model` | string | `ha006b` | 要显示的机器人模型 |
+| `description_package` | string | `hdr_description` | 包含 URDF 文件的包 |
+| `description_file` | string | `hdr.urdf.xacro` | 主 URDF/XACRO 文件 |
 
 ### Mesh Quality
 
-The package provides two types of meshes for each robot:
+该包为每个机器人提供两种类型的网格：
 
 #### Visual Meshes
-- High-resolution meshes for realistic visualization
-- Detailed surface textures and materials
-- Used for visual representation in RViz and Gazebo
+- 高分辨率网格以实现真实的可视化
+- 详细的表面纹理和材料
+- 用于 RViz 和 Gazebo 中的视觉表示
 
 #### Collision Meshes
-- Simplified meshes for collision detection
-- Optimized for computational efficiency
-- Used by physics engines and motion planners
+- 简化的网格用于碰撞检测
+- 针对计算效率进行了优化
+- 由物理引擎和运动规划器使用
 
-For model-specific details, see [Supported Robot Models](../1-intro/2-robot-models/README.md).
+有关模型特定的详细信息，请参见 [Supported Robot Models](../1-intro/2-robot-models/README.md).

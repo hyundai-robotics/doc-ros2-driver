@@ -1,18 +1,18 @@
-﻿# 6. MoveIt2 Configuration (`hdr_moveit_config`)
+﻿# 6. MoveIt2 配置 (`hdr_moveit_config`)
 
-The `hdr_moveit_config` package provides MoveIt2 configuration packages for controlling HD Hyundai Robotics robots in both real and simulation environments. This package includes robot-specific motion planning configurations with SRDF definitions, joint limits, and controller settings.
+`hdr_moveit_config` 包提供用于控制 HD Hyundai Robotics 机器人在实际和仿真环境中的 MoveIt2 配置包。该包包含特定于机器人的运动规划配置，具有 SRDF 定义、关节限制和控制器设置。
 
-### Key Features
+### 主要特性
 
-- **Robot-Specific Configuration**: Individual MoveIt2 settings for each supported robot model
-- **SRDF Definitions**: Semantic robot description with planning groups and poses
-- **Joint Limits Management**: Velocity and acceleration scaling for safe operation
-- **Kinematics Integration**: Forward/inverse kinematics solver configuration
-- **Controller Integration**: ros2_control and trajectory execution setup
+- **特定于机器人的配置**：每个支持的机器人模型的单独 MoveIt2 设置
+- **SRDF 定义**：带有规划组和姿态的语义机器人描述
+- **关节限制管理**：安全操作的速度和加速度缩放
+- **运动学集成**：正/反运动学求解器配置
+- **控制器集成**：ros2_control 和轨迹执行设置
 
-### Package Organization
+### 包组织
 
-Each robot model has its own MoveIt2 configuration package:
+每个机器人模型都有自己独立的 MoveIt2 配置包：
 
 - `ha006b_moveit_config/`
 - `hdf7_9_moveit_config/`
@@ -24,40 +24,40 @@ Each robot model has its own MoveIt2 configuration package:
 - `hh020_moveit_config/`
 - `hdr35_20_moveit_config/`
 
-### Configuration Files
+### 配置文件
 
-Each robot configuration includes:
+每个机器人配置包括：
 
-#### Core Configuration
-- **SRDF Files**: Semantic robot description with planning groups
-- **joint_limits.yaml**: Velocity and acceleration limits with scaling factors
-- **kinematics.yaml**: Kinematics solver plugin configuration
-- **controllers.yaml**: ros2_control trajectory controller settings
+#### 核心配置
+- **SRDF 文件**：带有规划组的语义机器人描述
+- **joint_limits.yaml**：带有缩放因子的速度和加速度限制
+- **kinematics.yaml**：运动学求解器插件配置
+- **controllers.yaml**：ros2_control 轨迹控制器设置
 
-#### Advanced Settings
-- **ompl_planning.yaml**: OMPL motion planner configuration
-- **pilz_cartesian_limits.yaml**: Cartesian motion limits for Pilz planner
-- **sensors_3d.yaml**: 3D sensor integration (if applicable)
-- **initial_positions.yaml**: Default starting poses
+#### 高级设置
+- **ompl_planning.yaml**：OMPL 运动规划器配置
+- **pilz_cartesian_limits.yaml**：Pilz 规划器的笛卡尔运动限制
+- **sensors_3d.yaml**：3D 传感器集成（如适用）
+- **initial_positions.yaml**：默认起始姿态
 
-### Safety Considerations
+### 安全注意事项
 
-#### Velocity Scaling
-**≤ 0.5** scaling factors are recommended for stable operation:
+#### 速度缩放
+**≤ 0.5** 的缩放因子推荐用于稳定操作：
 
 ```yaml
 default_velocity_scaling_factor: 0.5
 default_acceleration_scaling_factor: 0.5
 ```
 
-#### Joint Limits
-The `joint_limits.yaml` file defines:
-- Maximum joint velocities
-- Maximum joint accelerations
-- Software position limits
-- Scaling factors for motion planning
+#### 关节限制
+`joint_limits.yaml` 文件定义：
+- 最大关节速度
+- 最大关节加速度
+- 软件位置限制
+- 运动规划的缩放因子
 
-### Launch
+### 启动
 
 ```bash
 ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
@@ -65,9 +65,9 @@ ros2 launch hdr_bringup hdr_moveit.launch.py robot_model:=ha006b
 
 ![](../_assets/hdr_moveit.png)
 
-### Planning Groups
+### 规划组
 
-Typical SRDF planning group configuration:
+典型的 SRDF 规划组配置：
 
 ```xml
 <group name="manipulator">
@@ -85,10 +85,10 @@ Typical SRDF planning group configuration:
 ```
 
 
-### Customization
+### 定制
 
-To modify motion planning behavior:
-1. Edit `joint_limits.yaml` for velocity/acceleration limits (cannot exceed maximum velocities defined per joint in URDF)
-2. Modify `ompl_planning.yaml` for planner-specific settings
-3. Update SRDF for new planning groups or poses
-4. Adjust controller parameters in `controllers.yaml`
+要修改运动规划行为：
+1. 编辑 `joint_limits.yaml` 以设置速度/加速度限制（不能超过 URDF 中每个关节定义的最大速度）
+2. 修改 `ompl_planning.yaml` 以设置特定于规划器的参数
+3. 更新 SRDF 以添加新的规划组或姿态
+4. 在 `controllers.yaml` 中调整控制器参数

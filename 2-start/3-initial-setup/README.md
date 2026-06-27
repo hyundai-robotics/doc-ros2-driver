@@ -1,77 +1,77 @@
-﻿# 2.3 Controller and PC Communication Setup
+﻿# 2.3 控制器与PC通信设置
 
-This guide covers the configuration of network interfaces on your development PC for communication with HD Hyundai Robotics robot controllers.
+本指南涵盖了在开发PC上配置网络接口以与HD Hyundai Robotics机器人控制器进行通信。
 
-### Prerequisites
-⚠️ Please verify the following before starting setup:
-- **Robot Controller SW Version**: Hi6, Hi7 series controller with SW version **70.00-00** or higher
+### 前提条件
+⚠️ 请在开始设置之前确认以下事项：
+- **机器人控制器软件版本**：Hi6、Hi7系列控制器，软件版本 **70.00-00** 或更高
 
-### Network Configuration Overview
+### 网络配置概述
 
-The PC must be configured to communicate with the robot controller via Ethernet. The default configuration uses a 192.168.1.x subnet with the controller at 192.168.1.150.
+PC必须配置为通过以太网与机器人控制器进行通信。默认配置使用192.168.1.x子网，控制器地址为192.168.1.150。
 
-### Default Network Configuration (Using LAN1)
+### 默认网络配置（使用LAN1）
 
-| Component | Parameter | Default Value |
+| 组件 | 参数 | 默认值 |
 |-----------|-----------|---------------|
-| **PC IP Address** | Static IP | 192.168.1.x (user configured)|
-| **Robot Controller IP** | Static IP | 192.168.1.150 |
-| **Subnet Mask** | Network Mask | 255.255.255.0 |
-| **Gateway** | Default Gateway | 192.168.1.1  |
+| **PC IP地址** | 静态IP | 192.168.1.x（用户配置）|
+| **机器人控制器IP** | 静态IP | 192.168.1.150 |
+| **子网掩码** | 网络掩码 | 255.255.255.0 |
+| **网关** | 默认网关 | 192.168.1.1  |
 
-### Cable Connection
+### 电缆连接
 
 ![](../../_assets/controller.png)
 
-1. **Locate Robot Controller Ethernet Port**
-   - **Hi6-N Controller**: Ethernet port on top of main module
-   - **Hi6-T Controller**: Ethernet port on controller front panel
+1. **找到机器人控制器以太网端口**
+   - **Hi6-N 控制器**：主模块顶部的以太网端口
+   - **Hi6-T 控制器**：控制器前面板上的以太网端口
 
-2. **Connect Ethernet Cable**
-   - Use Cat5e or Cat6 Ethernet cable
-   - **Recommendation**: Use LAN1 (typically pre-configured to 192.168.1.x)
-   - LAN2, LAN3 ports are also available with different default controller IPs: </br>
-      LAN2: 192.168.4.150 → PC needs to be configured to 192.168.4.x range </br>
-      LAN3: 192.168.3.150 → PC needs to be configured to 192.168.3.x range
+2. **连接以太网电缆**
+   - 使用Cat5e或Cat6以太网电缆
+   - **建议**：使用LAN1（通常预配置为192.168.1.x）
+   - LAN2、LAN3端口也可用，默认控制器IP不同：</br>
+      LAN2: 192.168.4.150 → PC需配置为192.168.4.x范围 </br>
+      LAN3: 192.168.3.150 → PC需配置为192.168.3.x范围
 
-3. **Verify Physical Connection**
-   - Ensure cable connection is secure
-   - Check network port LED indicators (if available)
+3. **验证物理连接**
+   - 确保电缆连接牢固
+   - 检查网络端口LED指示灯（如果可用）
 
 
-### PC Network Interface Configuration
+### PC网络接口配置
 
 ![](../../_assets/LAN_com.png)
 
-#### Using Network Manager GUI
+#### 使用网络管理器GUI
 
-##### Ubuntu Desktop (GNOME)
+##### Ubuntu桌面 (GNOME)
 
-1. **Open Network Settings**
-   - Click on the network icon in the top-right corner
-   - Select "Wired Settings" or go to Settings → Network
+1. **打开网络设置**
+   - 点击右上角的网络图标
+   - 选择“有线设置”或转到设置 → 网络
 
-2. **Configure Wired Connection**
-   - Click the gear icon next to the wired connection
-   - Navigate to the "IPv4" tab
+2. **配置有线连接**
+   - 点击有线连接旁边的齿轮图标
+   - 转到“IPv4”选项卡
 
-3. **Set Static IP Configuration (Using LAN1)**
-   - **Method**: Manual
-   - **Address**: 192.168.1.100
-   - **Netmask**: 255.255.255.0
-   - **Gateway**: 192.168.1.1
+3. **设置静态IP配置（使用LAN1）**
+   - **方法**：手动
+   - **地址**：192.168.1.100
+   - **子网掩码**：255.255.255.0
+   - **网关**：192.168.1.1
 
-4. **Apply Settings**
-   - Click "Apply" and disconnect then reconnect the network interface
+4. **应用设置**
+   - 点击“应用”，然后断开再重新连接网络接口
 
 ![](../../_assets/ip_setup.png)
 
-### Verification
+### 验证
 
-#### Verify Network Configuration
+#### 验证网络配置
 
 ```bash
-# Test network connectivity
+# 测试网络连接
 ping -c 4 192.168.1.150
 ```
 

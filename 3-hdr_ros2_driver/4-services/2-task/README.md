@@ -1,30 +1,30 @@
-﻿# 3.4.2 Task Management Services
+﻿# 3.4.2 任务管理服务
 
-### Overview
+### 概述
 
-Task and variable management related ROS2 services provided by `hdr_ros2_driver`.
+由 `hdr_ros2_driver` 提供的与任务和变量管理相关的 ROS2 服务。
 
-### Task Management Services
+### 任务管理服务
 
-#### Variable Management
+#### 变量管理
 
 ```bash
-# Assign variable
+# 指派变量
 ros2 service call /hdr_ros2_driver/task/post/assign_var hdr_msgs/srv/ProgramVar "{name: 'a', scope: 'local', expr: '14 + 2', save: 'true'}"
 
-# Solve expression
+# 解决表达式
 ros2 service call /hdr_ros2_driver/task/post/solve_expr hdr_msgs/srv/ProgramVar "{name: 'a', scope: 'local'}"
 ```
 
-#### Motion Control
+#### 动作控制
 
 ```bash
-# Execute move command
+# 执行移动命令
 ros2 service call /hdr_ros2_driver/task/post/execute_move hdr_msgs/srv/ExecuteMove "{task_no: 0, stmt: 'move SP,spd=1sec,accu=0,tool=1 [0, 90, 0, 0, 0, 0]'}"
 
-# Release wait state
+# 释放等待状态
 ros2 service call /hdr_ros2_driver/task/post/release_wait std_srvs/srv/Trigger
 
-# Set program counter index
+# 设置程序计数器索引
 ros2 service call /hdr_ros2_driver/task/post/set_cur_pc_idx hdr_msgs/srv/Number "{data: 0}"
 ```

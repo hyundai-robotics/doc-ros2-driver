@@ -1,16 +1,16 @@
-﻿# 10. ROS2 Driver Execution and Robot Control
+﻿# 10. ROS2 驱动执行与机器人控制
 
-### Overview
+### 概述
 
-This section provides a comprehensive guide for operating HD Hyundai Robotics robots using the ROS2 driver.
+本部分提供了使用 ROS2 驱动程序操作 HD 现代机器人机器人全面的指南。
 
-The HD Hyundai Robotics ROS2 system provides the following control methods:
+HD 现代机器人 ROS2 系统提供以下控制方法：
 
-- **MoveIt2 Integration**: Motion planning and execution
-- **ros2_control**: Hardware interface control
-- **ROS2 Services**: Controller API access
+- **MoveIt2 集成**：运动规划与执行
+- **ros2_control**：硬件接口控制
+- **ROS2 服务**：控制器 API 访问
 
-### Next Steps
+### 下一步
 
-- [MoveIt2 Launch Procedures](1-launch-moveit2/README.md)
-- [Direct ros2_control Control](2-launch-ros2_control/README.md)
+- [MoveIt2 启动程序](1-launch-moveit2/README.md)
+- [直接 ros2_control 控制](2-launch-ros2_control/README.md)

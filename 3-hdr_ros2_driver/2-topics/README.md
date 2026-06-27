@@ -1,26 +1,26 @@
-﻿# 3.2 Provided Topics
+﻿# 3.2 提供的主题
 
-### Overview
+### 概述
 
-The ROS2 driver publishes real-time robot data through standardized ROS2 topics. These topics provide joint states, robot status information, and diagnostic data for monitoring and control applications.
+ROS2 驱动程序通过标准化的 ROS2 主题发布实时机器人数据。这些主题提供关节状态、机器人状态信息和用于监控和控制应用的诊断数据。
 
-### Published Topics
+### 发布的主题
 
-#### Joint State Information
+#### 关节状态信息
 
 ##### `/joint_states` (sensor_msgs/msg/JointState)
-**Description**: Real-time joint position data
+**描述**：实时关节位置数据
 
-**Message Fields**:
+**消息字段**：
 ```yaml
 std_msgs/Header header
   uint32 seq
   time stamp
   string frame_id
-string[] name          # Joint names matching URDF
-float64[] position     # Joint positions in radians
-float64[] velocity     # Joint velocity in radians/sec
-float64[] effort       # Joint effort in torque
+string[] name          # 与 URDF 匹配的关节名称
+float64[] position     # 以弧度表示的关节位置
+float64[] velocity     # 以弧度/秒表示的关节速度
+float64[] effort       # 以扭矩表示的关节努力
 ```
 
-**Publishing Frequency**: 50 Hz (configurable via `publish_rate` parameter)
+**发布频率**：50 Hz（可通过 `publish_rate` 参数配置）

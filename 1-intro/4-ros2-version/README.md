@@ -1,24 +1,24 @@
-﻿# 1.4 Supported ROS2 Versions
+# 1.4 支持的 ROS2 版本
 
-The HD Hyundai Robotics ROS2 driver supports specific ROS2 distributions that have been tested and validated in robot controller and simulation environments.
+HD Hyundai Robotics ROS2 驱动程序支持在机器人控制器和仿真环境中经过测试和验证的特定 ROS2 发行版。
 
-### Supported ROS2 Distributions
+### 支持的 ROS2 发行版
 
 - **ROS2 Humble Hawksbill** (Ubuntu 22.04 LTS)
 - **ROS2 Jazzy Jalisco** (Ubuntu 24.04 LTS)
 
-### Version Verification
+### 版本验证
 
-After installation, verify your ROS2 setup:
+安装后，验证您的 ROS2 设置：
 
 ```bash
-# Source ROS2 environment
+# 来源 ROS2 环境
 source /opt/ros/$ROS_DISTRO/setup.bash
 
-# Check ROS2 version
+# 检查 ROS2 版本
 ros2 doctor
 ```
 
-### Next Steps
+### 后续步骤
 
-After confirming ROS2 compatibility, proceed to [Getting Started](../../2-start/README.md) for installation.
+确认 ROS2 兼容性后，请继续阅读 [Getting Started](../../2-start/README.md) 进行安装。

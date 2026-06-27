@@ -1,22 +1,22 @@
-﻿# 1.3 System Requirements
+﻿# 1.3 系统要求
 
-This page describes the hardware and software requirements for running the HD Hyundai Robotics ROS2 driver.
+此页面描述了运行 HD Hyundai Robotics ROS2 驱动程序所需的硬件和软件要求。
 
-### Hardware Requirements
+### 硬件要求
 
-#### Robot Controller
-- **Compatible Controllers**: Hi6, Hi7 controller series
-- **Controller SW Version**: **70.00-00** or higher
-- **Operation Mode**: Robot must be set to **REMOTE** mode
-- **Network Interface**: Ethernet connection (LAN1, LAN2, or LAN3)
+#### 机器人控制器
+- **兼容控制器**: Hi6, Hi7 控制器系列
+- **控制器软件版本**: **70.00-00** 或更高
+- **操作模式**: 机器人必须设置为 **REMOTE** 模式
+- **网络接口**: 以太网连接 (LAN1, LAN2 或 LAN3)
 
-#### Development PC
-- **Operating System**: Ubuntu 22.04 LTS or Ubuntu 24.04 LTS
-- **Memory**: Minimum 8GB RAM (16GB recommended for simulation)
-- **Network**: Ethernet interface for robot communication
-- **CPU**: Multi-core processor (4 cores or more recommended)
+#### 开发 PC
+- **操作系统**: Ubuntu 22.04 LTS 或 Ubuntu 24.04 LTS
+- **内存**: 最少 8GB RAM（推荐 16GB 用于仿真）
+- **网络**: 用于机器人通信的以太网接口
+- **CPU**: 多核处理器（推荐 4 核或更多）
 
 
-### Next Steps
+### 下一步
 
-Once your system meets all requirements, check [Supported ROS2 Versions](../4-ros2-version/README.md).
+一旦您的系统满足所有要求，请检查 [支持的 ROS2 版本](../4-ros2-version/README.md)。
